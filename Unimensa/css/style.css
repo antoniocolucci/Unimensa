@@ -30,12 +30,34 @@ ul#menu li.active, ul#menu li:hover {
     background-color: #d2d2d2;
     border-bottom: 5px solid #3b83bd;
 }
-.logo{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+div#dropdraw_menu{
+    float: left;
+    margin-top: 50px;
+    margin-left: 30px;
  }
 
 div#containerMenu{
     display: inline-block;
 }
+img#logo {
+    width: 40px;
+    height: 40px;
+}
+
+.header {
+    padding: 10px;
+    text-align: center;
+    background: #3b83bd;
+    color: white;
+    font-size: 30px;
+}
+
+p#txt_menu{
+    font-family: Arial;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 0px;
+    margin-left: 0px;
+    color: white;
+}
+
