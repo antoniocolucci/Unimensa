@@ -1,0 +1,14 @@
+body{
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    height: 100%;
+
+}
+
+.header{
+    height:70px;
+    background-color:#3b83bd;
+    text-align: center;
+    color: white;
+}

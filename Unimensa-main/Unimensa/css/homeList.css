@@ -1,0 +1,31 @@
+ul#menu {
+    font-family: Arialgold,sans-serif;
+    font-size: 11px;
+    padding: 0;
+    list-style: none;
+    height: 20px;
+}
+ul#menu li {
+    background-color: #EFEFEF;
+    border-bottom: 5px solid #3b83bd;
+    display: block;
+    width: 100%;
+    height: 30px;
+    margin: 0;
+    float: left; /* elementi su singola riga */
+
+}
+ul#menu li a {
+    color: black;
+    display: block;
+    font-weight: bold;
+    line-height: 30px;
+    text-decoration: none;
+    text-align: center;
+}
+
+/*Freccia che passa sul bottone*/
+ul#menu li.active, ul#menu li:hover {
+    background-color: #d2d2d2;
+    border-bottom: 5px solid #3b83bd;
+}

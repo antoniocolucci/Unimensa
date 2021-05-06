@@ -1,0 +1,12 @@
+input.icon{
+    height: 32px;
+    width: 32px;
+}
+
+input#close_menu{
+    height: 32px;
+    width: 32px;
+    float: right;
+    margin-right: 5px;
+    margin-top: 5px;
+}
