@@ -6,15 +6,22 @@ ul#menu {
     height: 20px;
 }
 ul#menu li {
-    background-color: #EFEFEF;
-    border-bottom: 5px solid #3b83bd;
+    background-color: #dcdcdc;
     display: block;
     width: 100%;
-    height: 30px;
+    height: 35px;
     margin: 0;
     float: left; /* elementi su singola riga */
 
 }
+ul#menu li.active{
+    background-color: #b1b0b0;
+}
+
+ul#menu li a.active{
+    color: #EFEFEF;
+}
+
 ul#menu li a {
     color: black;
     display: block;
@@ -25,7 +32,42 @@ ul#menu li a {
 }
 
 /*Freccia che passa sul bottone*/
-ul#menu li.active, ul#menu li:hover {
+ul#menu li:hover {
+    background-color: #b1b0b0;
+}
+
+ul#notifications{
+    font-family: Arialgold,sans-serif;
+    font-size: 11px;
+    padding: 0;
+    list-style: none;
+    height: 20px;
+}
+
+ul#notifications li{
+    color: black;
+    display: block;
+    font-weight: bold;
+    line-height: 30px;
+    text-decoration: none;
+    text-align: center;
+    margin: 5px;
+}
+
+ul#notifications li a{
+    color: black;
+    display: block;
+    font-weight: bold;
+    line-height: 30px;
+    text-decoration: none;
+    text-align: center;
+}
+
+ul#notifications li:hover{
     background-color: #d2d2d2;
     border-bottom: 5px solid #3b83bd;
+}
+
+ul#notifications li a.active{
+    background-color: #3b83bd;
 }
