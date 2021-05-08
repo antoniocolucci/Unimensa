@@ -3,28 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <title>Home</title>
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/navigationBar.css">
-  <link rel="stylesheet" href="../css/homeList.css">
-  <link rel="stylesheet" href="../css/container.css">
-  <link rel="stylesheet" href="../css/button.css">
-  <link rel="stylesheet" href="../css/text.css">
+  <link rel="stylesheet" href="../css/headerCSS/style.css">
+  <link rel="stylesheet" href="../css/headerCSS/navigationBar.css">
+  <link rel="stylesheet" href="../css/headerCSS/homeList.css">
+  <link rel="stylesheet" href="../css/headerCSS/container.css">
+  <link rel="stylesheet" href="../css/headerCSS/button.css">
+  <link rel="stylesheet" href="../css/headerCSS/text.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
     <div class="header">
         <div id="icon_menu" >
             <input type="image" class="icon" alt="menu" src="../images/menu.png"
-                   onclick="showContainer('lateral_menu'); hideOtherMenu('lateral_menu')">
+                   onclick="showContainer('lateral_menu');
+                   hideOtherMenu('lateral_menu')">
             <p class="txt_icon">MENU</p>
         </div>
         <div id="icon_profile">
             <input type="image" class="icon" id="imgProfile" alt="profile" src="../images/imgProfile.png" title="Profile"
-               onclick="showContainer('container_profile'); changeIcon('imgProfile');hideOtherMenu('container_profile')">
+                   onclick="showContainer('container_profile');
+                   changeIcon('imgProfile');
+                   hideOtherMenu('container_profile')">
         </div>
         <div id="icon_bell">
             <input type="image" class="icon" id="imgBell" alt="bell" src="../images/imgBell.png" title="Notifications"
-               onclick="showContainer('container_notifications'); changeIcon('imgBell'); hideOtherMenu('container_notifications')">
+               onclick="showContainer('container_notifications');
+               changeIcon('imgBell');
+               hideOtherMenu('container_notifications')">
         </div>
         <div id="title">
             <h1>uniMensa</h1>
@@ -36,7 +41,7 @@
             </div>
             <div id="list_menu">
             <ul id="menu">
-                <li class="active"><a classe="active" href="../html/Home.html">HOME</a></li>
+                <li class="active"><a class="active" href="../html/Home.html">HOME</a></li>
                 <li><a href="../html/Ordini.html">ORDINI</a></li>
                 <li><a href="../html/Mensa.html">MENSA</a></li>
                 <li><a href="../html/Calendario.html">CALENDARIO</a></li>
@@ -47,8 +52,8 @@
 
     <div id="container_notifications" style="display: none">
         <ul id="notifications">
-            <li><a href="#"> Notifica 1</a></li>
-            <li><a href="#"> Notifica 2</a></li>
+            <li><a href="#"> Ritira il pasto</a></li>
+            <li><a href="#"> Il pasto è pronto</a></li>
         </ul>
     </div>
 
@@ -59,6 +64,7 @@
     </div>
 
 <script language="JavaScript" src="../js/Home.js"></script>
+<script language="JavaScript" src="../js/Login.js"></script>
 </body>
 </html>
 

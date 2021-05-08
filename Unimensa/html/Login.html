@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="../css/headerCSS/style.css">
+  <link rel="stylesheet" href="../css/headerCSS/navigationBar.css">
+  <link rel="stylesheet" href="../css/headerCSS/homeList.css">
+  <link rel="stylesheet" href="../css/headerCSS/container.css">
+  <link rel="stylesheet" href="../css/headerCSS/button.css">
+  <link rel="stylesheet" href="../css/headerCSS/text.css">
+  <link rel="stylesheet" href="../css/loginCSS/login.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="header">
+  <div id="icon_menu" >
+    <input type="image" class="icon" alt="menu" src="../images/menu.png"
+           onclick="showContainer('lateral_menu');
+                    hideOtherMenu('lateral_menu')">
+    <p class="txt_icon">MENU</p>
+  </div>
+  <div id="title">
+    <h1>uniMensa</h1>
+  </div>
+  <nav id="lateral_menu" style="display: none">
+    <div id="icon_x">
+      <input type="image" id="close_menu" alt="menu" src="../images/close.png" title="Menu"
+             onclick="showContainer('lateral_menu')">
+    </div>
+    <div id="list_menu">
+      <ul id="menu">
+        <li class="active"><a class="active" href="../html/Home.html">HOME</a></li>
+        <li><a href="../html/Ordini.html">ORDINI</a></li>
+        <li><a href="../html/Mensa.html">MENSA</a></li>
+        <li><a href="../html/Calendario.html">CALENDARIO</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+
+<div id="container_form_login">
+
+  <div id="container_title">
+  <h1>Accedi</h1>
+  </div>
+  <form method="post" action="../html/Home.html">
+
+      <div class="container_label">
+    <label for="login">
+      Username
+    </label>
+    </div>
+
+    <div class="container_input_login">
+    <input type="text" id="login" name="Login">
+     </div>
+
+
+    <div class="container_label">
+    <label for="password">
+      Password
+    </label>
+      </div>
+
+    <div class="container_input_login">
+    <input type="password" id="password" name="Password">
+
+    <input type="submit" value="Accedi" id="submit">
+    </div>
+  </form>
+
+</div>
+
+<script language="JavaScript" src="../js/Home.js"></script>
+<script language="JavaScript" src="../js/Login.js"></script>
+</body>
+</html>
+
