@@ -1,0 +1,22 @@
+input.icon{
+    height: 32px;
+    width: 32px;
+}
+
+input#close_menu{
+    height: 32px;
+    width:  32px;
+    float: right;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+input.log_sign_button{
+    cursor: pointer;
+    width: 75%;
+    height: 30px;
+    margin-top: 10px;
+    background-color: #358000;
+    color: white;
+}
+
