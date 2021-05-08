@@ -58,9 +58,18 @@
     </div>
 
     <div id="container_profile" style="display: none">
-            <input type="button" value="Login" id="login">
+        <div id="container_buttonProfile" style="display: block">
+            <input type="button" value="Login" class="log_sign_button"
+                   onclick="goTo('../html/Login.html')">
             <br>
-            <input type="button" value="Sign in" id="sign in">
+            <input type="button" value="Sign in" class="log_sign_button">
+        </div>
+        <div id="container_infoProfile">
+             <ul id="myAccount">
+                 <li><a href="#"> Il mio account</a></li>
+                 <li><a href="#"> Logout</a></li>
+             </ul>
+        </div>
     </div>
 
 <script language="JavaScript" src="../js/Home.js"></script>

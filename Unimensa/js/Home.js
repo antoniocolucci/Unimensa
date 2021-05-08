@@ -31,18 +31,18 @@ function hideOtherMenu (element_id) {
         'lateral_menu'
     ]
 
-    if(element == document.getElementById(nameContainer[0]))
+    if(element === document.getElementById(nameContainer[0]))
      {
-         if(document.getElementById(nameContainer[1]).style.display == 'block') {
+         if(document.getElementById(nameContainer[1]).style.display === 'block') {
              document.getElementById(nameContainer[1]).style.display = 'none'
              changeIcon('imgProfile')
          }
         document.getElementById(nameContainer[2]).style.display= 'none'
      }
 
-    else if (element == document.getElementById(nameContainer[1]))
+    else if (element === document.getElementById(nameContainer[1]))
      {
-         if(document.getElementById(nameContainer[0]).style.display == 'block') {
+         if(document.getElementById(nameContainer[0]).style.display === 'block') {
              document.getElementById(nameContainer[0]).style.display= 'none'
              changeIcon('imgBell')
          }
@@ -51,11 +51,11 @@ function hideOtherMenu (element_id) {
 
     else
      {
-         if(document.getElementById(nameContainer[0]).style.display == 'block') {
+         if(document.getElementById(nameContainer[0]).style.display === 'block') {
              document.getElementById(nameContainer[0]).style.display= 'none'
              changeIcon('imgBell')
          }
-         if(document.getElementById(nameContainer[1]).style.display == 'block') {
+         if(document.getElementById(nameContainer[1]).style.display === 'block') {
              document.getElementById(nameContainer[1]).style.display= 'none'
              changeIcon('imgProfile')
          }
