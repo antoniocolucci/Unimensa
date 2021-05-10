@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="../css/headerCSS/container.css">
   <link rel="stylesheet" href="../css/headerCSS/button.css">
   <link rel="stylesheet" href="../css/headerCSS/text.css">
+    <link rel="stylesheet" href="../css/homeCSS/homepage.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -19,26 +20,30 @@
                    hideOtherMenu('lateral_menu')">
             <p class="txt_icon">MENU</p>
         </div>
+
         <div id="icon_profile">
             <input type="image" class="icon" id="imgProfile" alt="profile" src="../images/imgProfile.png" title="Profile"
                    onclick="showContainer('container_profile');
                    changeIcon('imgProfile');
                    hideOtherMenu('container_profile')">
         </div>
+
         <div id="icon_bell">
             <input type="image" class="icon" id="imgBell" alt="bell" src="../images/imgBell.png" title="Notifications"
                onclick="showContainer('container_notifications');
                changeIcon('imgBell');
                hideOtherMenu('container_notifications')">
         </div>
+
         <div id="title">
             <h1>uniMensa</h1>
         </div>
         <nav id="lateral_menu" style="display: none">
             <div id="icon_x">
-                <input type="image" id="close_menu" alt="menu" src="../images/close.png" title="Menu"
+                <input type="image" id="close_menu" alt="menu" src="../images/close.png" title="Close"
                        onclick="showContainer('lateral_menu')">
             </div>
+
             <div id="list_menu">
             <ul id="menu">
                 <li class="active"><a class="active" href="../html/Home.html">HOME</a></li>

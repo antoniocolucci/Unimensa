@@ -1,0 +1,32 @@
+div#container_center{
+    border: 1px #3b83bd solid;
+    width: 50%;
+    height: 50%;
+    margin-top: 5%;
+    margin-left: 15%;
+    float: left;
+    position: absolute;
+}
+
+
+div#container_elementMenu, #container_elementOrder{
+    float: left;
+    display: block;
+    border: 1px #3b83bd solid;
+    width: 30%;
+    height: 80%;
+    background-color: white;
+    text-align: center;
+    margin-left: 10%;
+    margin-bottom: 10%;
+    margin-top: 5%;
+}
+
+
+.img_element{
+    width: 250px;
+    height: 250px;
+}
+
+
+
