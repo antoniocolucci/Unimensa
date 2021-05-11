@@ -1,11 +1,10 @@
 div#container_center{
     border: 1px #3b83bd solid;
     width: 50%;
-    height: 50%;
+    height: 90%;
     margin-top: 5%;
     margin-left: 15%;
     float: left;
-    position: absolute;
 }
 
 
@@ -15,8 +14,8 @@ div#container_elementMenu, #container_elementOrder{
     border: 1px #3b83bd solid;
     width: 30%;
     height: 80%;
-    background-color: white;
     text-align: center;
+    background-color: white;
     margin-left: 10%;
     margin-bottom: 10%;
     margin-top: 5%;
@@ -26,6 +25,7 @@ div#container_elementMenu, #container_elementOrder{
 .img_element{
     width: 250px;
     height: 250px;
+    text-align: center;
 }
 
 h1.title {
@@ -38,4 +38,8 @@ a.more_info{
     text-decoration: none;
 }
 
+p{
+    text-align: left;
+    margin-left: 5%;
+}
 
