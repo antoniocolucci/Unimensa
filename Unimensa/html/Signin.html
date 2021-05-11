@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign in</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/headerCSS/style.css">
+    <link rel="stylesheet" href="../css/headerCSS/navigationBar.css">
+    <link rel="stylesheet" href="../css/headerCSS/homeList.css">
+    <link rel="stylesheet" href="../css/headerCSS/container.css">
+    <link rel="stylesheet" href="../css/headerCSS/button.css">
+    <link rel="stylesheet" href="../css/headerCSS/text.css">
+    <link rel="stylesheet" href="../css/loginCSS/login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="header">
+    <div id="icon_menu" >
+        <input type="image" class="icon" alt="menu" src="../images/header/menu.png"
+               onclick="showContainer('lateral_menu');
+                    hideOtherMenu('lateral_menu')">
+        <p class="txt_icon">MENU</p>
+    </div>
+    <div id="title">
+        <h1>uniMensa</h1>
+    </div>
+    <nav id="lateral_menu" style="display: none">
+        <div id="icon_x">
+            <input type="image" id="close_menu" alt="menu" src="../images/lateral_menù/close.png" title="Close"
+                   onclick="showContainer('lateral_menu')">
+        </div>
+
+        <div id="list_menu">
+            <ul id="menu">
+                <li class="active"><a class="active" href="../html/Home.html"> <img id="home" src="../images/lateral_menù/home.png"> HOME</a></li>
+                <li><a href="../html/Ordini.html"> <img id="ordini" src="../images/lateral_menù/ordini2.png">ORDINI</a></li>
+                <li><a href="../html/Mensa.html"> <img id="mensa" src="../images/lateral_menù/mensa.png">MENSA</a></li>
+                <li><a href="../html/Calendario.html">CALENDARIO</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+
+<div id="container_form_signin">
+
+    <div id="container_title">
+        <h1>Registrazione</h1>
+    </div>
+    <form method="post" action="../html/Home.html">
+        <div class="container_label">
+            <label for="name">
+                Nome
+            </label>
+        </div>
+        <div class="container_input_login">
+            <input type="text" id="name" name="Name">
+        </div>
+        <div class="container_label">
+            <label for="surname">
+                Cognome
+            </label>
+        </div>
+        <div class="container_input_login">
+            <input type="text" id="surname" name="Surname">
+        </div>
+        <div class="container_label">
+            <label for="email">
+                E-mail istituzionale
+            </label>
+        </div>
+        <div class="container_input_login">
+            <input type="text" id="email" name="Email">
+        </div>
+        <div class="container_label">
+            <label for="password">
+                Password
+            </label>
+        </div>
+        <div class="container_input_login">
+            <input type="password" id="password" name="Password">
+        </div>
+        <input type="submit" value="Registrati" id="submit">
+
+    </form>
+
+</div>
+
+<script language="JavaScript" src="../js/Home.js"></script>
+<script language="JavaScript" src="../js/Login.js"></script>
+</body>
+</html>
+
+</body>
+</html>

@@ -12,13 +12,13 @@ function changeIcon(element_id){
     let firstOcc = document.getElementById(element_id).src.indexOf('images')
     let var2 = document.getElementById(element_id).src.substr(firstOcc,document.getElementById(element_id).src.length)
     let var1 = "../"+var2
-    if(var1 === "../images/"+element_id+".png")
+    if(var1 === "../images/header/"+element_id+".png")
      {
-        document.getElementById(element_id).src = "../images/"+element_id+"clicked.png"
+        document.getElementById(element_id).src = "../images/header/"+element_id+"clicked.png"
      }
     else
      {
-        document.getElementById(element_id).src = "../images/"+element_id+".png"
+        document.getElementById(element_id).src = "../images/header/"+element_id+".png"
      }
 
 }

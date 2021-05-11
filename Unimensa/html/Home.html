@@ -9,27 +9,29 @@
   <link rel="stylesheet" href="../css/headerCSS/container.css">
   <link rel="stylesheet" href="../css/headerCSS/button.css">
   <link rel="stylesheet" href="../css/headerCSS/text.css">
-    <link rel="stylesheet" href="../css/homeCSS/homepage.css">
+  <link rel="stylesheet" href="../css/homeCSS/homepage.css">
+  <link rel="stylesheet" href="../css/headerCSS/style.css">
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
     <div class="header">
         <div id="icon_menu" >
-            <input type="image" class="icon" alt="menu" src="../images/menu.png"
+            <input type="image" class="icon" alt="menu" src="../images/header/menu.png"
                    onclick="showContainer('lateral_menu');
                    hideOtherMenu('lateral_menu')">
             <p class="txt_icon">MENU</p>
         </div>
 
         <div id="icon_profile">
-            <input type="image" class="icon" id="imgProfile" alt="profile" src="../images/imgProfile.png" title="Profile"
+            <input type="image" class="icon" id="imgProfile" alt="profile" src="../images/header/imgProfile.png" title="Profile"
                    onclick="showContainer('container_profile');
                    changeIcon('imgProfile');
                    hideOtherMenu('container_profile')">
         </div>
 
         <div id="icon_bell">
-            <input type="image" class="icon" id="imgBell" alt="bell" src="../images/imgBell.png" title="Notifications"
+            <input type="image" class="icon" id="imgBell" alt="bell" src="../images/header/imgBell.png" title="Notifications"
                onclick="showContainer('container_notifications');
                changeIcon('imgBell');
                hideOtherMenu('container_notifications')">
@@ -40,15 +42,15 @@
         </div>
         <nav id="lateral_menu" style="display: none">
             <div id="icon_x">
-                <input type="image" id="close_menu" alt="menu" src="../images/close.png" title="Close"
+                <input type="image" id="close_menu" alt="menu" src="../images/lateral_menù/close.png" title="Close"
                        onclick="showContainer('lateral_menu')">
             </div>
 
             <div id="list_menu">
             <ul id="menu">
-                <li class="active"><a class="active" href="../html/Home.html"> <input type="image" id="home" src="../images/home.png"> HOME</a></li>
-                <li><a href="../html/Ordini.html"> <input type="image" id="ordini" src="../images/ordini2.png">ORDINI</a></li>
-                <li><a href="../html/Mensa.html"> <input type="image" id="mensa" src="../images/mensa.png">MENSA</a></li>
+                <li class="active"><a class="active" href="../html/Home.html"> <img id="home" src="../images/lateral_menù/home.png"> HOME</a></li>
+                <li><a href="../html/Ordini.html"> <img id="ordini" src="../images/lateral_menù/ordini2.png">ORDINI</a></li>
+                <li><a href="../html/Mensa.html"> <img id="mensa" src="../images/lateral_menù/mensa.png">MENSA</a></li>
                 <li><a href="../html/Calendario.html">CALENDARIO</a></li>
             </ul>
             </div>
@@ -66,7 +68,8 @@
             <input type="button" value="Login" class="log_sign_button"
                    onclick="goTo('../html/Login.html')">
             <br>
-            <input type="button" value="Sign in" class="log_sign_button">
+            <input type="button" value="Sign in" class="log_sign_button"
+                   onclick="goTo('../html/Signin.html')">
         </div>
         <div id="container_infoProfile">
             <ul id="myAccount">
@@ -80,16 +83,16 @@
     <div id="container_center">
         <div id="container_elementMenu">
         <h1 class="title">Menù</h1>
-        <a href="../html/Mensa.html">
-        <img src="../images/menu_home_3.jpg" alt="menu del giorno" class="img_element"><br>
-            Vai ai menù
+        <a class="more_info" href="../html/Mensa.html">
+        <img src="../images/body_home/menu.jpeg" alt="menu del giorno" class="img_element"><br>
+            <p> Vai ai menù </p>
         </a>
         </div>
         <div id="container_elementOrder">
         <h1 class="title">I miei ordini</h1>
-        <a href="../html/Ordini.html">
-            <img src="../images/ritiro.png" alt="myOrder" class="img_element"><br>
-            I miei ordini
+        <a class="more_info" href="../html/Ordini.html">
+            <img src="../images/body_home/take.jpeg" alt="myOrder" class="img_element"><br>
+            <p>I miei ordini</p>
         </a>
         </div>
     </div>

@@ -11,3 +11,18 @@ body{
     text-align: center;
     color: white;
 }
+
+@media screen and  (max-width:767px){
+    nav#lateral_menu {width:50%;}
+    div#container_notifications {width:60%;height:25%;}
+    div#container_profile {width:60%;height:25%;}
+    div#container_elementMenu, #container_elementOrder{float: none;}
+}
+
+@media screen and (min-width:768px) and (max-width:1023px){
+    nav#lateral_menu {width:40%;}
+    div#container_notifications {width:60%;height:30%;}
+    div#container_profile {width:60%;height:30%;}
+    div#container_elementMenu, #container_elementOrder{float: none;}
+}
+

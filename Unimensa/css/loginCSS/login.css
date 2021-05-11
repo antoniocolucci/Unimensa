@@ -49,4 +49,14 @@ div.container_label{
     margin-bottom: 5px;
 }
 
+div#container_form_signin{
+    border: 1px #000000 solid;
+    position: center;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 50px;
+    width: 300px;
+    height: 500px;
+    text-align: center;
+}
 

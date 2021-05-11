@@ -28,5 +28,14 @@ div#container_elementMenu, #container_elementOrder{
     height: 250px;
 }
 
+h1.title {
+    text-align: left;
+    margin-left: 5%;
+}
+
+a.more_info{
+    color: #3b83bd;
+    text-decoration: none;
+}
 
 
