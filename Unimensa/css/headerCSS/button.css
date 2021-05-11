@@ -20,3 +20,10 @@ input.log_sign_button{
     color: white;
 }
 
+input#home, #ordini, #mensa{
+    height: 15%;
+    width: 15%;
+    margin-left: 2%;
+    float: left;
+}
+
