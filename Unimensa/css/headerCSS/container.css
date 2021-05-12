@@ -28,21 +28,22 @@ div#title{
 
 div#container_notifications{
     background: #EFEFEF;
-    position: absolute;
+    position: fixed;
+    top: 70px;
     right: 60px;
     height: 25%;
     width: 15%;
     border-radius: 3px;
-
 }
 
 div#container_profile{
     text-align: center;
-    position: absolute;
+    position: fixed;
     background: #EFEFEF;
     height: 25%;
     width: 15%;
     border-radius: 3px;
+    top: 70px;
     right: 0px;
 }
 
