@@ -1,9 +1,6 @@
-
-div#container_form_login{
+#container_form_login{
     border: 1px #000000 solid;
     border-radius: 5px;
-    margin: auto;
-    margin-top: 50px;
     width: 300px;
     height: 400px;
     text-align: center;
