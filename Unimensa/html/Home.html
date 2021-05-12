@@ -19,7 +19,8 @@
         <div id="icon_menu" >
             <input type="image" class="icon" alt="menu" src="../images/header/menu.png"
                    onclick="showContainer('lateral_menu');
-                   hideOtherMenu('lateral_menu')">
+                    hideOtherMenu('lateral_menu');">
+
             <p class="txt_icon">MENU</p>
         </div>
 
@@ -38,7 +39,7 @@
         </div>
 
         <div id="title">
-            <h1>uniMensa</h1>
+            <h1> <a href="../html/Home.html" id="title_header">uniMensa </a></h1>
         </div>
         <nav id="lateral_menu" style="display: none">
             <div id="icon_x">
@@ -48,15 +49,19 @@
 
             <div id="list_menu">
             <ul id="menu">
-                <li class="active"><a class="active" href="../html/Home.html"> <img id="home" src="../images/lateral_menù/home.png"> HOME</a></li>
-                <li><a href="../html/Ordini.html"> <img id="ordini" src="../images/lateral_menù/ordini2.png">ORDINI</a></li>
-                <li><a href="../html/Mensa.html"> <img id="mensa" src="../images/lateral_menù/mensa.png">MENSA</a></li>
-                <li><a href="../html/Calendario.html">CALENDARIO</a></li>
+                <li class="active"><a class="active" href="../html/Home.html"> <img id="home" src="../images/lateral_menù/home_2.png" alt="icon home"> HOME</a></li>
+                <li><a href="../html/Ordini.html"> <img id="ordini" src="../images/lateral_menù/ordini2.png" alt="icon order">ORDINI</a></li>
+                <li><a href="../html/Mensa.html"> <img id="mensa" src="../images/lateral_menù/mensa.png" alt="icon mensa">MENSA</a></li>
             </ul>
             </div>
         </nav>
-
     </div>
+
+    <!--
+    DA RIVEDERE
+    div id="menu_opacity"></div
+    -->
+
     <div id="container_notifications" style="display: none">
         <ul id="notifications">
             <li><a href="#"> Ritira il pasto</a></li>
@@ -79,23 +84,76 @@
         </div>
     </div>
 
+
     <!--CONTENUTO-->
     <div id="container_center">
-        <div id="container_elementMenu">
-        <h1 class="title">Menù</h1>
-        <a class="more_info" href="../html/Mensa.html">
-        <img src="../images/body_home/menu.jpeg" alt="menu del giorno" class="img_element"><br>
-            <p> Vai ai menù </p>
-        </a>
-        </div>
-        <div id="container_elementOrder">
+     <div class="container_elements">
+      <h1 class="title">Menù</h1>
+       <a class="more_info" href="../html/Mensa.html">
+        <img src="../images/body_home/menu.jpeg" alt="menu del giorno" class="img_element">
+         <br>
+          <p> Vai ai menù </p>
+           </a>
+     </div>
+
+       <div class="container_elements">
         <h1 class="title">I miei ordini</h1>
-        <a class="more_info" href="../html/Ordini.html">
-            <img src="../images/body_home/take.jpeg" alt="myOrder" class="img_element"><br>
-            <p>I miei ordini</p>
-        </a>
+           <a class="more_info" href="../html/Ordini.html">
+             <img src="../images/body_home/take.jpeg" alt="myOrder" class="img_element">
+               <br>
+                 <p>I miei ordini</p>
+           </a>
+       </div>
+
+       <div class="container_elements">
+        <h1 class="title">I miei ordini</h1>
+           <a class="more_info" href="../html/Ordini.html">
+             <img src="../images/body_home/take.jpeg" alt="myOrder2" class="img_element">
+               <br>
+                 <p>I miei ordini</p>
+            </a>
         </div>
     </div>
+
+
+    <!-- PREFERITI-->
+    <div id="container_choose">
+        <h1 class="title">Scelte rapide</h1>
+        <div class="choose">
+            <p>Scelta 1</p>
+            <div class="img_choose">
+            <img src="../images/body_home/mc.png" alt="choose 1" class="img_element">
+                <input type="button" value="Prenota">
+            </div>
+        </div>
+
+        <div class="choose">
+            <p>Scelta 2</p>
+            <div class="img_choose">
+            <img src="../images/body_home/mc.png" alt="Choose 2" class="img_element">
+                <input type="button" value="Prenota">
+            </div>
+        </div>
+
+        <div class="choose">
+            <p>Scelta 3</p>
+            <div class="img_choose">
+            <img src="../images/body_home/mc.png" alt="Choose 3" class="img_element">
+                <input type="button" value="Prenota">
+            </div>
+        </div>
+
+        <div class="choose">
+            <p>Scelta 4</p>
+            <div class="img_choose">
+                <img src="../images/body_home/mc.png" alt="Choose 4" class="img_element">
+                <input type="button" value="Prenota">
+            </div>
+        </div>
+
+    </div>
+
+
 
 
 <script language="JavaScript" src="../js/Home.js"></script>
