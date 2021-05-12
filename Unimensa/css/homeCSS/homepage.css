@@ -1,30 +1,28 @@
 div#container_center{
-    border: 1px #3b83bd solid;
-    width: 50%;
-    height: 90%;
+    height: 25%;
+    width: 100%;
     margin-top: 5%;
-    margin-left: 15%;
+    text-align: center;
     float: left;
 }
 
 
-div#container_elementMenu, #container_elementOrder{
+div.container_elements{
+    border: 1px silver solid;
+    border-radius: 5px;
     float: left;
     display: block;
-    border: 1px #3b83bd solid;
-    width: 30%;
-    height: 80%;
     text-align: center;
-    background-color: white;
     margin-left: 10%;
-    margin-bottom: 10%;
-    margin-top: 5%;
+    background-color: white;
+    width: 20%;
+    height: 60%;
 }
 
 
 .img_element{
-    width: 250px;
-    height: 250px;
+    width: 90%;
+    height: 200px;
     text-align: center;
 }
 
@@ -41,5 +39,35 @@ a.more_info{
 p{
     text-align: left;
     margin-left: 5%;
+}
+
+div#container_choose {
+    border: 1px silver solid;
+    background: white;
+    width: 80%;
+    height: 400px;
+    margin-top: 3%;
+    margin-left: 10%;
+    text-align: center;
+    float: left;
+    border-radius: 5px;
+}
+
+div.choose{
+    border: 1px silver solid;
+    border-radius: 5px;
+    float: left;
+    display: block;
+    text-align: center;
+    margin-left: 5%;.
+    background-color: white;
+    width: 18.5%;
+    height: 75%;
+}
+
+
+.img_choose {
+    height: 30%;
+    width: 100%;
 }
 
