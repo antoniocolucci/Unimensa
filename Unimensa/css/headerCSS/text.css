@@ -6,3 +6,8 @@ p.txt_icon{
     font-size: 11px;
     color: white;
 }
+
+a#title_header{
+    color: #EFEFEF;
+    text-decoration: none;
+}

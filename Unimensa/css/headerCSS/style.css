@@ -10,8 +10,11 @@ body{
     width: 100%;
     height:70px;
     background-color:#3b83bd;
+    //background-color:#F28C0F;
     text-align: center;
     color: white;
+    position: fixed;
+
 }
 
 @media screen and  (max-width:767px){
@@ -28,3 +31,9 @@ body{
     div#container_elementMenu, #container_elementOrder{float: none;}
 }
 
+/*div#menu_opacity {
+    width: 100%;
+    height: 100%;
+    margin-left: 15%;
+}
+*/

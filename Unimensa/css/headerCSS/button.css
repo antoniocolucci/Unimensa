@@ -21,8 +21,8 @@ input.log_sign_button{
 }
 
 img#home, #ordini, #mensa{
-    height: 15%;
-    width: 15%;
+    height: 5%;
+    width: 13%;
     margin-left: 2%;
     float: left;
 }
