@@ -16,7 +16,8 @@ input.log_sign_button{
     width: 75%;
     height: 30px;
     margin-top: 10px;
-    background-color: #358000;
+    background-color: #3b83bd;
+    border-radius: 3px;
     color: white;
 }
 
