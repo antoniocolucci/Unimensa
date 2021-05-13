@@ -6,7 +6,6 @@ ul#menu {
     height: 20px;
 }
 ul#menu li {
-    //background-color: #dcdcdc;
     background-color: ghostwhite;
     border-bottom: 3px #3b83bd solid;
     display: block;
