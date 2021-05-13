@@ -3,38 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <title>Mensa</title>
-    <link rel="stylesheet" href="../css/headerCSS/style.css">
+
     <link rel="stylesheet" href="../css/headerCSS/navigationBar.css">
     <link rel="stylesheet" href="../css/headerCSS/homeList.css">
     <link rel="stylesheet" href="../css/headerCSS/container.css">
     <link rel="stylesheet" href="../css/headerCSS/button.css">
     <link rel="stylesheet" href="../css/headerCSS/text.css">
+    <link rel="stylesheet" href="../css/homeCSS/homepage.css">
+    <link rel="stylesheet" href="../css/mensaCSS/mensa.css">
+
+    <link rel="stylesheet" href="../css/headerCSS/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <div class="header">
     <div id="icon_menu" >
-        <input type="image" id="button_menu" alt="menu" src="../images/menu.png"
-               onclick="swapMenu('lateral_menu')">
-        <p id="txt_menu">MENU</p>
+        <input type="image" class="icon" alt="menu" src="../images/header/menu.png"
+               onclick="showContainer('lateral_menu');
+             hideOtherMenu('lateral_menu');">
+
+        <p class="txt_icon">MENU</p>
     </div>
-    <h1>uniMensa</h1>
+
+    <div id="icon_profile">
+        <input type="image" class="icon" id="imgProfile" alt="profile" src="../images/header/imgProfile.png" title="Profile"
+               onclick="showContainer('container_profile');
+                changeIcon('imgProfile');
+                hideOtherMenu('container_profile')">
+    </div>
+
+    <div id="icon_bell">
+        <input type="image" value="0" class="icon" id="imgBell" alt="bell" src="../images/header/imgBell.png" title="Notifications"
+               onclick="showContainer('container_notifications');
+                changeIcon('imgBell');
+                hideOtherMenu('container_notifications')">
+    </div>
+
+
+    <div id="icon_cart">
+        <input type="image" class="icon" id="imgCart" alt="cart" src="../images/header/cart3.png">
+    </div>
+
+
+
+    <div id="title">
+        <h1><a href="../html/Home.html" id="title_header">uniMensa</a></h1>
+    </div>
+
     <nav id="lateral_menu" style="display: none">
         <div id="icon_x">
-            <input type="image" id="close_menu" alt="menu" src="../images/close.png"
-                   onclick="swapMenu('lateral_menu')">
+            <input type="image" id="close_menu" alt="menu" src="../images/lateral_menù/close.png" title="Close"
+                   onclick="showContainer('lateral_menu');">
         </div>
+
         <div id="list_menu">
             <ul id="menu">
-                <li><a href="../html/Home.html">Home</a></li>
-                <li><a href="../html/Ordini.html">Ordini</a></li>
-                <li><a href="../html/Mensa.html">Mensa</a></li>
-                <li><a href="../html/Calendario.html">Calendario</a></li>
+                <li><a href="../html/Home.html">
+                    <img id="home" src="../images/lateral_menù/home_2.png" alt="icon home" style="width: 32px; height: 32px"> HOME</a></li>
+                <li><a href="../html/Ordini.html">
+                    <img id="ordini" src="../images/lateral_menù/ordini.png" alt="icon order" style="width: 32px; height: 32px">ORDINI</a></li>
+                <li class="active"><a href="../html/Mensa.html">
+                    <img id="mensa" src="../images/lateral_menù/mensa.png" alt="icon mensa" style="width: 32px; height: 32px">MENSA</a></li>
             </ul>
         </div>
     </nav>
 </div>
+<br>
+
+
+<div id="menu_opacity">
+
+    <!-- Contenitori informazioni icone-->
+    <div id="container_notifications" style="display: none">
+        <ul id="notifications">
+            <li><a href="#"> Ritira il pasto</a></li>
+            <li><a href="#"> Il pasto è pronto</a></li>
+        </ul>
+    </div>
+
+    <div id="container_profile" style="display: none">
+        <div id="container_buttonProfile" style="display: block">
+            <input type="button" value="Login" class="log_sign_button"
+                   onclick="goTo('../html/Login.html')">
+            <br>
+            <input type="button" value="Sign in" class="log_sign_button"
+                   onclick="goTo('../html/Signin.html')">
+        </div>
+
+        <div id="container_infoProfile">
+            <ul id="myAccount">
+                <li><a href="#"> Il mio account</a></li>
+                <li><a href="#"> Logout</a></li>
+            </ul>
+        </div>
+    </div>
+
+</div> <!-- Chiusura menu opacity-->
+    <h1 id="title_page">Scegli il tuo menù</h1>
+<div id="container_elementMensa" class="elementi_interni">
+    <div id="container_listPlate">
+        <ul id="listPlate">
+            <li id="pasta"><img class="icon_listPlate" src="../images/mensa/pasta.png"><p class="p_listPlate">Primi </p></li>
+            <li id="meat"><img class="icon_listPlate" src="../images/mensa/meat.png"><p class="p_listPlate">Secondi</p></li>
+            <li id="salad"><img class="icon_listPlate" src="../images/mensa/chips.png"><p class="p_listPlate">Contorni</p></li>
+            <li id="fruit"><img class="icon_listPlate" src="../images/mensa/fruit.png"><p class="p_listPlate">Frutta</p> </li>
+            <li id="desserts"><img class="icon_listPlate" src="../images/mensa/cake.png"><p class="p_listPlate">Dolci</p></li>
+            <li id="sandwiches"><img class="icon_listPlate" src="../images/mensa/burger.png"><p class="p_listPlate">Panini</p></li>
+            <li id="pizza"><img class="icon_listPlate" src="../images/mensa/pizza.png"><p class="p_listPlate">Pizze</p></li>
+            <li id="drink"><img class="icon_listPlate" src="../images/mensa/drink.png"><p class="p_listPlate">Bibite</p></li>
+        </ul>
+
+    </div>
+    <div id="container_plate">
+
+    </div>
+</div>
+
+
+
+
+
+
+
 <script language="JavaScript" src="../js/Home.js"></script>
+<script language="JavaScript" src="../js/Login.js"></script>
 </body>
 </html>
 
