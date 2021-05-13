@@ -47,3 +47,9 @@ div#container_profile{
     right: 0px;
 }
 
+div#icon_cart{
+    margin-top: 20px;
+    margin-right: 20px;
+    float: right;
+}
+
