@@ -3,6 +3,7 @@ input.icon{
     width: 32px;
 }
 
+
 input#close_menu{
     height: 32px;
     width:  32px;
@@ -22,8 +23,8 @@ input.log_sign_button{
 }
 
 img#home, #ordini, #mensa{
-    height: 5%;
-    width: 13%;
+    width: 32px;
+    height: 32px;
     margin-left: 2%;
     float: left;
 }
