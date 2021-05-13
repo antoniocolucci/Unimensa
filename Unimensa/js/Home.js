@@ -62,10 +62,26 @@ function hideOtherMenu (element_id) {
      }
 }
 
-/*
-    DA RIVEDERE
-function setOpacity(element_id) {
 
-    let element = document.getElementById(element_id)
-    element.style.opacity= '0.5'
+
+/*   DA RICORDARE
+
+function setOpacity(element_id, x) {
+
+
+    let elemento = document.getElementById("menu_opacity");
+    elemento.style.opacity = 0.5;
+
+    let a = document.getElementById("close_menu");
+    a.style.opacity = 1;
+
+
+}
+
+function resetOpacity(x) {
+
+
+    let elemento = document.getElementById("menu_opacity");
+    elemento.style.opacity = 1;
+
 }*/
