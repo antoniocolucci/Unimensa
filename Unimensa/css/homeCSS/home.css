@@ -1,0 +1,26 @@
+body{
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    height: 100%;
+    background-color: ghostwhite;
+}
+.navbar-brand{
+    color: white !important;
+    font-size: 30px;
+}
+nav.navbar-default {
+    margin-top: 0;
+    background-color: #3b83bd;
+    height: 60px;
+    padding: 4px;
+}
+
+.nav-link{
+    color: white !important;
+    font-size: 15px;
+}
+
+li.nav-item a.active{
+    background-color: #d2d2d2;
+}
