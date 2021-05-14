@@ -1,0 +1,74 @@
+ul#menu {
+    font-family: Arialgold,sans-serif;
+    font-size: 11px;
+    padding: 0;
+    list-style: none;
+    height: 20px;
+}
+ul#menu li {
+    background-color: ghostwhite;
+    border-bottom: 3px #3b83bd solid;
+    display: block;
+    width: 100%;
+    height: 35px;
+    margin: 0;
+    float: left; /* elementi su singola riga */
+
+}
+ul#menu li.active{
+    background-color: #DCDCDC;
+}
+
+ul#menu li a.active{
+    color: black;
+}
+
+ul#menu li a {
+    color: black;
+    display: block;
+    font-weight: bold;
+    line-height: 30px;
+    text-decoration: none;
+    text-align: center;
+}
+
+/*Freccia che passa sul bottone*/
+ul#menu li:hover {
+    background-color: #DCDCDC;
+}
+
+ul#notifications, #myAccount{
+    font-family: Arialgold,sans-serif;
+    font-size: 11px;
+    padding: 0;
+    list-style: none;
+    height: 20px;
+}
+
+ul#notifications li, #myAccount li{
+    color: black;
+    display: block;
+    font-weight: bold;
+    line-height: 30px;
+    text-decoration: none;
+    text-align: center;
+    margin: 5px;
+}
+
+ul#notifications li a, #myAccount li a{
+    color: black;
+    display: block;
+    font-weight: bold;
+    line-height: 30px;
+    text-decoration: none;
+    text-align: center;
+}
+
+ul#notifications li:hover, #myAccount li:hover{
+    background-color: #d2d2d2;
+    border-bottom: 5px solid #3b83bd;
+}
+
+ul#notifications li a.active, #myAccount li.active{
+    background-color: #3b83bd;
+}
