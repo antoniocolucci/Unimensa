@@ -4,93 +4,191 @@
   <meta charset="UTF-8">
   <title>Home</title>
 
-  <!--link rel="stylesheet" href="../css/headerCSS/navigationBar.css">
-  <link rel="stylesheet" href="../css/headerCSS/homeList.css">
-  <link rel="stylesheet" href="../css/headerCSS/container.css">
-  <link rel="stylesheet" href="../css/headerCSS/button.css">
-  <link rel="stylesheet" href="../css/headerCSS/text.css">
-  <link rel="stylesheet" href="../css/homeCSS/homepage.css">
-  <link rel="stylesheet" href="../css/headerCSS/style.css"-->
-
-
-  <link rel="stylesheet" href="../css/homeCSS/home.css">
-  <link rel="stylesheet" href="../css/homeCSS/button.css">
-
   <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="../css/homeCSS/home.css">
+  <link rel="stylesheet" href="../css/homeCSS/contentHome.css">
+  <link rel="stylesheet" href="../css/screen/screen768.css">
+
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <!--div class="header">
-     <div id="icon_menu" >
-      <input type="image" class="icon" alt="menu" src="../images/header/menu.png"
-             onclick="showContainer('lateral_menu');
-             hideOtherMenu('lateral_menu');">
 
-             <p class="txt_icon">MENU</p>
-     </div>
+    <!--NAVBAR-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+     <div class="container-fluid">
 
-        <div id="icon_profile">
-         <input type="image" class="icon" id="imgProfile" alt="profile" src="../images/header/imgProfile.png" title="Profile"
-                onclick="showContainer('container_profile');
-                changeIcon('imgProfile');
-                hideOtherMenu('container_profile')">
-        </div>
+         <!--BUTTON MENU-->
+         <button class="navbar-toggler" type="button">
+          <span class="navbar-toggler-icon"
+                onclick="showContainer('container_menu');
+                hideOtherMenu('container_menu')"></span>
+         </button>
 
-        <div id="icon_bell">
-         <input type="image" value="0" class="icon" id="imgBell" alt="bell" src="../images/header/imgBell.png" title="Notifications"
-                onclick="showContainer('container_notifications');
-                changeIcon('imgBell');
-                hideOtherMenu('container_notifications')">
-        </div>
+         <!--UNIMENSA-->
+         <a class="navbar-brand text-white" href="../html/Home.html">uniMensa</a>
+
+         <!--MENU LIST-->
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+           <li class="nav-item">
+            <a class="nav-link active text-white"  href="../html/Home.html">Home</a>
+           </li>
+            <li class="nav-item">
+             <a class="nav-link text-white" href="../html/Mensa.html">Mensa</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link text-white" href="../html/Ordini.html">Ordini</a>
+             </li>
+          </ul>
+         </div>
+
+            <!--CART-->
+            <div id="icon_cart">
+                <input type="image" class="icon" id="imgCart" alt="cart" src="../images/header/cart.png" title="Carrello">
+            </div>
+
+            <!--BELL-->
+            <div id="icon_bell">
+                <input type="image" class="icon" id="imgBell" alt="bell" src="../images/header/imgBell.png" title="Notifiche"
+                       onclick="changeIcon('imgBell');
+                       showContainer('container_notifications');
+                       hideOtherMenu('container_notifications')">
+            </div>
 
 
-        <div id="icon_cart">
-            <input type="image" class="icon" id="imgCart" alt="cart" src="../images/header/cart3.png">
-        </div>
-
-
-
-        <div id="title">
-         <h1><a href="../html/Home.html" id="title_header">uniMensa</a></h1>
-        </div>
-
-        <nav id="lateral_menu" style="display: none">
-         <div id="icon_x">
-          <input type="image" id="close_menu" alt="menu" src="../images/lateral_menù/close.png" title="Close"
-                 onclick="showContainer('lateral_menu');">
-          </div>
-
-          <div id="list_menu">
-           <ul id="menu">
-               <li class="active"><a href="../html/Home.html">
-                   <img id="home" src="../images/lateral_menù/home_2.png" alt="icon home"> HOME</a></li>
-               <li><a href="../html/Ordini.html">
-                   <img id="ordini" src="../images/lateral_menù/ordini.png" alt="icon order">ORDINI</a></li>
-               <li><a href="../html/Mensa.html">
-                   <img id="mensa" src="../images/lateral_menù/mensa.png" alt="icon mensa">MENSA</a></li>
-           </ul>
-          </div>
-        </nav>
-    </div-->
-
-    <!--/***********************************************************************************************************************/-->
-
-    <nav class="navbar navbar-default fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="../html/Home.html">uniMensa</a>
-            <ul class="nav navbar-nav">
-                <li class=" nav-item"><a class="active nav-link" href="../html/Home.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="../html/Mensa.html">Mensa</a></li>
-                <li class="nav-item"><a class="nav-link" href="../html/Ordini.html">Ordini</a></li>
-            </ul>
+            <!--PROFILE-->
+            <div id="icon_profile">
+                <input type="image" class="icon" id="imgProfile" alt="profile" src="../images/header/imgProfile.png" title="Profilo"
+                       onclick="changeIcon('imgProfile');
+                       showContainer('container_profile');
+                       hideOtherMenu('container_profile')">
+            </div>
 
         </div>
-
     </nav>
 
+    <!--CONTAINER MENU SMARTPHONE-->
+    <div id="container_menu" class="dropdown-menu" style="display: none">
+        <a class="dropdown-item active" href="../html/Home.html">Home</a>
+        <a class="dropdown-item " href="../html/Mensa.html">Mensa</a>
+        <a class="dropdown-item" href="../html/Ordini.html">Ordini</a>
+    </div>
+
+    <!--CONTAINER NOTIFICATIONS-->
+    <div id="container_notifications" style="display: none">
+        <ul id="notifications">
+            <li><a href="#"> Ritira il pasto</a></li>
+            <li><a href="#"> Il pasto è pronto</a></li>
+        </ul>
+    </div>
+
+    <!--CONTAINER PROFILE-->
+    <div id="container_profile" style="display: none">
+        <div id="container_buttonProfile" style="display: block">
+            <a href="../html/Login.html" class="btn btn-info button_Profile" role="button">Login</a>
+            <br>
+            <a href="../html/Signin.html" class="btn btn-info button_Profile" role="button">Signin</a>
+        </div>
+        <br><br>
+
+        <div id="container_infoProfile">
+            <ul id="myAccount">
+                <li><a href="#"> Il mio account</a></li>
+                <li><a href="#"> Logout</a></li>
+            </ul>
+        </div>
+    </div>
 
 
+    <!--HOMPAGE CONTENT-->
+    <div id="external_container" class="container-fluid">
+    <!--BUTTON CENTER-->
+    <button class="btn btn-li" id="choose_menu" onclick="showContent('container_center1')">
+        Scelte rapide
+    </button>
+
+    <button class="btn btn-light" id="create_menu" onclick="showContent('container_center2')">
+        Componi il tuo menù
+    </button>
+
+    <!--CONTENT CHOOSE MENU-->
+    <div  id="container_center1" class="container-fluid content_center" style="display: block">
+        <div class="container-fluid choose">
+            <p>Scelta 1</p>
+            <div class="container img_choose">
+                <button class="btn btn-light">Prev</button>
+                <img src="../images/body_home/mc.png" alt="choose 1" class="img_element img-fluid">
+                <button class="btn btn-light">Next</button>
+            </div>
+            <input type="button" class="button_book" value="Prenota">
+        </div>
+
+        <div class="container-fluid choose">
+            <p>Scelta 2</p>
+            <div class="container img_choose">
+                <img src="../images/body_home/mc.png" alt="Choose 2" class="img_element img-fluid">
+            </div>
+            <input type="button" class="button_book" value="Prenota">
+        </div>
+
+        <div class="container-fluid choose">
+            <p>Scelta 3</p>
+            <div class="container img_choose">
+                <img src="../images/body_home/mc.png" alt="Choose 3" class="img_element img-fluid">
+            </div>
+            <input type="button" class="button_book" value="Prenota">
+        </div>
+
+        <div class="container-fluid choose">
+            <p>Scelta 4</p>
+            <div class="container img_choose">
+                <img src="../images/body_home/mc.png" alt="Choose 4" class="img_element img-fluid">
+            </div>
+            <input type="button" class="button_book" value="Prenota">
+        </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+    <!--CONTENT CREATE MENU-->
+    <div  id="container_center2" class="container-fluid content_center" style="display: none">
+        <form>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="pasta" name="PrimiPiatti">
+                <label class="custom-control-label" for="pasta">Primi Piatti</label>
+                <input type="checkbox" class="custom-control-input" id="meat" name="SecondiPiatti">
+                <label class="custom-control-label" for="meat">Secondi Piatti</label>
+                <input type="checkbox" class="custom-control-input" id="salad" name="Contorni">
+                <label class="custom-control-label" for="salad">Contorni</label>
+                <input type="checkbox" class="custom-control-input" id="fruit" name="Frutta">
+                <label class="custom-control-label" for="fruit">Frutta</label>
+                <input type="checkbox" class="custom-control-input" id="desserts" name="Dolci">
+                <label class="custom-control-label" for="desserts">Dolci</label>
+                <input type="checkbox" class="custom-control-input" id="sandwiches" name="Panini">
+                <label class="custom-control-label" for="sandwiches">Panini</label>
+                <input type="checkbox" class="custom-control-input" id="pizza" name="Pizze">
+                <label class="custom-control-label" for="pizza">Pizze</label>
+                <input type="checkbox" class="custom-control-input" id="drink" name="Bibite" value="on">
+                <label class="custom-control-label" for="drink">Bibite</label>
+            </div>
+        </form>
+
+        <br> <br><br><br><br><br><br><br>
+       <p>PRIMI PIATTI</p>
+
+    </div>
+    </div>
 
 
 
@@ -98,29 +196,7 @@
 
     <!--div id="menu_opacity">
 
-    <div id="container_notifications" style="display: none">
-     <ul id="notifications">
-         <li><a href="#"> Ritira il pasto</a></li>
-         <li><a href="#"> Il pasto è pronto</a></li>
-     </ul>
-    </div>
 
-    <div id="container_profile" style="display: none">
-     <div id="container_buttonProfile" style="display: block">
-      <input type="button" value="Login" class="log_sign_button"
-             onclick="goTo('../html/Login.html')">
-             <br>
-      <input type="button" value="Sign in" class="log_sign_button"
-             onclick="goTo('../html/Signin.html')">
-      </div>
-
-      <div id="container_infoProfile">
-       <ul id="myAccount">
-           <li><a href="#"> Il mio account</a></li>
-           <li><a href="#"> Logout</a></li>
-       </ul>
-       </div>
-    </div>
 
 
 
@@ -194,8 +270,8 @@
 
 
 
-<script  src="../js/Home.js"></script>
-<script  src="../js/Login.js"></script>
+<script src="../js/Home.js"></script>
+<script src="../bootstrap/js/bootstrap.esm.js"></script>
 </body>
 </html>
 
