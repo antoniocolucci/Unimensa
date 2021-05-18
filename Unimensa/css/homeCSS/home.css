@@ -6,6 +6,8 @@ body{
     background-color: ghostwhite;
     //background-image: radial-gradient(center, circle farthest-corner, ghostwhite, #ffe0b5);
 }
+
+/*UNIMENSA*/
 .navbar-brand{
     color: white;
     margin-right: 20px;
@@ -20,7 +22,149 @@ nav.navbar-expand-lg {
     background-color: #3b83bd;
 }
 
+/*NAVBAR ELEMENT*/
 li.nav-item a.active{
     background-color: #3b83bd;
     border-bottom: 3px darkorange solid;
 }
+
+/* NAVBAR LINK */
+.nav-link{
+    font-size: 18px;
+}
+
+/*ICON*/
+.icon{
+    height: 32px;
+    width: 32px;
+}
+
+/*CONTAINER PROFILE ICON*/
+div#icon_profile{
+    float: right;
+    margin-right: 1%;
+}
+
+/*CONTAINER BELL ICON*/
+div#icon_bell{
+    float: right;
+    margin-right: 1%;
+}
+
+/*CONTAINER CART ICON*/
+div#icon_cart{
+    margin-right: 1%;
+    float: right;
+}
+
+/*CONTAINER NOTIFICATIONS*/
+div#container_notifications{
+    background-color: #EFEFEF;
+    position: fixed;
+    top: 60px;
+    right: 65px;
+    height: 25%;
+    width: 15%;
+    border-radius: 3px;
+}
+
+/*CONTAINER PROFILE*/
+div#container_profile{
+    text-align: center;
+    position: fixed;
+    background: #EFEFEF;
+    height: 25%;
+    width: 15%;
+    border-radius: 3px;
+    top: 60px;
+    right: 0px;
+}
+
+/*BUTTON PROFILE*/
+.button_Profile{
+    background-color: #3b83bd;
+    border: #3b83bd;
+    color: white;
+    margin-top: 10px;
+    height: 28px;
+    width: 75%;
+    text-align: center;
+    border-bottom: 15px;
+    border-top: 1px;
+    line-height: 1;
+}
+
+.button_Profile:hover {
+    background-color: #6c757d;
+}
+
+/*CONTAINER MENU*/
+div#container_menu{
+    background-color: #EFEFEF;
+    top:59px;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    position: fixed;
+}
+
+div.dropdown-menu a.active{
+    background-color: #3b83bd;
+}
+
+/*CONTAINER HOMEPAGE CONTENT*/
+div#external_container{
+    margin-top: 60px;
+    height: 100%;
+    width: 100%;
+    background: url("../../images/mensa1.png");
+}
+
+/*CONTAINER ELEMENT*/
+div.content_center{
+    text-align: center;
+    //background: rgba(255, 222, 173, 0.43);
+    //background: linear-gradient(to bottom,  ghostwhite, #72a7d3);
+
+    border-right: 1px #3b83bd solid;
+    border-left: 1px #3b83bd solid;
+    border-bottom: 1px #3b83bd solid;
+    height: 65%;
+    width: 80%;
+    margin-left: 10%;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+/*BUTTON CENTER PAGE*/
+button#create_menu{
+    text-align: center;
+    background: white;
+    border-right: 1px #3b83bd solid;
+    border-left: 1px #3b83bd solid;
+    border-top: 1px #3b83bd solid;
+    border-radius: 3px;
+    margin-top: 5%;
+    height: 65%;
+    width: 30%;
+}
+
+
+button#choose_menu{
+    text-align: center;
+    background: white;
+    border-right: 1px #3b83bd solid;
+    border-left: 1px #3b83bd solid;
+    border-top: 1px #3b83bd solid;
+    border-radius: 3px;
+    margin-top: 5%;
+    margin-left: 10%;
+    height: 65%;
+    width: 30%;
+}
+
+/*LABEL PLATE*/
+label.custom-control-label {
+    margin-right: 5%;
+}
+
