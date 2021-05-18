@@ -63,6 +63,39 @@ function hideOtherMenu (element_id) {
 }
 
 
+function showContent (container_id) {
+    let container = document.getElementById(container_id)
+    let nameContainer = [
+        'container_center1',
+        'container_center2'
+    ]
+
+    if (container === document.getElementById(nameContainer[1]) && container.style.display === 'none') {
+        document.getElementById(nameContainer[1]).style.display = 'block'
+        document.getElementById(nameContainer[0]).style.display = 'none'
+    }
+
+    if (container === document.getElementById(nameContainer[0]) && container.style.display === 'none')
+    {
+        document.getElementById(nameContainer[0]).style.display = 'block'
+        document.getElementById(nameContainer[1]).style.display = 'none'
+    }
+
+}
+
+function carouselSlide () {
+
+
+
+
+}
+
+
+
+
+
+
+
 
 /*   DA RICORDARE
 
