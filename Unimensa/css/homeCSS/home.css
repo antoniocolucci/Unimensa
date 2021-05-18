@@ -4,6 +4,7 @@ body{
     margin-right: 0;
     height: 100%;
     background-color: ghostwhite;
+    //background-image: radial-gradient(center, circle farthest-corner, ghostwhite, #ffe0b5);
 }
 .navbar-brand{
     color: white;
