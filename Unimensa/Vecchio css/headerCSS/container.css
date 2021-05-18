@@ -8,23 +8,6 @@ div#list_menu{
     margin-top: 70px;
 }
 
-div#icon_profile{
-    float: right;
-    margin-top: 20px;
-    margin-right: 20px;
-}
-
-div#icon_bell{
-    float: right;
-    margin-top: 20px;
-    margin-right: 20px;
-}
-
-div#title{
-    padding: 1px;
-    text-align: center;
-    font-family: Arialgold,sans-serif;
-}
 
 div#container_notifications{
     background: #EFEFEF;
@@ -35,6 +18,15 @@ div#container_notifications{
     width: 15%;
     border-radius: 3px;
 }
+
+
+div#title{
+    padding: 1px;
+    text-align: center;
+    font-family: Arialgold,sans-serif;
+}
+
+
 
 div#container_profile{
     text-align: center;
@@ -47,9 +39,5 @@ div#container_profile{
     right: 0px;
 }
 
-div#icon_cart{
-    margin-top: 20px;
-    margin-right: 20px;
-    float: right;
-}
+
 
