@@ -1,0 +1,6 @@
+@media screen and (min-width:768px) and (max-width:1023px) {
+    div#container_notifications {
+        width: 60%;
+        height: 30%;
+    }
+}
