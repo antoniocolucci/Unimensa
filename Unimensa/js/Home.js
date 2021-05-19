@@ -28,7 +28,7 @@ function hideOtherMenu (element_id) {
     let nameContainer = [
         'container_notifications',
         'container_profile',
-        'lateral_menu'
+        'container_menu'
     ]
 
     if(element === document.getElementById(nameContainer[0]))
