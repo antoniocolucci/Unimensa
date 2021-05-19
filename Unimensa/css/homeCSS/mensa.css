@@ -1,0 +1,37 @@
+div#container_elementMensa{
+    margin-left: 15%;
+    margin-top: 2%;
+    width: 80%;
+    float: left;
+    height: 700px;
+}
+
+
+
+
+
+
+
+
+
+.p_listPlate{
+   text-align: center;
+    margin-top: 5%;
+}
+
+h1#title_page{
+     margin-top: 3%;
+     margin-right: 6%;
+     text-align: center;
+
+}
+div#container_plate{
+    margin-top:0;
+    margin-left:0;
+    border: 2px black solid;
+    width: 80%;
+    height: 698px;
+    background: ghostwhite;
+    display: inline-block;
+}
+
