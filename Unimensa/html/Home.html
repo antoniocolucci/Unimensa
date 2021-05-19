@@ -72,7 +72,7 @@
     <div id="container_menu" class="dropdown-menu" style="display: none">
         <a class="dropdown-item active" href="../html/Home.html">Home</a>
         <a class="dropdown-item " href="../html/Mensa.html">Mensa</a>
-        <a class="dropdown-item" href="../html/Ordini.html">Ordini</a>
+        <a class="dropdown-item" href="../html/Ordini.html"> Ordini</a>
     </div>
 
     <!--CONTAINER NOTIFICATIONS-->
@@ -117,161 +117,68 @@
         <div class="container-fluid choose">
             <p>Scelta 1</p>
             <div class="container img_choose">
-                <button class="btn btn-light">Prev</button>
-                <img src="../images/body_home/mc.png" alt="choose 1" class="img_element img-fluid">
-                <button class="btn btn-light">Next</button>
+                <img src="../images/mensa/carbonara.jpeg" alt="choose 1" class="img_element img-fluid">
             </div>
-            <input type="button" class="button_book" value="Prenota">
+            <p>Prezzo: </p>
+            <input type="button" class="button_book" value="Aggiungi al carrello"
+                   onclick="goTo('../html/Carrello.html')">
         </div>
 
         <div class="container-fluid choose">
             <p>Scelta 2</p>
             <div class="container img_choose">
-                <img src="../images/body_home/mc.png" alt="Choose 2" class="img_element img-fluid">
+                <img src="../images/mensa/cotoletta.jpeg" alt="Choose 2" class="img_element img-fluid">
             </div>
-            <input type="button" class="button_book" value="Prenota">
+            <p>Prezzo: </p>
+            <input type="button" class="button_book" value="Aggiungi al carrello"
+                   onclick="goTo('../html/Carrello.html')">
         </div>
 
         <div class="container-fluid choose">
             <p>Scelta 3</p>
             <div class="container img_choose">
-                <img src="../images/body_home/mc.png" alt="Choose 3" class="img_element img-fluid">
+                <img src="../images/mensa/salad.jpeg" alt="Choose 3" class="img_element img-fluid">
             </div>
-            <input type="button" class="button_book" value="Prenota">
+            <p>Prezzo: </p>
+            <input type="button" class="button_book" value="Aggiungi al carrello"
+                   onclick="goTo('../html/Carrello.html')">
         </div>
 
         <div class="container-fluid choose">
+
             <p>Scelta 4</p>
             <div class="container img_choose">
                 <img src="../images/body_home/mc.png" alt="Choose 4" class="img_element img-fluid">
             </div>
-            <input type="button" class="button_book" value="Prenota">
+            <p>Prezzo: </p>
+            <input type="button" class="button_book" value="Aggiungi al carrello"
+                   onclick="goTo('../html/Carrello.html')">
         </div>
-
-
-
 </div>
-
-
-
-
-
-
-
 
 
 
     <!--CONTENT CREATE MENU-->
     <div  id="container_center2" class="container-fluid content_center" style="display: none">
-        <form>
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="pasta" name="PrimiPiatti">
-                <label class="custom-control-label" for="pasta">Primi Piatti</label>
-                <input type="checkbox" class="custom-control-input" id="meat" name="SecondiPiatti">
-                <label class="custom-control-label" for="meat">Secondi Piatti</label>
-                <input type="checkbox" class="custom-control-input" id="salad" name="Contorni">
-                <label class="custom-control-label" for="salad">Contorni</label>
-                <input type="checkbox" class="custom-control-input" id="fruit" name="Frutta">
-                <label class="custom-control-label" for="fruit">Frutta</label>
-                <input type="checkbox" class="custom-control-input" id="desserts" name="Dolci">
-                <label class="custom-control-label" for="desserts">Dolci</label>
-                <input type="checkbox" class="custom-control-input" id="sandwiches" name="Panini">
-                <label class="custom-control-label" for="sandwiches">Panini</label>
-                <input type="checkbox" class="custom-control-input" id="pizza" name="Pizze">
-                <label class="custom-control-label" for="pizza">Pizze</label>
-                <input type="checkbox" class="custom-control-input" id="drink" name="Bibite" value="on">
-                <label class="custom-control-label" for="drink">Bibite</label>
-            </div>
-        </form>
-
-        <br> <br><br><br><br><br><br><br>
-       <p>PRIMI PIATTI</p>
-
-    </div>
-    </div>
-
-
-
-    <!--/***********************************************************************************************************************/-->
-
-    <!--div id="menu_opacity">
-
-
-
-
-
-    <div id="container_center">
-     <div class="container_elements">
-      <h1 class="title">Menù</h1>
-       <a class="more_info" href="../html/Mensa.html">
-        <img src="../images/body_home/menu.jpeg" alt="menu del giorno" class="img_element">
-         <br>
-          <p> Vai ai menù </p>
-           </a>
-     </div>
-
-       <div class="container_elements">
-        <h1 class="title">I miei ordini</h1>
-         <a class="more_info" href="../html/Ordini.html">
-          <img src="../images/body_home/take.jpeg" alt="myOrder" class="img_element">
-           <br>
-            <p>I miei ordini</p>
-         </a>
-       </div>
-
-       <div class="container_elements">
-        <h1 class="title">I miei ordini</h1>
-         <a class="more_info" href="../html/Ordini.html">
-          <img src="../images/body_home/take.jpeg" alt="myOrder2" class="img_element">
-           <br>
-            <p>I miei ordini</p>
-         </a>
+        <div class="container-fluid" id="container_listPlate">
+            <ul id="listPlate">
+                <li id="pasta"><img class="icon_listPlate" src="../images/mensa/pasta.png"><p class="p_listPlate">Primi </p></li>
+                <li id="meat"><img class="icon_listPlate" src="../images/mensa/meat.png"><p class="p_listPlate">Secondi</p></li>
+                <li id="salad"><img class="icon_listPlate" src="../images/mensa/chips.png"><p class="p_listPlate">Contorni</p></li>
+                <li id="fruit"><img class="icon_listPlate" src="../images/mensa/fruit.png"><p class="p_listPlate">Frutta</p></li>
+                <li id="desserts"><img class="icon_listPlate" src="../images/mensa/cake.png"><p class="p_listPlate">Dolci</p></li>
+                <li id="sandwiches"><img class="icon_listPlate" src="../images/mensa/burger.png"><p class="p_listPlate">Panini</p></li>
+                <li id="pizza"><img class="icon_listPlate" src="../images/mensa/pizza.png"><p class="p_listPlate">Pizze</p></li>
+                <li id="drink"><img class="icon_listPlate" src="../images/mensa/drink.png"><p class="p_listPlate">Bibite</p></li>
+            </ul>
         </div>
     </div>
-
-
-
-    <div id="container_choose">
-     <h1 class="title">Scelte rapide</h1>
-      <div class="choose">
-       <p>Scelta 1</p>
-        <div class="img_choose">
-         <img src="../images/body_home/mc.png" alt="choose 1" class="img_element">
-          <input type="button" value="Prenota">
-        </div>
-    </div>
-
-        <div class="choose">
-         <p>Scelta 2</p>
-          <div class="img_choose">
-           <img src="../images/body_home/mc.png" alt="Choose 2" class="img_element">
-            <input type="button" value="Prenota">
-          </div>
-        </div>
-
-        <div class="choose">
-         <p>Scelta 3</p>
-          <div class="img_choose">
-           <img src="../images/body_home/mc.png" alt="Choose 3" class="img_element">
-            <input type="button" value="Prenota">
-          </div>
-        </div>
-
-        <div class="choose">
-         <p>Scelta 4</p>
-          <div class="img_choose">
-           <img src="../images/body_home/mc.png" alt="Choose 4" class="img_element">
-            <input type="button" value="Prenota">
-          </div>
-        </div>
-
-    </div>
-    </div-->
-
+</div>
 
 
 <script src="../js/Home.js"></script>
 <script src="../bootstrap/js/bootstrap.esm.js"></script>
+
 </body>
 </html>
 
