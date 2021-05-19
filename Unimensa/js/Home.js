@@ -83,12 +83,11 @@ function showContent (container_id) {
 
 }
 
-function carouselSlide () {
 
-
-
-
+function goTo(page){
+    window.location.href = page;
 }
+
 
 
 
