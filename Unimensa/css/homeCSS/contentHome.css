@@ -13,8 +13,9 @@
 
 /*CONTAINER ELEMENT*/
 div.content_center{
-     background: rgba(255, 222, 173, 0.43);
-//background: linear-gradient(to bottom,  ghostwhite, #72a7d3);
+    //background: rgba(255, 222, 173, 0.43);
+    //background: linear-gradient(to bottom,  ghostwhite, #72a7d3);
+    background: white;
     padding: 3%;
     border-right: 1px #3b83bd solid;
     border-left: 1px #3b83bd solid;
@@ -104,8 +105,9 @@ ul#listPlate li{
     font-size: 20px;
     cursor: pointer;
     float: left;
-    background: navajowhite;
-    border-bottom: 2px darkred solid;
+    background: white;
+
+    padding: 2%;
 }
 
 ul#listPlate{
@@ -124,6 +126,53 @@ img.icon_listPlate{
     float: left;
 }
 
-ul#listPlate li:hover{
-    margin-bottom: 5px;
+
+#content_create_menu {
+    margin: 0;
+    padding-top: 3%;
+    border-radius: 5px;
+  //  border: 1px #3b83bd solid;
+    width: 80%;
+    height: 500px;
+    display: inline-block;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+div#bill{
+    width: 100%;
+    border-top: 2px #000000 solid;
+    margin-top: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1%;
+}
+
+.button_book2 {
+    margin-top: 20px;
+    margin-right: 15px;
+    float: right;
+    width: 20%;
+    background-color: #3b83bd;
+    color: white;
+}
+
+.plate{
+    float: left;
+    display: inline-block;
+    width: 40%;
+    height: 30%;
+   // border: 1px #3b83bd solid;
+   margin: 4%;
+    border-radius: 5px;
+    padding: 2%;
+    background-color: #EFEFEF;
+}
+
+.container_img_plate{
+    width: 50%;
+    height: 100%;
+   //border: 2px black solid;
+    margin-right: 0;
+    float: right;
 }
