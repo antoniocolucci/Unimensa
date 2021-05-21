@@ -1,3 +1,7 @@
+/*VAR FOR CALCULATE TOT PRICE*/
+let semiTot = 0.0
+
+/*FUNCTION CHANGE VISIBILITY ELEMENT*/
 function showContainer(element_id) {
 
     let element = document.getElementById(element_id)
@@ -8,6 +12,7 @@ function showContainer(element_id) {
     }
 }
 
+/*FUNCTION CHANGE INCON IN NAVBAR*/
 function changeIcon(element_id){
     let firstOcc = document.getElementById(element_id).src.indexOf('images')
     let var2 = document.getElementById(element_id).src.substr(firstOcc,document.getElementById(element_id).src.length)
@@ -23,6 +28,7 @@ function changeIcon(element_id){
 
 }
 
+/*FUNCTION FOR HIDE OTHER MENU IN NAVBAR*/
 function hideOtherMenu (element_id) {
     let element = document.getElementById(element_id)
     let nameContainer = [
@@ -62,7 +68,7 @@ function hideOtherMenu (element_id) {
      }
 }
 
-
+/*FUNCTION SHOW CONTENT CENTER*/
 function showContent (container_id) {
     let container = document.getElementById(container_id)
     let nameContainer = [
@@ -83,7 +89,7 @@ function showContent (container_id) {
 
 }
 
-
+/*FUNCTION FOR CHANGE PAGE*/
 function goTo(page){
     window.location.href = page;
 }
