@@ -88,6 +88,66 @@ function goTo(page){
     window.location.href = page;
 }
 
+/*FUNCTION SELECT PLATE IN CREATE FAST MENU*/
+function selectPlate(plate_id, name, price){
+    let plate = document.getElementById(plate_id)
+    let plate_price = document.getElementById(price)
+    let plate_name = document.getElementById(name)
+    let plate_choose1 = document.getElementById('plate_choose')
+    let total = document.getElementById('tot')
+
+    if(plate.style.backgroundColor === 'gray')
+    {
+        plate.style.backgroundColor = 'white'
+        plate.style.border = '1px #3b83bd solid'
+        semiTot = semiTot - parseFloat(plate_price.innerText.substr(0, plate_price.length))
+        total.innerText = "Totale: " + semiTot + "€"
+        plate_choose1.innerText = plate_choose1.innerText.replace(plate_name.innerText + ","," ")
+    }
+    else{
+        plate.style.backgroundColor = 'gray'
+        plate.style.border = '2px #3b83bd solid'
+        plate_choose1.innerText =  plate_choose1.innerText  + " " + plate_name.innerText.substr(0, plate_name.length) + ", "
+        semiTot = semiTot + parseFloat(plate_price.innerText.substr(0, plate_price.length))
+        total.innerText = "Totale: " + semiTot + "€"
+    }
+
+}
+
+function reverse_color(button_id1, button_id2){
+
+    let clicked = document.getElementById(button_id1)
+    let unclicked = document.getElementById(button_id2)
+
+    if(clicked.style.backgroundColor !== '#3b83bd') {
+        unclicked.style.backgroundColor = '#3b83bd'
+        unclicked.style.color = 'white'
+        clicked.style.color = 'black'
+        clicked.style.backgroundColor = 'white'
+    }
+    else if (clicked.style.backgroundColor !== 'white') {
+        clicked.style.backgroundColor = '#3b83bd'
+        clicked.style.color = 'white'
+        unclicked.style.backgroundColor = 'white'
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
