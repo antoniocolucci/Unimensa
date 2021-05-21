@@ -109,7 +109,8 @@
         Scelte rapide
     </button>
 
-    <button class="btn btn-light" id="create_menu" onclick="showContent('container_center2')">
+    <button class="btn btn-light" id="create_menu" onclick="showContent('container_center2')
+                                                      reverse_color('create_menu', 'choose_menu');">
         Componi il tuo menù
     </button>
 
@@ -125,6 +126,8 @@
                    onclick="goTo('../html/Carrello.html')">
         </div>
 
+
+
         <div class="container-fluid choose">
             <p>Scelta 2</p>
             <div class="container img_choose">
@@ -135,6 +138,7 @@
                    onclick="goTo('../html/Carrello.html')">
         </div>
 
+
         <div class="container-fluid choose">
             <p>Scelta 3</p>
             <div class="container img_choose">
@@ -144,6 +148,7 @@
             <input type="button" class="button_book" value="Aggiungi al carrello"
                    onclick="goTo('../html/Carrello.html')">
         </div>
+
 
         <div class="container-fluid choose">
 
@@ -163,14 +168,14 @@
     <div  id="container_center2" class="container-fluid content_center" style="display: none">
         <div class="container-fluid" id="container_listPlate">
             <ul id="listPlate">
-                <li id="pasta"><img class="icon_listPlate" src="../images/mensa/pasta.png"><p class="p_listPlate">Primi </p></li>
-                <li id="meat"><img class="icon_listPlate" src="../images/mensa/meat.png"><p class="p_listPlate">Secondi</p></li>
-                <li id="salad"><img class="icon_listPlate" src="../images/mensa/chips.png"><p class="p_listPlate">Contorni</p></li>
-                <li id="fruit"><img class="icon_listPlate" src="../images/mensa/fruit.png"><p class="p_listPlate">Frutta</p></li>
-                <li id="desserts"><img class="icon_listPlate" src="../images/mensa/cake.png"><p class="p_listPlate">Dolci</p></li>
-                <li id="sandwiches"><img class="icon_listPlate" src="../images/mensa/burger.png"><p class="p_listPlate">Panini</p></li>
-                <li id="pizza"><img class="icon_listPlate" src="../images/mensa/pizza.png"><p class="p_listPlate">Pizze</p></li>
-                <li id="drink"><img class="icon_listPlate" src="../images/mensa/drink.png"><p class="p_listPlate">Bibite</p></li>
+                <li id="pasta"><p class="p_listPlate">Primi</p></li>
+                <li id="meat"><p class="p_listPlate">Secondi</p></li>
+                <li id="salad"><p class="p_listPlate">Contorni</p></li>
+                <li id="fruit"><p class="p_listPlate">Frutta</p></li>
+                <li id="desserts"><p class="p_listPlate">Dolci</p></li>
+                <li id="sandwiches"><p class="p_listPlate">Panini</p></li>
+                <li id="pizza"><p class="p_listPlate">Pizze</p></li>
+                <li id="drink"><p class="p_listPlate">Bibite</p></li>
             </ul>
         </div>
     </div>
