@@ -1,12 +1,14 @@
 .choose {
-    width: 20%;
-    height: 50%;
-    border: 1px #3b83bd solid;
+    //width: 20%;
+    //height: 50%;
+    width: 300px;
+    height: 350px;
+    border: 1px #EFEFEF solid;
     margin-top: 3%;
     margin-bottom: 3%;
     display: inline-block;
     border-radius: 3px;
-    background: transparent;
+    background: ghostwhite;
     margin-right: 1.5%;
     margin-left:1.5%;
 }
@@ -17,27 +19,33 @@ div.content_center{
     //background: linear-gradient(to bottom,  ghostwhite, #72a7d3);
     background: white;
     padding: 3%;
-    border-right: 1px #3b83bd solid;
-    border-left: 1px #3b83bd solid;
-    border-bottom: 1px #3b83bd solid;
+  border-right: 1px black solid;
+  border-left: 1px black solid;
+  border-bottom: 1px black solid;
     height: 100%;
     width: 80%;
-    margin-left: 10%;
+   margin-left: 10%;
     border-radius: 3px;
 }
 
 div#container_center1{
+    float: left;
     text-align: center;
+}
+
+div#container_center2{
+    display: inline-block;
 }
 
 /*BUTTON CENTER PAGE*/
 button#create_menu{
     text-align: center;
-    background: white;
-    border-right: 1px #3b83bd solid;
-    border-left: 1px #3b83bd solid;
-    border-top: 1px #3b83bd solid;
-    border-radius: 3px;
+    background-color: #3b83bd;
+    color: white;
+    border-right: 1px #EFEFEF solid;
+    border-left: 1px #EFEFEF solid;
+    border-top: 1px #EFEFEF solid;
+    border-bottom: 1px white solid;
     margin-top: 5%;
     height: 65%;
     width: 30%;
@@ -45,39 +53,34 @@ button#create_menu{
 
 
 button#choose_menu{
+   background-color: white;
+    color:black;
+    border-right: 1px #EFEFEF solid;
+    border-left: 1px #EFEFEF solid;
+    border-top: 1px #EFEFEF solid;
+    border-bottom: 1px white solid;'
     text-align: center;
-    background: white;
-    border-right: 1px #3b83bd solid;
-    border-left: 1px #3b83bd solid;
-    border-top: 1px #3b83bd solid;
-    border-radius: 3px;
     margin-top: 5%;
     margin-left: 10%;
     height: 65%;
     width: 30%;
 }
 
-/*LABEL PLATE*/
-label.custom-control-label {
-
-}
 
 .img_choose {
-
-    width: 100%;
-    height: 70%;
+    width: 90%;
+    height: 60%;
     margin-bottom: 5%;
 }
 
 .img_element {
 
-    width: 90%;
-    height: 50%;
-
+    width: 100%;
+    height: 100%;
 }
 
 .button_book{
-    background-color: #3b83bd;
+    background: #3b83bd;
     border: #3b83bd;
     color: white;
     height: 28px;
@@ -89,13 +92,11 @@ label.custom-control-label {
 
 
 div#container_listPlate{
-
-    width: 10%;
-    height: 100%;
-    border: 1px black solid;
-    border-radius: 3px;
+    width: 15%;
+    height: 500px;
     display: inline-block;
-    background: navajowhite;
+    border-right: 2px darkred solid;
+
 }
 
 ul#listPlate li{
@@ -109,20 +110,20 @@ ul#listPlate li{
 
     padding: 2%;
 }
-
+ul#listPlate li:hover{
+    background-color: #EFEFEF;
+}
 ul#listPlate{
     font-family: Arialgold,sans-serif;
     padding: 0;
     list-style: none;
-    height: 20px;
     margin-top: 0;
 }
 
 img.icon_listPlate{
-    margin-top: 2%;
     height: 32px;
     width: 32px;
-    margin-left: 5%;
+    margin-left: 3%;
     float: left;
 }
 
