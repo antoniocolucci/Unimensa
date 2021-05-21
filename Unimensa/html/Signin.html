@@ -10,42 +10,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" href="../css/headerCSS/style.css">
-    <link rel="stylesheet" href="../css/headerCSS/navigationBar.css">
-    <link rel="stylesheet" href="../css/headerCSS/homeList.css">
-    <link rel="stylesheet" href="../css/headerCSS/container.css">
-    <link rel="stylesheet" href="../css/headerCSS/button.css">
-    <link rel="stylesheet" href="../css/headerCSS/text.css">
-    <link rel="stylesheet" href="../css/loginCSS/login.css">
+
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/homeCSS/home.css">
+    <link rel="stylesheet" href="../css/signinCSS/signin.css">
+    <link rel="stylesheet" href="../css/screen/screen768.css">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body>
-<div class="header">
-    <div id="icon_menu" >
-        <input type="image" class="icon" alt="menu" src="../images/header/menu.png"
-               onclick="showContainer('lateral_menu');
-                    hideOtherMenu('lateral_menu')">
-        <p class="txt_icon">MENU</p>
-    </div>
-    <div id="title">
-        <h1>uniMensa</h1>
-    </div>
-    <nav id="lateral_menu" style="display: none">
-        <div id="icon_x">
-            <input type="image" id="close_menu" alt="menu" src="../images/lateral_menù/close.png" title="Close"
-                   onclick="showContainer('lateral_menu')">
-        </div>
 
-        <div id="list_menu">
-            <ul id="menu">
-                <li class="active"><a class="active" href="../html/Home.html"> <img id="home" src="../images/lateral_menù/home.png"> HOME</a></li>
-                <li><a href="../html/Ordini.html"> <img id="ordini" src="../images/lateral_menù/ordini2.png">ORDINI</a></li>
-                <li><a href="../html/Mensa.html"> <img id="mensa" src="../images/lateral_menù/mensa.png">MENSA</a></li>
-                <li><a href="../html/Calendario.html">CALENDARIO</a></li>
-            </ul>
-        </div>
-    </nav>
-</div>
+<body onLoad="signin.Name.focus();">
+<!--div class="header">
 
 
 <div id="container_form_signin">
@@ -90,12 +65,158 @@
 
     </form>
 
-</div>
+</div-->
+
+<!--NAVBAR-->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container-fluid">
+        <!--BUTTON MENU-->
+        <button class="navbar-toggler" type="button">
+                <span class="navbar-toggler-icon"
+                      onclick="showContainer('container_menu');
+                      hideOtherMenu('container_menu')"></span>
+        </button>
+
+        <!--UNIMENSA-->
+        <a class="navbar-brand text-white" href="../html/Home.html">uniMensa</a>
+
+        <!--MENU LIST-->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active text-white"  href="../html/Home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="../html/Mensa.html">Mensa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="../html/Ordini.html">Ordini</a>
+                </li>
+            </ul>
+        </div>
+
+        <!--CART-->
+        <div id="icon_cart">
+            <input type="image" class="icon" id="imgCart" alt="cart" src="../images/header/cart.png" title="Carrello">
+        </div>
+
+        <!--BELL-->
+        <div id="icon_bell">
+            <input type="image" class="icon" id="imgBell" alt="bell" src="../images/header/imgBell.png" title="Notifiche"
+                   onclick="changeIcon('imgBell');
+                       showContainer('container_notifications');
+                       hideOtherMenu('container_notifications')">
+        </div>
+
+
+        <!--PROFILE-->
+        <div id="icon_profile">
+            <input type="image" class="icon" id="imgProfile" alt="profile" src="../images/header/imgProfile.png" title="Profilo"
+                   onclick="changeIcon('imgProfile');
+                       showContainer('container_profile');
+                       hideOtherMenu('container_profile')">
+        </div>
+
+    </div>
+</nav>
+
+        <!--CONTAINER MENU SMARTPHONE-->
+        <div id="container_menu" class="dropdown-menu" style="display: none">
+            <a class="dropdown-item active" href="../html/Home.html">Home</a>
+            <a class="dropdown-item " href="../html/Mensa.html">Mensa</a>
+            <a class="dropdown-item" href="../html/Ordini.html">Ordini</a>
+        </div>
+
+        <!--CONTAINER NOTIFICATIONS-->
+        <div id="container_notifications" style="display: none">
+            <ul id="notifications">
+                <li><a href="#"> Ritira il pasto</a></li>
+                <li><a href="#"> Il pasto è pronto</a></li>
+            </ul>
+        </div>
+
+        <!--CONTAINER PROFILE-->
+        <div id="container_profile" style="display: none">
+            <div id="container_buttonProfile" style="display: block">
+                <a href="../html/Login.html" class="btn btn-info button_Profile" role="button">Login</a>
+                <br>
+                <a href="../html/Signin.html" class="btn btn-info button_Profile" role="button">Signin</a>
+            </div>
+
+            <div id="container_infoProfile">
+                <ul id="myAccount">
+                    <li><a href="#"> Il mio account</a></li>
+                    <li><a href="#"> Logout</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+        <div  id="container_form_signin" class="container-fluid content_center" style="display: block">
+            <div class="container-fluid" id="container_title">
+                <h1>Registrazione</h1>
+            </div>
+
+            <form name="signin" method="post" action="../html/Home.html">
+                <div class="container container_label">
+                    <label for="name">
+                        Nome
+                    </label>
+                </div>
+                <div class="container-fluid container_input_login">
+                    <input type="text" class="form-control" id="name" name="Name">
+                </div>
+                <div class="container container_label">
+                    <label for="surname">
+                        Cognome
+                    </label>
+                </div>
+                <div class="container container_input_login">
+                    <input type="text" class="form-control" id="surname" name="Surname">
+                </div>
+                <div class="container container_label">
+                    <label for="email">
+                        E-mail istituzionale
+                    </label>
+                </div>
+                <div class="container container_input_login">
+                    <input type="email" class="form-control" id="email" name="Email">
+                </div>
+                <div class="container container_label">
+                    <label for="password">
+                        Password
+                    </label>
+                </div>
+                <div class="container container_input_login">
+                    <input type="password"  id="password" name="Password">
+                </div>
+
+                <div class="container container_label">
+                    <label for="confirm_password">
+                        Conferma Password
+                    </label>
+                </div>
+                <div class="container container_input_login">
+                    <input type="password" id="confirm_password" name="Password">
+                </div>
+
+                <input type="submit" value="Registrati" id="submit">
+                <p> Hai già un account ? <a href="Login.html"> Accedi </a></p>
+
+            </form>
+        </div>
+
+
+
+
+
+
+
 
 <script language="JavaScript" src="../js/Home.js"></script>
 <script language="JavaScript" src="../js/Login.js"></script>
 </body>
 </html>
 
-</body>
-</html>
