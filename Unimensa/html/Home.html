@@ -115,7 +115,11 @@
         Componi il tuo menù
     </button>
 
+
+
+
     <!--CONTENT CHOOSE MENU-->
+
     <div  id="container_center1" class="container-fluid content_center" style="display: block">
         <div class="container-fluid choose">
             <p>Scelta 1</p>
@@ -170,21 +174,21 @@
 
         <div class="container" id="container_listPlate">
             <ul id="listPlate">
-                <li id="pasta"><p class="p_listPlate">Primi</p></li>
-                <li id="meat"><p class="p_listPlate">Secondi</p></li>
-                <li id="salad"><p class="p_listPlate">Contorni</p></li>
-                <li id="fruit"><p class="p_listPlate">Frutta</p></li>
-                <li id="desserts"><p class="p_listPlate">Dolci</p></li>
-                <li id="sandwiches"><p class="p_listPlate">Panini</p></li>
-                <li id="pizza"><p class="p_listPlate">Pizze</p></li>
-                <li id="drink"><p class="p_listPlate">Bibite</p></li>
+                <li class="liPlate" id="pasta" onclick="elementActive('pasta')"><p class="p_listPlate">Primi</p></li>
+                <li class="liPlate" id="meat"><p class="p_listPlate">Secondi</p></li>
+                <li class="liPlate" id="salad"><p class="p_listPlate">Contorni</p></li>
+                <li class="liPlate" id="fruit"><p class="p_listPlate">Frutta</p></li>
+                <li class="liPlate" id="desserts"><p class="p_listPlate">Dolci</p></li>
+                <li class="liPlate" id="sandwiches"><p class="p_listPlate">Panini</p></li>
+                <li class="liPlate" id="pizza"><p class="p_listPlate">Pizze</p></li>
+                <li class="liPlate" id="drink"><p class="p_listPlate">Bibite</p></li>
             </ul>
         </div>
         <div class="container" id="content_create_menu">
 
             <div class="container plate" id="plate1" onclick="selectPlate('plate1','plate1_name','plate1_price')">
                 <div class="container container_img_plate">
-                    <img src="../images/mensa/carbonara.jpeg" alt="plate1" class="img_element">
+                    <!--img  class="img_element"-->
                 </div>
                 <p>Piatto:</p><p id="plate1_name">Carbonara</p>
                 <p>Prezzo:</p>
@@ -218,13 +222,13 @@
             <h4 id="plate_choose">Piatti scelti: </h4>
             <h4 id="tot">Totale: </h4>
 
-
         </div>
     </div>
 </div>
 
 
 <script src="../js/Home.js"></script>
+    <script src="../js/JQuery.js"></script>
 <script src="../bootstrap/js/bootstrap.esm.js"></script>
 
 </body>
