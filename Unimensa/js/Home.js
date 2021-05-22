@@ -136,7 +136,6 @@ function reverse_color(button_id1, button_id2){
         clicked.style.color = 'white'
         unclicked.style.backgroundColor = 'white'
     }
-
 }
 
 
