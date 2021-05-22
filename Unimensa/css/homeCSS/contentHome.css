@@ -27,13 +27,13 @@ button#create_menu{
     text-align: center;
     background-color: #3b83bd;
     color: white;
-    border-right: 1px #EFEFEF solid;
-    border-left: 1px #EFEFEF solid;
-    border-top: 1px #EFEFEF solid;
-    border-bottom: 1px white solid;
+    border-right: 1px #3b83bd solid;
+    border-left: 1px #3b83bd solid;
+    border-top: 1px #3b83bd solid;
+    border-radius: 0;
     margin-top: 5%;
     height: 65%;
-    width: 30%;
+    width: 39.9%;
 }
 
 
@@ -48,20 +48,7 @@ button#choose_menu{
     margin-top: 5%;
     margin-left: 10%;
     height: 65%;
-    width: 30%;
-}
-
-
-.img_choose {
-    width: 90%;
-    height: 60%;
-    margin-bottom: 5%;
-}
-
-.img_element {
-
-    width: 100%;
-    height: 100%;
+    width: 39.85%;
 }
 
 .button_book{
@@ -84,7 +71,7 @@ div#container_listPlate{
 
 }
 
-ul#listPlate li{
+.liPlate{
     width: 100%;
     height: 40px;
     text-align: center;
@@ -92,10 +79,10 @@ ul#listPlate li{
     cursor: pointer;
     float: left;
     background: white;
-
+    border: 1px #EFEFEF solid;
     padding: 2%;
 }
-ul#listPlate li:hover{
+.liPlate:hover{
     background-color: #EFEFEF;
 }
 ul#listPlate{
