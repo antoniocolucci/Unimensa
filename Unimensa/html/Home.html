@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="../css/homeCSS/contentHome.css">
   <link rel="stylesheet" href="../css/screen/screen768.css">
 
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -121,50 +121,46 @@
     <!--CONTENT CHOOSE MENU-->
 
     <div  id="container_center1" class="container-fluid content_center" style="display: block">
-        <div class="container-fluid choose">
-            <p>Scelta 1</p>
-            <div class="container img_choose">
-                <img src="../images/mensa/carbonara.jpeg" alt="choose 1" class="img_element">
+        <div class="card" style="width: 18rem;">
+            <img src="../images/mensa/carbonara.jpeg" class="card-img-top imgCard" alt="img_element">
+            <div class="card-body">
+                <h5 class="card-title">Scelta 1</h5>
+                <p class="card-text">Prezzo: </p>
+                <input type="button" class="button_book" value="Aggiungi al carrello"
+                       onclick="goTo('../html/Carrello.html')">
             </div>
-            <p>Prezzo: </p>
-            <input type="button" class="button_book" value="Aggiungi al carrello"
-                   onclick="goTo('../html/Carrello.html')">
         </div>
 
-
-
-        <div class="container-fluid choose">
-            <p>Scelta 2</p>
-            <div class="container img_choose">
-                <img src="../images/mensa/cotoletta.jpeg" alt="Choose 2" class="img_element ">
+        <div class="card" style="width: 18rem;">
+            <img src="../images/mensa/cotoletta.jpeg" class="card-img-top imgCard" alt="img_element">
+            <div class="card-body">
+                <h5 class="card-title">Scelta 2</h5>
+                <p class="card-text">Prezzo: </p>
+                <input type="button" class="button_book" value="Aggiungi al carrello"
+                       onclick="goTo('../html/Carrello.html')">
             </div>
-            <p>Prezzo: </p>
-            <input type="button" class="button_book" value="Aggiungi al carrello"
-                   onclick="goTo('../html/Carrello.html')">
         </div>
 
-
-        <div class="container-fluid choose">
-            <p>Scelta 3</p>
-            <div class="container img_choose">
-                <img src="../images/mensa/salad.jpeg" alt="Choose 3" class="img_element">
+        <div class="card" style="width: 18rem;">
+            <img src="../images/mensa/salad.jpeg" class="card-img-top imgCard" alt="img_element">
+            <div class="card-body">
+                <h5 class="card-title">Scelta 3</h5>
+                <p class="card-text">Prezzo: </p>
+                <input type="button" class="button_book" value="Aggiungi al carrello"
+                       onclick="goTo('../html/Carrello.html')">
             </div>
-            <p>Prezzo: </p>
-            <input type="button" class="button_book" value="Aggiungi al carrello"
-                   onclick="goTo('../html/Carrello.html')">
         </div>
 
-
-        <div class="container-fluid choose">
-
-            <p>Scelta 4</p>
-            <div class="container img_choose">
-                <img src="../images/body_home/mc.png" alt="Choose 4" class="img_element">
+        <div class="card" style="width: 18rem;">
+            <img src="../images/body_home/mc.png" class="card-img-top imgCard" alt="img_element">
+            <div class="card-body">
+                <h5 class="card-title">Scelta 4</h5>
+                <p class="card-text">Prezzo: </p>
+                <input type="button" class="button_book" value="Aggiungi al carrello"
+                       onclick="goTo('../html/Carrello.html')">
             </div>
-            <p>Prezzo: </p>
-            <input type="button" class="button_book" value="Aggiungi al carrello"
-                   onclick="goTo('../html/Carrello.html')">
         </div>
+
 </div>
 
 
