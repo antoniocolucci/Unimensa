@@ -3,7 +3,8 @@ body{
     margin-left: 0;
     margin-right: 0;
     height: 100%;
-    background-color: ghostwhite;
+    background-color: rgba(64, 175, 232, 0.04);
+    //background-color: ghostwhite;
     //background-image: radial-gradient(center, circle farthest-corner, ghostwhite, #ffe0b5);
 }
 
@@ -116,4 +117,5 @@ div#external_container{
     height: 100%;
     width: 100%;
 }
+
 
