@@ -82,9 +82,10 @@ div#container_listPlate{
     border: 1px #EFEFEF solid;
     padding: 2%;
 }
-.liPlate:hover{
+/*.liPlate:hover{
     background-color: #EFEFEF;
-}
+}*/
+
 ul#listPlate{
     font-family: Arialgold,sans-serif;
     padding: 0;
