@@ -34,6 +34,7 @@ button#create_menu{
     margin-top: 5%;
     height: 65%;
     width: 39.9%;
+
 }
 
 
@@ -103,6 +104,7 @@ ul#listPlate{
     background: #3b83bd;
     border: 1px #EFEFEF solid;
     padding: 2%;
+    font-weight: bold;
 }
 
 
@@ -182,4 +184,8 @@ div#bill{
     text-align: left;
     font-family: "Century Gothic";
     font-size: 20px;
+}
+
+.prova{
+    background-color: springgreen;
 }
