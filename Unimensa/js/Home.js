@@ -1,5 +1,8 @@
-/*VAR FOR CALCULATE TOT PRICE*/
+/*VAR FOR CALCTOT*/
 let semiTot = 0.0
+let beforeClickedName
+let beforeTot = 0.0
+let beforeClickedElement
 
 
 /*FUNCTION CHANGE VISIBILITY ELEMENT*/
@@ -102,8 +105,9 @@ function calcTot(plate_id, name, price){
     let plate_name = document.getElementById(name)
     let plate_choose1 = document.getElementById('plate_choose')
     let total = document.getElementById('tot')
+    let varName = plate_id + '_name'
 
-    if(plate.style.backgroundColor === 'springgreen')
+    if($(plate).hasClass('prova'))
     {
         $(plate).removeClass('prova')
         semiTot = semiTot - parseFloat(plate_price.innerText.substr(0, plate_price.length))
@@ -113,13 +117,19 @@ function calcTot(plate_id, name, price){
 
     }
     else{
-        plate.style.backgroundColor = 'springgreen'
-        plate.style.border = '3px #EFEFEF solid'
+        $('.plate').removeClass('prova')
+        plate_choose1.innerText = plate_choose1.innerText.replace(beforeClickedName + ","," ")
+        $(plate).toggleClass('prova')
+        if()
         plate_choose1.innerText =  plate_choose1.innerText  + " " + plate_name.innerText.substr(0, plate_name.length) + ", "
         semiTot = semiTot + parseFloat(plate_price.innerText.substr(0, plate_price.length))
+        console.log('siamo nell else  ', semiTot)
+
         total.innerText = "Totale: " + semiTot + "€"
     }
-
+    beforeClickedElement = document.getElementById(plate_id)
+    beforeClickedName = document.getElementById(varName).innerText
+    beforeTot = parseFloat(plate_price.innerText.substr(0, plate_price.length))
 }
 
 function reverse_color(button_id1, button_id2){
@@ -130,13 +140,15 @@ function reverse_color(button_id1, button_id2){
     if(clicked.style.backgroundColor !== '#3b83bd') {
         unclicked.style.backgroundColor = '#3b83bd'
         unclicked.style.color = 'white'
+        unclicked.style.fontWeight = 'normal'
         clicked.style.color = 'black'
-        clicked.style.backgroundColor = 'white'
+        clicked.style.backgroundColor = 'whitesmoke'
+        clicked.style.fontWeight = 'bold'
     }
-    else if (clicked.style.backgroundColor !== 'white') {
+    else if (clicked.style.backgroundColor !== 'whitesmoke') {
         clicked.style.backgroundColor = '#3b83bd'
         clicked.style.color = 'white'
-        unclicked.style.backgroundColor = 'white'
+        unclicked.style.backgroundColor = 'whitesmoke'
     }
 }
 

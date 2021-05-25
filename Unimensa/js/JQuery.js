@@ -7,11 +7,3 @@ $(document).ready(function(){
 
 });
 
-/*$(document).ready(function(){
-    $('.plate').click(function(){
-        $('.plate').not(this).removeClass("cardActive")
-        $(this).toggleClass("cardActive")
-
-    });
-
-});*/
