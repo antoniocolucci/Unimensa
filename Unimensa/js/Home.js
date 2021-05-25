@@ -1,6 +1,7 @@
 /*VAR FOR CALCULATE TOT PRICE*/
 let semiTot = 0.0
 
+
 /*FUNCTION CHANGE VISIBILITY ELEMENT*/
 function showContainer(element_id) {
 
@@ -95,24 +96,24 @@ function goTo(page){
 }
 
 /*FUNCTION SELECT PLATE IN CREATE FAST MENU*/
-function selectPlate(plate_id, name, price){
+function calcTot(plate_id, name, price){
     let plate = document.getElementById(plate_id)
     let plate_price = document.getElementById(price)
     let plate_name = document.getElementById(name)
     let plate_choose1 = document.getElementById('plate_choose')
     let total = document.getElementById('tot')
 
-    if(plate.style.backgroundColor === 'gray')
+    if(plate.style.backgroundColor === 'springgreen')
     {
         plate.style.backgroundColor = 'white'
-        plate.style.border = '1px #3b83bd solid'
+        plate.style.border = '1px #EFEFEF solid'
         semiTot = semiTot - parseFloat(plate_price.innerText.substr(0, plate_price.length))
         total.innerText = "Totale: " + semiTot + "€"
         plate_choose1.innerText = plate_choose1.innerText.replace(plate_name.innerText + ","," ")
     }
     else{
-        plate.style.backgroundColor = 'gray'
-        plate.style.border = '2px #3b83bd solid'
+        plate.style.backgroundColor = 'springgreen'
+        plate.style.border = '3px #EFEFEF solid'
         plate_choose1.innerText =  plate_choose1.innerText  + " " + plate_name.innerText.substr(0, plate_name.length) + ", "
         semiTot = semiTot + parseFloat(plate_price.innerText.substr(0, plate_price.length))
         total.innerText = "Totale: " + semiTot + "€"

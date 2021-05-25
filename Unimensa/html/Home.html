@@ -166,6 +166,7 @@
          <div  id="container_center2" class="container-fluid content_center" style="display: none">
         <!--RICARDARE COLORE VERDE-->
         <div class="container" id="container_listPlate">
+            <!--LIST IN CREATE MENU-->
             <ul id="listPlate">
                 <li class="liPlate liActive" id="pasta" ><p class="p_listPlate">Primi</p></li>
                 <li class="liPlate" id="meat"><p class="p_listPlate">Secondi</p></li>
@@ -177,6 +178,7 @@
                 <li class="liPlate" id="drink"><p class="p_listPlate">Bibite</p></li>
             </ul>
         </div>
+
         <div class="container" id="content_create_menu">
             <!--CARDS HORIZONTAL-->
             <div class="container plate" id="plate1" onclick="calcTot('plate1','plate1_name','plate1_price')">
@@ -188,9 +190,6 @@
                 <div class="container-fluid container_img_plate">
                     <img  src="../images/mensa/carbonara.jpeg"  class="imgPlate">
                 </div>
-                <p>Piatto:</p><p id="plate1_name">Carbonara</p>
-                <p>Prezzo:</p>
-                <p id="plate1_price">5€</p>
 
             </div>
 
@@ -235,11 +234,10 @@
 
         <!--CONTAINER TOTAL-->
         <div class="container-fluid" id="bill">
-            <input type="button" class="button_book2" value="Aggiungi al carrello"
-                   onclick="goTo('../html/Carrello.html')">
             <h4 id="plate_choose">Piatti scelti: </h4>
             <h4 id="tot">Totale: </h4>
-
+            <input type="button" class="button_book2" value="Aggiungi al carrello"
+                   onclick="goTo('../html/Carrello.html')">
         </div>
     </div>
 </div>
