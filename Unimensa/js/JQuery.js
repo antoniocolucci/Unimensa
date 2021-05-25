@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
     $('.liPlate').click(function(){
         $('.liPlate').removeClass("liActive");
@@ -7,7 +6,6 @@ $(document).ready(function(){
     });
 
 });
-
 
 /*$(document).ready(function(){
     $('.plate').click(function(){

@@ -105,11 +105,12 @@ function calcTot(plate_id, name, price){
 
     if(plate.style.backgroundColor === 'springgreen')
     {
-        plate.style.backgroundColor = 'white'
-        plate.style.border = '1px #EFEFEF solid'
+        $(plate).removeClass('prova')
         semiTot = semiTot - parseFloat(plate_price.innerText.substr(0, plate_price.length))
+        console.log('siamo nell if  ', semiTot)
         total.innerText = "Totale: " + semiTot + "€"
         plate_choose1.innerText = plate_choose1.innerText.replace(plate_name.innerText + ","," ")
+
     }
     else{
         plate.style.backgroundColor = 'springgreen'
@@ -138,25 +139,6 @@ function reverse_color(button_id1, button_id2){
         unclicked.style.backgroundColor = 'white'
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
