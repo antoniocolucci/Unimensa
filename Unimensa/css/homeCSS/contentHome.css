@@ -12,12 +12,12 @@ div.content_center{
     width: 80%;
     margin-left: 10%;
 }
-
+/*CONTAINER CHOOSE MENU*/
 div#container_center1{
     float: left;
     text-align: center;
 }
-
+/*CONTAINER CREATE MENU*/
 div#container_center2{
     display: inline-block;
 }
@@ -51,6 +51,7 @@ button#choose_menu{
     width: 39.85%;
 }
 
+/*BUTTON ADD TO CART*/
 .button_book{
     background: #3b83bd;
     border: #3b83bd;
@@ -62,15 +63,15 @@ button#choose_menu{
     margin-bottom: 5%;
 }
 
-
+/*CONTAINER LIST PLATES IN CREATE MENU*/
 div#container_listPlate{
     width: 15%;
     height: 500px;
     display: inline-block;
-    border-right: 2px darkred solid;
+    border-right: 2px darkorange solid;
 
 }
-
+/*LIST PLATES*/
 .liPlate{
     width: 100%;
     height: 40px;
@@ -82,9 +83,7 @@ div#container_listPlate{
     border: 1px #EFEFEF solid;
     padding: 2%;
 }
-/*.liPlate:hover{
-    background-color: #EFEFEF;
-}*/
+
 
 ul#listPlate{
     font-family: Arialgold,sans-serif;
@@ -92,63 +91,77 @@ ul#listPlate{
     list-style: none;
     margin-top: 0;
 }
+/*LIST PLATES ACTIVE*/
+.liActive{
+    width: 100%;
+    color: white;
+    height: 40px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    float: left;
+    background: #3b83bd;
+    border: 1px #EFEFEF solid;
+    padding: 2%;
+}
 
+
+/*CONTAINER CARDS HORIZONTAL IN CREATE MENU*/
 #content_create_menu {
     margin: 0;
-    padding-top: 3%;
-    border-radius: 5px;
-  //  border: 1px #3b83bd solid;
     width: 80%;
     height: 500px;
     display: inline-block;
     padding-left: 5%;
     padding-right: 5%;
+    text-align: center;
+    //background-color: black;
 }
-
+/*CONTAINER TOTAL IN CREATE MENU*/
 div#bill{
     width: 100%;
-    border-top: 2px #000000 solid;
+    border-top: 2px darkorange solid;
     margin-top: 2%;
     padding-left: 5%;
     padding-right: 5%;
     padding-top: 1%;
 }
 
+/*SECOND BUTTON ADD TO CART*/
 .button_book2 {
-    margin-top: 20px;
-    margin-right: 15px;
-    float: right;
     width: 20%;
     background-color: #3b83bd;
     color: white;
 }
 
+/*CARDS PLATE HORIZONTAL*/
 .plate{
+    display: flex;
     float: left;
-    display: inline-block;
     width: 40%;
     height: 30%;
-   // border: 1px #3b83bd solid;
-   margin: 4%;
+    margin: 4%;
     border-radius: 5px;
-    padding: 2%;
     background-color: #EFEFEF;
 }
 
+/*CONTAINER IMG PLATE*/
 .container_img_plate{
     width: 50%;
     height: 100%;
-   //border: 2px black solid;
     margin-right: 0;
     float: right;
+    border-radius: 3px;
 }
 
+/*CARDS VERTICAL IN CHOOSE MENU*/
 .card{
     display: inline-block;
     float: left;
     margin-left: 3.5%;
 }
 
+/*IMAGE CARDS VERTICAL*/
 .imgCard{
      width: 100%;
      height: 250px;
