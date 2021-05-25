@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>Home</title>
 
-
   <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
   <link rel="stylesheet" href="../css/homeCSS/home.css">
   <link rel="stylesheet" href="../css/homeCSS/contentHome.css">
@@ -21,9 +20,10 @@
 
          <!--BUTTON MENU-->
          <button class="navbar-toggler" type="button">
-          <span class="navbar-toggler-icon"
+           <span class="navbar-toggler-icon"
                 onclick="showContainer('container_menu');
-                hideOtherMenu('container_menu')"></span>
+                hideOtherMenu('container_menu')">
+           </span>
          </button>
 
          <!--UNIMENSA-->
@@ -31,97 +31,95 @@
 
          <!--MENU LIST-->
          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-           <li class="nav-item">
-            <a class="nav-link active text-white"  href="../html/Home.html">Home</a>
-           </li>
-            <li class="nav-item">
-             <a class="nav-link text-white" href="../html/Mensa.html">Mensa</a>
-            </li>
-             <li class="nav-item">
-              <a class="nav-link text-white" href="../html/Ordini.html">Ordini</a>
-             </li>
-          </ul>
+             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+               <li class="nav-item">
+                 <a class="nav-link active text-white"  href="../html/Home.html">Home</a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link text-white" href="../html/Mensa.html">Mensa</a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link text-white" href="../html/Ordini.html">Ordini</a>
+               </li>
+             </ul>
          </div>
 
-            <!--CART-->
-            <div id="icon_cart">
-                <input type="image" class="icon" id="imgCart" alt="cart" src="../images/header/cart.png" title="Carrello">
-            </div>
+         <!--CART-->
+         <div id="icon_cart">
+           <input type="image" class="icon" id="imgCart" alt="cart" src="../images/header/cart.png" title="Carrello">
+         </div>
 
-            <!--BELL-->
-            <div id="icon_bell">
-                <input type="image" class="icon" id="imgBell" alt="bell" src="../images/header/imgBell.png" title="Notifiche"
+         <!--BELL-->
+         <div id="icon_bell">
+           <input type="image" class="icon" id="imgBell" alt="bell" src="../images/header/imgBell.png" title="Notifiche"
                        onclick="changeIcon('imgBell');
                        showContainer('container_notifications');
                        hideOtherMenu('container_notifications')">
-            </div>
+         </div>
 
 
-            <!--PROFILE-->
-            <div id="icon_profile">
-                <input type="image" class="icon" id="imgProfile" alt="profile" src="../images/header/imgProfile.png" title="Profilo"
+         <!--PROFILE-->
+         <div id="icon_profile">
+           <input type="image" class="icon" id="imgProfile" alt="profile" src="../images/header/imgProfile.png" title="Profilo"
                        onclick="changeIcon('imgProfile');
                        showContainer('container_profile');
                        hideOtherMenu('container_profile')">
-            </div>
+         </div>
 
-        </div>
+     </div>
     </nav>
 
-    <!--CONTAINER MENU SMARTPHONE-->
-    <div id="container_menu" class="dropdown-menu" style="display: none">
-        <a class="dropdown-item active" href="../html/Home.html">Home</a>
-        <a class="dropdown-item " href="../html/Mensa.html">Mensa</a>
-        <a class="dropdown-item" href="../html/Ordini.html"> Ordini</a>
-    </div>
+         <!--CONTAINER MENU SMARTPHONE-->
+         <div id="container_menu" class="dropdown-menu" style="display: none">
+              <a class="dropdown-item active" href="../html/Home.html">Home</a>
+              <a class="dropdown-item " href="../html/Mensa.html">Mensa</a>
+              <a class="dropdown-item" href="../html/Ordini.html"> Ordini</a>
+         </div>
 
-    <!--CONTAINER NOTIFICATIONS-->
-    <div id="container_notifications" style="display: none">
-        <ul id="notifications">
-            <li><a href="#"> Ritira il pasto</a></li>
-            <li><a href="#"> Il pasto è pronto</a></li>
-        </ul>
-    </div>
+         <!--CONTAINER NOTIFICATIONS-->
+         <div id="container_notifications" style="display: none">
+            <ul id="notifications">
+              <li><a href="#"> Ritira il pasto</a></li>
+              <li><a href="#"> Il pasto è pronto</a></li>
+            </ul>
+         </div>
 
-    <!--CONTAINER PROFILE-->
-    <div id="container_profile" style="display: none">
-        <div id="container_buttonProfile" style="display: block">
-            <a href="../html/Login.html" class="btn btn-info button_Profile" role="button">Login</a>
-            <br>
-            <a href="../html/Signin.html" class="btn btn-info button_Profile" role="button">Signin</a>
-        </div>
-        <br><br>
+         <!--CONTAINER PROFILE-->
+         <div id="container_profile" style="display: none">
+           <div id="container_buttonProfile" style="display: block">
+              <a href="../html/Login.html" class="btn btn-info button_Profile" role="button">Login</a>
+              <br>
+              <a href="../html/Signin.html" class="btn btn-info button_Profile" role="button">Signin</a>
+           </div>
+           <br><br>
 
-        <div id="container_infoProfile">
+           <div id="container_infoProfile">
             <ul id="myAccount">
                 <li><a href="#"> Il mio account</a></li>
                 <li><a href="#"> Logout</a></li>
             </ul>
+           </div>
         </div>
-    </div>
 
 
-    <!--HOMPAGE CONTENT-->
-    <div id="external_container" class="container-fluid">
-    <!--BUTTON CENTER-->
-    <button class="btn btn-light" id="choose_menu" onclick="showContent('container_center1');
-                                                      reverse_color('choose_menu', 'create_menu');">
-        Scelte rapide
-    </button>
+         <!--HOMPAGE CONTENT-->
+         <div id="external_container" class="container-fluid">
 
-    <button class="btn btn-light" id="create_menu" onclick="showContent('container_center2')
-                                                      reverse_color('create_menu', 'choose_menu');">
-        Componi il tuo menù
-    </button>
+         <!--BUTTON CENTER-->
+         <button class="btn btn-light" id="choose_menu" onclick="showContent('container_center1');
+                                                                 reverse_color('choose_menu', 'create_menu');">
+              Scelte rapide
+         </button>
+
+         <button class="btn btn-light" id="create_menu" onclick="showContent('container_center2')
+                                                                 reverse_color('create_menu', 'choose_menu');">
+              Componi il tuo menù
+         </button>
 
 
-
-
-    <!--CONTENT CHOOSE MENU-->
-
-    <div  id="container_center1" class="container-fluid content_center" style="display: block">
-        <div class="card" style="width: 18rem;">
+         <!--CONTENT CHOOSE MENU-->
+         <div  id="container_center1" class="container-fluid content_center" style="display: block">
+         <div class="card" style="width: 18rem;">
             <img src="../images/mensa/carbonara.jpeg" class="card-img-top imgCard" alt="img_element">
             <div class="card-body">
                 <h5 class="card-title">Scelta 1</h5>
@@ -164,13 +162,12 @@
 </div>
 
 
-
-    <!--CONTENT CREATE MENU-->
-    <div  id="container_center2" class="container-fluid content_center" style="display: none">
-
+         <!--CONTENT CREATE MENU-->
+         <div  id="container_center2" class="container-fluid content_center" style="display: none">
+        <!--RICARDARE COLORE VERDE-->
         <div class="container" id="container_listPlate">
             <ul id="listPlate">
-                <li class="liPlate" id="pasta" onclick="elementActive('pasta')"><p class="p_listPlate">Primi</p></li>
+                <li class="liPlate liActive" id="pasta" ><p class="p_listPlate">Primi</p></li>
                 <li class="liPlate" id="meat"><p class="p_listPlate">Secondi</p></li>
                 <li class="liPlate" id="salad"><p class="p_listPlate">Contorni</p></li>
                 <li class="liPlate" id="fruit"><p class="p_listPlate">Frutta</p></li>
@@ -181,10 +178,15 @@
             </ul>
         </div>
         <div class="container" id="content_create_menu">
-
-            <div class="container plate" id="plate1" onclick="selectPlate('plate1','plate1_name','plate1_price')">
-                <div class="container container_img_plate">
-                    <!--img  class="img_element"-->
+            <!--CARDS HORIZONTAL-->
+            <div class="container plate" id="plate1" onclick="calcTot('plate1','plate1_name','plate1_price')">
+                <div class="textCardHor">
+                    <p id="plate1_name">Carbonara</p>
+                    <p>Prezzo:</p>
+                    <p class="price" id="plate1_price">5€</p>
+                </div>
+                <div class="container-fluid container_img_plate">
+                    <img  src="../images/mensa/carbonara.jpeg"  class="imgPlate">
                 </div>
                 <p>Piatto:</p><p id="plate1_name">Carbonara</p>
                 <p>Prezzo:</p>
@@ -192,26 +194,46 @@
 
             </div>
 
-            <div class="container plate" id="plate2" onclick="selectPlate('plate2', 'plate2_name', 'plate2_price')">
-                <p>Piatto:</p><p id="plate2_name">Pesto</p>
-                <p>Prezzo:</p>
-                <p id="plate2_price">5€</p>
+            <div class="container plate" id="plate2" onclick="calcTot('plate2', 'plate2_name', 'plate2_price')">
+                <div class="textCardHor">
+                    <p id="plate2_name">Pesto</p>
+                    <p>Prezzo:</p>
+                    <p class="price" id="plate2_price">5€</p>
+                </div>
+                <div class="container-fluid container_img_plate">
+                    <img  src="../images/mensa/spaghetti.jpg"  class="imgPlate">
+                </div>
+
             </div>
 
-            <div class="container plate" id="plate3" onclick="selectPlate('plate3', 'plate3_name', 'plate3_price')">
-                <p>Piatto:</p><p id="plate3_name">Carbonara</p>
-                <p>Prezzo:</p>
-                <p id="plate3_price">5€</p>
+            <div class="container plate" id="plate3" onclick="calcTot('plate3', 'plate3_name', 'plate3_price')">
+
+                    <div class="textCardHor">
+                        <p id="plate3_name">Carbonara</p>
+                        <p>Prezzo:</p>
+                        <p class="price" id="plate3_price">5€</p>
+                    </div>
+                <div class="container-fluid container_img_plate">
+                    <img  src="../images/mensa/cotoletta.jpeg"  class="imgPlate">
+                </div>
+
             </div>
 
-            <div class="container plate" id="plate4" onclick="selectPlate('plate4','plate4_name', 'plate4_price')">
-                <p>Piatto:</p><p id="plate4_name">Gnocchi</p>
-                <p>Prezzo:</p>
-                <p id="plate4_price">5€</p>
+            <div class="container plate" id="plate4" onclick="calcTot('plate4','plate4_name', 'plate4_price')">
+
+                    <div class="textCardHor">
+                        <p id="plate4_name">Gnocchi</p>
+                        <p>Prezzo:</p>
+                        <p class="price" id="plate4_price">5€</p>
+                    </div>
+                <div class="container-fluid container_img_plate">
+                    <img  src="../images/mensa/cotoletta.jpeg"  class="imgPlate">
+                </div>
             </div>
 
         </div>
 
+        <!--CONTAINER TOTAL-->
         <div class="container-fluid" id="bill">
             <input type="button" class="button_book2" value="Aggiungi al carrello"
                    onclick="goTo('../html/Carrello.html')">
@@ -224,7 +246,7 @@
 
 
 <script src="../js/Home.js"></script>
-    <script src="../js/JQuery.js"></script>
+<script src="../js/JQuery.js"></script>
 <script src="../bootstrap/js/bootstrap.esm.js"></script>
 
 </body>
