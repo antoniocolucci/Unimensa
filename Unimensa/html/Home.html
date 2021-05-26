@@ -103,7 +103,7 @@
 
 
          <!--HOMPAGE CONTENT-->
-         <div id="external_container" class="container-fluid">
+ <div id="external_container" class="container-fluid">
 
          <!--BUTTON CENTER-->
          <button class="btn btn-light" id="choose_menu" onclick="showContent('container_center1');
@@ -158,28 +158,35 @@
                        onclick="goTo('../html/Carrello.html')">
             </div>
         </div>
-
-</div>
+    </div>
 
 
          <!--CONTENT CREATE MENU-->
-         <div  id="container_center2" class="container-fluid content_center" style="display: none">
+    <div  id="container_center2" class="container-fluid content_center" style="display: none">
         <!--RICARDARE COLORE VERDE-->
         <div class="container" id="container_listPlate">
             <!--LIST IN CREATE MENU-->
             <ul id="listPlate">
-                <li class="liPlate liActive" id="pasta" ><p class="p_listPlate">Primi</p></li>
-                <li class="liPlate" id="meat"><p class="p_listPlate">Secondi</p></li>
-                <li class="liPlate" id="salad"><p class="p_listPlate">Contorni</p></li>
-                <li class="liPlate" id="fruit"><p class="p_listPlate">Frutta</p></li>
-                <li class="liPlate" id="desserts"><p class="p_listPlate">Dolci</p></li>
-                <li class="liPlate" id="sandwiches"><p class="p_listPlate">Panini</p></li>
-                <li class="liPlate" id="pizza"><p class="p_listPlate">Pizze</p></li>
-                <li class="liPlate" id="drink"><p class="p_listPlate">Bibite</p></li>
+                <li class="liPlate liActive" id="pasta">
+                    <p class="p_listPlate">Primi</p></li>
+                <li class="liPlate" id="meat">
+                    <p class="p_listPlate">Secondi</p></li>
+                <li class="liPlate" id="salad">
+                    <p class="p_listPlate">Contorni</p></li>
+                <li class="liPlate" id="fruit">
+                    <p class="p_listPlate">Frutta</p></li>
+                <li class="liPlate" id="desserts">
+                    <p class="p_listPlate">Dolci</p></li>
+                <li class="liPlate" id="sandwiches">
+                    <p class="p_listPlate">Panini</p></li>
+                <li class="liPlate" id="pizza">
+                    <p class="p_listPlate">Pizze</p></li>
+                <li class="liPlate" id="drink">
+                    <p class="p_listPlate">Bibite</p></li>
             </ul>
         </div>
 
-        <div class="container" id="content_create_menu" >
+        <div class="container" id="content_create_menu" style="display: none">
             <!--CARDS HORIZONTAL-->
             <div class="container plate" id="plate1"  onclick="calcTot('plate1', 'plate1_name', 'plate1_price')">
                 <div class="textCardHor">
@@ -387,7 +394,7 @@
                    onclick="goTo('../html/Carrello.html')">
         </div>
     </div>
-</div>
+ </div>
 
 
 <script src="../js/Home.js"></script>
