@@ -1,13 +1,6 @@
-/*VAR FOR CALCTOT*/
-let semiTot = 0.0
-let beforeClickedName
-let beforeTot = 0.0
-let beforeClickedElement
-
 
 /*FUNCTION CHANGE VISIBILITY ELEMENT*/
 function showContainer(element_id) {
-
     let element = document.getElementById(element_id)
     if(element.style.display === 'none') {
         element.style.display = 'block'
@@ -18,17 +11,21 @@ function showContainer(element_id) {
 
 /*FUNCTION CHANGE INCON IN NAVBAR*/
 function changeIcon(element_id){
+    /*SAVE THE FIRST OCCURRENCE OF IMAGES IN THE SRC ATTRIBUTE OF THE ELEMENT*/
     let firstOcc = document.getElementById(element_id).src.indexOf('images')
+    /*SET VAR2 IN THE SUBSTRING FROM FIRST OCCURRENCE TO ALL LENGTH*/
     let var2 = document.getElementById(element_id).src.substr(firstOcc,document.getElementById(element_id).src.length)
     let var1 = "../"+var2
+    /*IF THE ICON IS NOT CLICKED: SET NEW SRC FOR ICON CLICKED*/
     if(var1 === "../images/header/"+element_id+".png")
-     {
+    {
         document.getElementById(element_id).src = "../images/header/"+element_id+"clicked.png"
-     }
+    }
+    /*IF THE ICON IS CLICKED: SET NEW SRC FOR ICON NOT CLICKED*/
     else
-     {
+    {
         document.getElementById(element_id).src = "../images/header/"+element_id+".png"
-     }
+    }
 
 }
 
@@ -42,34 +39,34 @@ function hideOtherMenu (element_id) {
     ]
 
     if(element === document.getElementById(nameContainer[0]))
-     {
-         if(document.getElementById(nameContainer[1]).style.display === 'block') {
-             document.getElementById(nameContainer[1]).style.display = 'none'
-             changeIcon('imgProfile')
-         }
+    {
+        if(document.getElementById(nameContainer[1]).style.display === 'block') {
+            document.getElementById(nameContainer[1]).style.display = 'none'
+            changeIcon('imgProfile')
+        }
         document.getElementById(nameContainer[2]).style.display= 'none'
-     }
+    }
 
     else if (element === document.getElementById(nameContainer[1]))
-     {
-         if(document.getElementById(nameContainer[0]).style.display === 'block') {
-             document.getElementById(nameContainer[0]).style.display= 'none'
-             changeIcon('imgBell')
-         }
-         document.getElementById(nameContainer[2]).style.display= 'none'
-     }
+    {
+        if(document.getElementById(nameContainer[0]).style.display === 'block') {
+            document.getElementById(nameContainer[0]).style.display= 'none'
+            changeIcon('imgBell')
+        }
+        document.getElementById(nameContainer[2]).style.display= 'none'
+    }
 
     else
-     {
-         if(document.getElementById(nameContainer[0]).style.display === 'block') {
-             document.getElementById(nameContainer[0]).style.display= 'none'
-             changeIcon('imgBell')
-         }
-         if(document.getElementById(nameContainer[1]).style.display === 'block') {
-             document.getElementById(nameContainer[1]).style.display= 'none'
-             changeIcon('imgProfile')
-         }
-     }
+    {
+        if(document.getElementById(nameContainer[0]).style.display === 'block') {
+            document.getElementById(nameContainer[0]).style.display= 'none'
+            changeIcon('imgBell')
+        }
+        if(document.getElementById(nameContainer[1]).style.display === 'block') {
+            document.getElementById(nameContainer[1]).style.display= 'none'
+            changeIcon('imgProfile')
+        }
+    }
 }
 
 /*FUNCTION SHOW CONTENT CENTER*/
@@ -98,38 +95,78 @@ function goTo(page){
     window.location.href = page;
 }
 
-/*FUNCTION SELECT PLATE IN CREATE FAST MENU*/
+/*GLOBAL VAR FOR FUNCTION CALCTOT*/
+let totalSpending = 0.0
+let beforeClickedName
+let beforeClickedPrice = 0.0
+let beforeClickedElement
+let isClicked = false
+
+/*FUNCTION CALCTOT IN CREATE MENU IN HOMEPAGE*/
 function calcTot(plate_id, name, price){
     let plate = document.getElementById(plate_id)
     let plate_price = document.getElementById(price)
     let plate_name = document.getElementById(name)
     let plate_choose1 = document.getElementById('plate_choose')
     let total = document.getElementById('tot')
-    let varName = plate_id + '_name'
+    let saveName = plate_id + '_name'
 
-    if($(plate).hasClass('prova'))
+    /*IF PLATE CLICKED HAS CLASS 'PLATEACTIVE' REMOVE CLASS FROM HIM AND DELETE HIS NAME IN PLATE CHOOSE*/
+    if($(plate).hasClass('plateActive'))
     {
-        $(plate).removeClass('prova')
-        semiTot = semiTot - parseFloat(plate_price.innerText.substr(0, plate_price.length))
-        console.log('siamo nell if  ', semiTot)
-        total.innerText = "Totale: " + semiTot + "€"
+        $(plate).removeClass('plateActive')
         plate_choose1.innerText = plate_choose1.innerText.replace(plate_name.innerText + ","," ")
-
     }
+    /*IF PLATE CLICKED NOT HAS CLASS 'PLATEACTIVE' REMOVE CLASS FROM ALL, REMOVE PLATE NAME IF IT HA ALREADY BEEN CLICKED,
+        TOGGLE CLASS AT PLATE AND ADD HIS NAME TO CHOOSE PLATE*/
     else{
-        $('.plate').removeClass('prova')
+        $('.plate').removeClass('plateActive')
         plate_choose1.innerText = plate_choose1.innerText.replace(beforeClickedName + ","," ")
-        $(plate).toggleClass('prova')
-        if()
+        $(plate).toggleClass('plateActive')
         plate_choose1.innerText =  plate_choose1.innerText  + " " + plate_name.innerText.substr(0, plate_name.length) + ", "
-        semiTot = semiTot + parseFloat(plate_price.innerText.substr(0, plate_price.length))
-        console.log('siamo nell else  ', semiTot)
-
-        total.innerText = "Totale: " + semiTot + "€"
     }
+    /*THEN CALCULATE THE TOTAL.
+      IF THE DISH IS THE SAME ONE THAT HAS BEEN CLICKED BEFORE AND NOT HAS THE CLASS 'PLATEACTIVE':
+      SUBTRACT TO THE TOTAL THE PLATE PRICE*/
+    if(plate === beforeClickedElement && !($(plate).hasClass('plateActive'))){
+        totalSpending = totalSpending - parseFloat(plate_price.innerText.substr(0, plate_price.length))
+    }
+    /*IF THE DISH IS THE SAME ONE THAT HAS BEEN CLICKED BEFORE AND HAS THE CLASS 'PLATEACTIVE': ADD TO THE TOTAL THE PLATE PRICE*/
+    else if(plate === beforeClickedElement && $(plate).hasClass('plateActive')){
+        totalSpending = parseFloat(totalSpending) + parseFloat(plate_price.innerText.substr(0, plate_price.length))
+    }
+    /*IF THE DISH IS NOT THE SAME ONE THAT HAS BEEN CLICKED BEFORE*/
+
+    else if (plate !== beforeClickedElement){
+        /*IF THE PLATE THAT HAS BEEN CLICKED BEFORE IT WAS CLICKED:
+        SUBTRACT TO THE TOTAL THE PLATE PRICE OF PLATECLICKED BEFORE, AND THEN ADD TO THE TOTAL THE PRICE OF PLATE CLICKED NOW*/
+        if(isClicked)
+        {
+            totalSpending =  totalSpending - parseFloat(beforeClickedPrice)
+            totalSpending = totalSpending + parseFloat(plate_price.innerText.substr(0, plate_price.length))
+        }
+        /*IF THE PLATE THAT HAS BEEN CLICKED BEFORE IT NOT WAS CLICKED: ADD TO THE TOTAL ONLY THE PRICE OF PLATE CLICKED NOW*/
+        else if(!(isClicked)){
+
+            totalSpending = totalSpending + parseFloat(plate_price.innerText.substr(0, plate_price.length))
+        }
+        /*UPDATE THE PRICE OF PLATECLICKED BEFORE WITH THE PRICE OF THE PLATE CLICKED NOW*/
+        beforeClickedPrice = parseFloat(plate_price.innerText.substr(0, plate_price.length))
+    }
+    /*WRITE THE TOTAL IN THE CORRECT POSITION*/
+    total.innerText = 'Totale= ' + totalSpending + '€'
+    /*UPDATE PLATECLICKED BEFORE WITH PLATE CLICKED NOW*/
     beforeClickedElement = document.getElementById(plate_id)
-    beforeClickedName = document.getElementById(varName).innerText
-    beforeTot = parseFloat(plate_price.innerText.substr(0, plate_price.length))
+    /*UPDATE THE NAME OF PLATECLICKED BEFORE WITH THE NAME OF THE PLATE CLICKED NOW*/
+    beforeClickedName = document.getElementById(saveName).innerText
+    /*IF PLATE CLICKED HAS CLASS 'PLATEACTIVE' SET ISCLICKED TRUE*/
+    if($(beforeClickedElement).hasClass('plateActive')){
+        isClicked = true
+    }
+    /*IF PLATE CLICKED HAS NOT CLASS 'PLATEACTIVE' SET ISCLICKED FALSE*/
+    else{
+        isClicked = false
+    }
 }
 
 function reverse_color(button_id1, button_id2){
