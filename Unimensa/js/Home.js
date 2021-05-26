@@ -189,6 +189,22 @@ function reverse_color(button_id1, button_id2){
     }
 }
 
+function createIsClicked(){
+    let cards = document.getElementsByClassName('plate');
+    let checkboxes = document.getElementsByClassName('check_clicked')
+
+    let attribute1 = document.createAttribute("isClicked");
+    let attribute2 = document.createAttribute("beforeIsClicked");
+    attribute1.value = false;
+    attribute2.value = false;
+    cards.setAttributeNode(attribute1);
+    checkboxes.setAttributeNode(attribute2)
+
+    console.log('isclicked ', document.getAttribute('isClicked'))
+    console.log('beforeisclicked ', document.getAttribute('beforeIsClicked'))
+
+}
+
 
 
 
