@@ -12,7 +12,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body>
+
+<body onload="createIsClicked()">
 
     <!--NAVBAR-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
@@ -186,7 +187,7 @@
             </ul>
         </div>
 
-        <div class="container" id="content_create_menu" style="display: none">
+        <div class="container" id="content_create_menu" style="display: inline-block">
             <!--CARDS HORIZONTAL-->
             <div class="container plate" id="plate1"  onclick="calcTot('plate1', 'plate1_name', 'plate1_price')">
                 <div class="textCardHor">
@@ -235,7 +236,7 @@
         </div>
 
 
-        <div class="container" id="container_sandwiches" style="display: block">
+        <div class="container" id="container_sandwiches" style="display: none">
 
             <div class="container_checkbox">
                 <h3>Pane</h3>
@@ -260,22 +261,22 @@
                     <h3>Salumi</h3>
                     <input  type="checkbox" value="" id="salume1">
                     <label  for="salume1">
-                        Prosciutto Cotto
+                        Prosciutto Cotto (1€)
                     </label>
                     <br>
                     <input  type="checkbox" value="" id="salume2">
                     <label  for="salume2">
-                        Salame
+                        Salame (1€)
                     </label>
                     <br>
                     <input  type="checkbox" value="" id="salume3">
                     <label  for="salume3">
-                        Bresaola
+                        Bresaola (1.50€)
                     </label>
                     <br>
                     <input  type="checkbox" value="" id="salume4">
                     <label  for="salume4">
-                        Mortadella
+                        Mortadella (1.50€)
                     </label>
               </div>
 
