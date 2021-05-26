@@ -144,6 +144,7 @@ div#bill{
     margin: 4%;
     border-radius: 5px;
     background-color: whitesmoke;
+    cursor: pointer;
 }
 
 /*CONTAINER IMG PLATE*/
@@ -184,6 +185,6 @@ div#bill{
     font-size: 35px;
 }
 
-.prova{
+.plateActive{
     background-color: springgreen;
 }
