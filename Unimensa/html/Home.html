@@ -122,8 +122,8 @@
          <div class="card" style="width: 18rem;">
             <img src="../images/mensa/carbonara.jpeg" class="card-img-top imgCard" alt="img_element">
             <div class="card-body">
-                <h5 class="card-title">Scelta 1</h5>
-                <p class="card-text">Prezzo: </p>
+                <h5 class="card-title">Spaghetti alla carbonara</h5>
+                <p class="card-text">Prezzo: 5€</p>
                 <input type="button" class="button_book" value="Aggiungi al carrello"
                        onclick="goTo('../html/Carrello.html')">
             </div>
@@ -132,8 +132,8 @@
         <div class="card" style="width: 18rem;">
             <img src="../images/mensa/cotoletta.jpeg" class="card-img-top imgCard" alt="img_element">
             <div class="card-body">
-                <h5 class="card-title">Scelta 2</h5>
-                <p class="card-text">Prezzo: </p>
+                <h5 class="card-title">Cotoletta</h5>
+                <p class="card-text">Prezzo: 6€</p>
                 <input type="button" class="button_book" value="Aggiungi al carrello"
                        onclick="goTo('../html/Carrello.html')">
             </div>
@@ -142,8 +142,8 @@
         <div class="card" style="width: 18rem;">
             <img src="../images/mensa/salad.jpeg" class="card-img-top imgCard" alt="img_element">
             <div class="card-body">
-                <h5 class="card-title">Scelta 3</h5>
-                <p class="card-text">Prezzo: </p>
+                <h5 class="card-title">Insalata</h5>
+                <p class="card-text">Prezzo: 4€</p>
                 <input type="button" class="button_book" value="Aggiungi al carrello"
                        onclick="goTo('../html/Carrello.html')">
             </div>
@@ -182,8 +182,7 @@
         <div class="container" id="content_create_menu" >
             <!--CARDS HORIZONTAL-->
             <div class="container plate" id="plate1"  onclick="calcTot('plate1', 'plate1_name', 'plate1_price')">
-
-                 <div class="textCardHor">
+                <div class="textCardHor">
                     <p id="plate1_name">Carbonara</p>
                     <h1 class="price" id="plate1_price">5€</h1>
                 </div>
@@ -206,10 +205,10 @@
 
             <div class="container plate" id="plate3" onclick="calcTot('plate3', 'plate3_name', 'plate3_price')">
 
-                    <div class="textCardHor">
-                        <p id="plate3_name">Riso</p>
-                        <p class="price" id="plate3_price">2€</p>
-                    </div>
+                <div class="textCardHor">
+                    <p id="plate3_name">Cotoletta</p>
+                    <p class="price" id="plate3_price">2€</p>
+                </div>
                 <div class="container-fluid container_img_plate">
                     <img  src="../images/mensa/cotoletta.jpeg"  class="imgPlate">
                 </div>
@@ -218,20 +217,171 @@
 
             <div class="container plate" id="plate4" onclick="calcTot('plate4','plate4_name', 'plate4_price')">
 
-                    <div class="textCardHor">
-                        <p id="plate4_name">Gnocchi</p>
-                        <p class="price" id="plate4_price">9€</p>
-                    </div>
+                <div class="textCardHor">
+                    <p id="plate4_name">Gnocchi</p>
+                    <p class="price" id="plate4_price">9€</p>
+                </div>
                 <div class="container-fluid container_img_plate">
                     <img  src="../images/mensa/gnocchi.png"  class="imgPlate">
                 </div>
             </div>
+        </div>
+
+
+        <div class="container" id="container_sandwiches" style="display: block">
+
+            <div class="container_checkbox">
+                <h3>Pane</h3>
+                <input  type="checkbox" value="" id="pane1">
+                <label  for="pane1">
+                    Panino
+                </label>
+                <br>
+                <input  type="checkbox" value="" id="pane2">
+                <label  for="pane2">
+                    Baguette
+                </label>
+                <br>
+                <input  type="checkbox" value="" id="pane3">
+                <label  for="pane3">
+                    Ciabatta
+                </label>
+            </div>
+
+
+            <div class="container_checkbox">
+                    <h3>Salumi</h3>
+                    <input  type="checkbox" value="" id="salume1">
+                    <label  for="salume1">
+                        Prosciutto Cotto
+                    </label>
+                    <br>
+                    <input  type="checkbox" value="" id="salume2">
+                    <label  for="salume2">
+                        Salame
+                    </label>
+                    <br>
+                    <input  type="checkbox" value="" id="salume3">
+                    <label  for="salume3">
+                        Bresaola
+                    </label>
+                    <br>
+                    <input  type="checkbox" value="" id="salume4">
+                    <label  for="salume4">
+                        Mortadella
+                    </label>
+              </div>
+
+
+            <div class="container_checkbox">
+                <h3>Formaggi</h3>
+                <input  type="checkbox" value="" id="formaggio1">
+                <label  for="formaggio1">
+                    Mozzarella
+                </label>
+                <br>
+                <input  type="checkbox" value="" id="formaggio2">
+                <label  for="formaggio2">
+                    Provola
+                </label>
+                <br>
+                <input  type="checkbox" value="" id="formaggio3">
+                <label  for="formaggio3">
+                    Fior di latte
+                </label>
+                <br>
+                <input  type="checkbox" value="" id="formaggio4">
+                <label  for="formaggio4">
+                    Cheddar
+                </label>
+                <br>
+            </div>
+
+            <div class="container_checkbox">
+                <h3>Contorni</h3>
+                <input  type="checkbox" value="" id="contorno1">
+                <label  for="formaggio1">
+                    Peperoni
+                </label>
+                <br>
+                <input  type="checkbox" value="" id="contorno2">
+                <label  for="contorno2">
+                    Patatine
+                </label>
+                <br>
+                <input  type="checkbox" value="" id="contorno3">
+                <label  for="contorno3">
+                    Melanzane
+                </label>
+                <br>
+                <input  type="checkbox" value="" id="contorno4">
+                <label  for="contorno4">
+                    Carote
+                </label>
+                <br>
+                <input  type="checkbox" value="" id="contorno5">
+                <label  for="contorno5">
+                    Funghi
+                </label>
+                <br>
+            </div>
+
+            <div class="container_checkbox">
+                <h3>Carne</h3>
+                <input  type="checkbox" value="" id="carne1">
+                <label  for="carne1">
+                    Petto di pollo
+                </label>
+                <br>
+                <input  type="checkbox" value="" id="carne2">
+                <label  for="carne2">
+                    Hamburger
+                </label>
+                <br>
+                <input  type="checkbox" value="" id="carne3">
+                <label  for="carne3">
+                    Salsiccia
+                </label>
+                <br>
+                <input  type="checkbox" value="" id="carne4">
+                <label  for="contorno4">
+                    Cotoletta
+                </label>
+                <br>
+            </div>
+
+
+
+            <div class="container_checkbox">
+                <h3>Salse</h3>
+                <input  type="checkbox" value="" id="salsa1">
+                <label  for="salsa1">
+                    Maionese
+                </label>
+                <br>
+                <input  type="checkbox" value="" id="salsa2">
+                <label  for="salsa2">
+                    Ketchup
+                </label>
+                <br>
+                <input  type="checkbox" value="" id="salsa3">
+                <label  for="salsa3">
+                    Barbecue
+                </label>
+                <br>
+                <input  type="checkbox" value="" id="salsa4">
+                <label  for="salsa4">
+                    Senape
+                </label>
+                <br>
+            </div>
+
 
         </div>
 
         <!--CONTAINER TOTAL-->
         <div class="container-fluid" id="bill">
-            <h4 id="plate_choose">Piatti scelti: </h4>
+            <h4 id="plate_choose">Prodotti scelti: </h4>
             <h4 id="tot">Totale: </h4>
             <input type="button" class="button_book2" value="Aggiungi al carrello"
                    onclick="goTo('../html/Carrello.html')">
