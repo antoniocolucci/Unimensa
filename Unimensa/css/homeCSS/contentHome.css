@@ -66,7 +66,7 @@ button#choose_menu{
 /*CONTAINER LIST PLATES IN CREATE MENU*/
 div#container_listPlate{
     width: 15%;
-    height: 500px;
+    height: 450px;
     display: inline-block;
     border-right: 2px darkorange solid;
 
@@ -109,15 +109,15 @@ ul#listPlate{
 
 /*CONTAINER CARDS HORIZONTAL IN CREATE MENU*/
 #content_create_menu {
-    margin: 0;
+    margin:0;
     width: 80%;
-    height: 500px;
+    height: 450px;
     display: inline-block;
     padding-left: 5%;
     padding-right: 5%;
     text-align: center;
-    //background-color: black;
 }
+
 /*CONTAINER TOTAL IN CREATE MENU*/
 div#bill{
     width: 100%;
@@ -183,8 +183,38 @@ div#bill{
     text-align: center;
     font-family: "Arial";
     font-size: 35px;
+    cursor: pointer;
 }
 
 .plateActive{
     background-color: springgreen;
+}
+
+.container_checkbox{
+    //background-color: #0dcaf0;
+    text-align: left;
+    width: 30%;
+    margin-left: 0.5%;
+    margin-top: 2%;
+    float: left;
+    display: inline-block;
+    //border-top: 2px darkorange solid;
+
+}
+
+.title_sub{
+    border-bottom: 2px darkorange solid;
+    width: 30%;
+}
+
+#container_sandwiches{
+    width: 80%;
+    height: 450px;
+    margin-top: 0;
+    margin-left: 0;
+    float: right;
+    display: inline-block;
+    margin-right: 4.7%;
+    text-align: center;
+    padding-left: 7%;
 }
