@@ -21,33 +21,6 @@ $(document).ready(function(){
 
 $('input[type="checkbox"]').on('change', function() {
     $(this).siblings('input[type="checkbox"]').not(this).prop('checked', false);
-    let tot = document.getElementById('tot')
-    let name = this.getAttribute('id')
-    let label = document.querySelector(`label[for = '${name}']`)
-    let price = parseFloat(label.getAttribute('value'))
-
-    if(this['checked'] && this === beforeClickedElement){
-        totalSpending = totalSpending + price
-    }else if(!(this['checked']) && this === beforeClickedElement){
-        totalSpending = totalSpending - price
-    }else{
-        if(isClicked)
-        {
-            totalSpending =  totalSpending - parseFloat(beforeClickedPrice)
-            totalSpending = totalSpending + price
-        }else if(!(isClicked)){
-
-            totalSpending = totalSpending + price
-        }
-        beforeClickedPrice = price
-    }
-    tot.innerText = 'Totale= ' + totalSpending + '€'
-    beforeClickedElement = document.getElementById(name)
-    if(beforeClickedElement['checked']){
-        isClicked = true
-    }else{
-        isClicked = false
-    }
 });
 
 /*1) isClicked in Database

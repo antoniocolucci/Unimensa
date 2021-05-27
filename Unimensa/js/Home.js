@@ -29,6 +29,7 @@ function changeIcon(element_id){
 
 }
 
+/*RICORDA DI RENDERE GLOBALE LA FUNZIONA CON JQUERY*/
 /*FUNCTION FOR HIDE OTHER MENU IN NAVBAR*/
 function hideOtherMenu (element_id) {
     let element = document.getElementById(element_id)
@@ -69,6 +70,7 @@ function hideOtherMenu (element_id) {
     }
 }
 
+/*RICORDA DI RENDERE GLOBALE LA FUNZIONA CON JQUERY*/
 /*FUNCTION SHOW CONTENT CENTER*/
 function showContent (container_id) {
     let container = document.getElementById(container_id)
@@ -95,82 +97,8 @@ function goTo(page){
     window.location.href = page;
 }
 
-/*GLOBAL VAR FOR FUNCTION CALCTOT*/
-let totalSpending = 0.0
-let beforeClickedName
-let beforeClickedPrice = 0.0
-let beforeClickedElement
-let isClicked = false
-
-/*FUNCTION CALCTOT IN CREATE MENU IN HOMEPAGE*/
-function calcTot(plate_id, name, price){
-    let plate = document.getElementById(plate_id)
-    let plate_price = document.getElementById(price)
-    let plate_name = document.getElementById(name)
-    let plate_choose1 = document.getElementById('plate_choose')
-    let total = document.getElementById('tot')
-    let saveName = plate_id + '_name'
-
-    /*IF PLATE CLICKED HAS CLASS 'PLATEACTIVE' REMOVE CLASS FROM HIM AND DELETE HIS NAME IN PLATE CHOOSE*/
-    if($(plate).hasClass('plateActive'))
-    {
-        $(plate).removeClass('plateActive')
-        plate_choose1.innerText = plate_choose1.innerText.replace(plate_name.innerText + ","," ")
-    }
-    /*IF PLATE CLICKED NOT HAS CLASS 'PLATEACTIVE' REMOVE CLASS FROM ALL, REMOVE PLATE NAME IF IT HA ALREADY BEEN CLICKED,
-        TOGGLE CLASS AT PLATE AND ADD HIS NAME TO CHOOSE PLATE*/
-    else{
-        $('.plate').removeClass('plateActive')
-        plate_choose1.innerText = plate_choose1.innerText.replace(beforeClickedName + ","," ")
-        $(plate).toggleClass('plateActive')
-        plate_choose1.innerText =  plate_choose1.innerText  + " " + plate_name.innerText.substr(0, plate_name.length) + ", "
-    }
-    /*THEN CALCULATE THE TOTAL.
-      IF THE DISH IS THE SAME ONE THAT HAS BEEN CLICKED BEFORE AND NOT HAS THE CLASS 'PLATEACTIVE':
-      SUBTRACT TO THE TOTAL THE PLATE PRICE*/
-    if(plate === beforeClickedElement && !($(plate).hasClass('plateActive'))){
-        totalSpending = totalSpending - parseFloat(plate_price.innerText.substr(0, plate_price.length))
-    }
-    /*IF THE DISH IS THE SAME ONE THAT HAS BEEN CLICKED BEFORE AND HAS THE CLASS 'PLATEACTIVE': ADD TO THE TOTAL THE PLATE PRICE*/
-    else if(plate === beforeClickedElement && $(plate).hasClass('plateActive')){
-        totalSpending = parseFloat(totalSpending) + parseFloat(plate_price.innerText.substr(0, plate_price.length))
-    }
-    /*IF THE DISH IS NOT THE SAME ONE THAT HAS BEEN CLICKED BEFORE*/
-
-    else if (plate !== beforeClickedElement){
-        /*IF THE PLATE THAT HAS BEEN CLICKED BEFORE IT WAS CLICKED:
-        SUBTRACT TO THE TOTAL THE PLATE PRICE OF PLATECLICKED BEFORE, AND THEN ADD TO THE TOTAL THE PRICE OF PLATE CLICKED NOW*/
-        if(isClicked)
-        {
-            totalSpending =  totalSpending - parseFloat(beforeClickedPrice)
-            totalSpending = totalSpending + parseFloat(plate_price.innerText.substr(0, plate_price.length))
-        }
-        /*IF THE PLATE THAT HAS BEEN CLICKED BEFORE IT NOT WAS CLICKED: ADD TO THE TOTAL ONLY THE PRICE OF PLATE CLICKED NOW*/
-        else if(!(isClicked)){
-
-            totalSpending = totalSpending + parseFloat(plate_price.innerText.substr(0, plate_price.length))
-        }
-        /*UPDATE THE PRICE OF PLATECLICKED BEFORE WITH THE PRICE OF THE PLATE CLICKED NOW*/
-        beforeClickedPrice = parseFloat(plate_price.innerText.substr(0, plate_price.length))
-    }
-    /*WRITE THE TOTAL IN THE CORRECT POSITION*/
-    total.innerText = 'Totale= ' + totalSpending + '€'
-    /*UPDATE PLATECLICKED BEFORE WITH PLATE CLICKED NOW*/
-    beforeClickedElement = document.getElementById(plate_id)
-    /*UPDATE THE NAME OF PLATECLICKED BEFORE WITH THE NAME OF THE PLATE CLICKED NOW*/
-    beforeClickedName = document.getElementById(saveName).innerText
-    /*IF PLATE CLICKED HAS CLASS 'PLATEACTIVE' SET ISCLICKED TRUE*/
-    if($(beforeClickedElement).hasClass('plateActive')){
-        isClicked = true
-    }
-    /*IF PLATE CLICKED HAS NOT CLASS 'PLATEACTIVE' SET ISCLICKED FALSE*/
-    else{
-        isClicked = false
-    }
-}
 
 function reverse_color(button_id1, button_id2){
-
     let clicked = document.getElementById(button_id1)
     let unclicked = document.getElementById(button_id2)
 
