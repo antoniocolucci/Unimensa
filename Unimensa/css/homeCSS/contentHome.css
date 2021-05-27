@@ -32,13 +32,12 @@ button#create_menu{
     margin-top: 5%;
     height: 65%;
     width: 39.9%;
-
 }
 
 
 button#choose_menu{
     font-weight: bold;
-   background-color: whitesmoke;
+    background-color: whitesmoke;
     color: black;
     border-right: 1px #3b83bd solid;
     border-left: 1px #3b83bd solid;
@@ -169,27 +168,6 @@ div#bill{
      height: 250px;
 }
 
-.imgPlate {
-    height: 100%;
-    width:100%;
-    margin-left: 17%;
-    border-radius: 3px;
-}
-
-.textCardHor{
-    width: 60%;
-    padding: 1%;
-    float: left;
-    text-align: center;
-    font-family: "Arial";
-    font-size: 35px;
-    cursor: pointer;
-}
-
-.plateActive{
-    background-color: springgreen;
-}
-
 .container_checkbox{
     //background-color: #0dcaf0;
     text-align: left;
@@ -200,11 +178,6 @@ div#bill{
     display: inline-block;
     //border-top: 2px darkorange solid;
 
-}
-
-.title_sub{
-    border-bottom: 2px darkorange solid;
-    width: 30%;
 }
 
 #container_sandwiches{
