@@ -189,21 +189,24 @@ function reverse_color(button_id1, button_id2){
     }
 }
 
-function createIsClicked(){
-    let cards = document.getElementsByClassName('plate');
-    let checkboxes = document.getElementsByClassName('check_clicked')
+let semiTot = 0.0
+function addProductToBill(plate_name, plate_price){
 
-    let attribute1 = document.createAttribute("isClicked");
-    let attribute2 = document.createAttribute("beforeIsClicked");
-    attribute1.value = false;
-    attribute2.value = false;
-    cards.setAttributeNode(attribute1);
-    checkboxes.setAttributeNode(attribute2)
+    let name = document.getElementById(plate_name)
 
-    console.log('isclicked ', document.getAttribute('isClicked'))
-    console.log('beforeisclicked ', document.getAttribute('beforeIsClicked'))
+    let plate_choose = document.getElementById('plate_choose')
+    let occurrPrice = document.getElementById(plate_price).innerText.indexOf(': ')
+    let price = document.getElementById(plate_price).innerText.substr(occurrPrice+2, plate_price.length)
+    let total = document.getElementById('tot')
+    semiTot = semiTot + parseFloat(price)
+    console.log(price)
+    plate_choose.innerText = plate_choose.innerText + ' ' + name.innerText + ","
+    total.innerText = "Totale: "+ semiTot + "€"
 
 }
+
+
+
 
 
 
