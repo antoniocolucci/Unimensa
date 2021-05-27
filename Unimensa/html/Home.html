@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body onload="createIsClicked()">
+<body >
 
     <!--NAVBAR-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
@@ -154,7 +154,7 @@
             <img src="../images/body_home/mc.png" class="card-img-top imgCard" alt="img_element">
             <div class="card-body">
                 <h5 class="card-title">Scelta 4</h5>
-                <p class="card-text">Prezzo: </p>
+                <p class="card-text">Prezzo: 8€</p>
                 <input type="button" class="button_book" value="Aggiungi al carrello"
                        onclick="goTo('../html/Carrello.html')">
             </div>
@@ -189,50 +189,50 @@
 
         <div class="container" id="content_create_menu" style="display: inline-block">
             <!--CARDS HORIZONTAL-->
-            <div class="container plate" id="plate1"  onclick="calcTot('plate1', 'plate1_name', 'plate1_price')">
-                <div class="textCardHor">
-                    <p id="plate1_name">Carbonara</p>
-                    <h1 class="price" id="plate1_price">5€</h1>
-                </div>
-                <div class="container-fluid container_img_plate">
-                    <img  src="../images/mensa/carbonara.jpeg"  class="imgPlate">
-                </div>
-
+            <div class="col-md-3 usCard">
+            <div class="card card2">
+            <img src="../images/mensa/carbonara.jpeg" class="card-img-top imgCard2" alt="img_element">
+            <div class="card-body">
+                <h5 id="plate1_name" class="card-title">Carbonara</h5>
+                <p id="plate1_price" class="card-text">Prezzo: 5.00€</p>
+                <input type="button" class="button_book" value="Aggiungi"
+                       onclick="addProductToBill('plate1_name', 'plate1_price')">
             </div>
-
-            <div class="container plate" id="plate2" onclick="calcTot('plate2','plate2_name', 'plate2_price')">
-                <div class="textCardHor">
-                    <p id="plate2_name">Pesto</p>
-                    <p class="price" id="plate2_price">8€</p>
-                </div>
-                <div class="container-fluid container_img_plate">
-                    <img  src="../images/mensa/pesto.jpg"  class="imgPlate">
-                </div>
-
             </div>
-
-            <div class="container plate" id="plate3" onclick="calcTot('plate3', 'plate3_name', 'plate3_price')">
-
-                <div class="textCardHor">
-                    <p id="plate3_name">Cotoletta</p>
-                    <p class="price" id="plate3_price">2€</p>
                 </div>
-                <div class="container-fluid container_img_plate">
-                    <img  src="../images/mensa/cotoletta.jpeg"  class="imgPlate">
+            <div class="col-md-3 usCard">
+                <div class="card card2">
+                 <img src="../images/mensa/pesto.jpg" class="card-img-top imgCard2" alt="img_element">
+                <div class="card-body">
+                    <h5 id="plate2_name" class="card-title">Pesto</h5>
+                     <p id="plate2_price" class="card-text">Prezzo: 8.00€</p>
+                    <input type="button" class="button_book" value="Aggiungi"
+                           onclick="addProductToBill('plate2_name', 'plate2_price')">
                 </div>
-
-            </div>
-
-            <div class="container plate" id="plate4" onclick="calcTot('plate4','plate4_name', 'plate4_price')">
-
-                <div class="textCardHor">
-                    <p id="plate4_name">Gnocchi</p>
-                    <p class="price" id="plate4_price">9€</p>
-                </div>
-                <div class="container-fluid container_img_plate">
-                    <img  src="../images/mensa/gnocchi.png"  class="imgPlate">
                 </div>
             </div>
+            <div class="col-md-3 usCard">
+            <div class="card card2">
+            <img src="../images/mensa/cotoletta.jpeg" class="card-img-top imgCard2" alt="img_element">
+            <div class="card-body">
+                <h5 id="plate3_name" class="card-title">Cotoletta</h5>
+                <p  id="plate3_price" class="card-text">Prezzo: 2.50€</p>
+                <input type="button" class="button_book" value="Aggiungi"
+                       onclick="addProductToBill('plate3_name', 'plate3_price')">
+            </div>
+            </div>
+            </div>
+            <div class="col-md-3 usCard">
+            <div class="card card2">
+            <img src="../images/mensa/gnocchi.png" class="card-img-top imgCard2" alt="img_element">
+            <div class="card-body">
+                <h5 id="plate4_name" class="card-title">Gnocchi</h5>
+                <p id="plate4_price" class="card-text">Prezzo: 9.00€</p>
+                <input type="button" class="button_book" value="Aggiungi"
+                       onclick="addProductToBill('plate4_name', 'plate4_price')">
+            </div>
+         </div>
+                </div>
         </div>
 
 
@@ -353,7 +353,7 @@
                 </label>
                 <br>
                 <input  type="checkbox" value="" id="carne4">
-                <label  for="contorno4">
+                <label  for="carne4">
                     Cotoletta
                 </label>
                 <br>
@@ -385,15 +385,16 @@
                 <br>
             </div>
 
-
+            <div class="container-fluid">
+            <input type="button" class="button_book2" value="Conferma il tuo panino"
+                   onclick="addSandwichesToBill('')">
+            </div>
         </div>
 
         <!--CONTAINER TOTAL-->
         <div class="container-fluid" id="bill">
             <h4 id="plate_choose">Prodotti scelti: </h4>
             <h4 id="tot">Totale: </h4>
-            <input type="button" class="button_book2" value="Aggiungi al carrello"
-                   onclick="goTo('../html/Carrello.html')">
         </div>
     </div>
  </div>
