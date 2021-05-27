@@ -113,7 +113,6 @@ ul#listPlate{
     height: 450px;
     display: inline-block;
     padding-left: 5%;
-    padding-right: 5%;
     text-align: center;
 }
 
@@ -134,26 +133,6 @@ div#bill{
     color: white;
 }
 
-/*CARDS PLATE HORIZONTAL*/
-.plate{
-    display: flex;
-    float: left;
-    width: 40%;
-    height: 30%;
-    margin: 4%;
-    border-radius: 5px;
-    background-color: whitesmoke;
-    cursor: pointer;
-}
-
-/*CONTAINER IMG PLATE*/
-.container_img_plate{
-    width: 50%;
-    height: 100%;
-    margin-right: 0;
-    float: right;
-    border-radius: 3px;
-}
 
 /*CARDS VERTICAL IN CHOOSE MENU*/
 .card{
@@ -191,3 +170,21 @@ div#bill{
     text-align: center;
     padding-left: 7%;
 }
+
+.usCard{
+    float: left;
+    display: inline-block;
+    margin-left: 0;
+}
+
+.card2{
+    margin-left: 0;
+    height: 20rem;
+    width: 15rem;
+}
+
+.imgCard2{
+    width: 100%;
+    height: 180px;
+}
+
