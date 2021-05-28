@@ -23,5 +23,6 @@ $('input[type="checkbox"]').on('change', function() {
     $(this).siblings('input[type="checkbox"]').not(this).prop('checked', false);
 });
 
-/*1) isClicked in Database
-2) aggiungere attributo isClicked a tutte le card e ai checkbox*/
+
+
+
