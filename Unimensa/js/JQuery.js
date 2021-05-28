@@ -2,7 +2,6 @@ $(document).ready(function(){
     $('.liPlate').click(function(){
         $('.liPlate').removeClass("liActive");
         $(this).addClass("liActive");
-        console.log(this.getAttribute('id'))
         if(this.getAttribute('id') === 'sandwiches'
             && document.getElementById('container_sandwiches').style.display === 'none'){
             document.getElementById('content_create_menu').style.display = 'none'
@@ -17,10 +16,14 @@ $(document).ready(function(){
 
 });
 
-
+let beforeElementClicked
+let section
+let checked
+let price_sandwiches = 0.0
 
 $('input[type="checkbox"]').on('change', function() {
     $(this).siblings('input[type="checkbox"]').not(this).prop('checked', false);
+
 });
 
 

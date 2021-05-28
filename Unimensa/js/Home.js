@@ -119,16 +119,29 @@ function reverse_color(button_id1, button_id2){
 
 let semiTot = 0.0
 function addProductToBill(plate_name, plate_price){
-
-    let name = document.getElementById(plate_name)
-
     let plate_choose = document.getElementById('plate_choose')
-    let occurrPrice = document.getElementById(plate_price).innerText.indexOf(': ')
-    let price = document.getElementById(plate_price).innerText.substr(occurrPrice+2, plate_price.length)
     let total = document.getElementById('tot')
-    semiTot = semiTot + parseFloat(price)
-    console.log(price)
-    plate_choose.innerText = plate_choose.innerText + ' ' + name.innerText + ","
+    if(plate_name === 'sandwiches'){
+        let checked = $(".checkbox_sandwiches")
+
+
+        for(let x in checked){
+            let xChecked = checked[x]
+            if(xChecked["checked"] === true) {
+                price_sandwiches =  price_sandwiches + parseFloat(xChecked["value"])
+            }
+        }
+        console.log(price_sandwiches)
+        semiTot = semiTot + price_sandwiches
+        price_sandwiches = 0.0
+        $(".checkbox_sandwiches").prop('checked', false)
+    }else{
+        let name = document.getElementById(plate_name)
+        let occurrPrice = document.getElementById(plate_price).innerText.indexOf(': ')
+        let price = document.getElementById(plate_price).innerText.substr(occurrPrice+2, plate_price.length)
+        semiTot = semiTot + parseFloat(price)
+        plate_choose.innerText = plate_choose.innerText + ' ' + name.innerText + ","
+    }
     total.innerText = "Totale: "+ semiTot + "€"
 
 }
