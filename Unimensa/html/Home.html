@@ -246,9 +246,9 @@
                 </label>
 
                 <br>
-                <input  type="checkbox" value="" id="pane2" class="check_clicked">
-                <label  for="pane2" value="0.50">
-                    Baguette (0.50)
+                <input  type="checkbox" value="0.50" id="pane2" class="checkbox_sandwiches">
+                <label  for="pane2">
+                    Baguette (0.50€)
                 </label>
                 <br>
                 <input  type="checkbox" value="" id="pane3" class="check_clicked">
@@ -262,20 +262,20 @@
                     <h3>Salumi</h3>
                     <input  type="checkbox" value="" id="salume1">
                     <label  for="salume1">
-                        Prosciutto Cotto (1€)
+                        Prosciutto Cotto (1.00€)
                     </label>
                     <br>
-                    <input  type="checkbox" value="" id="salume2">
+                    <input  type="checkbox" value="1.00" id="salume2" class="checkbox_sandwiches" >
                     <label  for="salume2">
-                        Salame (1€)
+                        Salame (1.00€)
                     </label>
                     <br>
-                    <input  type="checkbox" value="" id="salume3">
+                    <input  type="checkbox" value="1.50" id="salume3" class="checkbox_sandwiches">
                     <label  for="salume3">
                         Bresaola (1.50€)
                     </label>
                     <br>
-                    <input  type="checkbox" value="" id="salume4">
+                    <input  type="checkbox" value="1.50" id="salume4" class="checkbox_sandwiches">
                     <label  for="salume4">
                         Mortadella (1.50€)
                     </label>
@@ -284,9 +284,9 @@
 
             <div class="container_checkbox">
                 <h3>Formaggi</h3>
-                <input  type="checkbox" value="" id="formaggio1">
+                <input  type="checkbox" value="0.50" id="formaggio1" class="checkbox_sandwiches">
                 <label  for="formaggio1">
-                    Mozzarella
+                    Mozzarella (0.50€)
                 </label>
                 <br>
                 <input  type="checkbox" value="" id="formaggio2">
@@ -294,9 +294,9 @@
                     Provola
                 </label>
                 <br>
-                <input  type="checkbox" value="" id="formaggio3">
+                <input  type="checkbox" value="0.50" id="formaggio3" class="checkbox_sandwiches">
                 <label  for="formaggio3">
-                    Fior di latte
+                    Fior di latte (0.50€)
                 </label>
                 <br>
                 <input  type="checkbox" value="" id="formaggio4">
@@ -313,22 +313,22 @@
                     Peperoni
                 </label>
                 <br>
-                <input  type="checkbox" value="" id="contorno2">
+                <input  type="checkbox" value="0.50" id="contorno2" class="checkbox_sandwiches" >
                 <label  for="contorno2">
                     Patatine
                 </label>
                 <br>
-                <input  type="checkbox" value="" id="contorno3">
+                <input  type="checkbox" value="0.50" id="contorno3" class="checkbox_sandwiches">
                 <label  for="contorno3">
                     Melanzane
                 </label>
                 <br>
-                <input  type="checkbox" value="" id="contorno4">
+                <input  type="checkbox" value="0.50" id="contorno4" class="checkbox_sandwiches">
                 <label  for="contorno4">
                     Carote
                 </label>
                 <br>
-                <input  type="checkbox" value="" id="contorno5">
+                <input  type="checkbox" value="0.50" id="contorno5" class="checkbox_sandwiches">
                 <label  for="contorno5">
                     Funghi
                 </label>
@@ -337,22 +337,22 @@
 
             <div class="container_checkbox">
                 <h3>Carne</h3>
-                <input  type="checkbox" value="" id="carne1">
+                <input  type="checkbox" value="1.00" id="carne1" class="checkbox_sandwiches">
                 <label  for="carne1">
                     Petto di pollo
                 </label>
                 <br>
-                <input  type="checkbox" value="" id="carne2">
+                <input  type="checkbox" value="1.00" id="carne2" class="checkbox_sandwiches">
                 <label  for="carne2">
                     Hamburger
                 </label>
                 <br>
-                <input  type="checkbox" value="" id="carne3">
+                <input  type="checkbox" value="1.00" id="carne3" class="checkbox_sandwiches">
                 <label  for="carne3">
                     Salsiccia
                 </label>
                 <br>
-                <input  type="checkbox" value="" id="carne4">
+                <input  type="checkbox" value="1.00" id="carne4" class="checkbox_sandwiches">
                 <label  for="carne4">
                     Cotoletta
                 </label>
@@ -363,31 +363,31 @@
 
             <div class="container_checkbox">
                 <h3>Salse</h3>
-                <input  type="checkbox" value="" id="salsa1">
+                <input  type="checkbox" value="0.50" id="salsa1" class="checkbox_sandwiches">
                 <label  for="salsa1">
-                    Maionese
+                    Maionese (0.50€)
                 </label>
                 <br>
-                <input  type="checkbox" value="" id="salsa2">
+                <input  type="checkbox" value="0.50" id="salsa2" class="checkbox_sandwiches">
                 <label  for="salsa2">
-                    Ketchup
+                    Ketchup (0.50€)
                 </label>
                 <br>
-                <input  type="checkbox" value="" id="salsa3">
+                <input  type="checkbox" value="0.50" id="salsa3" class="checkbox_sandwiches">
                 <label  for="salsa3">
-                    Barbecue
+                    Barbecue (0.50€)
                 </label>
                 <br>
-                <input  type="checkbox" value="" id="salsa4">
+                <input  type="checkbox" value="0.50" id="salsa4" class="checkbox_sandwiches">
                 <label  for="salsa4">
-                    Senape
+                    Senape (0.50€)
                 </label>
                 <br>
             </div>
 
             <div class="container-fluid">
             <input type="button" class="button_book2" value="Conferma il tuo panino"
-                   onclick="addSandwichesToBill('')">
+                   onclick="addProductToBill('sandwiches')">
             </div>
         </div>
 
