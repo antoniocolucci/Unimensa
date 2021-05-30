@@ -16,11 +16,6 @@ $(document).ready(function(){
 
 });
 
-let beforeElementClicked
-let section
-let checked
-let price_sandwiches = 0.0
-
 $('input[type="checkbox"]').on('change', function() {
     $(this).siblings('input[type="checkbox"]').not(this).prop('checked', false);
 
