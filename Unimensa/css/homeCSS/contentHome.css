@@ -1,14 +1,12 @@
 
 /*CONTAINER ELEMENT*/
-div.content_center{
-    background: white;
-    padding: 3%;
-    border-right: 1px #3b83bd solid;
-    border-left: 1px #3b83bd solid;
-    border-bottom: 1px #3b83bd solid;
+.content_center{
+    background: ghostwhite;
     height: 100%;
-    width: 80%;
-    margin-left: 10%;
+    width: 100%;
+    padding-top: 0;
+    display: inline-block;
+    padding-left: 0;
 }
 /*CONTAINER CHOOSE MENU*/
 div#container_center1{
@@ -67,9 +65,11 @@ div#container_listPlate{
     width: 15%;
     height: 450px;
     display: inline-block;
-    border-right: 2px darkorange solid;
-
+    background-color: #FCFCFC;
+    border-right: 2px #F2F2F2 solid;
+    float: left;
 }
+
 /*LIST PLATES*/
 .liPlate{
     width: 100%;
@@ -90,6 +90,7 @@ ul#listPlate{
     list-style: none;
     margin-top: 0;
 }
+
 /*LIST PLATES ACTIVE*/
 .liActive{
     width: 100%;
@@ -109,21 +110,17 @@ ul#listPlate{
 /*CONTAINER CARDS HORIZONTAL IN CREATE MENU*/
 #content_create_menu {
     margin:0;
-    width: 80%;
-    height: 450px;
+    width: 55%;
+    height: 100%;
     display: inline-block;
-    padding-left: 5%;
+    float: left;
     text-align: center;
 }
 
-/*CONTAINER TOTAL IN CREATE MENU*/
-div#bill{
+.container_card{
     width: 100%;
-    border-top: 2px darkorange solid;
-    margin-top: 2%;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 1%;
+    height: 45%;
+    margin-top: 1%;
 }
 
 /*SECOND BUTTON ADD TO CART*/
@@ -131,6 +128,10 @@ div#bill{
     width: 20%;
     background-color: #3b83bd;
     color: white;
+    margin-top: 5%;
+    margin-left: 27.5%;
+    float: left;
+    border-radius: 2px;
 }
 
 
@@ -148,7 +149,6 @@ div#bill{
 }
 
 .container_checkbox{
-    //background-color: #0dcaf0;
     text-align: left;
     width: 30%;
     margin-left: 0.5%;
@@ -160,11 +160,7 @@ div#bill{
 }
 
 #container_sandwiches{
-    width: 80%;
-    height: 450px;
-    margin-top: 0;
-    margin-left: 0;
-    float: right;
+    float: left;
     display: inline-block;
     margin-right: 4.7%;
     text-align: center;
@@ -181,6 +177,7 @@ div#bill{
     margin-left: 0;
     height: 20rem;
     width: 15rem;
+    margin-top: 5%;
 }
 
 .imgCard2{

@@ -3,7 +3,7 @@ body{
     margin-left: 0;
     margin-right: 0;
     height: 100%;
-    background-color: rgba(64, 175, 232, 0.04);
+    background-color: ghostwhite;
 }
 
 /*UNIMENSA*/
@@ -108,13 +108,6 @@ div#container_menu{
 
 div.dropdown-menu a.active{
     background-color: #3b83bd;
-}
-
-/*CONTAINER HOMEPAGE CONTENT*/
-div#external_container{
-    margin-top: 60px;
-    height: 100%;
-    width: 100%;
 }
 
 
