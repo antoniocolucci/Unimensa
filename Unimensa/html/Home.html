@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body >
+<body>
 
     <!--NAVBAR-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
@@ -27,8 +27,9 @@
            </span>
          </button>
 
-         <!--UNIMENSA-->
-         <a class="navbar-brand text-white" href="../html/Home.html">uniMensa</a>
+           <img class ="icon" src="../images/header/icon.png" style="height: 65px; width: 65px">
+            <!--UNIMENSA-->
+            <a class="navbar-brand text-white" href="../html/Home.html" style="font-family: 'Britannic Bold'">uniMensa</a>
 
          <!--MENU LIST-->
          <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -50,13 +51,14 @@
            <input type="image" class="icon" id="imgCart" alt="cart" src="../images/header/cart.png" title="Carrello">
          </div>
 
-         <!--BELL-->
-         <div id="icon_bell">
-           <input type="image" class="icon" id="imgBell" alt="bell" src="../images/header/imgBell.png" title="Notifiche"
-                       onclick="changeIcon('imgBell');
-                       showContainer('container_notifications');
-                       hideOtherMenu('container_notifications')">
-         </div>
+
+             <!--BELL-->
+            <div id="icon_bell">
+                 <input type="image" class="icon" id="imgBell" alt="bell" src="../images/header/imgBell.png" title="Notifiche"
+                                onclick="changeIcon('imgBell');
+                                        showContainer('container_notifications');
+                                         hideOtherMenu('container_notifications')">
+            </div>
 
 
          <!--PROFILE-->
@@ -104,71 +106,16 @@
 
 
          <!--HOMPAGE CONTENT-->
- <div id="external_container" class="container-fluid">
-
-         <!--BUTTON CENTER-->
-         <button class="btn btn-light" id="choose_menu" onclick="showContent('container_center1');
-                                                                 reverse_color('choose_menu', 'create_menu');">
-              Scelte rapide
-         </button>
-
-         <button class="btn btn-light" id="create_menu" onclick="showContent('container_center2')
-                                                                 reverse_color('create_menu', 'choose_menu');">
-              Componi il tuo menù
-         </button>
-
-
-         <!--CONTENT CHOOSE MENU-->
-         <div  id="container_center1" class="container-fluid content_center" style="display: block">
-         <div class="card" style="width: 18rem;">
-            <img src="../images/mensa/carbonara.jpeg" class="card-img-top imgCard" alt="img_element">
-            <div class="card-body">
-                <h5 class="card-title">Spaghetti alla carbonara</h5>
-                <p class="card-text">Prezzo: 5€</p>
-                <input type="button" class="button_book" value="Aggiungi al carrello"
-                       onclick="goTo('../html/Carrello.html')">
-            </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-            <img src="../images/mensa/cotoletta.jpeg" class="card-img-top imgCard" alt="img_element">
-            <div class="card-body">
-                <h5 class="card-title">Cotoletta</h5>
-                <p class="card-text">Prezzo: 6€</p>
-                <input type="button" class="button_book" value="Aggiungi al carrello"
-                       onclick="goTo('../html/Carrello.html')">
-            </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-            <img src="../images/mensa/salad.jpeg" class="card-img-top imgCard" alt="img_element">
-            <div class="card-body">
-                <h5 class="card-title">Insalata</h5>
-                <p class="card-text">Prezzo: 4€</p>
-                <input type="button" class="button_book" value="Aggiungi al carrello"
-                       onclick="goTo('../html/Carrello.html')">
-            </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-            <img src="../images/body_home/mc.png" class="card-img-top imgCard" alt="img_element">
-            <div class="card-body">
-                <h5 class="card-title">Scelta 4</h5>
-                <p class="card-text">Prezzo: 8€</p>
-                <input type="button" class="button_book" value="Aggiungi al carrello"
-                       onclick="goTo('../html/Carrello.html')">
-            </div>
-        </div>
-    </div>
-
-
          <!--CONTENT CREATE MENU-->
-    <div  id="container_center2" class="container-fluid content_center" style="display: none">
-        <!--RICARDARE COLORE VERDE-->
-        <div class="container" id="container_listPlate">
+      <div class="container-fluid content_center">
+
+         <!--RICARDARE COLORE VERDE-->
+         <div class="container" id="container_listPlate">
             <!--LIST IN CREATE MENU-->
             <ul id="listPlate">
-                <li class="liPlate liActive" id="pasta">
+                <li class="liPlate liActive" id="choose_plate">
+                    <p class="p_listPlate">Scelte rapide</p></li>
+                <li class="liPlate" id="pasta">
                     <p class="p_listPlate">Primi</p></li>
                 <li class="liPlate" id="meat">
                     <p class="p_listPlate">Secondi</p></li>
@@ -222,17 +169,42 @@
             </div>
             </div>
             </div>
-            <div class="col-md-3 usCard">
-            <div class="card card2">
-            <img src="../images/mensa/gnocchi.png" class="card-img-top imgCard2" alt="img_element">
-            <div class="card-body">
-                <h5 id="plate4_name" class="card-title">Gnocchi</h5>
-                <p id="plate4_price" class="card-text">Prezzo: 9.00€</p>
-                <input type="button" class="button_book" value="Aggiungi"
-                       onclick="addProductToBill('plate4_name', 'plate4_price')">
-            </div>
-         </div>
+
+            <div class="container-fluid container_card">
+                <div class="col-md-3 usCard">
+                    <div class="card">
+                        <img src="../images/mensa/gnocchi.png" class="card-img-top imgCard" alt="img_element">
+                        <div class="card-body">
+                            <h5 id="plate4_name" class="card-title">Gnocchi</h5>
+                            <p id="plate4_price" class="card-text">Prezzo: 9.00€</p>
+                            <input type="button" class="button_book" value="Aggiungi"
+                                 onclick="addProductToBill('plate4_name', 'plate4_price')">
+                        </div>
+                    </div>
                 </div>
+            <div class="col-md-3 usCard">
+                <div class="card">
+                    <img src="../images/mensa/gnocchi.png" class="card-img-top imgCard" alt="img_element">
+                    <div class="card-body">
+                        <h5 id="plate5_name" class="card-title">Gnocchi</h5>
+                        <p id="plate5_price" class="card-text">Prezzo: 9.00€</p>
+                        <input type="button" class="button_book" value="Aggiungi"
+                               onclick="addProductToBill('plate4_name', 'plate4_price')">
+                    </div>
+                </div>
+            </div>
+          <div class="col-md-3 usCard">
+              <div class="card">
+                  <img src="../images/mensa/gnocchi.png" class="card-img-top imgCard" alt="img_element">
+                  <div class="card-body">
+                      <h5 id="plate6_name" class="card-title">Gnocchi</h5>
+                      <p id="plate6_price" class="card-text">Prezzo: 9.00€</p>
+                      <input type="button" class="button_book" value="Aggiungi"
+                             onclick="addProductToBill('plate4_name', 'plate4_price')">
+                  </div>
+              </div>
+          </div>
+      </div>
         </div>
 
 
@@ -328,11 +300,6 @@
                     Carote (0.50€)
                 </label>
                 <br>
-                <input  type="checkbox" value="0.50" id="contorno5" class="checkbox_sandwiches">
-                <label  for="contorno5">
-                    Funghi (0.50€)
-                </label>
-                <br>
             </div>
 
             <div class="container_checkbox">
@@ -391,13 +358,37 @@
             </div>
         </div>
 
-        <!--CONTAINER TOTAL-->
-        <div class="container-fluid" id="bill">
-            <h4 id="plate_choose">Prodotti scelti: </h4>
-            <h4 id="tot">Totale: </h4>
-        </div>
+
+
+         <div class="container container_bill">
+
+             <h3>Prodotti scelti: </h3>
+             <div class="container_product_chosen">
+                <ul class="list_bill">
+                    <li class="item_bill">Carbonara
+                        <input type="image" class="icon2" src="../images/body_home/cestino.png">
+                    </li>
+                    <li class="item_bill">Carbonara
+                        <input type="image" class="icon2" src="../images/body_home/cestino.png">
+                    </li>
+                    <li class="item_bill">Carbonara
+                        <input type="image" class="icon2" src="../images/body_home/cestino.png">
+                    </li>
+                    <li class="item_bill">Carbonara
+                        <input type="image" class="icon2" src="../images/body_home/cestino.png">
+                    </li>
+
+                </ul>
+                 <input type="button" class="button_deleteAll" value="Svuota tutto">
+             </div>
+             <div class="container_total">
+                 <h3>Totale:  </h3>
+                 <input type="button" class="button_book2" value="Vai al pagamento">
+
+             </div>
+         </div>
     </div>
- </div>
+
 
 
 <script src="../js/Home.js"></script>
