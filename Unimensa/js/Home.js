@@ -70,51 +70,10 @@ function hideOtherMenu (element_id) {
     }
 }
 
-/*RICORDA DI RENDERE GLOBALE LA FUNZIONA CON JQUERY*/
-/*FUNCTION SHOW CONTENT CENTER*/
-function showContent (container_id) {
-    let container = document.getElementById(container_id)
-    let nameContainer = [
-        'container_center1',
-        'container_center2'
-    ]
-
-    if (container === document.getElementById(nameContainer[1]) && container.style.display === 'none') {
-        document.getElementById(nameContainer[1]).style.display = 'block'
-        document.getElementById(nameContainer[0]).style.display = 'none'
-    }
-
-    if (container === document.getElementById(nameContainer[0]) && container.style.display === 'none')
-    {
-        document.getElementById(nameContainer[0]).style.display = 'block'
-        document.getElementById(nameContainer[1]).style.display = 'none'
-    }
-
-}
 
 /*FUNCTION FOR CHANGE PAGE*/
 function goTo(page){
     window.location.href = page;
-}
-
-
-function reverse_color(button_id1, button_id2){
-    let clicked = document.getElementById(button_id1)
-    let unclicked = document.getElementById(button_id2)
-
-    if(clicked.style.backgroundColor !== '#3b83bd') {
-        unclicked.style.backgroundColor = '#3b83bd'
-        unclicked.style.color = 'white'
-        unclicked.style.fontWeight = 'normal'
-        clicked.style.color = 'black'
-        clicked.style.backgroundColor = 'whitesmoke'
-        clicked.style.fontWeight = 'bold'
-    }
-    else if (clicked.style.backgroundColor !== 'whitesmoke') {
-        clicked.style.backgroundColor = '#3b83bd'
-        clicked.style.color = 'white'
-        unclicked.style.backgroundColor = 'whitesmoke'
-    }
 }
 
 /*VARIABLE FOR FUNCTION "ADDPRODUCTTOBILL()"*/

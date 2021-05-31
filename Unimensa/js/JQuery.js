@@ -4,11 +4,11 @@ $(document).ready(function(){
         $(this).addClass("liActive");
         if(this.getAttribute('id') === 'sandwiches'
             && document.getElementById('container_sandwiches').style.display === 'none'){
-            document.getElementById('content_create_menu').style.display = 'none'
+            document.getElementById('content_cards_menu').style.display = 'none'
             document.getElementById('container_sandwiches').style.display = 'inline-block'
         }
        else if(this.getAttribute('id') !== 'sandwiches'){
-            document.getElementById('content_create_menu').style.display = 'inline-block'
+            document.getElementById('content_cards_menu').style.display = 'inline-block'
             document.getElementById('container_sandwiches').style.display = 'none'
        }
 
