@@ -17,39 +17,35 @@
 
     <!--NAVBAR-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-     <div class="container-fluid">
+         <div class="container-fluid">
 
-         <!--BUTTON MENU-->
-         <button class="navbar-toggler" type="button">
-           <span class="navbar-toggler-icon"
-                onclick="showContainer('container_menu');
-                hideOtherMenu('container_menu')">
-           </span>
-         </button>
+             <!--BUTTON MENU-->
+            <button class="navbar-toggler" type="button">
+                <span class="navbar-toggler-icon" onclick="showContainer('container_menu');
+                                                           hideOtherMenu('container_menu')">
+                </span>
+            </button>
 
            <img class ="icon" src="../images/header/icon.png" style="height: 65px; width: 65px">
             <!--UNIMENSA-->
             <a class="navbar-brand text-white" href="../html/Home.html" style="font-family: 'Britannic Bold'">uniMensa</a>
 
-         <!--MENU LIST-->
-         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-               <li class="nav-item">
-                 <a class="nav-link active text-white"  href="../html/Home.html">Home</a>
-               </li>
-               <li class="nav-item">
-                 <a class="nav-link text-white" href="../html/Mensa.html">Mensa</a>
-               </li>
-               <li class="nav-item">
-                 <a class="nav-link text-white" href="../html/Ordini.html">Ordini</a>
-               </li>
-             </ul>
-         </div>
+            <!--MENU LIST-->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                         <a class="nav-link active text-white"  href="../html/Home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="../html/Ordini.html">Ordini</a>
+                     </li>
+                </ul>
+            </div>
 
-         <!--CART-->
-         <div id="icon_cart">
-           <input type="image" class="icon" id="imgCart" alt="cart" src="../images/header/cart.png" title="Carrello">
-         </div>
+            <!--CART-->
+            <div id="icon_cart">
+                 <input type="image" class="icon" id="imgCart" alt="cart" src="../images/header/cart.png" title="Carrello">
+            </div>
 
 
              <!--BELL-->
@@ -61,15 +57,14 @@
             </div>
 
 
-         <!--PROFILE-->
-         <div id="icon_profile">
-           <input type="image" class="icon" id="imgProfile" alt="profile" src="../images/header/imgProfile.png" title="Profilo"
-                       onclick="changeIcon('imgProfile');
-                       showContainer('container_profile');
-                       hideOtherMenu('container_profile')">
-         </div>
-
-     </div>
+            <!--PROFILE-->
+            <div id="icon_profile">
+                     <input type="image" class="icon" id="imgProfile" alt="profile" src="../images/header/imgProfile.png" title="Profilo"
+                                    onclick="changeIcon('imgProfile');
+                                            showContainer('container_profile');
+                                            hideOtherMenu('container_profile')">
+            </div>
+        </div>
     </nav>
 
          <!--CONTAINER MENU SMARTPHONE-->
@@ -134,40 +129,42 @@
             </ul>
         </div>
 
-        <div class="container" id="content_create_menu" style="display: inline-block">
+        <div class="container" id="content_cards_menu" style="display: inline-block">
             <!--CARDS HORIZONTAL-->
-            <div class="col-md-3 usCard">
-            <div class="card card2">
-            <img src="../images/mensa/carbonara.jpeg" class="card-img-top imgCard2" alt="img_element">
-            <div class="card-body">
-                <h5 id="plate1_name" class="card-title">Carbonara</h5>
-                <p id="plate1_price" class="card-text">Prezzo: 5.00€</p>
-                <input type="button" class="button_book" value="Aggiungi"
-                       onclick="addProductToBill('plate1_name', 'plate1_price')">
-            </div>
-            </div>
+            <div class="container-fluid container_card">
+                <div class="col-md-3 usCard">
+                    <div class="card">
+                        <img src="../images/mensa/carbonara.jpeg" class="card-img-top imgCard" alt="img_element">
+                        <div class="card-body">
+                         <h5 id="plate1_name" class="card-title">Carbonara</h5>
+                         <p id="plate1_price" class="card-text">Prezzo: 5.00€</p>
+                        <input type="button" class="button_book" value="Aggiungi"
+                                    onclick="addProductToBill('plate1_name', 'plate1_price')">
+                        </div>
+                    </div>
                 </div>
-            <div class="col-md-3 usCard">
-                <div class="card card2">
-                 <img src="../images/mensa/pesto.jpg" class="card-img-top imgCard2" alt="img_element">
-                <div class="card-body">
-                    <h5 id="plate2_name" class="card-title">Pesto</h5>
-                     <p id="plate2_price" class="card-text">Prezzo: 8.00€</p>
-                    <input type="button" class="button_book" value="Aggiungi"
-                           onclick="addProductToBill('plate2_name', 'plate2_price')">
+                <div class="col-md-3 usCard">
+                    <div class="card">
+                       <img src="../images/mensa/pesto.jpg" class="card-img-top imgCard" alt="img_element">
+                        <div class="card-body">
+                            <h5 id="plate2_name" class="card-title">Pesto</h5>
+                            <p id="plate2_price" class="card-text">Prezzo: 8.00€</p>
+                            <input type="button" class="button_book" value="Aggiungi"
+                                onclick="addProductToBill('plate2_name', 'plate2_price')">
+                        </div>
+                    </div>
                 </div>
+                <div class="col-md-3 usCard">
+                    <div class="card">
+                        <img src="../images/mensa/cotoletta.jpeg" class="card-img-top imgCard" alt="img_element">
+                        <div class="card-body">
+                        <h5 id="plate3_name" class="card-title">Cotoletta</h5>
+                        <p  id="plate3_price" class="card-text">Prezzo: 2.50€</p>
+                        <input type="button" class="button_book" value="Aggiungi"
+                               onclick="addProductToBill('plate3_name', 'plate3_price')">
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3 usCard">
-            <div class="card card2">
-            <img src="../images/mensa/cotoletta.jpeg" class="card-img-top imgCard2" alt="img_element">
-            <div class="card-body">
-                <h5 id="plate3_name" class="card-title">Cotoletta</h5>
-                <p  id="plate3_price" class="card-text">Prezzo: 2.50€</p>
-                <input type="button" class="button_book" value="Aggiungi"
-                       onclick="addProductToBill('plate3_name', 'plate3_price')">
-            </div>
-            </div>
             </div>
 
             <div class="container-fluid container_card">
@@ -353,7 +350,7 @@
             </div>
 
             <div class="container-fluid">
-            <input type="button" class="button_book2" value="Conferma il tuo panino"
+                <input type="button" class="button_sandwiches" value="Conferma il tuo panino"
                    onclick="addProductToBill('sandwiches')">
             </div>
         </div>
