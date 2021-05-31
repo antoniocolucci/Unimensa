@@ -1,4 +1,4 @@
-body{
+html,body{
     margin-top: 0;
     margin-left: 0;
     margin-right: 0;
@@ -16,7 +16,7 @@ body{
 /*HEADER - NAVBAR*/
 nav.navbar-expand-lg {
     margin-top: 0;
-    height: 60px;
+    height: 7%;
     padding: 4px;
     background-color: #3b83bd;
 }
@@ -30,7 +30,6 @@ li.nav-item a.active{
 /* NAVBAR LINK */
 .nav-link{
     font-size: 18px;
-    //font-family: Calibri;
 }
 
 /*ICON*/
@@ -61,8 +60,8 @@ div#icon_cart{
 div#container_notifications{
     background-color: #EFEFEF;
     position: fixed;
-    top: 60px;
-    right: 65px;
+    top: 7%;
+    right: 4%;
     height: 25%;
     width: 15%;
     border-radius: 3px;
@@ -76,7 +75,7 @@ div#container_profile{
     height: 25%;
     width: 15%;
     border-radius: 3px;
-    top: 60px;
+    top: 7%;
     right: 0px;
 }
 
