@@ -76,10 +76,99 @@ function goTo(page){
     window.location.href = page;
 }
 
+
+
+
 /*VARIABLE FOR FUNCTION "ADDPRODUCTTOBILL()"*/
 let semiTot = 0.0
+let countAllProduct = 0
+
+function addProductToBill(plate_name,plate_price) {
+    $("#cartEmpty").css("display", "none")
+    $('.button_deleteAll').css("display", "block")
+    let name = document.getElementById(plate_name)
+    let namstring = name.innerText
+    let occurrPrice = document.getElementById(plate_price).innerText.indexOf(': ')
+    let price = document.getElementById(plate_price).innerText.substr(occurrPrice + 2, document.getElementById(plate_price).length)
+    let list = document.getElementById('list_bill')
+    let Allitem = document.getElementsByClassName('item_bill')
+    let product = check()
+    let productName = product.innerText
+
+        if(!productName) {
+            let item = document.createElement("li")
+            let trash = document.createElement("input")
+            let priceItem = document.createElement("p")
+            let count = document.createElement("p")
+            let quant = document.createAttribute('quantity')
+            item.setAttributeNode(quant)
+            item['quantity'] = "1"
+
+            count.innerText = item['quantity']
+            count.classList.add('count_item')
+            trash.type = "image";
+            trash.classList.add('icon2')
+            trash.src = "../images/body_home/cestino.png"
+            priceItem.innerText = price
+            priceItem.classList.add('price_bill')
+            item.classList.add('item_bill')
+            item.innerText = name.innerText
+            item.appendChild(count)
+            item.appendChild(trash)
+            item.appendChild(priceItem)
+            list.appendChild(item)
+        }else{
+            if(productName.search(namstring) !== -1){
+                let beforeQuantity = product['quantity']
+                let newQuantity
+                product['quantity'] = parseFloat(product['quantity'])+1
+                newQuantity = product['quantity']
+                productName[11] = newQuantity
+            }
+        }
+
+
+
+
+}
+
+function check() {
+    let Allitem = document.getElementsByClassName('item_bill')
+    for (let i in Allitem) {
+        let product = Allitem[i]
+        if (!product)
+            return 0
+        else{
+            return product
+        }
+
+    }
+}
+/*
+let item = document.createElement("li")
+let trash = document.createElement("input")
+let priceItem = document.createElement("p")
+
+count.classList.add('count_item')
+trash.type = "image";
+trash.classList.add('icon2')
+trash.src = "../images/body_home/cestino.png"
+priceItem.innerText = price
+priceItem.classList.add('price_bill')
+item.classList.add('item_bill')
+item.innerText = name.innerText
+item.appendChild(trash)
+item.appendChild(priceItem)
+
+list.appendChild(item)
+
+*/
+
+
+
+
 /*FUNCTION FOR ADD THE PRODUCT TO BILL*/
-function addProductToBill(plate_name, plate_price){
+function addProductToBill2(plate_name, plate_price){
     /*VARIABLES TO WRITE PRODUCT CHOOSE AND TOTAL*/
     let plate_choose = document.getElementById('plate_choose')
     let total = document.getElementById('tot')
