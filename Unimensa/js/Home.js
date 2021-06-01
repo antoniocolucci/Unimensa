@@ -79,6 +79,7 @@ function goTo(page){
 
 
 
+
 /*VARIABLE FOR FUNCTION "ADDPRODUCTTOBILL()"*/
 let semiTot = 0.0
 let countAllProduct = 0
