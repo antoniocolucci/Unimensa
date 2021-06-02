@@ -241,6 +241,10 @@ function addProductToBill2(plate_name, plate_price){
 }
 
 
+
+
+
+
 //labels = Array.from(document.querySelector(`label[for='${id}']`)));
 
 
