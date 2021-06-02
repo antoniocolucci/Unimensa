@@ -163,6 +163,7 @@ ul#listPlate{
     height: 50%;
     width: 25%;
     background-color: #FCFCFC;
+    //background-color: rgba(41, 101, 68, 0.13);
     border: 2px #F2F2F2 solid;
     border-radius: 3px;
 }
@@ -192,6 +193,7 @@ ul#listPlate{
     background: white;
     border-bottom: 1px #EFEFEF solid;
     padding: 2%;
+
 }
 
 /*BUTTON DELETE ALL IN THE BILL*/
@@ -227,7 +229,7 @@ ul#listPlate{
 .price_bill {
     float: right;
     width: 10%;
-    margin-right: 2%;
+    margin-right: 5%;
 }
 
 .container_deleteAll{
@@ -242,5 +244,11 @@ ul#listPlate{
 .count_item{
 
     float: left;
-    width: 5%;
+    width: 8%;
+    //border: 1px #F2F2F2 solid;
+    text-align: center;
+    margin-right: 5%;
+    background-color: rgba(41, 101, 68, 0.13);
+
 }
+
