@@ -199,33 +199,159 @@ function dropProduct(plate_name,plate_price){
 
 
 
+function drop_all_product(){
+
+    let list = document.getElementById('list_bill')
+
+    let cart_length = elementCart.length
+
+    for(let i = 0; i < cart_length; i++) {
+        let child = document.getElementById('li_item'+i)
+
+        elementCart.splice(0, 1)
+        numElem = numElem -1
+
+        list.removeChild(child)
+
+
+    }
+    bill_tot(0,-1)
+    $("#cartEmpty").css("display", "block")
+    $('.button_deleteAll').css("display", "none")
+
+}
+
+
+function addSandwichesToBill() {
+    $("#cartEmpty").css("display", "none")
+    $('.button_deleteAll').css("display", "block")
+    let price_Float = 0.2 //RICORDA DA RECUPERARE DAL DB
+    let checked = $(".checkbox_sandwiches")
+
+    let labels
+    let components = "Panino("
+    for(let x in checked){
+        let xChecked = checked[x]
+        if(xChecked["checked"] === true) {
+            labels = document.querySelector(`label[for='${xChecked["id"]}']`)
+            lengName = labels.innerText.indexOf('(')-1
+            if(xChecked.matches('.pane')){
+                components = labels.innerText.substr(0, lengName) + "("
+                price_Float = Math.max(price_Float, parseFloat(xChecked["value"]))
+            } else
+            {
+                components = components + " " + labels.innerText.substr(0,lengName) +","
+                price_Float = price_Float + parseFloat(xChecked["value"])
+            }
+
+        }
+    }
+    components = components.substr(0,components.length-1)+' )'
+    checked.prop('checked', false)
+    let y = researchEle(components)
+    let price_sandwiches = ''+ price_Float.toFixed(2) + ' €'
+
+    if(y < 0){
+        addElementToList(components, price_sandwiches, y, 'list_bill', 'sandwiches_bill')
+    }else{
+        updatePriceQuantity(price_sandwiches, y, 0)
+    }
+
+    bill_tot(price_sandwiches,0)
+}
+
+function addElementToList (name, price, x, id_list, class_item){
+    let list = document.getElementById(id_list)
+    let cartLength = elementCart.length
+    let item
+    let trash
+    let priceItem
+    let count
+    let li_name
+
+        elementCart[cartLength] = new Elementcart(name, price, 1,)
+        item = document.createElement("li")
+        li_name = document.createElement('p')
+        trash = document.createElement("input")
+        priceItem = document.createElement("p")
+        count = document.createElement("p")
+        count.innerText = elementCart[cartLength].quantity
+        count.classList.add('count_item')
+        count.id = "count" + cartLength
+        trash.type = "image";
+        trash.classList.add('icon2')
+        trash.addEventListener('click',function(){
+            dropProduct(name,price)
+        });
+        trash.src = "../images/body_home/cestino.png"
+        priceItem.innerText = elementCart[cartLength].price
+        priceItem.classList.add('price_bill')
+        priceItem.id = "price"+ cartLength
+        li_name.innerText = elementCart[cartLength].name
+        li_name.classList.add('li_name')
+        li_name.id = 'li_name' + cartLength
+        item.classList.add(class_item)
+        item.id = 'li_item' + cartLength
+        item.appendChild(count)
+        item.appendChild(li_name)
+        item.appendChild(trash)
+        item.appendChild(priceItem)
+        list.appendChild(item)
+
+}
+
+function updatePriceQuantity (price, x, operand){
+
+    if(operand === 0) {
+        elementCart[x].quantity =  elementCart[x].quantity + 1
+        elementCart[x].price = parseFloat(elementCart[x].price) + parseFloat(price)
+        let newQnt = parseFloat(elementCart[x].quantity)
+        let newPrice = parseFloat(elementCart[x].price).toFixed(2)
+        let elemQnt = document.getElementById('count'+x)
+        let elemPrice = document.getElementById('price'+x)
+        elemQnt.innerText = newQnt
+        elemPrice.innerText = newPrice + " €"
+    }
+    else {
+        elementCart[x].quantity = elementCart[x].quantity - 1
+        elementCart[x].price = parseFloat(elementCart[x].price) - parseFloat(price)
+            let newPrice = parseFloat(elementCart[x].price).toFixed(2)
+        let elemQnt = document.getElementById('count'+parseFloat(elementCart[x].Id))
+        let newQnt = parseFloat(elementCart[x].quantity)
+        let elemPrice = document.getElementById('price'+parseFloat(elementCart[x].Id))
+        elemQnt.innerText = newQnt
+        elemPrice.innerText = newPrice + " €"
+    }
+
+}
+
+
+let tot = 0;
+
+
+function bill_tot(price, operand){
+
+    if(operand === 0){
+        tot = tot + parseFloat(price)
+        let price_total = document.getElementById('total')
+        price_total.innerText = 'Totale: ' + tot.toFixed(2) + " €"
+
+    }
+    else if (operand === 1){
+        tot = tot - parseFloat(price)
+        let price_total = document.getElementById('total')
+        price_total.innerText = 'Totale: ' + tot.toFixed(2) + " €"
+
+    }
+    else if (operand === -1){
+        tot = price
+        let price_total = document.getElementById('total')
+        price_total.innerText = 'Totale: ' + tot.toFixed(2) + " €"
+    }
 
 
 
-//labels = Array.from(document.querySelector(`label[for='${id}']`)));
-
-
-
-
-
-/*   DA RICORDARE
-
-function setOpacity(element_id, x) {
-
-
-    let elemento = document.getElementById("menu_opacity");
-    elemento.style.opacity = 0.5;
-
-    let a = document.getElementById("close_menu");
-    a.style.opacity = 1;
 
 
 }
 
-function resetOpacity(x) {
-
-
-    let elemento = document.getElementById("menu_opacity");
-    elemento.style.opacity = 1;
-
-}*/
