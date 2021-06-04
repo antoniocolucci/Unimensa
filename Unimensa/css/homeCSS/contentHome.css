@@ -201,7 +201,7 @@ ul#listPlate{
     background: #f34336;
     border: #f34336;
     color: white;
-    height: 30%;
+    height: 35%;
     width: 50%;
     text-align: center;
     line-height: 1;
@@ -218,7 +218,7 @@ ul#listPlate{
     background: #3b83bd;
     border: #3b83bd;
     color: white;
-    height: 30%;
+    height: 35%;
     width: 50%;
     text-align: center;
     line-height: 1;
@@ -238,7 +238,6 @@ ul#listPlate{
 
 .container_product_chosen{
     height: 50%;
-
 }
 
 .count_item{
@@ -249,5 +248,11 @@ ul#listPlate{
     margin-right: 5%;
     background-color: rgba(41, 101, 68, 0.13);
 
+}
+
+.li_name{
+    width: 50%;
+    display: inline-block;
+    float: left;
 }
 
