@@ -86,13 +86,16 @@ function researchEle(name_p){
 }
 
 /*VARIABLE FOR FUNCTION "ADDPRODUCTTOBILL()"*/
-let semiTot = 0.0
 let elementCart = []
+let numElem = 0
 
 function Elementcart(name, price, quantity){
+    this.Id = numElem;
     this.name = name;
     this.price = price;
     this.quantity = quantity;
+
+    numElem = numElem +1
 }
 
 function addProductToBill(plate_name,plate_price) {
@@ -102,99 +105,54 @@ function addProductToBill(plate_name,plate_price) {
     let name = plateName.innerText
     let occurrPrice = document.getElementById(plate_price).innerText.indexOf(': ')
     let price = document.getElementById(plate_price).innerText.substr(occurrPrice + 2, document.getElementById(plate_price).length)
-    let list = document.getElementById('list_bill')
-    let item
-    let trash
-    let priceItem
-    let count
+
     let x = researchEle(name)
-    let cartLength = elementCart.length
 
     if(x < 0){
-        elementCart[cartLength] = new Elementcart(name, price, 1)
-        item = document.createElement("li")
-        trash = document.createElement("input")
-        priceItem = document.createElement("p")
-        count = document.createElement("p")
-        count.innerText = elementCart[cartLength].quantity
-        count.classList.add('count_item')
-        count.id = "item" + cartLength
-        trash.type = "image";
-        trash.classList.add('icon2')
-        trash.addEventListener('click',function(){
-            dropProduct(plate_name,plate_price)
-        });
-        trash.src = "../images/body_home/cestino.png"
-        priceItem.innerText = elementCart[cartLength].price
-        priceItem.classList.add('price_bill')
-        priceItem.id = "price"+ cartLength
-        item.classList.add('item_bill')
-        item.innerText = elementCart[cartLength].name
-        item.id = "li"+cartLength
-
-
-        item.appendChild(count)
-        item.appendChild(trash)
-        item.appendChild(priceItem)
-        list.appendChild(item)
+        addElementToList(name, price, x, 'list_bill', 'item_bill')
     }else{
-        elementCart[x].quantity =  elementCart[x].quantity + 1
-        elementCart[x].price = parseFloat(elementCart[x].price) + parseFloat(price)
-        let newQnt = parseFloat(elementCart[x].quantity)
-        let newPrice = parseFloat(elementCart[x].price).toFixed(2)
-
-
-        let elemQnt = document.getElementById('item'+x)
-        let elemPrice = document.getElementById('price'+x)
-
-        elemQnt.innerText = newQnt
-        elemPrice.innerText = newPrice + "€"
-
+        updatePriceQuantity(price, x, 0)
     }
+
+    bill_tot(price,0)
 
 }
 
 
 
 function dropProduct(plate_name,plate_price){
-    console.log(elementCart)
-    let plateName = document.getElementById(plate_name)
-    let name = plateName.innerText
-    let occurrPrice = document.getElementById(plate_price).innerText.indexOf(': ')
-    let price = document.getElementById(plate_price).innerText.substr(occurrPrice + 2, document.getElementById(plate_price).length)
     let list = document.getElementById('list_bill')
-    let x = researchEle(name)
+    let x = researchEle(plate_name)
     let cartLength = elementCart.length
     let idItem
 
-    console.log ("X: ", x)
-
-
-    if(elementCart[x].quantity === 1 ){
-        idItem = "li"+x
-        console.log("Sono idItem: ", idItem)
-
-        let child = document.getElementById(idItem)
-        console.log("Sono splice",elementCart[x].name)
-        elementCart.splice(x, 1)
+    if(elementCart[x].quantity === 1){
+        idItem = elementCart[x].Id
+        let child = document.getElementById('li_item'+idItem)
+        elementCart.splice(x,1)
         list.removeChild(child)
+        numElem = numElem -1
+        for(let i = idItem; i < cartLength-1; i++){
+            let element = document.getElementById('li_item'+(i+1))
+            let elementPrice = document.getElementById('price'+(i+1))
+            let elementName  = document.getElementById('li_name'+(i+1))
+            let elementCount = document.getElementById('count' + (i+1))
+            elementCart[i].Id = (parseFloat(elementCart[i].Id) - 1)
+            element.id = 'li_item' + elementCart[i].Id
+            elementName.id = "li_name"+elementCart[i].Id
+            elementPrice.id = "price"+elementCart[i].Id
+            elementCount.id = "count" + elementCart[i].Id
+        }
+
 
     }else{
-        elementCart[x].quantity = elementCart[x].quantity - 1
-        elementCart[x].price = parseFloat(elementCart[x].price) - parseFloat(price)
-        let newPrice = parseFloat(elementCart[x].price).toFixed(2)
-
-
-        let elemQnt = document.getElementById('item'+x)
-        let newQnt = parseFloat(elementCart[x].quantity)
-        let elemPrice = document.getElementById('price'+x)
-
-        elemQnt.innerText = newQnt
-        elemPrice.innerText = newPrice + "€"
-
-
+        updatePriceQuantity(plate_price, x, 1)
     }
-
+    if(elementCart.length === 0){
+        $("#cartEmpty").css("display", "block")
+        $('.button_deleteAll').css("display", "none")
+    }
+    bill_tot(plate_price, 1)
 }
 
 
