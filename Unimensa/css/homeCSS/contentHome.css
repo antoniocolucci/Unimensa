@@ -196,6 +196,15 @@ ul#listPlate{
 
 }
 
+.sandwiches_bill{
+    height: 40%;
+    width: 100%;
+    float: left;
+    background-color: white;
+    border-bottom: 1px #EFEFEF solid;
+    padding: 2%;
+}
+
 /*BUTTON DELETE ALL IN THE BILL*/
 .button_deleteAll{
     background: #f34336;
@@ -228,12 +237,12 @@ ul#listPlate{
 
 .price_bill {
     float: right;
-    width: 10%;
+    width: 15%;
     margin-right: 5%;
 }
 
 .container_deleteAll{
-    height: 20%;
+    height: 17%;
 }
 
 .container_product_chosen{
