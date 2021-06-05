@@ -100,7 +100,7 @@ function Elementcart(name, price, quantity){
 
 function addProductToBill(plate_name,plate_price) {
     $("#cartEmpty").css("display", "none")
-    $('.button_deleteAll').css("display", "block")
+    $('.container_deleteAll').css("display", "block")
     let plateName = document.getElementById(plate_name)
     let name = plateName.innerText
     let occurrPrice = document.getElementById(plate_price).innerText.indexOf(': ')
@@ -150,7 +150,10 @@ function dropProduct(plate_name,plate_price){
     }
     if(elementCart.length === 0){
         $("#cartEmpty").css("display", "block")
-        $('.button_deleteAll').css("display", "none")
+        $('.container_deleteAll').css("display", "none")
+    }else if(elementCart.length <= 3 ){
+
+        $('.container_product_chosen').css('overflow-y', 'hidden')
     }
     bill_tot(plate_price, 1)
 }
@@ -174,15 +177,17 @@ function drop_all_product(){
 
     }
     bill_tot(0,-1)
+    $('.container_product_chosen').css('overflow-y', 'hidden')
     $("#cartEmpty").css("display", "block")
-    $('.button_deleteAll').css("display", "none")
+    $('.container_deleteAll').css("display", "none")
+
 
 }
 
 
 function addSandwichesToBill() {
     $("#cartEmpty").css("display", "none")
-    $('.button_deleteAll').css("display", "block")
+    $('.container_deleteAll').css("display", "block")
     let price_Float = 0.2 //RICORDA DA RECUPERARE DAL DB
     let checked = $(".checkbox_sandwiches")
 
@@ -210,7 +215,7 @@ function addSandwichesToBill() {
     let price_sandwiches = ''+ price_Float.toFixed(2) + ' €'
 
     if(y < 0){
-        addElementToList(components, price_sandwiches, y, 'list_bill', 'sandwiches_bill')
+        addElementToList(components, price_sandwiches, y, 'list_bill', 'item_bill')
     }else{
         updatePriceQuantity(price_sandwiches, y, 0)
     }
@@ -252,9 +257,14 @@ function addElementToList (name, price, x, id_list, class_item){
         item.id = 'li_item' + cartLength
         item.appendChild(count)
         item.appendChild(li_name)
-        item.appendChild(trash)
         item.appendChild(priceItem)
+        item.appendChild(trash)
+
         list.appendChild(item)
+        if (cartLength >= 3) {
+
+            $('.container_product_chosen').css('overflow-y', 'scroll')
+        }
 
 }
 
@@ -286,25 +296,35 @@ function updatePriceQuantity (price, x, operand){
 
 let tot = 0;
 
-
 function bill_tot(price, operand){
 
     if(operand === 0){
         tot = tot + parseFloat(price)
+        tot = Math.abs(tot)
         let price_total = document.getElementById('total')
         price_total.innerText = 'Totale: ' + tot.toFixed(2) + " €"
 
     }
     else if (operand === 1){
         tot = tot - parseFloat(price)
+        tot = Math.abs(tot)
         let price_total = document.getElementById('total')
-        price_total.innerText = 'Totale: ' + tot.toFixed(2) + " €"
+        if(tot === 0){
+            price_total.innerText = 'Totale: '
+        }else{
+            price_total.innerText = 'Totale: ' + tot.toFixed(2) + " €"
+        }
 
     }
     else if (operand === -1){
         tot = price
+        tot = Math.abs(tot)
         let price_total = document.getElementById('total')
-        price_total.innerText = 'Totale: ' + tot.toFixed(2) + " €"
+        if(tot === 0){
+            price_total.innerText = 'Totale: '
+        }else{
+            price_total.innerText = 'Totale: ' + tot.toFixed(2) + " €"
+        }
     }
 
 
