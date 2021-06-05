@@ -24,9 +24,11 @@
                 <span class="navbar-toggler-icon" onclick="showContainer('container_menu');
                                                            hideOtherMenu('container_menu')">
                 </span>
+
             </button>
 
-           <img class ="icon" src="../images/header/icon.png" style="height: 65px; width: 65px">
+
+           <!--img class ="icon" src="../images/header/logo.png" style="height: 65px; width: 65px" alt="logo"-->
             <!--UNIMENSA-->
             <a class="navbar-brand text-white" href="../html/Home.html" style="font-family: 'Britannic Bold'">uniMensa</a>
 
@@ -42,11 +44,10 @@
                 </ul>
             </div>
 
-            <!--CART-->
-            <div id="icon_cart">
+             <!--CART-->
+             <div id="icon_cart" class="navbar-toggler">
                  <input type="image" class="icon" id="imgCart" alt="cart" src="../images/header/cart.png" title="Carrello">
-            </div>
-
+             </div>
 
              <!--BELL-->
             <div id="icon_bell">
@@ -196,7 +197,7 @@
                       <h5 id="plate6_name" class="card-title">Gnocchi</h5>
                       <p id="plate6_price" class="card-text">Prezzo: 9.00 €</p>
                       <input type="button" class="button_book" value="Aggiungi"
-                             onclick="addProductToBill('plate4_name', 'plate4_price')">
+                             onclick="addProductToBill('plate6_name', 'plate6_price')">
                   </div>
               </div>
           </div>
@@ -359,13 +360,14 @@
          <div class="container container_bill">
 
              <h3>Prodotti scelti: </h3>
+             <h4 id="cartEmpty">Il carrello è vuoto</h4>
              <div class="container_product_chosen">
-                 <h4 id="cartEmpty">Il carrello è vuoto</h4>
+                 <!--img class="cart_empty" src="../images/body_home/cart_empty.png" alt="cart_empty"style="display: block"-->
                  <ul id="list_bill">
                 </ul>
              </div>
-             <div class="container_deleteAll">
-             <input type="button" class="button_deleteAll" value="Svuota tutto" onclick="drop_all_product()" style="display: none">
+             <div class="container_deleteAll" style="display: none">
+             <input type="button" class="button_deleteAll" value="Svuota tutto" onclick="drop_all_product()" >
              </div>
              <div class="container_total">
                  <h3 id="total">Totale:  </h3>
