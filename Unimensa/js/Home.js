@@ -308,8 +308,5 @@ function bill_tot(price, operand){
     }
 
 
-
-
-
 }
 
