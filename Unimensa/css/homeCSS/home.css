@@ -54,6 +54,7 @@ div#icon_bell{
 div#icon_cart{
     margin-right: 1%;
     float: right;
+    border: none;
 }
 
 /*CONTAINER NOTIFICATIONS*/
