@@ -224,6 +224,7 @@ function addSandwichesToBill() {
 }
 
 function addElementToList (name, price, x, id_list, class_item){
+
     let list = document.getElementById(id_list)
     let cartLength = elementCart.length
     let item
