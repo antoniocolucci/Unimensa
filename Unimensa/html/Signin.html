@@ -2,13 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sign in</title>
-</head>
-<body>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
     <title>Login</title>
 
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
@@ -16,106 +9,20 @@
     <link rel="stylesheet" href="../css/signinCSS/signin.css">
     <link rel="stylesheet" href="../css/screen/screen768.css">
 
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body onLoad="signin.Name.focus();">
-<!--div class="header">
 
-
-<div id="container_form_signin">
-
-    <div id="container_title">
-        <h1>Registrazione</h1>
-    </div>
-    <form method="post" action="../html/Home.html">
-        <div class="container_label">
-            <label for="name">
-                Nome
-            </label>
-        </div>
-        <div class="container_input_login">
-            <input type="text" id="name" name="Name">
-        </div>
-        <div class="container_label">
-            <label for="surname">
-                Cognome
-            </label>
-        </div>
-        <div class="container_input_login">
-            <input type="text" id="surname" name="Surname">
-        </div>
-        <div class="container_label">
-            <label for="email">
-                E-mail istituzionale
-            </label>
-        </div>
-        <div class="container_input_login">
-            <input type="text" id="email" name="Email">
-        </div>
-        <div class="container_label">
-            <label for="password">
-                Password
-            </label>
-        </div>
-        <div class="container_input_login">
-            <input type="password" id="password" name="Password">
-        </div>
-        <input type="submit" value="Registrati" id="submit">
-
-    </form>
-
-</div-->
 
 <!--NAVBAR-->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+
     <div class="container-fluid">
-        <!--BUTTON MENU-->
-        <button class="navbar-toggler" type="button">
-                <span class="navbar-toggler-icon"
-                      onclick="showContainer('container_menu');
-                      hideOtherMenu('container_menu')"></span>
-        </button>
 
         <!--UNIMENSA-->
         <a class="navbar-brand text-white" href="../html/Home.html">uniMensa</a>
-
-        <!--MENU LIST-->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active text-white"  href="../html/Home.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="../html/Mensa.html">Mensa</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="../html/Ordini.html">Ordini</a>
-                </li>
-            </ul>
-        </div>
-
-        <!--CART-->
-        <div id="icon_cart">
-            <input type="image" class="icon" id="imgCart" alt="cart" src="../images/header/cart.png" title="Carrello">
-        </div>
-
-        <!--BELL-->
-        <div id="icon_bell">
-            <input type="image" class="icon" id="imgBell" alt="bell" src="../images/header/imgBell.png" title="Notifiche"
-                   onclick="changeIcon('imgBell');
-                       showContainer('container_notifications');
-                       hideOtherMenu('container_notifications')">
-        </div>
-
-
-        <!--PROFILE-->
-        <div id="icon_profile">
-            <input type="image" class="icon" id="imgProfile" alt="profile" src="../images/header/imgProfile.png" title="Profilo"
-                   onclick="changeIcon('imgProfile');
-                       showContainer('container_profile');
-                       hideOtherMenu('container_profile')">
-        </div>
 
     </div>
 </nav>
@@ -126,32 +33,6 @@
             <a class="dropdown-item " href="../html/Mensa.html">Mensa</a>
             <a class="dropdown-item" href="../html/Ordini.html">Ordini</a>
         </div>
-
-        <!--CONTAINER NOTIFICATIONS-->
-        <div id="container_notifications" style="display: none">
-            <ul id="notifications">
-                <li><a href="#"> Ritira il pasto</a></li>
-                <li><a href="#"> Il pasto è pronto</a></li>
-            </ul>
-        </div>
-
-        <!--CONTAINER PROFILE-->
-        <div id="container_profile" style="display: none">
-            <div id="container_buttonProfile" style="display: block">
-                <a href="../html/Login.html" class="btn btn-info button_Profile" role="button">Login</a>
-                <br>
-                <a href="../html/Signin.html" class="btn btn-info button_Profile" role="button">Signin</a>
-            </div>
-
-            <div id="container_infoProfile">
-                <ul id="myAccount">
-                    <li><a href="#"> Il mio account</a></li>
-                    <li><a href="#"> Logout</a></li>
-                </ul>
-            </div>
-        </div>
-
-
 
 
         <div  id="container_form_signin" class="container-fluid content_center" style="display: block">
@@ -173,11 +54,11 @@
                         Cognome
                     </label>
                 </div>
-                <div class="container container_input_login">
-                    <input type="text" class="form-control" id="surname" name="Surname">
+                <div class="container container_input_signin">
+                    <input type="text" class="signinControl" id="surname" name="Surname">
                 </div>
                 <div class="container container_label">
-                    <label for="email">
+                    <label for="email" id="prova">
                         E-mail istituzionale
                     </label>
                 </div>
@@ -189,8 +70,8 @@
                         Password
                     </label>
                 </div>
-                <div class="container container_input_login">
-                    <input type="password"  id="password" name="Password">
+                <div class="container container_input_signin">
+                    <input type="password" class="signinControl" id="password" name="Password">
                 </div>
 
                 <div class="container container_label">
@@ -198,8 +79,8 @@
                         Conferma Password
                     </label>
                 </div>
-                <div class="container container_input_login">
-                    <input type="password" id="confirm_password" name="Password">
+                <div class="container container_input_signin">
+                    <input type="password" class="signinControl" id="confirm_password" name="Password">
                 </div>
 
                 <input type="submit" value="Registrati" id="submit">
@@ -207,12 +88,6 @@
 
             </form>
         </div>
-
-
-
-
-
-
 
 
 <script language="JavaScript" src="../js/Home.js"></script>
