@@ -80,22 +80,6 @@ div#container_profile{
     right: 0px;
 }
 
-/*BUTTON PROFILE*/
-.button_Profile{
-    background-color: #3b83bd;
-    border: #3b83bd;
-    color: white;
-    margin-top: 10px;
-    height: 28px;
-    width: 75%;
-    text-align: center;
-    line-height: 1;
-}
-
-.button_Profile:hover {
-    background-color: #6c757d;
-}
-
 /*CONTAINER MENU*/
 div#container_menu{
     background-color: #EFEFEF;
