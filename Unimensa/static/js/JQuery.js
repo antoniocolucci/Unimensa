@@ -14,6 +14,30 @@ $(document).ready(function(){
 
     });
 
+    $('input[type="checkbox"]').on('change', function() {
+        $(this).siblings('input[type="checkbox"]').not(this).prop('checked', false);
+
+    });
+
+    $('form[name=login]').submit(function(e){
+
+        let form = $(this)
+        let error = form.find(".error")
+        let data = form.serialize()
+        $.ajax({
+            url: "http://localhost:5000/",
+            type: "POST",
+            data: data,
+            dataType: "json"
+            success: function(resp){
+                    window.location.href = "/Home"
+            },
+            error: function(resp){
+                console.log('error')
+            }
+        });
+       e.preventDefault();
+    });
 });
 
 
