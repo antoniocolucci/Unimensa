@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
   <title>Login</title>
 
-  <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
-  <link rel="stylesheet" href="../css/loginCSS/login.css">
-  <link rel="stylesheet" href="../css/screen/screen768.css">
-  <link rel="stylesheet" href="../css/homeCSS/home.css">
+  <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="../static/css/loginCSS/login.css">
+  <link rel="stylesheet" href="../static/css/screen/screen768.css">
+  <link rel="stylesheet" href="../static/css/homeCSS/home.css">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -21,7 +21,7 @@
         <div class="container-fluid">
 
           <!--UNIMENSA-->
-          <a class="navbar-brand text-white" href="../html/Home.html">uniMensa</a>
+          <a class="navbar-brand text-white" href="../templates/Home.html">uniMensa</a>
 
         </div>
       </nav>
@@ -32,7 +32,7 @@
           <h1>Accedi</h1>
         </div>
         <div class="container formLogin">
-          <form name="login" method="post" action="../html/Home.html">
+          <form name="login" method="post" action="../templates/Home.html">
 
             <div class="container container_label">
               <label for="email">
@@ -50,17 +50,18 @@
             <div class="container container_input_login">
               <input type="password" class="loginControl" id="password" name="Password">
             </div>
+          <input type="submit" value="Accedi" id="submit">
 
           </form>
         </div>
 
         <div class="container container_submit">
-          <input type="submit" value="Accedi" id="submit">
+
         </div>
       </div>
 
 
-<script language="JavaScript" src="../js/Home.js"></script>
+<script language="JavaScript" src="../static/js/Home.js"></script>
 </body>
 </html>
 

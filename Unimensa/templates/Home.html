@@ -28,30 +28,30 @@
             </button>
 
 
-           <img class ="icon" src="../images/header/logo.png" style="height: 65px; width: 65px" alt="logo">
+           <img class ="icon" src="../static/images/header/logo.png" style="height: 65px; width: 65px" alt="logo">
             <!--UNIMENSA-->
-            <a class="navbar-brand text-white" href="../html/Home.html" style="font-family: 'Britannic Bold'">uniMensa</a>
+            <a class="navbar-brand text-white" href="../templates/Home.html" style="font-family: 'Britannic Bold'">uniMensa</a>
 
             <!--MENU LIST-->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                      <li class="nav-item">
-                         <a class="nav-link active text-white"  href="../html/Home.html">Home</a>
+                         <a class="nav-link active text-white"  href="../templates/Home.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="../html/Ordini.html">Ordini</a>
+                        <a class="nav-link text-white" href="../templates/Ordini.html">Ordini</a>
                      </li>
                 </ul>
             </div>
 
              <!--CART-->
              <div id="icon_cart" class="navbar-toggler">
-                 <input type="image" class="icon" id="imgCart" alt="cart" src="../images/header/cart.png" title="Carrello">
+                 <input type="image" class="icon" id="imgCart" alt="cart" src="../static/images/header/cart.png" title="Carrello">
              </div>
 
              <!--BELL-->
             <div id="icon_bell">
-                 <input type="image" class="icon" id="imgBell" alt="bell" src="../images/header/imgBell.png" title="Notifiche"
+                 <input type="image" class="icon" id="imgBell" alt="bell" src="../static/images/header/imgBell.png" title="Notifiche"
                                 onclick="changeIcon('imgBell');
                                         showContainer('container_notifications');
                                          hideOtherMenu('container_notifications')">
@@ -60,7 +60,7 @@
 
             <!--PROFILE-->
             <div id="icon_profile">
-                     <input type="image" class="icon" id="imgProfile" alt="profile" src="../images/header/imgProfile.png" title="Profilo"
+                     <input type="image" class="icon" id="imgProfile" alt="profile" src="../static/images/header/imgProfile.png" title="Profilo"
                                     onclick="changeIcon('imgProfile');
                                             showContainer('container_profile');
                                             hideOtherMenu('container_profile')">
@@ -70,8 +70,8 @@
 
          <!--CONTAINER MENU SMARTPHONE-->
          <div id="container_menu" class="dropdown-menu" style="display: none">
-              <a class="dropdown-item active" href="../html/Home.html">Home</a>
-              <a class="dropdown-item" href="../html/Ordini.html"> Ordini</a>
+              <a class="dropdown-item active" href="../templates/Home.html">Home</a>
+              <a class="dropdown-item" href="../templates/Ordini.html"> Ordini</a>
          </div>
 
          <!--CONTAINER NOTIFICATIONS-->
@@ -127,7 +127,7 @@
             <div class="container-fluid container_card">
                 <div class="col-md-3 usCard">
                     <div class="card">
-                        <img src="../images/mensa/carbonara.jpeg" class="card-img-top imgCard" alt="img_element">
+                        <img src="../static/images/mensa/carbonara.jpeg" class="card-img-top imgCard" alt="img_element">
                         <div class="card-body">
                             <h5 id="plate1_name" class="card-title">Carbonara</h5>
                             <p id="plate1_price" class="card-text">Prezzo: 5.00 €</p>
@@ -138,7 +138,7 @@
                 </div>
                 <div class="col-md-3 usCard">
                     <div class="card">
-                       <img src="../images/mensa/pesto.jpg" class="card-img-top imgCard" alt="img_element">
+                       <img src="../static/images/mensa/pesto.jpg" class="card-img-top imgCard" alt="img_element">
                         <div class="card-body">
                             <h5 id="plate2_name" class="card-title">Pesto</h5>
                             <p id="plate2_price" class="card-text">Prezzo: 8.00 €</p>
@@ -149,7 +149,7 @@
                 </div>
                 <div class="col-md-3 usCard">
                     <div class="card">
-                        <img src="../images/mensa/cotoletta.jpeg" class="card-img-top imgCard" alt="img_element">
+                        <img src="../static/images/mensa/cotoletta.jpeg" class="card-img-top imgCard" alt="img_element">
                         <div class="card-body">
                         <h5 id="plate3_name" class="card-title">Cotoletta</h5>
                         <p  id="plate3_price" class="card-text">Prezzo: 2.50 €</p>
@@ -163,7 +163,7 @@
             <div class="container-fluid container_card">
                 <div class="col-md-3 usCard">
                     <div class="card">
-                        <img src="../images/mensa/gnocchi.png" class="card-img-top imgCard" alt="img_element">
+                        <img src="../static/images/mensa/gnocchi.png" class="card-img-top imgCard" alt="img_element">
                         <div class="card-body">
                             <h5 id="plate4_name" class="card-title">Gnocchi</h5>
                             <p id="plate4_price" class="card-text">Prezzo: 9.00 €</p>
@@ -174,7 +174,7 @@
                 </div>
             <div class="col-md-3 usCard">
                 <div class="card">
-                    <img src="../images/mensa/polpette.png" class="card-img-top imgCard" alt="img_element">
+                    <img src="../static/images/mensa/polpette.png" class="card-img-top imgCard" alt="img_element">
                     <div class="card-body">
                         <h5 id="plate5_name" class="card-title">Polpette</h5>
                         <p id="plate5_price" class="card-text">Prezzo: 5.00 €</p>
@@ -185,7 +185,7 @@
             </div>
           <div class="col-md-3 usCard">
               <div class="card">
-                  <img src="../images/mensa/gnocchi.png" class="card-img-top imgCard" alt="img_element">
+                  <img src="../static/images/mensa/gnocchi.png" class="card-img-top imgCard" alt="img_element">
                   <div class="card-body">
                       <h5 id="plate6_name" class="card-title">Gnocchi</h5>
                       <p id="plate6_price" class="card-text">Prezzo: 9.00 €</p>
@@ -355,7 +355,7 @@
              <h3>Prodotti scelti: </h3>
              <h4 id="cartEmpty">Il carrello è vuoto</h4>
              <div class="container_product_chosen">
-                 <!--img class="cart_empty" src="../images/body_home/cart_empty.png" alt="cart_empty"style="display: block"-->
+                 <!--img class="cart_empty" src="../static/images/body_home/cart_empty.png" alt="cart_empty"style="display: block"-->
                  <ul id="list_bill">
                 </ul>
              </div>
@@ -371,9 +371,9 @@
 
 
 
-<script src="../js/Home.js"></script>
-<script src="../js/JQuery.js"></script>
-<script src="../bootstrap/js/bootstrap.esm.js"></script>
+<script src="../static/js/Home.js"></script>
+<script src="../static/js/JQuery.js"></script>
+<script src="../static/bootstrap/js/bootstrap.esm.js"></script>
 
 </body>
 </html>
