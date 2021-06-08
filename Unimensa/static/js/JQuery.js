@@ -19,26 +19,24 @@ $(document).ready(function(){
 
     });
 
-    $('form[name=login]').submit(function(e){
-
-        let form = $(this)
-        let error = form.find(".error")
-        let data = form.serialize()
+    $('form[name=login]').submit(function(){
         $.ajax({
             url: "http://localhost:5000/",
-            type: "POST",
-            data: data,
-            dataType: "json"
-            success: function(resp){
-                    window.location.href = "/Home"
+            data: $('form[name=login]').serialize(),
+            type: 'POST',
+            success: function(response) {
+                console.log(response); alert(response)
+                if(response == 'ok'){
+                    window.location.href = '/Home';
+                }
             },
-            error: function(resp){
-                console.log('error')
+            error: function(error) {
+                console.log(error);
             }
         });
-       e.preventDefault();
     });
 });
+
 
 
 
