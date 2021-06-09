@@ -9,10 +9,11 @@ function showContainer(element_id) {
     }
 }
 
+/*DA RIFARE*/
 /*FUNCTION CHANGE INCON IN NAVBAR*/
 function changeIcon(element_id){
     /*SAVE THE FIRST OCCURRENCE OF IMAGES IN THE SRC ATTRIBUTE OF THE ELEMENT*/
-    let firstOcc = document.getElementById(element_id).src.indexOf('images')
+    let firstOcc = document.getElementById(element_id).src.indexOf('static')
     /*SET VAR2 IN THE SUBSTRING FROM FIRST OCCURRENCE TO ALL LENGTH*/
     let var2 = document.getElementById(element_id).src.substr(firstOcc,document.getElementById(element_id).src.length)
     let var1 = "../"+var2

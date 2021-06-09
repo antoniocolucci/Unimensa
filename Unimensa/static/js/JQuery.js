@@ -20,6 +20,8 @@ $(document).ready(function(){
     });
 
     $('form[name=login]').submit(function(){
+        let form = $(this)
+        let error = $(".error")
         $.ajax({
             url: "http://localhost:5000/",
             data: {
@@ -36,7 +38,7 @@ $(document).ready(function(){
             }
         });
     });
-});
 
+});
 
 
