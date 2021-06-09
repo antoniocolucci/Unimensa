@@ -2,7 +2,7 @@ from app import db, users
 from passlib.hash import pbkdf2_sha256
 import uuid
 
-"""user = [
+user = [
 
     {"_id": uuid.uuid4().hex, "Name": "Antonio", "Surname": "Colucci", "Email": "antoniocolucci@universita.it", "Password": pbkdf2_sha256.hash("antoniocolucci")},
     {"_id": uuid.uuid4().hex, "Name": "Antonio", "Surname": "Sarno", "Email": "antoniosarno@universita.it", "Password": pbkdf2_sha256.hash("antoniosarno")},
@@ -11,7 +11,7 @@ import uuid
     {"_id": uuid.uuid4().hex, "Name": "Angelo", "Surname": "Bianchi", "Email": "angelobianchi@personale.it", "Password": pbkdf2_sha256.hash("angelobianchi")}
 ]
 
-add = users.insert_many(user)"""
+add = users.insert_many(user)
 
 
 

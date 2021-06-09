@@ -3,6 +3,7 @@ from flask_cors import CORS
 from pymongo import MongoClient
 from werkzeug.security import generate_password_hash, check_password_hash
 from passlib.hash import pbkdf2_sha256
+from funzioni import *
 
 client = MongoClient("mongodb://localhost:27017/")
 db = client["unimensa"]
@@ -12,7 +13,10 @@ cors = CORS(app)
 
 #CORS(app, resources={r"/api/*": {"origins": "*"}})
 
-@app.route('/', methods=["GET", "POST"])
+
+
+
+@app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         usr_email = request.form['Email']
@@ -34,6 +38,12 @@ def index():
             return render_template('index.html', error=error)
     return render_template('index.html')
 
+@app.route('/logout', methods=['POST', 'GET'])
+def logout():
+    session.pop('_id', None)
+    session.pop("Type", None)
+    return redirect(url_for('index'))
+
 
 @app.route('/Home')
 def home():
@@ -43,11 +53,9 @@ def home():
 
 
 
-
-
-
-
-
+if __name__ == '__main__':
+    app.secret_key = 'unimensa'
+    app.run(debug=True)
 
 
 
