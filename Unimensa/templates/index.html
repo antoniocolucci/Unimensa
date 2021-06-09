@@ -33,7 +33,7 @@
           <h1>Accedi</h1>
         </div>
         <div class="container formLogin">
-          <form name="login" method="post" action="../templates/Home.html">
+          <form name="login" method="POST" action="/">
 
             <div class="container container_label">
               <label for="email">
@@ -51,6 +51,8 @@
             <div class="container container_input_login">
               <input type="password" class="loginControl" id="password" name="Password">
             </div>
+
+            <p class="invalid-feedback"></p>
           <input type="submit" value="Accedi" id="submit">
 
           </form>
