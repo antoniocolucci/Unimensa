@@ -17,14 +17,14 @@ function changeIcon(element_id){
     let var2 = document.getElementById(element_id).src.substr(firstOcc,document.getElementById(element_id).src.length)
     let var1 = "../"+var2
     /*IF THE ICON IS NOT CLICKED: SET NEW SRC FOR ICON CLICKED*/
-    if(var1 === "../images/header/"+element_id+".png")
+    if(var1 === "../static/images/header/"+element_id+".png")
     {
-        document.getElementById(element_id).src = "../images/header/"+element_id+"clicked.png"
+        document.getElementById(element_id).src = "../static/images/header/"+element_id+"clicked.png"
     }
     /*IF THE ICON IS CLICKED: SET NEW SRC FOR ICON NOT CLICKED*/
     else
     {
-        document.getElementById(element_id).src = "../images/header/"+element_id+".png"
+        document.getElementById(element_id).src = "../static/images/header/"+element_id+".png"
     }
 
 }
@@ -247,7 +247,7 @@ function addElementToList (name, price, x, id_list, class_item){
         trash.addEventListener('click',function(){
             dropProduct(name,price)
         });
-        trash.src = "../images/body_home/cestino.png"
+        trash.src = "../static/images/body_home/cestino.png"
         priceItem.innerText = elementCart[cartLength].price
         priceItem.classList.add('price_bill')
         priceItem.id = "price"+ cartLength

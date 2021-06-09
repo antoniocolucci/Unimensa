@@ -22,21 +22,21 @@ $(document).ready(function(){
     $('form[name=login]').submit(function(){
         $.ajax({
             url: "http://localhost:5000/",
-            data: $('form[name=login]').serialize(),
-            type: 'POST',
-            success: function(response) {
-                console.log(response); alert(response)
-                if(response == 'ok'){
-                    window.location.href = '/Home';
-                }
+            data: {
+                email: $("#Email").val(),
+                pwd:  $("#Password").val()
             },
-            error: function(error) {
-                console.log(error);
+            type: 'POST',
+            success: function(resp){
+                console.log(resp)
+            },
+            error: function(resp){
+                console.log(resp)
+                error.text(resp.responseJSON.error).removeClass("error--hidden")
             }
         });
     });
 });
-
 
 
 
