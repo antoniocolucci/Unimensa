@@ -36,17 +36,11 @@
     width: 50%;
 }
 
-.container_submit{
-    text-align: center;
-    height: 20%;
-    width: 100%;
-    border-top: 2px rgba(0,0,0, 0.1) solid;
-}
-
 #submit{
     margin-top: 5%;
-    margin-right: 25%
     cursor: pointer;
+    position: relative;
+    left: 25%;
     width: 50%;
     height: 35%;
     color: white;
@@ -55,8 +49,18 @@
 }
 
 .formLogin{
-    margin-top: 25%;
+    margin-top: 10%;
     height: 40%;
     width: 100%;
 }
 
+.infoLogin{
+    text-align: center
+}
+
+.errorLogin{
+
+   color: red;
+   position: relative;
+   float: left;
+}
