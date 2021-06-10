@@ -1,10 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>HomePage</title>
+  <meta charset="UTF-8">
+  <title>Home-Ristoratore</title>
+
+  <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="../static/css/homeCSS/home.css">
+    <link rel="stylesheet" href="../static/css/homeCSS/home_00.css">
+  <link rel="stylesheet" href="../static/css/homeCSS/contentHome.css">
+  <link rel="stylesheet" href="../static/css/screen/screen768.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
+
+    <!--NAVBAR-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+         <div class="container-fluid">
+
+             <!--BUTTON MENU-->
+            <button class="navbar-toggler" type="button">
+                <span class="navbar-toggler-icon" onclick="showContainer('container_menu');
+                                                           hideOtherMenu('container_menu')">
+                </span>
+
+            </button>
+
+
+           <!--img class ="icon" src="../static/images/header/logo.png" style="height: 65px; width: 65px" alt="logo"-->
+            <!--UNIMENSA-->
+            <a class="navbar-brand text-white" href="../templates/home_00.html" style="font-family: 'Britannic Bold'">uniMensa</a>
+
+            <!--MENU LIST-->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                         <a class="nav-link active text-white"  href="../templates/Home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="../templates/Order.html">Ordini</a>
+                     </li>
+                </ul>
+            </div>
+
+             <!--CART-->
+             <div id="icon_cart" class="navbar-toggler">
+                 <input type="image" class="icon" id="imgCart" alt="cart" src="../static/images/header/cart.png" title="Carrello">
+             </div>
+
+             <!--BELL-->
+            <div id="icon_bell">
+                 <input type="image" class="icon" id="imgBell" alt="bell" src="../static/images/header/imgBell.png" title="Notifiche"
+                                onclick="changeIcon('imgBell');
+                                        showContainer('container_notifications');
+                                         hideOtherMenu('container_notifications')">
+            </div>
+
+
+            <!--PROFILE-->
+            <div id="icon_profile">
+                     <input type="image" class="icon" id="imgProfile" alt="profile" src="../static/images/header/imgProfile.png" title="Profilo"
+                                    onclick="changeIcon('imgProfile');
+                                            showContainer('container_profile');
+                                            hideOtherMenu('container_profile')">
+            </div>
+        </div>
+    </nav>
+
+         <!--CONTAINER MENU SMARTPHONE-->
+         <div id="container_menu" class="dropdown-menu" style="display: none">
+              <a class="dropdown-item active" href="../templates/Home.html">Home</a>
+              <a class="dropdown-item" href="../templates/Order.html">Ordini</a>
+         </div>
+
+         <!--CONTAINER NOTIFICATIONS-->
+         <div id="container_notifications" style="display: none">
+            <ul id="notifications">
+              <li><a href="#"> Ritira il pasto</a></li>
+              <li><a href="#"> Il pasto è pronto</a></li>
+            </ul>
+         </div>
+
+         <!--CONTAINER PROFILE-->
+         <div id="container_profile" style="display: none">
+             <div id="container_infoProfile">
+                 <ul id="myAccount">
+                     <li><a href="#"> Il mio account</a></li>
+
+                     <li><a href="/logout" class="logout">Logout</a></li>
+                 </ul>
+             </div>
+        </div>
+
+    <div class="container-fluid content_center">
+        <div class="container" id="container_listPlate">
+            <!--LIST IN CREATE MENU-->
+            <ul id="listPlate">
+                <li class="liPlate liActive" id="choose_plate">
+                    <p class="p_listPlate">Scelte rapide</p></li>
+                <li class="liPlate" id="pasta">
+                    <p class="p_listPlate">Primi</p></li>
+                <li class="liPlate" id="meat">
+                    <p class="p_listPlate">Secondi</p></li>
+                <li class="liPlate" id="salad">
+                    <p class="p_listPlate">Contorni</p></li>
+                <li class="liPlate" id="fruit">
+                    <p class="p_listPlate">Frutta</p></li>
+                <li class="liPlate" id="desserts">
+                    <p class="p_listPlate">Dolci</p></li>
+                <li class="liPlate" id="sandwiches">
+                    <p class="p_listPlate">Panini</p></li>
+                <li class="liPlate" id="pizza">
+                    <p class="p_listPlate">Pizze</p></li>
+                <li class="liPlate" id="drink">
+                    <p class="p_listPlate">Bibite</p></li>
+            </ul>
+        </div>
+
+        <div class="container" id="content_cards_menu" style="display: inline-block">
+            <!--CARDS HORIZONTAL-->
+            <div class="container-fluid container_card cntcards1">
+                <div class="col-md-3 uscardPlus">
+                    <div class="card cardPlus" onclick="showContainer('add_plate')">
+                        <div>
+                            <img src="../static/images/menu_ristoratore/icon_add.png" class='plusIcon' alt="img_element">
+                            <p>Aggiungi un nuovo piatto</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="container-fluid container_card cntcards2 opc">
+
+            </div>
+
+
+            <div class="container_add_plate" id="add_plate" style="display: none">
+                <img src="../static/images/menu_ristoratore/close.png" alt="close" class="icon iconClose" onclick="showContainer('add_plate')">
+                <form name="login" method="GET" action="/home_00">
+                    <div class="container container_label">
+                        <label for="plate_name">
+                            Nome piatto:
+                        </label>
+                    </div>
+                    <div class="container container_inputPlate">
+                        <input type="text" class="addplateControl" id="plate_name" name="Name">
+                    </div>
+
+                    <div class="container container_label">
+                        <label for="price">
+                            Prezzo:
+                        </label>
+                    </div>
+                    <div class="container container_inputPlate">
+                        <input type="text" class="addplateControl" id="price" name="Price">
+                    </div>
+
+                    <div class="container container_label">
+                        <label for="ingredients">
+                            Ingredienti:
+                        </label>
+                    </div>
+                    <div class="container container_inputPlate">
+                        <textarea rows="4" cols="50" id="ingredients" name="Ingredients"></textarea>
+                    </div>
+
+
+                    <input type="file">
+                    <input type="submit" value="Aggiungi" id="addPlate">
+
+
+                </form>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    <script src="../static/js/Home.js"></script>
+    <script src="../static/js/JQuery.js"></script>
+    <script src="../static/bootstrap/js/bootstrap.esm.js"></script>
 
 </body>
 </html>

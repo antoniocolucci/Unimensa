@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+
   <title>Login</title>
 
   <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css">
@@ -22,7 +23,7 @@
         <div class="container-fluid">
 
           <!--UNIMENSA-->
-          <a class="navbar-brand text-white" href="../templates/Home.html">uniMensa</a>
+          <a class="navbar-brand text-white" href="/" style="font-family: 'Britannic Bold'">uniMensa</a>
 
         </div>
       </nav>
@@ -32,28 +33,35 @@
         <div class="container-fluid" id="container_title">
           <h1>Accedi</h1>
         </div>
+        <p class="infoLogin">Inserisci email e password del portale dell'università</p>
         <div class="container formLogin">
           <form name="login" method="POST" action="/">
-
             <div class="container container_label">
               <label for="email">
                 E-mail istituzionale
               </label>
             </div>
             <div class="container container_input_login">
+              {% if error == 2%}
+              <p class="errorLogin">Email sbagliata</p>
+              {% endif %}
               <input type="email" class="loginControl" id="email" name="Email">
             </div>
+
             <div class="container container_label">
               <label for="password">
                 Password
               </label>
             </div>
             <div class="container container_input_login">
+              {% if error == 1%}
+              <p class="errorLogin">Password sbagliata</p>
+              {% endif %}
               <input type="password" class="loginControl" id="password" name="Password">
+
             </div>
 
-            <p class="invalid-feedback"></p>
-          <input type="submit" value="Accedi" id="submit">
+           <input type="submit" value="Accedi" id="submit">
 
           </form>
         </div>
@@ -63,6 +71,8 @@
 <script src="../static/js/Home.js"></script>
 <script src="../static/js/JQuery.js"></script>
 <script src="../static/bootstrap/js/bootstrap.esm.js"></script>
+
 </body>
+
 </html>
 
