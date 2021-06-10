@@ -20,25 +20,28 @@ $(document).ready(function(){
     });
 
     $('form[name=login]').submit(function(){
-        let form = $(this)
-        let error = $(".error")
         $.ajax({
             url: "http://localhost:5000/",
+            type: 'POST',
             data: {
                 email: $("#Email").val(),
                 pwd:  $("#Password").val()
             },
-            type: 'POST',
-            success: function(resp){
-                console.log(resp)
-            },
-            error: function(resp){
-                console.log(resp)
-                error.text(resp.responseJSON.error).removeClass("error--hidden")
-            }
+
         });
     });
 
-});
 
+    $('.cardPlus').click(function (){
+
+        //$("body").siblings('.container_add_plate').css({ opacity: 0.5 });
+
+
+
+    });
+
+
+
+
+});
 
