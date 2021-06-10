@@ -1,0 +1,62 @@
+.cardPlus{
+
+    margin-left: 0;
+    height: 20rem;
+    width: 15rem;
+    margin-top: 5%;
+    border: 6px #65db86 dashed;
+    cursor: pointer;
+}
+
+.uscardPlus{
+
+    float: left;
+    display: inline-block;
+    margin-left: 5%;
+    cursor: pointer;
+}
+
+.plusIcon{
+
+    width: 128px;
+    height: 128px;
+    margin-top: 35%;
+    cursor: pointer;
+
+}
+
+.container_add_plate{
+    padding:0.5%;
+    position: absolute;
+    top: 20%;
+    left:25%;
+    width: 50%;
+    height: 50%;
+    background-color: white;
+    border: 2px #F2F2F2 solid;
+    border-radius: 3px;
+}
+
+.addplateControl{
+
+
+
+}
+
+#ingredients{
+    resize: none;
+    height: 50%;
+}
+
+#addPlate{
+
+    background-color: #358000;
+    color: white;
+
+}
+
+.iconClose{
+
+    float: right;
+    cursor: pointer;
+}

@@ -22,7 +22,7 @@
 }
 
 /*CONTAINER LIST PLATES IN CREATE MENU*/
-div#container_listPlate {
+#container_listPlate {
     padding-top: 6%;
     padding-left: 0;
     padding-right: 0;
