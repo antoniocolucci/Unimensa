@@ -16,19 +16,19 @@ cors = CORS(app)
 
 
 
-
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
-        allusers = users
-        login_user = allusers.find_one({"Email": request.form['Email']})
+        login_user = users.find_one({"Email": request.form['Email']})
         if login_user:
             if pbkdf2_sha256.verify(request.form['Password'], login_user['Password']):
                 session["_id"] = login_user["_id"]
                 session["Type"] = login_user["Type"]
                 return redirect('Home')
-        return "Login error"
+            return render_template('index.html', error=1)
+        return render_template('index.html', error=2)
     return render_template('index.html')
+
 
 @app.route('/logout', methods=['POST', 'GET'])
 def logout():
@@ -44,6 +44,7 @@ def home():
     else:
         return render_template('Home.html')
 
+
 @app.route('/myAccount')
 def account():
     return render_template('Account.html')
@@ -58,41 +59,6 @@ def cartphone():
 
 
 
-
-
-
-
-
 if __name__ == '__main__':
     app.secret_key = 'unimensa'
     app.run(debug=True)
-
-
-
-""" if(user and pbkdf2_sha256.verify(request.form.get("Password"), user['Password'])):
-            return jsonify({user})
-        else:
-            return jsonify({'error': 'Login Error'}), 400
-            
-                if request.method == 'POST':
-        usr_email = request.form['Email']
-        usr_pwd = request.form['Password']
-
-        user = users.find_one({'Email': usr_email}).count()
-        print(user)
-        if user > 0:
-            user_rs = users.find_one({'Email': usr_email})
-            pwd = user_rs['Password']
-            print(pwd)
-            #if check_password_hash(pwd, usr_pwd):
-            session['sessionusername'] = usr_email
-            return redirect('/Home')
-            #else:
-             #   error = 'Invalid login'
-             #   return render_template('index.html', error=error)
-        else:
-            error = 'Username not found'
-            return render_template('index.html', error=error)
-    return render_template('index.html')
-
-            """
