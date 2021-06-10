@@ -68,7 +68,6 @@ ul#listPlate{
     cursor: pointer;
     float: left;
     background: #3b83bd;
-    border: 1px darkorange solid;
     padding: 2%;
     font-weight: bold;
 }
@@ -266,5 +265,4 @@ ul#listPlate{
     width: 200px;
     height: 200px;
     margin-left: 20%;
-
 }
