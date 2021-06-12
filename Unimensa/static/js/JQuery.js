@@ -42,5 +42,19 @@ $(document).ready(function(){
 
     });
 
+    $('form[name=addPlate]').submit(function(){
+        $.ajax({
+            url: "http://localhost:5000/",
+            type: 'POST',
+            data: {
+                name: $("#plate_name").val(),
+                price:  $("#price").val()
+            },
+
+        });
+    });
+
+
+
 });
 
