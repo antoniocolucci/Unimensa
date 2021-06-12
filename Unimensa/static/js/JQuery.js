@@ -33,9 +33,7 @@ $(document).ready(function(){
 
 
     $('.cardPlus').click(function (){
-
-        //$("body").siblings('.container_add_plate').css({ opacity: 0.5 });
-
+        $('.content_center').addClass('opa')
 
 
     });
