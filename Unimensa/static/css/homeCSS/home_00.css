@@ -60,3 +60,15 @@
     float: right;
     cursor: pointer;
 }
+
+.opa{
+    opacity: 0.5;
+    background-color: rgb(33, 41, 52);
+}
+
+.resize{
+    height: 150px;
+    //border: 1px solid #000;
+    margin: 30px 30px 0 0;
+    //margin: auto;
+}
