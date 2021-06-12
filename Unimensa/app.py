@@ -2,8 +2,10 @@ from flask import Flask, render_template, request, redirect, jsonify, url_for, s
 from flask_cors import CORS
 from pymongo import MongoClient
 from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.utils import secure_filename
 from passlib.hash import pbkdf2_sha256
 from funzioni import *
+import gridfs
 
 client = MongoClient("mongodb://localhost:27017/")
 db = client["unimensa"]
@@ -11,7 +13,6 @@ users = db["users"]
 app = Flask(__name__)
 app.secret_key = 'unimensakey'
 cors = CORS(app)
-
 
 
 
@@ -40,6 +41,16 @@ def logout():
 @app.route('/Home', methods=['POST', 'GET'])
 def home():
     if session["Type"] == "admin":
+        if request.method == 'POST':
+           namePlate = request.form['Name']
+           pricePlate = request.form['Price']
+           ingredients = request.form['Ingredients']
+           imgPlate = request.files['imgFile']
+           #imgName = secure_filename(imgPlate.filename)
+
+           #print(imgPlate)
+           #print(imgName)
+
         return render_template('home_00.html')
     else:
         return render_template('Home.html')
