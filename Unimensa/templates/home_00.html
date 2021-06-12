@@ -93,7 +93,6 @@
                  </ul>
              </div>
         </div>
-
     <div class="container-fluid content_center">
         <div class="container" id="container_listPlate">
             <!--LIST IN CREATE MENU-->
@@ -139,55 +138,53 @@
             </div>
 
 
-            <div class="container_add_plate" id="add_plate" style="display: none">
-                <img src="../static/images/menu_ristoratore/close.png" alt="close" class="icon iconClose" onclick="showContainer('add_plate')">
-                <form name="login" method="GET" action="/home_00">
-                    <div class="container container_label">
-                        <label for="plate_name">
-                            Nome piatto:
-                        </label>
-                    </div>
-                    <div class="container container_inputPlate">
-                        <input type="text" class="addplateControl" id="plate_name" name="Name">
-                    </div>
-
-                    <div class="container container_label">
-                        <label for="price">
-                            Prezzo:
-                        </label>
-                    </div>
-                    <div class="container container_inputPlate">
-                        <input type="text" class="addplateControl" id="price" name="Price">
-                    </div>
-
-                    <div class="container container_label">
-                        <label for="ingredients">
-                            Ingredienti:
-                        </label>
-                    </div>
-                    <div class="container container_inputPlate">
-                        <textarea rows="4" cols="50" id="ingredients" name="Ingredients"></textarea>
-                    </div>
-
-
-                    <input type="file">
-                    <input type="submit" value="Aggiungi" id="addPlate">
-
-
-                </form>
-
-
-            </div>
-
-
         </div>
     </div>
+    <div class="container_add_plate" id="add_plate" style="display: none">
+        <img src="../static/images/menu_ristoratore/close.png" alt="close" class="icon iconClose" onclick="showContainer('add_plate')">
+        <form name="login" method="GET" action="/home_00">
+            <div class="container container_label">
+                <label for="plate_name">
+                    Nome piatto:
+                </label>
+            </div>
+            <div class="container container_inputPlate">
+                <input type="text" class="addplateControl" id="plate_name" name="Name">
+            </div>
 
+            <div class="container container_label">
+                <label for="price">
+                    Prezzo:
+                </label>
+            </div>
+            <div class="container container_inputPlate">
+                <input type="text" class="addplateControl" id="price" name="Price">
+            </div>
+
+            <div class="container container_label">
+                <label for="ingredients">
+                    Ingredienti:
+                </label>
+            </div>
+            <div class="container container_inputPlate">
+                <textarea rows="4" cols="50" id="ingredients" name="Ingredients"></textarea>
+            </div>
+            <div id="preview"></div>
+
+            <input type="file" name="imgFile" id="imgFile">
+            <input type="submit" value="Aggiungi" id="addPlate">
+
+
+        </form>
+
+
+    </div>
 
 
     <script src="../static/js/Home.js"></script>
     <script src="../static/js/JQuery.js"></script>
     <script src="../static/bootstrap/js/bootstrap.esm.js"></script>
+    <script src="../static/js/home_00.js"></script>
 
 </body>
 </html>
