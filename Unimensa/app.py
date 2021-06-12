@@ -60,5 +60,5 @@ def cartphone():
 
 
 if __name__ == '__main__':
-    app.secret_key = 'unimensa'
+    app.secret_key = 'unimensakey'
     app.run(debug=True)
