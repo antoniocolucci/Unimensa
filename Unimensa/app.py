@@ -4,14 +4,19 @@ from pymongo import MongoClient
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
 from passlib.hash import pbkdf2_sha256
+import uuid
+import os
 from funzioni import *
 import gridfs
 
 client = MongoClient("mongodb://localhost:27017/")
 db = client["unimensa"]
 users = db["users"]
+plate = db['plate']
+UPLOAD_FOLDER = '../static/images/mensa/'
 app = Flask(__name__)
 app.secret_key = 'unimensakey'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 cors = CORS(app)
 
 
@@ -38,18 +43,18 @@ def logout():
     return redirect(url_for('index'))
 
 
-@app.route('/Home', methods=['POST', 'GET'])
+@app.route('/Home', methods=['GET', 'POST'])
 def home():
     if session["Type"] == "admin":
         if request.method == 'POST':
-           namePlate = request.form['Name']
-           pricePlate = request.form['Price']
-           ingredients = request.form['Ingredients']
-           imgPlate = request.files['imgFile']
-           #imgName = secure_filename(imgPlate.filename)
-
-           #print(imgPlate)
-           #print(imgName)
+            namePlate = request.form['Name']
+            pricePlate = request.form['Price']
+            ingredients = request.form['Ingredients']
+            imgPlate = request.FILES['imgFile']
+            print(imgPlate)
+            if imgPlate:
+                filename = secure_filename(imgPlate.filename)
+                imgPlate.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
         return render_template('home_00.html')
     else:
