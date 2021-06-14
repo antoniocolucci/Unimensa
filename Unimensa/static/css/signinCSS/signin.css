@@ -1,0 +1,63 @@
+
+.container_label{
+    width: 50%;
+    float: left;
+    margin-left: 24.5%;
+}
+
+#submit{
+    margin-top: 5%;
+    cursor: pointer;
+    position: relative;
+    left: 25%;
+    width: 50%;
+    height: 35%;
+    color: white;
+    text-align: center;
+    background-color: #358000;
+}
+
+
+.container_input_signin{
+    margin-bottom: 3%;
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    float: left;
+}
+
+#container_title{
+    text-align: left;
+    width: 100%;
+}
+
+#container_form_signin{
+    background-color: white;
+    box-shadow: 5px 5px rgba(0,0,0, 0.1);
+    border: 1px #3b83bd solid;
+    border-radius: 3px;
+    position: relative;
+    top: 20%;
+    width: 30%;
+    height: 55%;
+    display: flex;
+}
+.formSignin{
+    height: 40%;
+    width: 100%;
+}
+.signinControl{
+    height: 50%;
+    width: 50%;
+}
+
+.verify{
+    text-align: center;
+}
+
+.errorLogin{
+
+   color: red;
+   position: relative;
+   float: left;
+}
