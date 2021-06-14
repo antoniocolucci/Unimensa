@@ -68,6 +68,40 @@ def order():
 def cartphone():
     return render_template('Cart.html')
 
+@app.route('/signin', methods=['POST', 'GET'])
+def signin():
+    if request.method == 'POST':
+        email_user = request.form['Email']
+        signin_user = users.find_one({"Email": email_user})
+        if signin_user:
+            return render_template('signin.html', error=3)
+        elif email_user.find('studenti.universita.it') == -1 and email_user.find('docenti.universita.it') == -1 and email_user.find('personale.universita.it') == -1:
+            return render_template('signin.html', error=4)
+        else:
+            if request.form['Email'] == '' or request.form['Name'] == '' or request.form['Surname'] == '' or request.form['Password'] == '' or request.form['checkPassword'] == '':
+                return render_template('signin.html', error=5)
+            elif request.form['Password'] != request.form['checkPassword']:
+                return render_template('signin.html', error=6)
+            #Remember check easy password
+            else:
+                user_type = 'user'
+                if email_user.find('personale.universita.it') != -1:
+                    user_type = 'admin'
+                users.insert_one({'_id': uuid.uuid4().hex, 'Name': request.form['Name'], 'Surname': request.form['Surname'], 'Email': request.form['Email'], 'Password': pbkdf2_sha256.hash(request.form['Password']), 'Type': user_type})
+                return redirect(url_for('index'))
+
+    return render_template('signin.html')
+
+
+
+
+
+
+
+
+
+
+
 
 
 if __name__ == '__main__':

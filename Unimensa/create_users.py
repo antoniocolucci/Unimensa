@@ -14,14 +14,14 @@ import uuid
 ]
 
 # Add users to the database.
-add = users.insert_many(user)
+add = users.insert_many(user)"""
 
 
 
 
 result = users.find()
 for item in result:
-    print(item)"""
+    print(item)
 
 #GridFSBucket = GridFSBuckets.create(db, "files");
 
