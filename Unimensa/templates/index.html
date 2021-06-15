@@ -15,7 +15,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body>
+<body onLoad="login.Email.focus();">
 
       <!--NAVBAR-->
       <nav class="navbar navbar-expand-lg navbar-light fixed-top">
@@ -33,7 +33,7 @@
         <div class="container-fluid" id="container_title">
           <h1>Accedi</h1>
         </div>
-        <p class="infoLogin">Inserisci email e password del portale dell'università</p>
+        <!--p class="infoLogin">Inserisci email e password del portale dell'università</p-->
         <div class="container formLogin">
           <form name="login" method="POST" action="/">
             <div class="container container_label">
@@ -42,9 +42,7 @@
               </label>
             </div>
             <div class="container container_input_login">
-              {% if error == 2%}
-              <p class="errorLogin">Email sbagliata</p>
-              {% endif %}
+
               <input type="email" class="loginControl" id="email" name="Email">
             </div>
 
@@ -54,17 +52,23 @@
               </label>
             </div>
             <div class="container container_input_login">
-              {% if error == 1%}
-              <p class="errorLogin">Password sbagliata</p>
-              {% endif %}
               <input type="password" class="loginControl" id="password" name="Password">
 
             </div>
+            <div class="container container_submit">
+              {% if error == 2%}
+              <p class="errorLogin">Email sbagliata</p>
+              {% endif %}
 
-           <input type="submit" value="Accedi" id="submit">
+              {% if error == 1%}
+              <p class="errorLogin">Password sbagliata</p>
+              {% endif %}
+
+              <input type="submit" value="Accedi" id="submit">
 
               <p class="verify"> Non sei ancora registrato ? <a href="/signin"> Registrati </a></p>
 
+            </div>
           </form>
         </div>
       </div>

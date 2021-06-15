@@ -77,8 +77,8 @@
          <!--CONTAINER NOTIFICATIONS-->
          <div id="container_notifications" style="display: none">
             <ul id="notifications">
-              <li><a href="#"> Ritira il pasto</a></li>
-              <li><a href="#"> Il pasto è pronto</a></li>
+              <li class="notify"><a href="#"> Ritira il pasto</a></li>
+              <li class="notify"><a href="#"> Il pasto è pronto</a></li>
             </ul>
          </div>
 
@@ -86,8 +86,8 @@
          <div id="container_profile" style="display: none">
              <div id="container_infoProfile">
                  <ul id="myAccount">
-                     <li><a href="#"> Il mio account</a></li>
-                     <li><a href="/logout" class="logout">Logout</a></li>
+                     <li class="login"><a href="#"> Il mio account</a></li>
+                     <li class="login"><a href="/logout" class="logout">Logout</a></li>
                  </ul>
              </div>
         </div>
@@ -139,7 +139,7 @@
                        <img src="../static/images/mensa/pesto.jpg" class="card-img-top imgCard" alt="img_element">
                         <div class="card-body">
                             <h5 id="plate2_name" class="card-title">Pesto</h5>
-                            <p id="plate2_price" class="card-text">Prezzo: 8.00 €</p>
+                            <p id="plate2_price" class="card-text">Prezzo: 7.00 €</p>
                             <input type="button" class="button_book" value="Aggiungi"
                                 onclick="addProductToBill('plate2_name', 'plate2_price')">
                         </div>
@@ -164,7 +164,7 @@
                         <img src="../static/images/mensa/gnocchi.png" class="card-img-top imgCard" alt="img_element">
                         <div class="card-body">
                             <h5 id="plate4_name" class="card-title">Gnocchi</h5>
-                            <p id="plate4_price" class="card-text">Prezzo: 9.00 €</p>
+                            <p id="plate4_price" class="card-text">Prezzo: 8.00 €</p>
                             <input type="button" class="button_book" value="Aggiungi"
                                  onclick="addProductToBill('plate4_name', 'plate4_price')">
                         </div>
@@ -183,10 +183,10 @@
             </div>
           <div class="col-md-3 usCard">
               <div class="card">
-                  <img src="../static/images/mensa/gnocchi.png" class="card-img-top imgCard" alt="img_element">
+                  <img src="../static/images/mensa/salad.jpeg" class="card-img-top imgCard" alt="img_element">
                   <div class="card-body">
-                      <h5 id="plate6_name" class="card-title">Gnocchi</h5>
-                      <p id="plate6_price" class="card-text">Prezzo: 9.00 €</p>
+                      <h5 id="plate6_name" class="card-title">Insalata</h5>
+                      <p id="plate6_price" class="card-text">Prezzo: 5.00 €</p>
                       <input type="button" class="button_book" value="Aggiungi"
                              onclick="addProductToBill('plate6_name', 'plate6_price')">
                   </div>
@@ -353,7 +353,7 @@
              <h3>Prodotti scelti: </h3>
              <h4 id="cartEmpty">Il carrello è vuoto</h4>
              <div class="container_product_chosen">
-                 <!--img class="cart_empty" src="../static/images/body_home/cart_empty.png" alt="cart_empty"style="display: block"-->
+                 <img class="cart_empty" src="../static/images/body_home/cart2.png" alt="cart_empty">
                  <ul id="list_bill">
                 </ul>
              </div>
