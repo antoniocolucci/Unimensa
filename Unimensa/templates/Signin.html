@@ -23,7 +23,7 @@
   <div class="container-fluid">
 
     <!--UNIMENSA-->
-    <a class="navbar-brand text-white" href="../html/Home.html">uniMensa</a>
+    <a class="navbar-brand text-white" href="/Home" style="font-family: 'Britannic Bold'">uniMensa</a>
 
   </div>
 </nav>
@@ -36,7 +36,7 @@
   <div class="container formSignin">
     <form name="signin" method="post" action="/signin">
       <div class="container container_label">
-        <label for="name">
+        <label for="name" class="text">
           Nome
         </label>
       </div>
@@ -44,7 +44,7 @@
         <input type="text" class="signinControl" id="name" name="Name">
       </div>
       <div class="container container_label">
-        <label for="surname">
+        <label for="surname" class="text">
           Cognome
         </label>
       </div>
@@ -52,15 +52,16 @@
         <input type="text" class="signinControl" id="surname" name="Surname">
       </div>
       <div class="container container_label">
-        <label for="email2" id="prova">
+        <label for="email2" id="prova" class="text">
           E-mail istituzionale
         </label>
       </div>
       <div class="container container_input_signin">
         <input type="email" class="signinControl" id="email2" name="Email">
       </div>
+
       <div class="container container_label">
-        <label for="password2">
+        <label for="password2" class="text">
           Password
         </label>
       </div>
@@ -69,7 +70,7 @@
       </div>
 
       <div class="container container_label">
-        <label for="confirm_password">
+        <label for="confirm_password" class="text">
           Conferma Password
         </label>
       </div>
@@ -81,13 +82,13 @@
         <p class="errorLogin">Email già in uso</p>
         {% endif %}
         {% if error == 4%}
-        <p class="errorLogin">Puoi registrarti solo con le email istituzionali (@studenti.universita.it) (@docenti.universita.it) (@personale.universita.it)</p>
+        <p class="errorLogin2">Registrarsi con una delle email istituzionali: (@studenti.universita.it) (@docenti.universita.it) (@personale.universita.it)</p>
         {% endif %}
         {% if error == 5%}
         <p class="errorLogin">Riempire tutti i campi</p>
         {% endif %}
         {% if error == 6%}
-        <p class="errorLogin">Le password inserite non combaciano</p>
+        <p class="errorLogin">Le password inserite sono diverse</p>
         {% endif %}
         <input type="submit" value="Registrati" id="submit">
 
