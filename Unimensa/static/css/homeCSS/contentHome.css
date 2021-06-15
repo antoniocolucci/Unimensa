@@ -266,3 +266,10 @@ ul#listPlate{
     height: 200px;
     margin-left: 20%;
 }
+
+#cartEmpty{
+
+    text-align: center;
+    top: 5%
+
+}
