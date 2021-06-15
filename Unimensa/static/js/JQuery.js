@@ -54,6 +54,16 @@ $(document).ready(function(){
         });
     });
 
+    $('form[name=signin]').submit(function(){
+        $.ajax({
+            url: "http://localhost:5000/signin",
+            type: 'POST',
+            data: {
+                email: $("#email2").val(),
+            },
+
+        });
+    });
 
 
 });
