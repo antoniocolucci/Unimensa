@@ -12,12 +12,13 @@ function previewFile(evt) {
     let reader = new FileReader();
 
     /*Onload of fileReader, put the image in the div preview*/
-    reader.onload = (function(theFile) {
+    reader.onload = (function (theFile) {
         return function(e) {
             /*The title is the filename, and the src is the PATH of file*/
             document.getElementById('preview').innerHTML = '<img class="resize" title="'+escape(theFile.name)+'" src="'+e.target.result+'" draggable="false" ondragstart="return false;"/>';
         };
     })(f);
+
 
     /*The readAsDataURL method is used to handle binary files, such as images in our example.
     The content of the file is interpreted as a "data URL", which is a base64 representation

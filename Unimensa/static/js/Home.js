@@ -101,6 +101,7 @@ function Elementcart(name, price, quantity){
 
 function addProductToBill(plate_name,plate_price) {
     $("#cartEmpty").css("display", "none")
+    $(".cart_empty").css("display", "none")
     $('.container_deleteAll').css("display", "block")
     let plateName = document.getElementById(plate_name)
     let name = plateName.innerText
@@ -151,6 +152,7 @@ function dropProduct(plate_name,plate_price){
     }
     if(elementCart.length === 0){
         $("#cartEmpty").css("display", "block")
+        $(".cart_empty").css("display", "block")
         $('.container_deleteAll').css("display", "none")
     }else if(elementCart.length <= 3 ){
 
@@ -180,6 +182,7 @@ function drop_all_product(){
     bill_tot(0,-1)
     $('.container_product_chosen').css('overflow-y', 'hidden')
     $("#cartEmpty").css("display", "block")
+    $(".cart_empty").css("display", "block")
     $('.container_deleteAll').css("display", "none")
 
 
@@ -188,7 +191,9 @@ function drop_all_product(){
 
 function addSandwichesToBill() {
     $("#cartEmpty").css("display", "none")
+    $(".cart_empty").css("display", "none")
     $('.container_deleteAll').css("display", "block")
+    $("#cart_empty").css("display", "none")
     let price_Float = 0.2 //RICORDA DA RECUPERARE DAL DB
     let checked = $(".checkbox_sandwiches")
 
@@ -200,17 +205,17 @@ function addSandwichesToBill() {
             labels = document.querySelector(`label[for='${xChecked["id"]}']`)
             lengName = labels.innerText.indexOf('(')-1
             if(xChecked.matches('.pane')){
-                components = labels.innerText.substr(0, lengName) + "("
+                components = labels.innerText.substr(0, lengName) + " ("
                 price_Float = Math.max(price_Float, parseFloat(xChecked["value"]))
             } else
             {
-                components = components + " " + labels.innerText.substr(0,lengName) +","
+                components = components + "" + labels.innerText.substr(0,lengName) +","
                 price_Float = price_Float + parseFloat(xChecked["value"])
             }
 
         }
     }
-    components = components.substr(0,components.length-1)+' )'
+    components = components.substr(0,components.length-1)+')'
     checked.prop('checked', false)
     let y = researchEle(components)
     let price_sandwiches = ''+ price_Float.toFixed(2) + ' €'
