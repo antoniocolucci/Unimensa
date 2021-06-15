@@ -33,13 +33,10 @@ $(document).ready(function(){
 
     $('.cardPlus').click(function (){
         $('.content_center').addClass('opa')
-
-
     });
+
     $('.iconClose').click(function (){
         $('.content_center').removeClass('opa')
-
-
     });
 
     $('form[name=addPlate]').submit(function(){
