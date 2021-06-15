@@ -13,13 +13,11 @@ client = MongoClient("mongodb://localhost:27017/")
 db = client["unimensa"]
 users = db["users"]
 plate = db['plate']
-UPLOAD_FOLDER = '../static/images/mensa/'
+UPLOAD_FOLDER = '../Unimensa/static/images/mensa/'
 app = Flask(__name__)
 app.secret_key = 'unimensakey'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 cors = CORS(app)
-
-
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -50,12 +48,23 @@ def home():
             namePlate = request.form['Name']
             pricePlate = request.form['Price']
             ingredients = request.form['Ingredients']
-            #imgPlate = request.FILES['imgFile']
-            #print(imgPlate)
-            #if imgPlate:
-            #    filename = secure_filename(imgPlate.filename)
-            #    imgPlate.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            plate.insert_one({'_id': uuid.uuid4().hex, 'Name': request.form['Name'], 'Price': request.form['Price'], 'Ingredients': request.form['Ingredients']})
+            #name = request.form['imgFile']
+            file = request.files['imgFile']
+            #print(name)
+            print(file)
+            filename = secure_filename(file.filename)
+            print(filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
+            """data = db.fs.files.find_one({'filename': name})
+            my_id = data['_id']
+            outputdata = fs.get(my_id).read()
+            download_location = '../Unimensa/static/images/mensa/' + name
+            output = open(download_location, 'wb')
+            output.write(outputdata)
+            output.close()
+            print("Download complete")"""
         return render_template('home_00.html')
     else:
         return render_template('Home.html')

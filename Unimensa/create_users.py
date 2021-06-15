@@ -1,4 +1,4 @@
-from app import db, users
+from app import db, users, plate, gridfs
 from passlib.hash import pbkdf2_sha256
 import uuid
 
@@ -14,16 +14,32 @@ import uuid
 ]
 
 # Add users to the database.
-add = users.insert_many(user)"""
-
-
+add = users.insert_many(user)
 
 
 result = users.find()
 for item in result:
+    print(item)"""
+
+
+"""piatto = [{"Name": "Carbonara"}]
+add = plate.insert_many(piatto)"""
+
+result = plate.find()
+
+for item in result:
     print(item)
 
-#GridFSBucket = GridFSBuckets.create(db, "files");
+#result = db.files.find()
+#result = plate.delete_many({})
+
+#for item in result:
+#    print(item)
+
+#data = db.fs.files.find()
+
+
+#GridFSBucket = GridFSBuckets.find(db);
 
 
 #result = users.delete_many({})
