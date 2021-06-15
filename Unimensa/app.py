@@ -6,7 +6,6 @@ from werkzeug.utils import secure_filename
 from passlib.hash import pbkdf2_sha256
 import uuid
 import os
-from funzioni import *
 import gridfs
 
 client = MongoClient("mongodb://localhost:27017/")
