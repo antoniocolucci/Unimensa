@@ -42,10 +42,12 @@
     height: 55%;
     display: flex;
 }
+
 .formSignin{
     height: 40%;
     width: 100%;
 }
+
 .signinControl{
     height: 50%;
     width: 50%;
@@ -56,7 +58,6 @@
 }
 
 .errorLogin{
-
    color: red;
    position: absolute;
    float: left;
