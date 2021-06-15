@@ -50,11 +50,11 @@ def home():
             namePlate = request.form['Name']
             pricePlate = request.form['Price']
             ingredients = request.form['Ingredients']
-            imgPlate = request.FILES['imgFile']
-            print(imgPlate)
-            if imgPlate:
-                filename = secure_filename(imgPlate.filename)
-                imgPlate.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            #imgPlate = request.FILES['imgFile']
+            #print(imgPlate)
+            #if imgPlate:
+            #    filename = secure_filename(imgPlate.filename)
+            #    imgPlate.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
         return render_template('home_00.html')
     else:
