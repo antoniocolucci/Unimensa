@@ -58,6 +58,17 @@
 .errorLogin{
 
    color: red;
-   position: relative;
+   position: absolute;
    float: left;
+   margin-left: 35%
 }
+
+.errorLogin2{
+   color: red;
+   float: left;
+   position: static;
+}
+
+/*.text{
+   font-weight: bold;
+}*/
