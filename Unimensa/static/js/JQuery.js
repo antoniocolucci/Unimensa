@@ -1,4 +1,8 @@
 $(document).ready(function(){
+
+
+});
+
     $('.liPlate').click(function(){
         $('.liPlate').removeClass("liActive");
         $(this).addClass("liActive");
@@ -39,8 +43,10 @@ $(document).ready(function(){
         $('.content_center').removeClass('opa')
     });
 
+
     $('form[name=addPlate]').submit(function(){
         $.ajax({
+            dataType: 'json',
             url: "http://localhost:5000/Home",
             type: 'POST',
             data: {
@@ -49,7 +55,9 @@ $(document).ready(function(){
                 ingredients: $("#ingredients").val(),
                 filename: $("#imgFile").val(),
             },
-
+            success: function(card){
+                createCard(card)
+            }
         });
     });
 
