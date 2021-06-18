@@ -4,6 +4,7 @@ from pymongo import MongoClient
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
 from passlib.hash import pbkdf2_sha256
+from django.http import HttpRequest
 import uuid
 import os
 import gridfs
@@ -17,7 +18,7 @@ app = Flask(__name__)
 app.secret_key = 'unimensakey'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 cors = CORS(app)
-
+#newCard ={'Name': '', 'Price': '', 'Ingredients': '', 'Filename': ''}
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -47,14 +48,15 @@ def home():
             namePlate = request.form['Name']
             pricePlate = request.form['Price']
             ingredients = request.form['Ingredients']
-            plate.insert_one({'_id': uuid.uuid4().hex, 'Name': request.form['Name'], 'Price': request.form['Price'], 'Ingredients': request.form['Ingredients']})
-            #name = request.form['imgFile']
+            plate.insert_one({'_id': uuid.uuid4().hex, 'Name': namePlate, 'Price': pricePlate, 'Ingredients': ingredients})
             file = request.files['imgFile']
-            #print(name)
-            print(file)
             filename = secure_filename(file.filename)
             print(filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            newCard = jsonify({'Name': namePlate, 'Price': pricePlate, 'Ingredients': ingredients, 'Filename': filename})
+
+            return HttpResponse(newCard, content_type='application/json')
+
 
             """data = db.fs.files.find_one({'filename': name})
             my_id = data['_id']
@@ -67,7 +69,6 @@ def home():
         return render_template('home_00.html')
     else:
         return render_template('Home.html')
-
 
 @app.route('/myAccount')
 def account():
@@ -104,17 +105,6 @@ def signin():
                 return redirect(url_for('index'))
 
     return render_template('signin.html')
-
-
-
-
-
-
-
-
-
-
-
 
 
 if __name__ == '__main__':
