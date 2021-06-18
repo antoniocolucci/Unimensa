@@ -45,7 +45,9 @@ $(document).ready(function(){
             type: 'POST',
             data: {
                 name: $("#plate_name").val(),
-                price:  $("#price").val()
+                price:  $("#price").val(),
+                ingredients: $("#ingredients").val(),
+                filename: $("#imgFile").val(),
             },
 
         });
@@ -61,7 +63,3 @@ $(document).ready(function(){
 
         });
     });
-
-
-});
-

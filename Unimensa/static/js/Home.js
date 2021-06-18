@@ -337,3 +337,10 @@ function bill_tot(price, operand){
 
 }
 
+function svuota(){
+
+    $('#email').value = '';
+    $('#password').value = '';
+
+}
+
