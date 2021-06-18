@@ -13,6 +13,7 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 
 <body onLoad="login.Email.focus();">
@@ -64,7 +65,7 @@
               <p class="errorLogin">Password sbagliata</p>
               {% endif %}
 
-              <input type="submit" value="Accedi" id="submit">
+              <input type="submit" value="Accedi" id="submit" onclick="svuota()">
 
               <p class="verify"> Non sei ancora registrato ? <a href="/signin"> Registrati </a></p>
 
