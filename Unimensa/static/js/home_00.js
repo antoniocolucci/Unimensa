@@ -1,3 +1,4 @@
+let card
 
 function previewFile(evt) {
     /*Select a file*/
@@ -36,37 +37,6 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById('imgFile').addEventListener('change', previewFile, false);
 });
 
-let numbCard = 0;
-function createCard(result){
-   numbCard++;
-   let containerCards1 = document.getElementById('cntcards1')
-   let containerCards2 = document.getElementById('cntcards2')
-   let newName = result['Name']
-   let newPrice = result['Price']
-   let newIngredients = result['Ingredients']
-   let newIdName = 'plate'+numbCard+'_name'
-   let newIdPrice = 'plate'+numbCard+'_price'
-   let newFilename = result['Filename']
-   let externalCard
-   let card
-   let cardBody
-   let imgCard
 
-   externalCard = document.createElement("div")
-   externalCard.classList.add('col-md-3 usCard')
 
-   card = document.createElement("div")
-   card.classList.add('card')
 
-   cardBody = document.createElement("div")
-   cardBody.classList.add('card-body')
-   
-   imgCard = document.createElement("img")
-   imgCard.src = '../Unimensa/static/images/mensa/'+newFilename
-   imgCard.classList.add('card-img-top imgCard')
-
-   cardBody.appendChild(imgCard)
-   card.appendChild(cardBody)
-   externalCard.appendChild(card)
-   containerCards1.appendChild(externalCard)
-}
