@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, jsonify, url_for, session
+from flask import Flask, render_template, request, redirect, jsonify, url_for, session, json
 from flask_cors import CORS
 from pymongo import MongoClient
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -27,7 +27,7 @@ def index():
         if login_user:
             if pbkdf2_sha256.verify(request.form['Password'], login_user['Password']):
                 session["_id"] = login_user["_id"]
-                session["Type"] = login_user["Type"]
+                #session["Type"] = login_user["Type"]
                 return redirect('Home')
             return render_template('index.html', error=1)
         return render_template('index.html', error=2)
@@ -37,26 +37,41 @@ def index():
 @app.route('/logout', methods=['POST', 'GET'])
 def logout():
     session.pop('_id', None)
-    session.pop("Type", None)
     return redirect(url_for('index'))
+
+@app.route('/api/Home', methods=['GET', 'POST'])
+def loadCard():
+    if request.method == 'POST':
+        plates = plate.find_one({'Ingredients': 'f'})
+        print(plates)
+        if plates is not None:
+            #list_plates = list(plates)
+            return jsonify(plates)
+        else:
+            return render_template('home_00.html')
+    return render_template('home_00.html')
 
 
 @app.route('/Home', methods=['GET', 'POST'])
 def home():
-    if session["Type"] == "admin":
+    user = users.find_one({'Type': 'admin'})
+    if session["_id"] == user['_id']:
         if request.method == 'POST':
             namePlate = request.form['Name']
-            pricePlate = request.form['Price']
-            ingredients = request.form['Ingredients']
-            plate.insert_one({'_id': uuid.uuid4().hex, 'Name': namePlate, 'Price': pricePlate, 'Ingredients': ingredients})
-            file = request.files['imgFile']
-            filename = secure_filename(file.filename)
-            print(filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            newCard = jsonify({'Name': namePlate, 'Price': pricePlate, 'Ingredients': ingredients, 'Filename': filename})
-
-            return HttpResponse(newCard, content_type='application/json')
-
+            print(namePlate)
+            if namePlate == None:
+                print('Sono passato da qui')
+                return render_template('home_00.html')
+            else:
+                pricePlate = request.form['Price']
+                ingredients = request.form['Ingredients']
+                id = uuid.uuid4().hex
+                file = request.files['imgFile']
+                filename = secure_filename(file.filename)
+                file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                newCard = {'_id': id, 'Name': namePlate, 'Price': pricePlate, 'Ingredients': ingredients, 'Filename': filename}
+                plate.insert_one(newCard)
+                return render_template('home_00.html')
 
             """data = db.fs.files.find_one({'filename': name})
             my_id = data['_id']
@@ -66,9 +81,11 @@ def home():
             output.write(outputdata)
             output.close()
             print("Download complete")"""
-        return render_template('home_00.html')
+        else:
+            return render_template('home_00.html')
     else:
         return render_template('Home.html')
+
 
 @app.route('/myAccount')
 def account():
