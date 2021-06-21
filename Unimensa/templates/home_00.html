@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body>
+<body onload="loadCard()">
 
     <!--NAVBAR-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
@@ -143,7 +143,7 @@
     </div>
     <div class="container_add_plate" id="add_plate" style="display: none">
         <img src="../static/images/menu_ristoratore/close.png" alt="close" class="icon iconClose" onclick="showContainer('add_plate')">
-        <form name="addPlate" method="POST" action="/Home" enctype="multipart/form-data">
+        <form name="addPlate" method="post" enctype="multipart/form-data">
             <div class="container container_label">
                 <label for="plate_name">
                     Nome piatto:
