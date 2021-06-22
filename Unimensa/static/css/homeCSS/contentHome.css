@@ -162,7 +162,6 @@ ul#listPlate{
     height: 50%;
     width: 25%;
     background-color: #FCFCFC;
-    //background-color: rgba(41, 101, 68, 0.13);
     border: 2px #F2F2F2 solid;
     border-radius: 3px;
 }
@@ -235,7 +234,6 @@ ul#listPlate{
     text-align: center;
     width: 100%;
     padding-top: 2%;
-   // background-color: #358000;
 }
 
 .container_product_chosen{
