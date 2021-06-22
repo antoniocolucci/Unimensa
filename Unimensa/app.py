@@ -42,11 +42,11 @@ def logout():
 @app.route('/api/Home', methods=['GET', 'POST'])
 def loadCard():
     if request.method == 'POST':
-        plates = plate.find_one({'Ingredients': 'f'})
-        print(plates)
-        if plates is not None:
-            #list_plates = list(plates)
-            return jsonify(plates)
+        type = request.form['Type']
+        plates = plate.find({'Type': type})
+        if plates:
+            list_plates = list(plates)
+            return jsonify(list_plates)
         else:
             return render_template('home_00.html')
     return render_template('home_00.html')
@@ -65,22 +65,14 @@ def home():
             else:
                 pricePlate = request.form['Price']
                 ingredients = request.form['Ingredients']
+                type = request.form['Type']
                 id = uuid.uuid4().hex
                 file = request.files['imgFile']
                 filename = secure_filename(file.filename)
                 file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-                newCard = {'_id': id, 'Name': namePlate, 'Price': pricePlate, 'Ingredients': ingredients, 'Filename': filename}
+                newCard = {'_id': id, 'Name': namePlate, 'Price': pricePlate, 'Ingredients': ingredients, 'Filename': filename, 'Type': type}
                 plate.insert_one(newCard)
                 return render_template('home_00.html')
-
-            """data = db.fs.files.find_one({'filename': name})
-            my_id = data['_id']
-            outputdata = fs.get(my_id).read()
-            download_location = '../Unimensa/static/images/mensa/' + name
-            output = open(download_location, 'wb')
-            output.write(outputdata)
-            output.close()
-            print("Download complete")"""
         else:
             return render_template('home_00.html')
     else:
