@@ -239,7 +239,7 @@ function addElementToList (name, price, x, id_list, class_item){
     let count
     let li_name
 
-        elementCart[cartLength] = new Elementcart(name, price, 1,)
+        elementCart[cartLength] = new Elementcart(name, price, 1)
         item = document.createElement("li")
         li_name = document.createElement('p')
         trash = document.createElement("input")
