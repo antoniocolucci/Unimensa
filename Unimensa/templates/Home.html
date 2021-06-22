@@ -122,40 +122,8 @@
 
         <div class="container" id="content_cards_menu" style="display: inline-block">
             <!--CARDS HORIZONTAL-->
-            <div class="container-fluid container_card cntcards1">
-                <div class="col-md-3 usCard">
-                    <div class="card">
-                        <img src="../static/images/mensa/carbonara.jpeg" class="card-img-top imgCard" alt="img_element">
-                        <div class="card-body">
-                            <h5 id="plate1_name" class="card-title">Carbonara</h5>
-                            <p id="plate1_price" class="card-text">Prezzo: 5.00 €</p>
-                            <input type="button" class="button_book" value="Aggiungi"
-                                   onclick="addProductToBill('plate1_name', 'plate1_price')">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 usCard">
-                    <div class="card">
-                       <img src="../static/images/mensa/pesto.jpg" class="card-img-top imgCard" alt="img_element">
-                        <div class="card-body">
-                            <h5 id="plate2_name" class="card-title">Pesto</h5>
-                            <p id="plate2_price" class="card-text">Prezzo: 7.00 €</p>
-                            <input type="button" class="button_book" value="Aggiungi"
-                                onclick="addProductToBill('plate2_name', 'plate2_price')">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 usCard">
-                    <div class="card">
-                        <img src="../static/images/mensa/cotoletta.jpeg" class="card-img-top imgCard" alt="img_element">
-                        <div class="card-body">
-                        <h5 id="plate3_name" class="card-title">Cotoletta</h5>
-                        <p  id="plate3_price" class="card-text">Prezzo: 2.50 €</p>
-                        <input type="button" class="button_book" value="Aggiungi"
-                               onclick="addProductToBill('plate3_name', 'plate3_price')">
-                        </div>
-                    </div>
-                </div>
+            <div id='cntcards1' class="container-fluid container_card cntcards1">
+
             </div>
 
             <div id='cntcards2' class="container-fluid container_card cntcards2">
@@ -313,27 +281,24 @@
                        onclick="addSandwichesToBill()">
             </div>
         </div>
+          <div class="container container_bill">
 
-
-
-         <div class="container container_bill">
-
-             <h3>Prodotti scelti: </h3>
-             <h4 id="cartEmpty">Il carrello è vuoto</h4>
-             <div class="container_product_chosen">
-                 <img class="cart_empty" src="../static/images/body_home/cart2.png" alt="cart_empty">
-                 <ul id="list_bill">
-                </ul>
-             </div>
-             <div class="container_deleteAll" style="display: none">
-             <input type="button" class="button_deleteAll" value="Svuota tutto" onclick="drop_all_product()" >
-             </div>
-             <div class="container_total">
-                 <h3 id="total">Totale:  </h3>
-                 <input type="button" class="button_book2" value="Vai al pagamento">
-             </div>
-         </div>
-    </div>
+              <h3>Prodotti scelti: </h3>
+              <h4 id="cartEmpty">Il carrello è vuoto</h4>
+              <div class="container_product_chosen">
+                  <img class="cart_empty" src="../static/images/body_home/cart2.png" alt="cart_empty">
+                  <ul id="list_bill">
+                  </ul>
+              </div>
+              <div class="container_deleteAll" style="display: none">
+                  <input type="button" class="button_deleteAll" value="Svuota tutto" onclick="drop_all_product()" >
+              </div>
+              <div class="container_total">
+                  <h3 id="total">Totale:  </h3>
+                  <input type="button" class="button_book2" value="Vai al pagamento">
+              </div>
+          </div>
+      </div>
 
 
 
