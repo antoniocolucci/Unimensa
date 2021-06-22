@@ -1,9 +1,6 @@
 $(document).ready(function(){
-
     }
 );
-
-
 
     $('.liPlate').click(function(){
         $('.liPlate').removeClass("liActive");
@@ -48,6 +45,7 @@ $(document).ready(function(){
 
 
     $('form[name=addPlate]').submit(function(){
+
     $.ajax({
         dataType: 'json',
         url: "/Home",
@@ -56,12 +54,14 @@ $(document).ready(function(){
             Name: $('#plate_name').val(),
             Price: $('#price').val(),
             Ingredients: $('#ingredients').val(),
-            imgFile: $('#imgFile').val()
+            imgFile: $('#imgFile').val(),
+            Type: $('li').hasClass('liActive').val()
         },
     });
     });
 
     $('form[name=signin]').submit(function(){
+        let plate =
         $.ajax({
             url: "http://localhost:5000/signin",
             type: 'POST',
@@ -74,82 +74,86 @@ $(document).ready(function(){
 
 
 
-let numbCard = 0;
+let numbCard = 1;
 function loadCard(){
     $.ajax({
         url: "http://localhost:5000/api/Home",
         type: 'POST',
+        data: {
+            Type: $('li').hasClass('liActive').val()
+        },
         success: function(cardToInsert){
-            let newCard = cardToInsert
-            console.log(cardToInsert)
-            console.log(newCard)
-            if(newCard){
-                console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
-                numbCard++;
-                let containerCards1 = document.getElementById('cntcards1')
-                let containerCards2 = document.getElementById('cntcards2')
-                let newName = newCard['Name']
-                console.log('newName', newName)
-                let newPrice = newCard['Price']
-                console.log('newPrice', newPrice)
-                let newIngredients = newCard['Ingredients']
-                console.log('newIngredients', newIngredients)
-                let newIdName = 'plate' + numbCard + '_name'
-                console.log('newIdName', newIdName);
-                let newIdPrice = 'plate' + numbCard + '_price'
-                console.log('newIdPrice: ', newIdPrice)
-                let newFilename = newCard['Filename']
-                console.log('newFilename: ', newFilename)
-                let externalCard
-                let card
-                let cardBody
-                let imgCard
-                let cardName
-                let priceName
-                let input
+            for (let i = cardToInsert.length - 1; i >= 0; i--) {
+                let newCard = cardToInsert[i]
+                        console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
+                        numbCard++;
+                        let containerCards1 = document.getElementById('cntcards1')
+                        let containerCards2 = document.getElementById('cntcards2')
+                        let newName = newCard['Name']
+                        console.log('newName', newName)
+                        let newPrice = newCard['Price']
+                        console.log('newPrice', newPrice)
+                        let newIngredients = newCard['Ingredients']
+                        console.log('newIngredients', newIngredients)
+                        let newIdName = 'plate' + numbCard + '_name'
+                        console.log('newIdName', newIdName);
+                        let newIdPrice = 'plate' + numbCard + '_price'
+                        console.log('newIdPrice: ', newIdPrice)
+                        let newFilename = newCard['Filename']
+                        console.log('newFilename: ', newFilename)
+                        let externalCard
+                        let card
+                        let cardBody
+                        let imgCard
+                        let cardName
+                        let priceName
+                        let input
 
-                externalCard = document.createElement("div")
-                externalCard.classList.add('col-md-3')
-                externalCard.classList.add('usCard')
+                        externalCard = document.createElement("div")
+                        externalCard.classList.add('col-md-3')
+                        externalCard.classList.add('usCard')
 
-                card = document.createElement("div")
-                card.classList.add('card')
+                        card = document.createElement("div")
+                        card.classList.add('card')
 
-                cardBody = document.createElement("div")
-                cardBody.classList.add('card-body')
+                        cardBody = document.createElement("div")
+                        cardBody.classList.add('card-body')
 
-                cardName = document.createElement("h5")
-                cardName.classList.add('card-title')
-                cardName.id = newIdName
+                        cardName = document.createElement("h5")
+                        cardName.classList.add('card-title')
+                        cardName.id = newIdName
+                        cardName.innerText = newName
 
-                priceName = document.createElement("p")
-                priceName.classList.add('card-text')
-                priceName.id = newIdPrice
+                        priceName = document.createElement("p")
+                        priceName.classList.add('card-text')
+                        priceName.id = newIdPrice
+                        priceName.innerText = 'Prezzo: ' + newPrice + '€'
 
-                input = document.createElement("input")
-                input.classList.add('button_book')
-                input.type = 'button'
-                input.value = 'Aggiungi'
-                input.addEventListener('click',function(){
-                    addProductToBill(newIdName,newIdPrice)
-                });
-
-
-                imgCard = document.createElement("img")
-                imgCard.src = '../static/images/mensa/' + newFilename
-                imgCard.classList.add('card-img-top')
-                imgCard.classList.add('imgCard')
-
-                cardBody.appendChild(imgCard)
-                cardBody.appendChild(cardName)
-                cardBody.appendChild(priceName)
-                cardBody.appendChild(input)
-                card.appendChild(cardBody)
+                        input = document.createElement("input")
+                        input.classList.add('button_book')
+                        input.type = 'button'
+                        input.value = 'Aggiungi'
+                        input.addEventListener('click', function () {
+                            addProductToBill(newIdName, newIdPrice)
+                        });
 
 
-                externalCard.appendChild(card)
-                containerCards1.appendChild(externalCard)
-            }
+                        imgCard = document.createElement("img")
+                        imgCard.src = '../static/images/mensa/' + newFilename
+                        imgCard.classList.add('card-img-top')
+                        imgCard.classList.add('imgCard')
+
+                        cardBody.appendChild(cardName)
+                        cardBody.appendChild(priceName)
+                        cardBody.appendChild(input)
+                        card.appendChild(imgCard)
+                        card.appendChild(cardBody)
+
+
+                        externalCard.appendChild(card)
+                        containerCards1.appendChild(externalCard)
+                    }
+
         },
         error: function(){
             console.log('0000000000000000000000000000000000000000000000000000000000000, error in createCard')

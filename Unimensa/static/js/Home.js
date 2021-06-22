@@ -290,7 +290,7 @@ function updatePriceQuantity (price, x, operand){
     else {
         elementCart[x].quantity = elementCart[x].quantity - 1
         elementCart[x].price = parseFloat(elementCart[x].price) - parseFloat(price)
-            let newPrice = parseFloat(elementCart[x].price).toFixed(2)
+        let newPrice = parseFloat(elementCart[x].price).toFixed(2)
         let elemQnt = document.getElementById('count'+parseFloat(elementCart[x].Id))
         let newQnt = parseFloat(elementCart[x].quantity)
         let elemPrice = document.getElementById('price'+parseFloat(elementCart[x].Id))
@@ -324,7 +324,7 @@ function bill_tot(price, operand){
 
     }
     else if (operand === -1){
-        tot = price
+        tot = parseFloat(price)
         tot = Math.abs(tot)
         let price_total = document.getElementById('total')
         if(tot === 0){
