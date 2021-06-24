@@ -19,7 +19,6 @@ app = Flask(__name__)
 app.secret_key = 'unimensakey'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 cors = CORS(app)
-#newCard ={'Name': '', 'Price': '', 'Ingredients': '', 'Filename': ''}
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -28,7 +27,7 @@ def index():
         if login_user:
             if pbkdf2_sha256.verify(request.form['Password'], login_user['Password']):
                 session["_id"] = login_user["_id"]
-                #session["Type"] = login_user["Type"]
+                session["Type"] = login_user["Type"]
                 return redirect('Home')
             return render_template('index.html', error=1)
         return render_template('index.html', error=2)
@@ -43,11 +42,14 @@ def logout():
 @app.route('/api/Home', methods=['GET', 'POST'])
 def loadCard():
     if request.method == 'POST':
-        section = request.form['section']
-        plates = plate.find({'Section': section})
+        plates = plate.find({'Section': request.form['Section_card']})
         if plates:
             list_plates = list(plates)
-            return jsonify(list_plates)
+            result = {
+                        'plates': list_plates,
+                        'Type':  type_user
+            }
+            return jsonify(result)
         else:
             return render_template('home_00.html')
     return render_template('home_00.html')
@@ -56,15 +58,13 @@ def loadCard():
 @app.route('/Home', methods=['GET', 'POST'])
 def home():
     user = users.find_one({'Type': 'admin'})
-    if session["_id"] == user['_id']:
+    if session['_id'] == user['_id']:
         if request.method == 'POST':
-            data = json.loads(request.data)
-
             namePlate = request.form['Name']
             id = uuid.uuid4().hex
             pricePlate = request.form['Price']
             ingredients = request.form['Ingredients']
-            section = data.get('section')
+            section =  request.form['Section_card']
             file = request.files['imgFile']
             print('file ok')
             filename = secure_filename(file.filename)
