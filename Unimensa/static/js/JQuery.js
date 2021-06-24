@@ -1,12 +1,13 @@
 $(document).ready(function(){
-    }
+  }
 );
 
     $('.liPlate').click(function(){
-        loadCard(this.id);
+        let id = this.id
+        loadCard(id);
     });
 
-    $('input[type="checkbox"]').on('change', function(){
+    $('input[type="checkbox"].pane').on('change', function(){
         $(this).siblings('input[type="checkbox"]').not(this).prop('checked', false);
 
     });
@@ -34,7 +35,7 @@ $(document).ready(function(){
 
 
 $('form[name=addPLate]').submit(function(){
-        let id = $(".liPlate.liActive").attr('id')
+
         $.ajax({
         url: "/Home",
         type: "POST",
@@ -43,7 +44,7 @@ $('form[name=addPLate]').submit(function(){
             Price: $('#price').val(),
             Ingredients: $('#ingredients').val(),
             imgFile: $('#imgFile').val(),
-            section: JSON.stringify(id),
+            Section_card: $('#section_card').val(),
         }
     });
     });
@@ -61,32 +62,29 @@ $('form[name=addPLate]').submit(function(){
 
 let numbCard = 1;
 function loadCard(id){
+    $('div').remove('.usCard');
+    $('#section_card').val(id)
     setActive(id);
     $.ajax({
         url: "http://localhost:5000/api/Home",
         type: 'POST',
         data: {
-            section: id,
+            Section_card: $('#section_card').val(),
         },
-        success: function(cardToInsert){
-            for (let i = cardToInsert.length - 1; i >= 0; i--) {
-                let newCard = cardToInsert[i]
+        success: function(resp){
+            let varTemp = resp['plates']
+            for (let i = varTemp.length - 1; i >= 0; i--) {
+                let newCard = varTemp[i]
                         console.log('Sono in success.')
                         numbCard++;
+
                         let containerCards1 = document.getElementById('cntcards1')
-                        let containerCards2 = document.getElementById('cntcards2')
                         let newName = newCard['Name']
-                        console.log('newName', newName)
                         let newPrice = newCard['Price']
-                        console.log('newPrice', newPrice)
                         let newIngredients = newCard['Ingredients']
-                        console.log('newIngredients', newIngredients)
                         let newIdName = 'plate' + numbCard + '_name'
-                        console.log('newIdName', newIdName);
                         let newIdPrice = 'plate' + numbCard + '_price'
-                        console.log('newIdPrice: ', newIdPrice)
                         let newFilename = newCard['Filename']
-                        console.log('newFilename: ', newFilename)
                         let externalCard
                         let card
                         let cardBody
@@ -116,12 +114,22 @@ function loadCard(id){
                         priceName.innerText = 'Prezzo: ' + newPrice + '€'
 
                         input = document.createElement("input")
-                        input.classList.add('button_book')
-                        input.type = 'button'
-                        input.value = 'Aggiungi'
-                        input.addEventListener('click', function () {
-                            addProductToBill(newIdName, newIdPrice)
-                        });
+                        if(resp['Type'] === 0) {
+                            input.classList.add('button_deleteAll')
+                            input.type = 'button'
+                            input.value = 'Rimuovi'
+                            input.addEventListener('click', function () {
+                                addProductToBill(newIdName, newIdPrice)
+                            });
+                        }else{
+                            input.classList.add('button_book')
+                            input.type = 'button'
+                            input.value = 'Aggiungi'
+                            input.addEventListener('click', function () {
+                                addProductToBill(newIdName, newIdPrice)
+                            });
+                        }
+
 
 
                         imgCard = document.createElement("img")
@@ -162,5 +170,7 @@ function setActive(id){
         document.getElementById('content_cards_menu').style.display = 'inline-block'
         document.getElementById('container_sandwiches').style.display = 'none'
     }
-    console.log($(".liPlate.liActive").attr('id'))
 }
+
+
+
