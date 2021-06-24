@@ -70,20 +70,20 @@ div#container_notifications{
 
 /*CONTAINER PROFILE*/
 div#container_profile{
-    text-align: center;
+    background-color: #EFEFEF;
     position: fixed;
-    background: #EFEFEF;
+    top: 7%;
+    right: 0;
     height: 25%;
     width: 15%;
     border-radius: 3px;
-    top: 7%;
-    right: 0px;
 }
+
 
 /*CONTAINER MENU*/
 div#container_menu{
     background-color: #EFEFEF;
-    top:59px;
+    top:6%;
     width: 50%;
     height: 100%;
     text-align: center;
@@ -107,14 +107,14 @@ div.dropdown-menu a.active{
     font-size: 18px;
     cursor: pointer;
     float: left;
-    background: white;
+    background-color: #EFEFEF;
     border-bottom: 2px darkorange solid;
     padding: 2%;
     list-style: none;
+    color: white;
 }
 
 #myAccount{
-
     padding: 0;
     margin-top: 0;
 }
@@ -123,16 +123,20 @@ div.dropdown-menu a.active{
     width: 100%;
     height: 3%;
     text-align: center;
-    font-size: 18px;
+    //font-size: 18px;
     cursor: pointer;
     float: left;
-    background: white;
+    background-color: #EFEFEF;
+    color: white;
     border-bottom: 2px darkorange solid;
     padding: 2%;
     list-style: none;
+
 }
-
-
+.a_profile{
+    text-decoration: none;
+    color: inherit;
+}
 
 .slide{
 
