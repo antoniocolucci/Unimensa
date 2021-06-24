@@ -35,14 +35,7 @@
 
             <!--MENU LIST-->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                     <li class="nav-item">
-                         <a class="nav-link active text-white"  href="../templates/Home.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="../templates/Order.html">Ordini</a>
-                     </li>
-                </ul>
+
             </div>
 
              <!--CART-->
@@ -85,12 +78,11 @@
 
          <!--CONTAINER PROFILE-->
          <div id="container_profile" style="display: none">
-             <div id="container_infoProfile">
                  <ul id="myAccount">
-                     <li class="login"><a href="#"> Il mio account</a></li>
-                     <li class="login"><a href="/logout" class="logout">Logout</a></li>
+                     <li class="login"><a class='a_profile' href="#">Il mio account</a></li>
+                     <li class="login"><a class='a_profile' href="/logout">Logout</a></li>
+                     <li class="login"><a class='a_profile' href="#">Ordini</a></li>
                  </ul>
-             </div>
         </div>
 
 
@@ -133,12 +125,6 @@
                 </div>
 
             </div>
-
-            <div class="container-fluid container_card cntcards2 opc">
-
-            </div>
-
-
         </div>
     </div>
     <div class="container" id="container_sandwiches" style="display: none">
@@ -316,6 +302,11 @@
                     Ingredienti:
                 </label>
             </div>
+
+            <div class="container container_inputPlate" style="display: none">
+                <input type="text" class="addplateControl" id="section_card" name="Section_card">
+            </div>
+
             <div class="container container_inputPlate">
                 <textarea rows="4" cols="50" id="ingredients" name="Ingredients"></textarea>
             </div>
