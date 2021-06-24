@@ -3,18 +3,7 @@ $(document).ready(function(){
 );
 
     $('.liPlate').click(function(){
-        $('.liPlate').removeClass("liActive");
-        $(this).addClass("liActive");
-        if(this.getAttribute('id') === 'sandwiches'
-            && document.getElementById('container_sandwiches').style.display === 'none'){
-            document.getElementById('content_cards_menu').style.display = 'none'
-            document.getElementById('container_sandwiches').style.display = 'inline-block'
-        }
-       else if(this.getAttribute('id') !== 'sandwiches'){
-            document.getElementById('content_cards_menu').style.display = 'inline-block'
-            document.getElementById('container_sandwiches').style.display = 'none'
-       }
-
+        loadCard(this.id);
     });
 
     $('input[type="checkbox"]').on('change', function(){
@@ -44,10 +33,9 @@ $(document).ready(function(){
 
 
 
-    $('form[name=addPlate]').submit(function(){
-
-    $.ajax({
-        dataType: 'json',
+$('form[name=addPLate]').submit(function(){
+        let id = $(".liPlate.liActive").attr('id')
+        $.ajax({
         url: "/Home",
         type: "POST",
         data: {
@@ -55,13 +43,12 @@ $(document).ready(function(){
             Price: $('#price').val(),
             Ingredients: $('#ingredients').val(),
             imgFile: $('#imgFile').val(),
-            Type: $('li').hasClass('liActive').val()
-        },
+            section: JSON.stringify(id),
+        }
     });
     });
 
     $('form[name=signin]').submit(function(){
-        let plate =
         $.ajax({
             url: "http://localhost:5000/signin",
             type: 'POST',
@@ -72,15 +59,14 @@ $(document).ready(function(){
         });
     });
 
-
-
 let numbCard = 1;
-function loadCard(){
+function loadCard(id){
+    setActive(id);
     $.ajax({
         url: "http://localhost:5000/api/Home",
         type: 'POST',
         data: {
-            Type: $('li').hasClass('liActive').val()
+            section: id,
         },
         success: function(cardToInsert){
             for (let i = cardToInsert.length - 1; i >= 0; i--) {
@@ -161,4 +147,20 @@ function loadCard(){
 
     });
 
+}
+
+function setActive(id){
+    let li = document.getElementById(id)
+    $('.liPlate').removeClass("liActive");
+    li.classList.add('liActive')
+    if(li.getAttribute('id') === 'sandwiches'
+        && document.getElementById('container_sandwiches').style.display === 'none'){
+        document.getElementById('content_cards_menu').style.display = 'none'
+        document.getElementById('container_sandwiches').style.display = 'inline-block'
+    }
+    else if(li.getAttribute('id') !== 'sandwiches'){
+        document.getElementById('content_cards_menu').style.display = 'inline-block'
+        document.getElementById('container_sandwiches').style.display = 'none'
+    }
+    console.log($(".liPlate.liActive").attr('id'))
 }
