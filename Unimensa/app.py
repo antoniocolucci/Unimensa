@@ -42,8 +42,8 @@ def logout():
 @app.route('/api/Home', methods=['GET', 'POST'])
 def loadCard():
     if request.method == 'POST':
-        type = request.form['Type']
-        plates = plate.find({'Type': type})
+        section = request.form['section']
+        plates = plate.find({'Section': section})
         if plates:
             list_plates = list(plates)
             return jsonify(list_plates)
@@ -57,22 +57,24 @@ def home():
     user = users.find_one({'Type': 'admin'})
     if session["_id"] == user['_id']:
         if request.method == 'POST':
+            data = json.loads(request.data)
+
             namePlate = request.form['Name']
-            print(namePlate)
-            if namePlate == None:
-                print('Sono passato da qui')
-                return render_template('home_00.html')
-            else:
-                pricePlate = request.form['Price']
-                ingredients = request.form['Ingredients']
-                type = request.form['Type']
-                id = uuid.uuid4().hex
-                file = request.files['imgFile']
-                filename = secure_filename(file.filename)
-                file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-                newCard = {'_id': id, 'Name': namePlate, 'Price': pricePlate, 'Ingredients': ingredients, 'Filename': filename, 'Type': type}
-                plate.insert_one(newCard)
-                return render_template('home_00.html')
+            id = uuid.uuid4().hex
+            pricePlate = request.form['Price']
+            ingredients = request.form['Ingredients']
+            section = data.get('section')
+            file = request.files['imgFile']
+            print('file ok')
+            filename = secure_filename(file.filename)
+            print('filename ok')
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            print('filesave ok')
+            newCard = {'_id': id, 'Name': namePlate, 'Price': pricePlate, 'Ingredients': ingredients, 'Section': section, 'Filename': filename}
+            print('newCard ok')
+            plate.insert_one(newCard)
+            print('insert ok')
+            return render_template('home_00.html')
         else:
             return render_template('home_00.html')
     else:
