@@ -13,6 +13,7 @@ client = MongoClient("mongodb://localhost:27017/")
 db = client["unimensa"]
 users = db["users"]
 plate = db['plate']
+sandwiches = db['sandwiches']
 UPLOAD_FOLDER = '../Unimensa/static/images/mensa/'
 app = Flask(__name__)
 app.secret_key = 'unimensakey'
@@ -74,7 +75,7 @@ def home():
             print('newCard ok')
             plate.insert_one(newCard)
             print('insert ok')
-            return render_template('home_00.html')
+            return redirect('Home')
         else:
             return render_template('home_00.html')
     else:
