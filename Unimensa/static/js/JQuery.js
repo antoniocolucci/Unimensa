@@ -85,7 +85,7 @@ function loadCard(){
         success: function(cardToInsert){
             for (let i = cardToInsert.length - 1; i >= 0; i--) {
                 let newCard = cardToInsert[i]
-                        console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
+                        console.log('Sono in success.')
                         numbCard++;
                         let containerCards1 = document.getElementById('cntcards1')
                         let containerCards2 = document.getElementById('cntcards2')
@@ -156,7 +156,7 @@ function loadCard(){
 
         },
         error: function(){
-            console.log('0000000000000000000000000000000000000000000000000000000000000, error in createCard')
+            console.log('Error in createCard.')
         }
 
     });
