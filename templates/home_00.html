@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home-Ristoratore</title>
+
+  <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="../static/css/homeCSS/home.css">
+    <link rel="stylesheet" href="../static/css/homeCSS/home_00.css">
+  <link rel="stylesheet" href="../static/css/homeCSS/contentHome.css">
+  <link rel="stylesheet" href="../static/css/screen/screen768.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body onload="loadCard('choose_plate')">
+
+    <!--NAVBAR-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+         <div class="container-fluid">
+
+             <!--BUTTON MENU-->
+            <button class="navbar-toggler" type="button">
+                <span class="navbar-toggler-icon" onclick="showContainer('container_menu');
+                                                           hideOtherMenu('container_menu')">
+                </span>
+
+            </button>
+
+
+             <img href='/Home' src="../static/images/header/logo.png" alt="logo_unimensa"  style="width: 287px; height: 50px;">
+            <!--UNIMENSA-->
+            <!--a class="navbar-brand text-white" href="../templates/home_00.html" style="font-family: 'Britannic Bold'">uniMensa</a-->
+
+            <!--MENU LIST-->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            </div>
+
+             <!--CART-->
+             <div id="icon_cart" class="navbar-toggler">
+                 <input type="image" class="icon" id="imgCart" alt="cart" src="../static/images/header/cart.png" title="Carrello">
+             </div>
+
+             <!--BELL-->
+            <div id="icon_bell">
+                 <input type="image" class="icon" id="imgBell" alt="bell" src="../static/images/header/imgBell.png" title="Notifiche"
+                                onclick="changeIcon('imgBell');
+                                        showContainer('container_notifications');
+                                         hideOtherMenu('container_notifications')">
+            </div>
+
+
+            <!--PROFILE-->
+            <div id="icon_profile">
+                     <input type="image" class="icon" id="imgProfile" alt="profile" src="../static/images/header/imgProfile.png" title="Profilo"
+                                    onclick="changeIcon('imgProfile');
+                                            showContainer('container_profile');
+                                            hideOtherMenu('container_profile')">
+            </div>
+        </div>
+    </nav>
+
+         <!--CONTAINER MENU SMARTPHONE-->
+         <div id="container_menu" class="dropdown-menu" style="display: none">
+              <a class="dropdown-item active" href="../templates/Home.html">Home</a>
+              <a class="dropdown-item" href="../templates/Order.html">Ordini</a>
+         </div>
+
+         <!--CONTAINER NOTIFICATIONS-->
+         <div id="container_notifications" style="display: none">
+            <ul id="notifications">
+              <li class="notify"><a href="#"> Ritira il pasto</a></li>
+              <li class="notify"><a href="#"> Il pasto è pronto</a></li>
+            </ul>
+         </div>
+
+         <!--CONTAINER PROFILE-->
+         <div id="container_profile" style="display: none">
+                 <ul id="myAccount">
+                     <li class="login"><a class='a_profile' href="#">Il mio account</a></li>
+                     <li class="login"><a class='a_profile' href="/logout">Logout</a></li>
+                     <li class="login"><a class='a_profile' href="#">Ordini</a></li>
+                 </ul>
+        </div>
+
+
+
+    <div class="container-fluid content_center">
+        <div class="container" id="container_listPlate">
+            <!--LIST IN CREATE MENU-->
+            <ul id="listPlate">
+                <li class="liPlate" id="choose_plate">
+                    <p class="p_listPlate">Scelte rapide</p></li>
+                <li class="liPlate " id="first_plate">
+                    <p class="p_listPlate">Primi</p></li>
+                <li class="liPlate" id="second_plate">
+                    <p class="p_listPlate">Secondi</p></li>
+                <li class="liPlate" id="side_dish">
+                    <p class="p_listPlate">Contorni</p></li>
+                <li class="liPlate" id="fruits">
+                    <p class="p_listPlate">Frutta</p></li>
+                <li class="liPlate" id="desserts">
+                    <p class="p_listPlate">Dolci</p></li>
+                <li class="liPlate" id="sandwiches">
+                    <p class="p_listPlate">Panini</p></li>
+                <li class="liPlate" id="pizza">
+                    <p class="p_listPlate">Pizze</p></li>
+                <li class="liPlate" id="drink">
+                    <p class="p_listPlate">Bibite</p></li>
+            </ul>
+        </div>
+
+        <div class="container" id="content_cards_menu" style="display: inline-block">
+            <!--CARDS HORIZONTAL-->
+            <div id='cntcards1' class="container-fluid container_card cntcards1">
+                <div class="col-md-3 uscardPlus">
+                    <div class="card cardPlus" onclick="showContainer('add_plate')">
+                        <div>
+                            <img src="../static/images/menu_ristoratore/icon_add.png" class='plusIcon' alt="img_element">
+                            <p>Aggiungi un nuovo piatto</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container" id="container_sandwiches" style="display: none">
+
+        <div class="container_checkbox">
+            <h3>Pane</h3>
+            <input type="checkbox" value="0.20" id="pane1" class="checkbox_sandwiches pane">
+            <label  for="pane1">
+                Panino (0.20 €)
+            </label>
+
+            <br>
+            <input  type="checkbox" value="0.50" id="pane2" class="checkbox_sandwiches pane">
+            <label  for="pane2">
+                Baguette (0.50 €)
+            </label>
+            <br>
+            <input  type="checkbox" value="0.30" id="pane3" class="checkbox_sandwiches pane">
+            <label  for="pane3">
+                Ciabatta (0.30 €)
+            </label>
+        </div>
+
+
+        <div class="container_checkbox">
+            <h3>Salumi</h3>
+            <input  type="checkbox" value="1.00" id="salume1" class="checkbox_sandwiches" >
+            <label  for="salume1">
+                Prosciutto Cotto (1.00 €)
+            </label>
+            <br>
+            <input  type="checkbox" value="1.00" id="salume2" class="checkbox_sandwiches" >
+            <label  for="salume2">
+                Salame (1.00 €)
+            </label>
+            <br>
+            <input  type="checkbox" value="1.50" id="salume3" class="checkbox_sandwiches">
+            <label  for="salume3">
+                Bresaola (1.50 €)
+            </label>
+            <br>
+            <input  type="checkbox" value="1.50" id="salume4" class="checkbox_sandwiches">
+            <label  for="salume4">
+                Mortadella (1.50 €)
+            </label>
+        </div>
+
+
+        <div class="container_checkbox">
+            <h3>Formaggi</h3>
+            <input  type="checkbox" value="0.50" id="formaggio1" class="checkbox_sandwiches">
+            <label  for="formaggio1">
+                Mozzarella (0.50 €)
+            </label>
+            <br>
+            <input  type="checkbox" value="0.50" id="formaggio2" class="checkbox_sandwiches" >
+            <label  for="formaggio2">
+                Provola (0.50 €)
+            </label>
+            <br>
+            <input  type="checkbox" value="0.50" id="formaggio3" class="checkbox_sandwiches">
+            <label  for="formaggio3">
+                Fior di latte (0.50 €)
+            </label>
+            <br>
+            <input  type="checkbox" value="0.50" id="formaggio4" class="checkbox_sandwiches">
+            <label  for="formaggio4">
+                Cheddar (0.50 €)
+            </label>
+            <br>
+        </div>
+
+        <div class="container_checkbox">
+            <h3>Contorni</h3>
+            <input  type="checkbox" value="0.50" id="contorno1" class="checkbox_sandwiches">
+            <label  for="contorno1">
+                Peperoni (0.50 €)
+            </label>
+            <br>
+            <input  type="checkbox" value="0.50" id="contorno2" class="checkbox_sandwiches" >
+            <label  for="contorno2">
+                Patatine (0.50 €)
+            </label>
+            <br>
+            <input  type="checkbox" value="0.50" id="contorno3" class="checkbox_sandwiches">
+            <label  for="contorno3">
+                Melanzane (0.50 €)
+            </label>
+            <br>
+            <input  type="checkbox" value="0.50" id="contorno4" class="checkbox_sandwiches">
+            <label  for="contorno4">
+                Carote (0.50 €)
+            </label>
+            <br>
+        </div>
+
+        <div class="container_checkbox">
+            <h3>Carne</h3>
+            <input  type="checkbox" value="1.00" id="carne1" class="checkbox_sandwiches">
+            <label  for="carne1">
+                Petto di pollo (1.00 €)
+            </label>
+            <br>
+            <input  type="checkbox" value="1.00" id="carne2" class="checkbox_sandwiches">
+            <label  for="carne2">
+                Hamburger (1.00 €)
+            </label>
+            <br>
+            <input  type="checkbox" value="1.00" id="carne3" class="checkbox_sandwiches">
+            <label  for="carne3">
+                Salsiccia (1.00 €)
+            </label>
+            <br>
+            <input  type="checkbox" value="1.00" id="carne4" class="checkbox_sandwiches">
+            <label  for="carne4">
+                Cotoletta (1.00 €)
+            </label>
+            <br>
+        </div>
+
+
+
+        <div class="container_checkbox">
+            <h3>Salse</h3>
+            <input  type="checkbox" value="0.50" id="salsa1" class="checkbox_sandwiches">
+            <label  for="salsa1">
+                Maionese (0.50 €)
+            </label>
+            <br>
+            <input  type="checkbox" value="0.50" id="salsa2" class="checkbox_sandwiches">
+            <label  for="salsa2">
+                Ketchup (0.50 €)
+            </label>
+            <br>
+            <input  type="checkbox" value="0.50" id="salsa3" class="checkbox_sandwiches">
+            <label  for="salsa3">
+                Barbecue (0.50 €)
+            </label>
+            <br>
+            <input  type="checkbox" value="0.50" id="salsa4" class="checkbox_sandwiches">
+            <label  for="salsa4">
+                Senape (0.50 €)
+            </label>
+            <br>
+        </div>
+
+        <div class="container-fluid">
+            <input type="button" class="button_sandwiches" value="Conferma il tuo panino"
+                   onclick="addSandwichesToBill()">
+        </div>
+    </div>
+    <div class="container_add_plate" id="add_plate" style="display: none">
+        <img src="../static/images/menu_ristoratore/close.png" alt="close" class="icon iconClose" onclick="showContainer('add_plate')">
+        <form name="addPlate" method="post" enctype="multipart/form-data">
+            <div class="container container_label">
+                <label for="plate_name">
+                    Nome piatto:
+                </label>
+            </div>
+            <div class="container container_inputPlate">
+                <input type="text" class="addplateControl" id="plate_name" name="Name">
+            </div>
+
+            <div class="container container_label">
+                <label for="price">
+                    Prezzo:
+                </label>
+            </div>
+            <div class="container container_inputPlate">
+                <input type="text" class="addplateControl" id="price" name="Price">
+            </div>
+
+            <div class="container container_label">
+                <label for="ingredients">
+                    Ingredienti:
+                </label>
+            </div>
+
+            <div class="container container_inputPlate" style="display: none">
+                <input type="text" class="addplateControl" id="section_card" name="Section_card">
+            </div>
+
+            <div class="container container_inputPlate">
+                <textarea rows="4" cols="50" id="ingredients" name="Ingredients"></textarea>
+            </div>
+            <div id="preview"></div>
+
+            <input type="file" name="imgFile" id="imgFile">
+            <input type="submit" value="Aggiungi" id="addPlate">
+
+        </form>
+
+
+    </div>
+
+
+
+    <script src="../static/js/Home.js"></script>
+    <script src="../static/js/JQuery.js"></script>
+    <script src="../static/bootstrap/js/bootstrap.esm.js"></script>
+    <script src="../static/js/home_00.js"></script>
+
+</body>
+</html>
