@@ -1,0 +1,154 @@
+html,body{
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    height: 100%;
+    background-color: ghostwhite;
+}
+
+/*UNIMENSA*/
+.navbar-brand{
+    color: white;
+    margin-right: 20px;
+    font-size: 30px;
+}
+
+/*HEADER - NAVBAR*/
+nav.navbar-expand-lg {
+    margin-top: 0;
+    height: 7%;
+    padding: 4px;
+    background-color: #3b83bd;
+}
+
+/*NAVBAR ELEMENT*/
+li.nav-item a.active{
+    background-color: #3b83bd;
+    border-bottom: 3px darkorange solid;
+}
+
+/* NAVBAR LINK */
+.nav-link{
+    font-size: 18px;
+}
+
+/*ICON*/
+.icon{
+    height: 32px;
+    width: 32px;
+}
+
+/*CONTAINER PROFILE ICON*/
+div#icon_profile{
+    float: right;
+    margin-right: 1%;
+}
+
+/*CONTAINER BELL ICON*/
+div#icon_bell{
+    float: right;
+    margin-right: 1%;
+}
+
+/*CONTAINER CART ICON*/
+div#icon_cart{
+    margin-right: 1%;
+    float: right;
+    border: none;
+}
+
+/*CONTAINER NOTIFICATIONS*/
+div#container_notifications{
+    background-color: #EFEFEF;
+    position: fixed;
+    top: 7%;
+    right: 4%;
+    height: 25%;
+    width: 15%;
+    border-radius: 3px;
+}
+
+/*CONTAINER PROFILE*/
+div#container_profile{
+    background-color: #EFEFEF;
+    position: fixed;
+    top: 7%;
+    right: 0;
+    height: 25%;
+    width: 15%;
+    border-radius: 3px;
+}
+
+
+/*CONTAINER MENU*/
+div#container_menu{
+    background-color: #EFEFEF;
+    top:6%;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    position: fixed;
+}
+
+div.dropdown-menu a.active{
+    background-color: #3b83bd;
+}
+
+#notifications{
+
+    padding: 0;
+    margin-top: 0;
+}
+
+.notify{
+    width: 100%;
+    height: 3%;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+    float: left;
+    background-color: #EFEFEF;
+    border-bottom: 2px darkorange solid;
+    padding: 2%;
+    list-style: none;
+    color: white;
+}
+
+#myAccount{
+    padding: 0;
+    margin-top: 0;
+}
+
+.login{
+    width: 100%;
+    height: 3%;
+    text-align: center;
+    //font-size: 18px;
+    cursor: pointer;
+    float: left;
+    background-color: #EFEFEF;
+    color: white;
+    border-bottom: 2px darkorange solid;
+    padding: 2%;
+    list-style: none;
+
+}
+.a_profile{
+    text-decoration: none;
+    color: inherit;
+}
+
+.slide{
+
+    color: red;
+}
+
+.card-text{
+
+    color: black;
+}
+
+.card-title{
+
+    color: black;
+}
