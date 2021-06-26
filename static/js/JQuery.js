@@ -1,7 +1,7 @@
 $(document).ready(function(){
+
   }
 );
-
     $('.liPlate').click(function(){
         let id = this.id
         loadCard(id);
@@ -66,7 +66,7 @@ function loadCard(id){
     $('#section_card').val(id)
     setActive(id);
     $.ajax({
-        url: "http://localhost:5000/api/Home",
+        url: "/LoadCard",
         type: 'POST',
         data: {
             Section_card: $('#section_card').val(),
@@ -77,7 +77,6 @@ function loadCard(id){
                 let newCard = varTemp[i]
                         console.log('Sono in success.')
                         numbCard++;
-
                         let containerCards1 = document.getElementById('cntcards1')
                         let newName = newCard['Name']
                         let newPrice = newCard['Price']
@@ -114,12 +113,12 @@ function loadCard(id){
                         priceName.innerText = 'Prezzo: ' + newPrice + '€'
 
                         input = document.createElement("input")
-                        if(resp['Type'] === 0) {
+                        if(resp['Type'] === 'admin') {
                             input.classList.add('button_deleteAll')
                             input.type = 'button'
                             input.value = 'Rimuovi'
                             input.addEventListener('click', function () {
-                                addProductToBill(newIdName, newIdPrice)
+                                removeCard(newCard['_id'])
                             });
                         }else{
                             input.classList.add('button_book')
@@ -172,5 +171,17 @@ function setActive(id){
     }
 }
 
+function removeCard(idCard)
+{
+    $.ajax({
+        url: "/DeleteCard",
+        type: 'POST',
+        data: {
+            'Name': idCard,
+        },
+        success: function(resp){
+        }
+    });
 
+}
 
