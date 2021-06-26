@@ -14,32 +14,27 @@ import uuid
 ]
 
 # Add users to the database.
-add = users.insert_many(user)"""
+add = users.insert_many(user)
 
 
 result = users.find()
 for item in result:
-    print(item)
+    print(item)"""
 
 
 """piatto = [{"Name": "Carbonara"}]
 add = plate.insert_many(piatto)"""
 
-#result = plate.find()
+result = plate.find()
 
-#for item in result:
-#    print(item)
+for item in result:
+    print(item)
 
 #result = db.files.find()
 #result = plate.delete_many({})
 
 #for item in result:
 #    print(item)
-
-#data = db.fs.files.find()
-
-
-#GridFSBucket = GridFSBuckets.find(db);
 
 
 #result = users.delete_many({})

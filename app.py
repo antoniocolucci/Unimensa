@@ -39,22 +39,6 @@ def logout():
     session.pop('_id', None)
     return redirect(url_for('index'))
 
-@app.route('/api/Home', methods=['GET', 'POST'])
-def loadCard():
-    if request.method == 'POST':
-        plates = plate.find({'Section': request.form['Section_card']})
-        if plates:
-            list_plates = list(plates)
-            result = {
-                        'plates': list_plates,
-                        #'Type':  type_user
-            }
-            return jsonify(result)
-        else:
-            return render_template('home_00.html')
-    return render_template('home_00.html')
-
-
 @app.route('/Home', methods=['GET', 'POST'])
 def home():
     user = users.find_one({'Type': 'admin'})
