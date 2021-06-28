@@ -31,26 +31,11 @@
 
              <img href='/Home' src="../static/images/header/logo2.png" alt="logo_unimensa"  style="width: 287px; height: 50px;">
             <!--UNIMENSA-->
-            <!--a class="navbar-brand text-white" href="../templates/home_00.html" style="font-family: 'Britannic Bold'">uniMensa</a-->
 
             <!--MENU LIST-->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
             </div>
-
-             <!--CART-->
-             <div id="icon_cart" class="navbar-toggler">
-                 <input type="image" class="icon" id="imgCart" alt="cart" src="../static/images/header/cart.png" title="Carrello">
-             </div>
-
-             <!--BELL-->
-            <div id="icon_bell">
-                 <input type="image" class="icon" id="imgBell" alt="bell" src="../static/images/header/imgBell.png" title="Notifiche"
-                                onclick="changeIcon('imgBell');
-                                        showContainer('container_notifications');
-                                         hideOtherMenu('container_notifications')">
-            </div>
-
 
             <!--PROFILE-->
             <div id="icon_profile">
@@ -64,24 +49,15 @@
 
          <!--CONTAINER MENU SMARTPHONE-->
          <div id="container_menu" class="dropdown-menu" style="display: none">
-              <a class="dropdown-item active" href="../templates/Home.html">Home</a>
-              <a class="dropdown-item" href="../templates/Order.html">Ordini</a>
+
          </div>
 
-         <!--CONTAINER NOTIFICATIONS-->
-         <div id="container_notifications" style="display: none">
-            <ul id="notifications">
-              <li class="notify"><a href="#"> Ritira il pasto</a></li>
-              <li class="notify"><a href="#"> Il pasto è pronto</a></li>
-            </ul>
-         </div>
 
          <!--CONTAINER PROFILE-->
          <div id="container_profile" style="display: none">
                  <ul id="myAccount">
-                     <li class="login"><a class='a_profile' href="#">Il mio account</a></li>
-                     <li class="login"><a class='a_profile' href="/logout">Logout</a></li>
                      <li class="login"><a class='a_profile' href="#">Ordini</a></li>
+                     <li class="login"><a class='a_profile' href="/logout">Logout</a></li>
                  </ul>
         </div>
 
@@ -126,8 +102,8 @@
 
             </div>
         </div>
-    </div>
-    <div class="container" id="container_sandwiches" style="display: none">
+
+        <div class="container" id="container_sandwiches" style="display: none">
 
         <div class="container_checkbox">
             <h3>Pane</h3>
@@ -276,6 +252,8 @@
                    onclick="addSandwichesToBill()">
         </div>
     </div>
+    </div>
+
     <div class="container_add_plate" id="add_plate" style="display: none">
         <img src="../static/images/menu_ristoratore/close.png" alt="close" class="icon iconClose" onclick="showContainer('add_plate')">
         <form name="addPlate" method="post" enctype="multipart/form-data">
