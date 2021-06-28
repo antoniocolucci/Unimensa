@@ -6,10 +6,9 @@ import requests
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
 from passlib.hash import pbkdf2_sha256
-from django.http import HttpRequest
 import uuid
 import os
-import gridfs
+
 
 client = MongoClient("mongodb://localhost:27017/")
 db = client["unimensa"]
@@ -22,9 +21,7 @@ app.secret_key = 'unimensakey'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 cors = CORS(app)
 
-#app.config["SESSION_PERMANENT"] = False
-#app.config["SESSION_TYPE"] = "filesystem"
-#Session(app)
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -85,20 +82,11 @@ def loadCard():
 @app.route('/DeleteCard', methods=['POST', 'GET'])
 def deleteCard():
     if request.method == 'POST':
-        data = request.get_data('Name')
-        #data = request.get_data()
-        print(data)
-        index = data.index('=')
-        id=data[(index+1):end]
-        plates = plate.find({'_id': data})
-        list_plates = list(plates)
-        #print(list_plates)
-        if plates:
-            #print(list_plates)
-            #plates = plate.delete_one({})
-            return redirect('Home')
-        else:
-            return render_template('home_00.html')
+        data = request.get_data()
+        name = data[5:]
+        enc_name = name.decode("utf-8")
+        plate.delete_one({'_id': enc_name})
+        return render_template('home_00.html')
     return render_template('home_00.html')
 
 @app.route('/myAccount')

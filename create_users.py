@@ -76,10 +76,21 @@ collection.update_one(old_values, new_values)
 
 add = sandwiches.insert_many(panini)"""
 
+#name = '60d2ed94e4f142c396cac5335b32f55d'
+
 
 """result = sandwiches.find()
+
+
 
 for item in result:
     print(item)"""
 
+#sandwiches.delete_one({'_id': name})
+
+
 #result = sandwiches.delete_many({})
+
+#provola = [{"_id": uuid.uuid4().hex, "Name": "Provola", "Price": "0.50", "Type": "formaggio"}]
+
+#b'd9a6c7467f604c10907fb9351238fdc0'
