@@ -1,40 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Ordini</title>
-    <link rel="stylesheet" href="../css/headerCSS/style.css">
-    <link rel="stylesheet" href="../css/headerCSS/navigationBar.css">
-    <link rel="stylesheet" href="../css/headerCSS/homeList.css">
-    <link rel="stylesheet" href="../css/headerCSS/container.css">
-    <link rel="stylesheet" href="../css/headerCSS/button.css">
-    <link rel="stylesheet" href="../css/headerCSS/text.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Home</title>
+
+  <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="../static/css/homeCSS/home.css">
+  <link rel="stylesheet" href="../static/css/homeCSS/contentHome.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
-<div class="header">
-    <div id="icon_menu" >
-        <input type="image" id="button_menu" alt="menu" src="../images/menu.png"
-               onclick="swapMenu('lateral_menu')">
-        <p id="txt_menu">MENU</p>
-    </div>
-    <h1>uniMensa</h1>
-    <nav id="lateral_menu" style="display: none">
-        <div id="icon_x">
-            <input type="image" id="close_menu" alt="menu" src="../images/close.png"
-                   onclick="swapMenu('lateral_menu')">
-        </div>
-        <div id="list_menu">
-            <ul id="menu">
-                <li><a href="../html/Home.html">Home</a></li>
-                <li><a href="../html/Ordini.html">Ordini</a></li>
-                <li><a href="../html/Mensa.html">Mensa</a></li>
-                <li><a href="../html/Calendario.html">Calendario</a></li>
-            </ul>
+    <!--NAVBAR-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+         <div class="container-fluid">
+
+             <!--BUTTON MENU-->
+            <button class="navbar-toggler" type="button">
+                <span class="navbar-toggler-icon" onclick="showContainer('container_menu');
+                                                           hideOtherMenu('container_menu')">
+                </span>
+
+            </button>
+
+
+           <img href='/Home' src="../static/images/header/logo2.png" alt="logo_unimensa"  style="width: 287px; height: 50px;">
+
+            <!--MENU LIST NOT DELETE THIS-->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            </div>
+
+
+            <!--PROFILE-->
+            <div id="icon_profile">
+                     <input type="image" class="icon" id="imgProfile" alt="profile" src="../static/images/header/imgProfile.png" title="Profilo"
+                                    onclick="changeIcon('imgProfile');
+                                            showContainer('container_profile');
+                                            hideOtherMenu('container_profile')">
+            </div>
         </div>
     </nav>
-</div>
-<script language="JavaScript" src="../js/Home.js"></script>
+
+         <!--CONTAINER MENU SMARTPHONE-->
+         <div id="container_menu" class="dropdown-menu" style="display: none">
+
+         </div>
+
+        <!--CONTAINER PROFILE-->
+        <div id="container_profile" style="display: none">
+            <ul id="myAccount">
+                <li class="login"><a class='a_profile' href="#">Ordini</a></li>
+                <li class="login"><a class='a_profile' href="/logout">Logout</a></li>
+            </ul>
+        </div>
+
+<script src="../static/js/Home.js"></script>
+<script src="../static/js/JQuery.js"></script>
+<script src="../static/bootstrap/js/bootstrap.esm.js"></script>
+
 </body>
 </html>
 
