@@ -1,9 +1,6 @@
 from flask import Flask, render_template, request, redirect, jsonify, url_for, session, json
 from flask_cors import CORS
 from pymongo import MongoClient
-from flask_session import Session
-import requests
-from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
 from passlib.hash import pbkdf2_sha256
 import uuid
@@ -57,7 +54,7 @@ def home():
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             newCard = {'_id': id, 'Name': namePlate, 'Price': pricePlate, 'Ingredients': ingredients, 'Section': section, 'Filename': filename}
             plate.insert_one(newCard)
-            return redirect('Home')
+            return render_template('home_00.html')
         else:
             return render_template('home_00.html')
     else:
@@ -89,17 +86,9 @@ def deleteCard():
         return render_template('home_00.html')
     return render_template('home_00.html')
 
-@app.route('/myAccount')
-def account():
-    return render_template('Account.html')
-
 @app.route('/Order')
 def order():
     return render_template('Order.html')
-
-@app.route('/Cartphone')
-def cartphone():
-    return render_template('Cart.html')
 
 @app.route('/signin', methods=['POST', 'GET'])
 def signin():

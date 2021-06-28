@@ -1,4 +1,4 @@
-from app import db, users, plate, sandwiches, gridfs
+from app import db, users, plate, sandwiches
 from passlib.hash import pbkdf2_sha256
 import uuid
 
