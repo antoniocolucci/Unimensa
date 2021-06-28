@@ -35,7 +35,6 @@ $(document).ready(function(){
 
 
 $('form[name=addPLate]').submit(function(){
-
         $.ajax({
         url: "/Home",
         type: "POST",
@@ -45,6 +44,13 @@ $('form[name=addPLate]').submit(function(){
             Ingredients: $('#ingredients').val(),
             imgFile: $('#imgFile').val(),
             Section_card: $('#section_card').val(),
+        },
+        done: function(){
+            section = data['Section_card']
+            loadCard(section);
+        },
+        error: function(){
+            console.log('Error in addPlate.')
         }
     });
     });
@@ -63,7 +69,7 @@ $('form[name=addPLate]').submit(function(){
 let numbCard = 1;
 function loadCard(id){
     $('div').remove('.usCard');
-    $('#section_card').val(id)
+    $('#section_card').val(id);
     setActive(id);
     $.ajax({
         url: "/LoadCard",
@@ -179,7 +185,12 @@ function removeCard(idCard)
         data: {
             'Name': idCard,
         },
-        success: function(resp){
+        success: function(){
+            section = $('#section_card').val();
+            loadCard(section);
+        },
+        error: function(){
+            console.log('Error in deleteCard.')
         }
     });
 
