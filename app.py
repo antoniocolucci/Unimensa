@@ -76,6 +76,21 @@ def loadCard():
     return render_template('home_00.html')
 
 
+@app.route('/LoadSandwiches', methods=['GET', 'POST'])
+def loadSandwiches():
+    if request.method == 'POST':
+        all_sandwiches = sandwiches.find({})
+        if all_sandwiches:
+            list_sandwiches = list(all_sandwiches)
+            result = {
+                        'sandwiches': list_sandwiches,
+                        'Type': session['Type']
+            }
+            return jsonify(result)
+        else:
+            return render_template('home_00.html')
+    return render_template('home_00.html')
+
 @app.route('/DeleteCard', methods=['POST', 'GET'])
 def deleteCard():
     if request.method == 'POST':
@@ -83,6 +98,16 @@ def deleteCard():
         name = data[5:]
         enc_name = name.decode("utf-8")
         plate.delete_one({'_id': enc_name})
+        return render_template('home_00.html')
+    return render_template('home_00.html')
+
+@app.route('/DeleteSandwiches', methods=['POST', 'GET'])
+def deleteSandwiches():
+    if request.method == 'POST':
+        data = request.get_data()
+        name = data[5:]
+        enc_name = name.decode("utf-8")
+        sandwiches.delete_one({'_id': enc_name})
         return render_template('home_00.html')
     return render_template('home_00.html')
 
