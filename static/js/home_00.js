@@ -6,7 +6,7 @@ function previewFile(evt) {
     let f = file[0];
     /*If type is not an image, show alert*/
     if (!f.type.match('image.*')) {
-        alert("Attenzione: il file selezionato deve essere una immagine");
+        alert("Attenzione: il file selezionato deve essere un'immagine");
         return false;
     }
 
