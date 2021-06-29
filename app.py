@@ -112,8 +112,29 @@ def deleteSandwiches():
         return render_template('home_00.html')
     return render_template('home_00.html')
 
-@app.route('/Order')
+@app.route('/Order', methods=['POST', 'GET'])
 def order():
+    if request.method == 'POST':
+        priceTot = 0
+        data = request.get_json()
+        for element in data:
+            name = element['name']
+            print(name)
+            id = element['Id']
+            print(id)
+            price = element['price']
+            print(price)
+            quantity = element['quantity']
+            print(quantity)
+            if isinstance(price, int):
+                priceTot = priceTot + price
+            else:
+                priceTot = priceTot + int(price[:-1])
+            print(priceTot)
+
+        print(data)
+        return render_template('Order.html')
+
     return render_template('Order.html')
 
 @app.route('/signin', methods=['POST', 'GET'])
