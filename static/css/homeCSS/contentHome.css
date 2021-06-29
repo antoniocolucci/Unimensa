@@ -105,6 +105,20 @@ ul#listPlate{
 /*CONTAINER THAT CONTAINS SINGLE GROUP OF CHECKBOX IN SANDWICHES*/
 .container_checkbox{
     text-align: left;
+    width: 100%;
+    float: left;
+    display: inline-block;
+}
+
+.nameContainerCheckbox{
+text-align: left;
+    width: 100%;
+    float: left;
+    display: inline-block;
+}
+
+.cntsnd{
+    text-align: left;
     width: 30%;
     margin-left: 0.5%;
     margin-top: 2%;
