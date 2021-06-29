@@ -4,7 +4,10 @@ $(document).ready(function(){
 );
     $('.liPlate').click(function(){
         let id = this.id
-        loadCard(id);
+        if(id === 'sandwiches')
+             loadSandwiches(id);
+        else
+            loadCard(id);
     });
 
     $('input[type="checkbox"].pane').on('change', function(){
@@ -196,3 +199,92 @@ function removeCard(idCard)
 
 }
 
+
+function loadSandwiches(id){
+    $('.container_checkbox').empty()
+    setActive(id);
+    $.ajax({
+        url: "/LoadSandwiches",
+        type: 'POST',
+        data: {
+            Section_card: $('#section_card').val(),
+        },
+        success: function(resp){
+            let varTemp = resp['sandwiches']
+            for (let i = varTemp.length - 1; i >= 0; i--) {
+                let sandwich = varTemp[i]
+                        console.log('Sono in success dei panini.')
+                        let nameContainer = sandwich['Type']
+                        let containerSandwiches = document.getElementById(nameContainer)
+                        let newName = sandwich['Name']
+                        let newPrice = sandwich['Price']
+                        let newIdName = sandwich['Type'] + i
+                        let label
+                        let input
+                        let br
+
+                        br = document.createElement('br')
+
+                        label = document.createElement('label')
+                        label.setAttribute('for', newIdName);
+                        label.innerText = ' '+newName + '('+newPrice+')'
+                        label.classList.add('labelSandwiches')
+                        console.log(label.getAttribute('for'))
+
+                        input = document.createElement("input")
+                        input.id = newIdName
+
+                        input = document.createElement("input")
+                        if(resp['Type'] === 'admin') {
+                            input.type = 'image'
+                            input.src = '../static/images/body_home/cestino.png'
+                            input.classList.add('icon3')
+                            input.addEventListener('click', function () {
+                                removeSandwich(sandwich['_id'])
+                            });
+                        }else{
+                            input.type = 'checkbox'
+                            input.classList.add('checkbox_sandwiches')
+                            input.setAttribute('value', newPrice);
+                        }
+
+                        containerSandwiches.appendChild(input)
+                        containerSandwiches.appendChild(label)
+                        containerSandwiches.appendChild(br)
+
+                    }
+
+        },
+        error: function(){
+            console.log('Error in createCard.')
+        }
+
+    });
+
+}
+
+
+
+function removeSandwich(idSandwiches)
+{
+    $.ajax({
+        url: "/DeleteSandwiches",
+        type: 'POST',
+        data: {
+            'Name': idSandwiches,
+        },
+        success: function(){
+            //$('.container_checkbox').remove('#'+idSandwiches);
+            //$('.container_checkbox').remove('label[for='+idSandwiches+']');
+            //window.location.reload();
+            //$('.container_checkbox').remove('.icon3');
+            //$('.container_checkbox').remove('.labelSandwiches');
+            loadSandwiches('sandwiches')
+        },
+        error: function(){
+            console.log('Error in deleteCard.')
+
+        }
+    });
+
+}
