@@ -11,6 +11,7 @@ client = MongoClient("mongodb://localhost:27017/")
 db = client["unimensa"]
 users = db["users"]
 plate = db['plate']
+order = db['order']
 sandwiches = db['sandwiches']
 UPLOAD_FOLDER = '../Unimensa/static/images/mensa/'
 app = Flask(__name__)
