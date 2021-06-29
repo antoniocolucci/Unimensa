@@ -4,9 +4,7 @@
 }
 
 .content_order2{
-    display: flex;
     width: 50%;
-    background-color: green;
     float: left;
 }
 
@@ -23,7 +21,7 @@
 
 .container_order{
     width: 70%;
-    height: 20%;
+    display: flex;
     margin-top: 1%;
     background-color: white;
     border: 2px #3b83bd solid;
@@ -33,5 +31,4 @@
 .hOrder{
     width: 100%;
     display: inline-block;
-    background-color: red;
 }
