@@ -7,11 +7,7 @@ html,body{
 }
 
 /*UNIMENSA*/
-.navbar-brand{
-    color: white;
-    margin-right: 20px;
-    font-size: 30px;
-}
+
 
 /*HEADER - NAVBAR*/
 nav.navbar-expand-lg {
@@ -92,26 +88,6 @@ div#container_menu{
 
 div.dropdown-menu a.active{
     background-color: #3b83bd;
-}
-
-#notifications{
-
-    padding: 0;
-    margin-top: 0;
-}
-
-.notify{
-    width: 100%;
-    height: 3%;
-    text-align: center;
-    font-size: 18px;
-    cursor: pointer;
-    float: left;
-    background-color: #EFEFEF;
-    border-bottom: 2px darkorange solid;
-    padding: 2%;
-    list-style: none;
-    color: white;
 }
 
 #myAccount{
