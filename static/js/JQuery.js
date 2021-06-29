@@ -229,8 +229,6 @@ function loadSandwiches(id){
                         label.setAttribute('for', newIdName);
                         label.innerText = ' '+newName + '('+newPrice+')'
                         label.classList.add('labelSandwiches')
-                        console.log(label.getAttribute('for'))
-
                         input = document.createElement("input")
                         input.id = newIdName
 
@@ -274,11 +272,6 @@ function removeSandwich(idSandwiches)
             'Name': idSandwiches,
         },
         success: function(){
-            //$('.container_checkbox').remove('#'+idSandwiches);
-            //$('.container_checkbox').remove('label[for='+idSandwiches+']');
-            //window.location.reload();
-            //$('.container_checkbox').remove('.icon3');
-            //$('.container_checkbox').remove('.labelSandwiches');
             loadSandwiches('sandwiches')
         },
         error: function(){
@@ -288,3 +281,27 @@ function removeSandwich(idSandwiches)
     });
 
 }
+
+function toOrder(){
+
+    //let total = document.getElementById('total').innerText
+    //let priceTotal = total.substr(total.indexOf(':')+1, total.length);
+    $.ajax({
+        url: "/Order",
+        type: 'POST',
+        //data: JSON.stringify(elementCart),
+        data: JSON.stringify(elementCart),
+
+        contentType: 'application/json',
+        success: function(){
+            console.log("SUCCESS ORDINI")
+        },
+        error: function(){
+            console.log('Error in ORDER.')
+
+        }
+    });
+
+}
+
+
