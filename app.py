@@ -3,6 +3,7 @@ from flask_cors import CORS
 from pymongo import MongoClient
 from werkzeug.utils import secure_filename
 from passlib.hash import pbkdf2_sha256
+from datetime import datetime
 import uuid
 import os
 
@@ -117,25 +118,30 @@ def order():
     if request.method == 'POST':
         priceTot = 0
         data = request.get_json()
+        dishes = []
         for element in data:
-            name = element['name']
-            print(name)
-            id = element['Id']
-            print(id)
             price = element['price']
-            print(price)
-            quantity = element['quantity']
-            print(quantity)
-            if isinstance(price, int):
+            user = users.find_one({'_id': session['_id']})
+            if user:
+                fullName = user['Name'] + ' ' + user['Surname']
+                idUser = user['_id']
+            if isinstance(price, float):
                 priceTot = priceTot + price
+                piatto = '' + str(element['quantity']) + ' - ' + element['name'] + ' (' + str(element['price']) + ')'
             else:
-                priceTot = priceTot + int(price[:-1])
-            print(priceTot)
+                if isinstance(price, int):
+                    priceTot = priceTot + price
+                    piatto = '' + str(element['quantity']) + ' - ' + element['name'] + ' (' + str(element['price']) + ')'
+                else:
+                    priceTot = priceTot + float(price[:-1])
+                    piatto = '' + str(element['quantity']) + ' - ' + element['name'] + ' (' + element['price'] + ')'
+            dishes.append(piatto)
+            today = datetime.today().strftime('%Y-%m-%d-%H:%M:%S')
 
-        print(data)
-        return render_template('Order.html')
+        db.order.insert_one({'_id': uuid.uuid4().hex, 'Plates': dishes, 'UserName': fullName, 'User_id': idUser, 'Data': today, 'PriceTot': priceTot, 'State': 'open'})
+        return render_template('Home.html')
 
-    return render_template('Order.html')
+    return render_template('Home.html')
 
 @app.route('/signin', methods=['POST', 'GET'])
 def signin():
@@ -151,7 +157,7 @@ def signin():
                 return render_template('signin.html', error=5)
             elif request.form['Password'] != request.form['checkPassword']:
                 return render_template('signin.html', error=6)
-            #Remember check easy password
+
             else:
                 user_type = 'user'
                 if email_user.find('personale.universita.it') != -1:
@@ -160,6 +166,31 @@ def signin():
                 return redirect(url_for('index'))
 
     return render_template('signin.html')
+
+@app.route('/LoadOrder', methods=['POST', 'GET'])
+def loadOrder():
+    if request.method == 'POST':
+        if session['Type'] == 'admin':
+            orders = db.order.find({'State': 'open'})
+            if orders:
+                list_orders = list(orders)
+                result = {
+                    'orders': list_orders,
+                    'Type': session['Type']
+                }
+                return jsonify(result)
+            return render_template('Order.html')
+        else:
+            orders = db.order.find({'User_id': session['_id']})
+            if orders:
+                list_orders = list(orders)
+                result = {
+                    'orders': list_orders,
+                    'Type': session['Type']
+                }
+                return jsonify(result)
+            return render_template('Order.html')
+    return render_template('Order.html')
 
 
 
