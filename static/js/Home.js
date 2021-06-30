@@ -32,10 +32,10 @@ function changeIcon(element_id){
 
 /*RICORDA DI RENDERE GLOBALE LA FUNZIONA CON JQUERY*/
 /*FUNCTION FOR HIDE OTHER MENU IN NAVBAR*/
+
 function hideOtherMenu (element_id) {
     let element = document.getElementById(element_id)
     let nameContainer = [
-        'container_notifications',
         'container_profile',
         'container_menu'
     ]
@@ -44,28 +44,13 @@ function hideOtherMenu (element_id) {
     {
         if(document.getElementById(nameContainer[1]).style.display === 'block') {
             document.getElementById(nameContainer[1]).style.display = 'none'
-            changeIcon('imgProfile')
         }
-        document.getElementById(nameContainer[2]).style.display= 'none'
     }
 
     else if (element === document.getElementById(nameContainer[1]))
     {
         if(document.getElementById(nameContainer[0]).style.display === 'block') {
             document.getElementById(nameContainer[0]).style.display= 'none'
-            changeIcon('imgBell')
-        }
-        document.getElementById(nameContainer[2]).style.display= 'none'
-    }
-
-    else
-    {
-        if(document.getElementById(nameContainer[0]).style.display === 'block') {
-            document.getElementById(nameContainer[0]).style.display= 'none'
-            changeIcon('imgBell')
-        }
-        if(document.getElementById(nameContainer[1]).style.display === 'block') {
-            document.getElementById(nameContainer[1]).style.display= 'none'
             changeIcon('imgProfile')
         }
     }
