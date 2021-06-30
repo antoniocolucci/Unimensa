@@ -1,4 +1,4 @@
-from app import db, users, plate, sandwiches
+from app import db, users, plate, order, sandwiches
 from passlib.hash import pbkdf2_sha256
 import uuid
 
@@ -66,11 +66,11 @@ for item in result:
 #result = sandwiches.delete_many({})
 
 
-result = sandwiches.find()
+result = db.order.find()
 
 #result = sandwiches.delete_many({})
 
 
-
 for item in result:
     print(item)
+

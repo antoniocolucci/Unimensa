@@ -163,7 +163,20 @@ def signin():
 
 
 
-
+@app.route('/closeOrder', methods=['POST', 'GET'])
+def closeOrder():
+    if request.method == 'POST':
+        data = request.get_data()
+        idOrder = data[3:]
+        print(idOrder)
+        enc_id = idOrder.decode("utf-8")
+        print(enc_id)
+        query = {"_id": enc_id}
+        oneOrder = db.order.find_one(query)
+        print(oneOrder)
+        new_values = {"$set": {"State": "closed"}}
+        db.order.update_one(query, new_values)
+    return render_template('Order.html')
 
 
 if __name__ == '__main__':
