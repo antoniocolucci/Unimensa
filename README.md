@@ -19,9 +19,4 @@ The app consists of a client side and a server side:
 5. Make sure the python interpreter is configured correctly.
 6. Install MongoDB for your operating system.
 
-Primo passo: installare venv. Digitare nel terminale py -m venv venv
-Recarsi nella cartella Scripts: cd venv/Scripts
-Digitare activate nel terminale.
-Digitare nel terminale: pip install -r requirements.txt
-Assicurarsi che l'interprete python sia configurato correttamente.
 
