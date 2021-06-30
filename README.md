@@ -1,4 +1,4 @@
-#Unimensa
+# Unimensa
 ![Alt text](static/images/logo/logo.jpeg "Logo Unimensa")
  Unimensa is a Progressive Web App made by **Antonio Colucci**, **Antonio Sarno** and **Jonathan De Michele** for the project of Web Technologies (University of Naples Parthenope).
  
@@ -11,7 +11,7 @@ The app consists of a client side and a server side:
 
 
 
-##How to install Unimensa?
+## How to install Unimensa?
 1. Create a virtual environment(venv) by terminal: > py -m venv venv
 2. Move to the folder venv/Scripts: > cd venv/Scripts
 3. Now activate the virtual environment writing in the terminal "activate": > activate
