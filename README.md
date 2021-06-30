@@ -12,11 +12,12 @@ The app consists of a client side and a server side:
 
 
 ## How to install Unimensa?
-1. Create a virtual environment(venv) by terminal: > py -m venv venv
-2. Move to the folder venv/Scripts: > cd venv/Scripts
-3. Now activate the virtual environment writing in the terminal "activate": > activate
-4. Go to project folder and install requirements by requirements.txt file: > pip install -r requirements.txt
+1. Create a virtual environment(venv) by terminal: **> py -m venv venv**
+2. Move to the folder venv/Scripts: **> cd venv/Scripts**
+3. Now activate the virtual environment writing in the terminal "activate": **> activate**
+4. Go to project folder and install requirements by requirements.txt file: **> pip install -r requirements.txt**
 5. Make sure the python interpreter is configured correctly.
+6. Install MongoDB for your operating system.
 
 Primo passo: installare venv. Digitare nel terminale py -m venv venv
 Recarsi nella cartella Scripts: cd venv/Scripts
