@@ -16,11 +16,11 @@ import uuid
 add = users.insert_many(user)"""
 
 
-result = users.find()
+#result = users.find()
 
 
-for item in result:
-    print(item)
+#for item in result:
+#    print(item)
 
 #result = users.delete_many({})
 
@@ -65,3 +65,12 @@ for item in result:
 
 #result = sandwiches.delete_many({})
 
+
+result = sandwiches.find()
+
+#result = sandwiches.delete_many({})
+
+
+
+for item in result:
+    print(item)
