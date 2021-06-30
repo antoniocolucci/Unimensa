@@ -305,3 +305,122 @@ function toOrder(){
 }
 
 
+function loadOrder(){
+    $.ajax({
+        url: "/LoadOrder",
+        type: 'POST',
+        success: function(resp){
+            console.log("SUCCESS Load ORDINI")
+            let varTemp = resp['orders']
+            for (let i = varTemp.length - 1; i >= 0; i--) {
+                let order = varTemp[i]
+                let containerOrder = document.getElementById('content_order')
+                let containerSingleOrder
+                let containerListOrder
+                let containerBill
+                let allOrder = order['Plates']
+                let data
+                let userName
+                let priceTot
+                let stringOrders
+                let state
+                let dvtitle1
+                let dvtitle2
+                let divCntLst
+                let divCntBll
+                let title1
+                let title2
+                let input
+
+                containerSingleOrder = document.createElement('div')
+                containerSingleOrder.classList.add('container-fluid')
+                containerSingleOrder.classList.add('container_order')
+
+                containerListOrder = document.createElement('div')
+                containerListOrder.classList.add('content_order2')
+
+                dvtitle1 = document.createElement('div')
+                divCntLst = document.createElement('div')
+                title1 = document.createElement('h3')
+                title1.classList.add('hOrder')
+                title1.innerText = 'Lista:'
+
+                dvtitle2 = document.createElement('div')
+                divCntBll = document.createElement('div')
+                title2 = document.createElement('h3')
+                title2.classList.add('hOrder')
+                title2.innerText = 'Spesa totale:'
+
+                containerBill = document.createElement('div')
+                containerBill.classList.add('content_order2')
+
+                containerOrder.appendChild(containerSingleOrder)
+                containerSingleOrder.appendChild(containerListOrder)
+                containerListOrder.appendChild(dvtitle1)
+                dvtitle1.appendChild(title1)
+                containerListOrder.appendChild(divCntLst)
+
+                containerSingleOrder.appendChild(containerBill)
+                containerBill.appendChild(dvtitle2)
+                dvtitle2.appendChild(title2)
+                containerBill.appendChild(divCntBll)
+
+
+                priceTot = document.createElement('p')
+                priceTot.innerText = order['PriceTot'] + '€'
+
+                data = document.createElement('p')
+                data.innerText = order['Data']
+
+                userName = document.createElement('p')
+                userName.innerText = order['UserName']
+
+                state = document.createElement('p')
+                state.innerText = order['State']
+
+                stringOrders = document.createElement('p')
+                for (let x = allOrder.length -1; x >=0; x--)
+                    stringOrders.innerText = stringOrders.innerText + '\n' + allOrder[x]
+
+
+
+
+                divCntLst.appendChild(stringOrders)
+                divCntBll.appendChild(priceTot)
+                divCntBll.appendChild(data)
+                divCntBll.appendChild(userName)
+                divCntBll.appendChild(state)
+
+                if(resp['Type'] == 'admin')
+                {
+                    input = document.createElement('input')
+                    input.classList.add('button_book')
+                    input.type = 'button'
+                    input.value = 'Chiudi ordine'
+                    input.addEventListener('click', function () {
+                          closeOrder(order['_id'])
+                    });
+                    divCntLst.appendChild(input)
+                }
+            }
+        }
+
+    });
+
+}
+
+
+function closeOrder(idOrder){
+    $.ajax({
+        url: "/closeOrder",
+        type: 'POST',
+        data: {
+            'Id': idOrder
+        },
+        success: function(){
+
+
+        }
+
+    });
+}
