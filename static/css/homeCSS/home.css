@@ -40,30 +40,6 @@ div#icon_profile{
     margin-right: 1%;
 }
 
-/*CONTAINER BELL ICON*/
-div#icon_bell{
-    float: right;
-    margin-right: 1%;
-}
-
-/*CONTAINER CART ICON*/
-div#icon_cart{
-    margin-right: 1%;
-    float: right;
-    border: none;
-}
-
-/*CONTAINER NOTIFICATIONS*/
-div#container_notifications{
-    background-color: #EFEFEF;
-    position: fixed;
-    top: 7%;
-    right: 4%;
-    height: 25%;
-    width: 15%;
-    border-radius: 3px;
-}
-
 /*CONTAINER PROFILE*/
 div#container_profile{
     background-color: #EFEFEF;
@@ -103,12 +79,15 @@ div.dropdown-menu a.active{
     cursor: pointer;
     float: left;
     background-color: #EFEFEF;
-    color: white;
-    border-bottom: 2px darkorange solid;
+    color: black;
+    border-bottom: 2px #3b83bd solid;
     padding: 2%;
     list-style: none;
-
 }
+.login:hover{
+    background-color: lightblue;
+}
+
 .a_profile{
     text-decoration: none;
     color: inherit;

@@ -41,22 +41,10 @@
     box-shadow: 0px 0px 52px -17px #000000;
 }
 
-.addplateControl{
-
-
-
-}
-
-#ingredients{
-    resize: none;
-    height: 50%;
-}
-
 #addPlate{
-
+    width: 15%;
     background-color: #358000;
     color: white;
-
 }
 
 .iconClose{
@@ -72,9 +60,7 @@
 
 .resize{
     height: 150px;
-    //border: 1px solid #000;
     margin: 30px 30px 0 0;
-    //margin: auto;
 }
 
 #imgFile{
@@ -84,27 +70,10 @@
 #preview{
     float: right;
     margin-right: 15%;
-    //bottom: 15%;
 }
 
-#notifications{
 
-    padding: 0;
-    margin-top: 0;
-}
 
-.notify{
-    width: 100%;
-    height: 3%;
-    text-align: center;
-    font-size: 18px;
-    cursor: pointer;
-    float: left;
-    background: white;
-    border-bottom: 2px darkorange solid;
-    padding: 2%;
-    list-style: none;
-}
 
 #myAccount{
 
@@ -112,18 +81,7 @@
     margin-top: 0;
 }
 
-.login{
-    width: 100%;
-    height: 3%;
-    text-align: center;
-    font-size: 18px;
-    cursor: pointer;
-    float: left;
-    background: white;
-    border-bottom: 2px darkorange solid;
-    padding: 2%;
-    list-style: none;
-}
+
 
 
 .icon3{
@@ -132,3 +90,53 @@
     float: left;
     left: 0;
 }
+
+
+.removeCard{
+    height: 30%;
+    width: 50%;
+    background: #f34336;
+    border: #f34336;
+    color: white;
+    text-align: center;
+    line-height: 1;
+    border-radius: 2px;
+}
+
+
+.addplateControl{
+    width: 30%;
+}
+
+
+.container_inputPlate{
+    width: 100%;
+    height: 30%;
+    margin-left: 1%;
+}
+
+.container_label{
+    margin-top: 3%;
+    margin-left: 1%;
+}
+
+.container_inputFile{
+    width: 100%;
+    height: 30%;
+    margin-top: 3%;
+}
+
+.container_inputSubmit{
+    width: 100%;
+    height: 30%;
+    margin-right: 5%;
+    margin-top: 20%;
+    text-align: right;
+}
+
+#addSand{
+    width: 15%;
+    background-color: #358000;
+    color: white;
+}
+
