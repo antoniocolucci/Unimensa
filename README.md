@@ -20,6 +20,6 @@ The app consists of a client side and a server side:
 6. Install MongoDB for your operating system.
 7. If you want to populate the database with users and dishes, you can execute the file "data_entry.py" located in the folder "script_DB", otherwise you can create users and upload dishes in the app.
 8. To run the application you can use the command: **> flask run -h 0.0.0.0**
-9. Now you can login, otherwise if you don't have an account, you can create it on the registration page.
+9. Now you can login, but if you don't have an account, you can create it on the registration page.
 
 
