@@ -3,15 +3,15 @@
  Unimensa is a Progressive Web App made by **Antonio Colucci**, **Antonio Sarno** and **Jonathan De Michele** for the project of Web Technologies (University of Naples Parthenope).
  
  
-The goal of the app is to optimize the management of a university canteen and to speed up the order of meals.
+The purpose of the app is to optimize the management of a university canteen and to speed up the order of meals.
 The app consists of a client side and a server side.
 
-## Functionality server side:
+## Functionalities of the server side:
 * Through the server side the chef can upload the dishes by filling in a form with name, price and an image of the dish.
-* The chef can view all the orders placed by the students and close them when they are completed.
+* The chef can view all the orders placed by the students and professors and close them when they are completed.
 
-## Functionality client side:
-* Through the client side students can choose the dishes or, in the sandwich section, they have the possibility to compose a sandwich with their favorite ingredients.
+## Functionalities of the client side:
+* Through the client side the students can choose the dishes or, in the sandwich section, they have the possibility to compose a sandwich with their favourite ingredients.
 * The students can view the orders placed and check their status. If the status is closed it means that the order has been completed, otherwise if the status is open it means that   the order is in preparation.
 
 
