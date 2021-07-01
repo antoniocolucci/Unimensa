@@ -123,7 +123,6 @@ text-align: left;
     margin-left: 0.5%;
     margin-top: 2%;
     float: left;
-    display: inline-block;
 }
 
 /*CONTAINER THET CONTAINS ALL CHECKBOX IN SANDWICHES*/
@@ -136,7 +135,6 @@ text-align: left;
     height: 100%;
     padding: 2%;
     padding-top: 5%;
-
 }
 
 /*CARD IN HOMEPAGE*/
