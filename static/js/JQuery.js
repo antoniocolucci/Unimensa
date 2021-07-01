@@ -10,9 +10,8 @@ $(document).ready(function(){
             loadCard(id);
     });
 
-    $('input[type="checkbox"].pane').on('change', function(){
-        $(this).siblings('input[type="checkbox"]').not(this).prop('checked', false);
-
+    $('input[type="checkbox"].bread').on('change', function() {
+        $('input[type="checkbox"].bread').not(this).prop('checked', false);
     });
 
     $('form[name=login]').submit(function(){
@@ -31,6 +30,10 @@ $(document).ready(function(){
         $('.content_center').addClass('opa')
     });
 
+    $('#add_ingr').click(function (){
+        $('.content_center').addClass('opa')
+    });
+
     $('.iconClose').click(function (){
         $('.content_center').removeClass('opa')
     });
@@ -44,7 +47,6 @@ $('form[name=addPLate]').submit(function(){
         data: {
             Name: $('#plate_name').val(),
             Price: $('#price').val(),
-            Ingredients: $('#ingredients').val(),
             imgFile: $('#imgFile').val(),
             Section_card: $('#section_card').val(),
         },
@@ -89,7 +91,6 @@ function loadCard(id){
                         let containerCards1 = document.getElementById('cntcards1')
                         let newName = newCard['Name']
                         let newPrice = newCard['Price']
-                        let newIngredients = newCard['Ingredients']
                         let newIdName = 'plate' + numbCard + '_name'
                         let newIdPrice = 'plate' + numbCard + '_price'
                         let newFilename = newCard['Filename']
@@ -123,7 +124,7 @@ function loadCard(id){
 
                         input = document.createElement("input")
                         if(resp['Type'] === 'admin') {
-                            input.classList.add('button_deleteAll')
+                            input.classList.add('removeCard')
                             input.type = 'button'
                             input.value = 'Rimuovi'
                             input.addEventListener('click', function () {
@@ -226,11 +227,11 @@ function loadSandwiches(id){
                 br = document.createElement('br')
 
                 label = document.createElement('label')
-                label.setAttribute('for', newIdName);
+                label.setAttribute('for', newIdName)
                 label.innerText = ' '+newName + '('+newPrice+')'
                 label.classList.add('labelSandwiches')
+
                 input = document.createElement("input")
-                input.id = newIdName
 
                 input = document.createElement("input")
                 if(resp['Type'] === 'admin') {
@@ -243,7 +244,12 @@ function loadSandwiches(id){
                 }else{
                     input.type = 'checkbox'
                     input.classList.add('checkbox_sandwiches')
+                    if(sandwich['Type'] === 'bread')
+                    {
+                        input.classList.add('bread')
+                    }
                     input.setAttribute('value', newPrice);
+                    input.setAttribute('id', newIdName)
                 }
 
                 containerSandwiches.appendChild(input)
@@ -344,10 +350,18 @@ function loadOrder(){
                 divCntBll = document.createElement('div')
                 title2 = document.createElement('h3')
                 title2.classList.add('hOrder')
-                title2.innerText = 'Spesa totale:'
+                title2.innerText = 'Dettagli:'
 
                 containerBill = document.createElement('div')
                 containerBill.classList.add('content_order2')
+
+                if(resp['Type'] === 'user')
+                {
+                    if(order['State'] === 'closed')
+                    {
+                        containerSingleOrder.classList.add('orderClosed')
+                    }
+                }
 
                 containerOrder.appendChild(containerSingleOrder)
                 containerSingleOrder.appendChild(containerListOrder)
@@ -362,16 +376,20 @@ function loadOrder(){
 
 
                 priceTot = document.createElement('p')
-                priceTot.innerText = order['PriceTot'] + '€'
+                priceTot.innerText = 'Prezzo totale: ' + order['PriceTot'] + '€'
+                priceTot.classList.add('boldText')
 
                 data = document.createElement('p')
-                data.innerText = order['Data']
+                data.innerText = 'Data ordine: ' + order['Data']
+                data.classList.add('boldText')
 
                 userName = document.createElement('p')
-                userName.innerText = order['UserName']
+                userName.innerText = 'Nome utente: ' + order['UserName']
+                userName.classList.add('boldText')
 
                 state = document.createElement('p')
-                state.innerText = order['State']
+                state.innerText = 'Stato ordine: ' + order['State']
+                state.classList.add('boldText')
 
                 stringOrders = document.createElement('p')
                 for (let x = allOrder.length -1; x >=0; x--)
@@ -386,10 +404,10 @@ function loadOrder(){
                 divCntBll.appendChild(userName)
                 divCntBll.appendChild(state)
 
-                if(resp['Type'] == 'admin')
+                if(resp['Type'] === 'admin')
                 {
                     input = document.createElement('input')
-                    input.classList.add('button_book')
+                    input.classList.add('buttonClose')
                     input.type = 'button'
                     input.value = 'Chiudi ordine'
                     input.addEventListener('click', function () {
@@ -413,8 +431,24 @@ function closeOrder(idOrder){
             'Id': idOrder
         },
         success: function(){
+        }
+
+    });
+}
 
 
+function addSandwiches()
+{
+    $.ajax({
+        url: "/addSand",
+        type: 'POST',
+        data: {
+            'sand_name': $('#sand_name').val(),
+            'sand_price': $('#sand_price').val(),
+            'typeSand': $('#typeSand').val(),
+        },
+        success: function(){
+            window.location.reload();
         }
 
     });

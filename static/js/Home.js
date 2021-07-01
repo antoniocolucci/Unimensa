@@ -179,17 +179,18 @@ function addSandwichesToBill() {
     $(".cart_empty").css("display", "none")
     $('.container_deleteAll').css("display", "block")
     $("#cart_empty").css("display", "none")
-    let price_Float = 0.2 //RICORDA DA RECUPERARE DAL DB
-    let checked = $(".checkbox_sandwiches")
-
+    let price_Float = 0.2
+    let checked = document.getElementsByClassName('checkbox_sandwiches')
     let labels
     let components = "Panino("
     for(let x in checked){
         let xChecked = checked[x]
+        console.log(checked[x])
+        console.log(xChecked['checked'])
         if(xChecked["checked"] === true) {
             labels = document.querySelector(`label[for='${xChecked["id"]}']`)
-            lengName = labels.innerText.indexOf('(')-1
-            if(xChecked.matches('.pane')){
+            lengName = labels.innerText.indexOf('(')
+            if(xChecked.matches('.bread')){
                 components = labels.innerText.substr(0, lengName) + " ("
                 price_Float = Math.max(price_Float, parseFloat(xChecked["value"]))
             } else
@@ -197,11 +198,11 @@ function addSandwichesToBill() {
                 components = components + "" + labels.innerText.substr(0,lengName) +","
                 price_Float = price_Float + parseFloat(xChecked["value"])
             }
-
         }
+
     }
     components = components.substr(0,components.length-1)+')'
-    checked.prop('checked', false)
+    $('.checkbox_sandwiches').prop('checked', false)
     let y = researchEle(components)
     let price_sandwiches = ''+ price_Float.toFixed(2) + ' €'
 
@@ -253,7 +254,7 @@ function addElementToList (name, price, x, id_list, class_item){
         item.appendChild(trash)
 
         list.appendChild(item)
-        if (cartLength >= 3) {
+        if (cartLength >= 2) {
 
             $('.container_product_chosen').css('overflow-y', 'scroll')
         }
