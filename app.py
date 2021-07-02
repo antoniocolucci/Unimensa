@@ -43,8 +43,7 @@ def logout():
 
 @app.route('/Home', methods=['GET', 'POST'])
 def home():
-    user = users.find_one({'Type': 'admin'})
-    if session['_id'] == user['_id']:
+    if session['Type'] == 'admin':
         if request.method == 'POST':
             namePlate = request.form['Name']
             id = uuid.uuid4().hex
