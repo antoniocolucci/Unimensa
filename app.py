@@ -49,12 +49,11 @@ def home():
             namePlate = request.form['Name']
             id = uuid.uuid4().hex
             pricePlate = request.form['Price']
-            ingredients = request.form['Ingredients']
             section = request.form['Section_card']
             file = request.files['imgFile']
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            newCard = {'_id': id, 'Name': namePlate, 'Price': pricePlate, 'Ingredients': ingredients, 'Section': section, 'Filename': filename}
+            newCard = {'_id': id, 'Name': namePlate, 'Price': pricePlate, 'Section': section, 'Filename': filename}
             plate.insert_one(newCard)
             return render_template('home_00.html')
         else:
@@ -199,15 +198,26 @@ def closeOrder():
     if request.method == 'POST':
         data = request.get_data()
         idOrder = data[3:]
-        print(idOrder)
         enc_id = idOrder.decode("utf-8")
-        print(enc_id)
         query = {"_id": enc_id}
         oneOrder = db.order.find_one(query)
-        print(oneOrder)
         new_values = {"$set": {"State": "closed"}}
         db.order.update_one(query, new_values)
     return render_template('Order.html')
+
+
+@app.route('/addSand', methods=['POST', 'GET'])
+def addSand():
+    if request.method == 'POST':
+        nameSand = request.form['sand_name']
+        print(nameSand)
+        priceSand = request.form['sand_price']
+        print(priceSand)
+        typeSand = request.form['typeSand']
+        print(typeSand)
+        sandwiches.insert_one({'_id': uuid.uuid4().hex, 'Name': nameSand, 'Price': priceSand, 'Type': typeSand})
+        return render_template('home_00.html')
+    return render_template('home_00.html')
 
 
 if __name__ == '__main__':
