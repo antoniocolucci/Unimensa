@@ -1,13 +1,16 @@
+/*TITLE IN THE BODY PAGE*/
 #title_order{
     display: inline-block;
     text-align: center;
 }
 
+/*SECOND SECTION IN ORDER*/
 .content_order2{
     width: 50%;
     float: left;
 }
 
+/*FIRST SECTION IN ORDER*/
 #content_order{
     padding: 2%;
     padding-top: 5%;
@@ -19,6 +22,7 @@
     text-align: center;
 }
 
+/*SINGLE ORDER*/
 .container_order{
     width: 70%;
     display: flex;
@@ -28,18 +32,20 @@
     border-radius: 2px;
 }
 
+/*LIST AND DETAILS IN ORDER*/
 .hOrder{
     width: 100%;
     display: inline-block;
 }
 
+/*TEXT BOLD FOR DETAILS IN ORDER*/
 .boldText{
 
     font-weight: bold;
 }
 
+/*BUTTON FOR CLOSE AN ORDER IN SESSION ADMIN ONLY*/
 .buttonClose{
-
     background: #3b83bd;
     border: #3b83bd;
     color: white;
@@ -49,8 +55,8 @@
     border-radius: 2px;
 }
 
+/*ORDER CLOSED*/
 .orderClosed{
 
     background-color: lightgreen;
 }
-

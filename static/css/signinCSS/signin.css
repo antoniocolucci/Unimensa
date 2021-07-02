@@ -1,10 +1,11 @@
-
+/*CONTAINER LABEL IN SIGNIN FORM*/
 .container_label{
     width: 50%;
     float: left;
     margin-left: 24.5%;
 }
 
+/*SUBMIT BUTTON IN SIGNIN FORM*/
 #submit{
     margin-top: 5%;
     cursor: pointer;
@@ -17,7 +18,7 @@
     background-color: #358000;
 }
 
-
+/*CONTAINER INPUT ELEMENT IN SIGNIN FORM*/
 .container_input_signin{
     margin-bottom: 3%;
     width: 100%;
@@ -26,11 +27,13 @@
     float: left;
 }
 
+/*CONTAINER "REGISTRATI" TITLE*/
 #container_title{
     text-align: left;
     width: 100%;
 }
 
+/*CONTAINER FORM SIGNIN*/
 #container_form_signin{
     background-color: white;
     box-shadow: 5px 5px rgba(0,0,0, 0.1);
@@ -43,33 +46,34 @@
     display: flex;
 }
 
+/*FORM SIGNIN*/
 .formSignin{
     height: 40%;
     width: 100%;
 }
 
+/*INPUT ELEMENT IN SIGNIN FORM*/
 .signinControl{
     height: 50%;
     width: 50%;
 }
 
+/*TEXT UNDER SUBMIT BUTTON*/
 .verify{
     text-align: center;
 }
 
+/*ERROR TEXT FOR SIGNIN FORM*/
 .errorLogin{
-   color: red;
-   position: absolute;
-   float: left;
-   margin-left: 35%
+    color: red;
+    position: absolute;
+    float: left;
+    margin-left: 35%
 }
 
+/*ERROR TEXT FOR SIGNIN FORM*/
 .errorLogin2{
-   color: red;
-   float: left;
-   position: static;
+    color: red;
+    float: left;
+    position: static;
 }
-
-/*.text{
-   font-weight: bold;
-}*/
