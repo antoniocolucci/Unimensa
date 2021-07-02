@@ -21,37 +21,17 @@
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
          <div class="container-fluid">
 
-             <!--BUTTON MENU-->
-            <button class="navbar-toggler" type="button">
-                <span class="navbar-toggler-icon" onclick="showContainer('container_menu');
-                                                           hideOtherMenu('container_menu')">
-                </span>
-
-            </button>
-
-
              <a href="/Home"><img  src="../static/images/logo/logo.png" alt="logo_unimensa" style="width: 287px; height: 50px;"></a>
-
-            <!--MENU LIST NOT DELETE THIS-->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-            </div>
-
 
             <!--PROFILE-->
             <div id="icon_profile">
                      <input type="image" class="icon" id="imgProfile" alt="profile" src="../static/images/header/imgProfile.png" title="Profilo"
                                     onclick="changeIcon('imgProfile');
-                                            showContainer('container_profile');
-                                            hideOtherMenu('container_profile')">
+                                            showContainer('container_profile');">
             </div>
         </div>
     </nav>
 
-         <!--CONTAINER MENU SMARTPHONE-->
-         <div id="container_menu" class="dropdown-menu" style="display: none">
-
-         </div>
 
     <!--CONTAINER PROFILE-->
     <div id="container_profile" style="display: none">
@@ -60,7 +40,6 @@
             <li class="login" onclick="goTo('/logout')"><a class='btn a_profile' role="button" href="/logout">Logout</a></li>
         </ul>
     </div>
-
 
 
     <div class="container-fluid" id="content_order" style="display: inline-block">
@@ -74,7 +53,6 @@
 <script src="../static/js/Home.js"></script>
 <script src="../static/js/JQuery.js"></script>
 <script src="../static/bootstrap/js/bootstrap.esm.js"></script>
-
 </body>
 </html>
 
