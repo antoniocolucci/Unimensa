@@ -1,15 +1,17 @@
-
+/*CONTAINER LABEL IN FORM LOGIN*/
 .container_label{
     width: 50%;
     float: left;
     margin-left: 24.5%;
 }
 
+/*CONTAINER "ACCEDI" TITLE*/
 #container_title{
     float: left;
     width: 100%;
 }
 
+/*CONTAINER INPUT ELEMENT IN LOGIN FORM*/
 .container_input_login{
     margin-bottom: 3%;
     width: 100%;
@@ -18,6 +20,7 @@
     float: left;
 }
 
+/*CONTAINER FORM LOGIN*/
 #container_form_login{
     background-color: white;
     box-shadow: 5px 5px rgba(0,0,0, 0.1);
@@ -30,12 +33,13 @@
     display: flex;
 }
 
+/*INPUT ELEMENT IN FORM LOGIN*/
 .loginControl{
-
     height: 50%;
     width: 50%;
 }
 
+/*BUTTON SUBMIT IN LOGIN FORM*/
 #submit{
     margin-top: 5%;
     cursor: pointer;
@@ -48,24 +52,28 @@
     background-color: #358000;
 }
 
+/*FORM LOGIN*/
 .formLogin{
     margin-top: 20%;
     height: 40%;
     width: 100%;
 }
 
+/*INFORMATION TEXT IN FORM LOGIN*/
 .infoLogin{
     text-align: center
 }
 
+/*ERROR TEXT IN FORM LOGIN*/
 .errorLogin{
 
-   color: red;
-   position: absolute;
-   float: left;
-   margin-left: 35%
+    color: red;
+    position: absolute;
+    float: left;
+    margin-left: 35%
 }
 
+/*TEXT UNDER THE BUTTON SUBMIT*/
 .verify{
     text-align: center;
 }
