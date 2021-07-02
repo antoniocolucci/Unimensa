@@ -1,47 +1,50 @@
 $(document).ready(function(){
 
-  }
+    }
 );
-    $('.liPlate').click(function(){
-        let id = this.id
-        if(id === 'sandwiches')
-             loadSandwiches(id);
-        else
-            loadCard(id);
+/*LOAD CARD OR SANDWICHES*/
+$('.liPlate').click(function(){
+    let id = this.id
+    if(id === 'sandwiches')
+        loadSandwiches(id);
+    else
+        loadCard(id);
+});
+
+/*NOT WORKING*/
+/*CAN SELECT ONLY ONE TYPE OF BREAD*/
+$('input[type="checkbox"].bread').on('change', function() {
+    $('input[type="checkbox"].bread').not(this).prop('checked', false);
+});
+
+/*LOGIN*/
+$('form[name=login]').submit(function(){
+    $.ajax({
+        url: "http://localhost:5000/",
+        type: 'POST',
+        data: {
+            email: $("#Email").val(),
+            pwd:  $("#Password").val()
+        },
+
     });
+});
 
-    $('input[type="checkbox"].bread').on('change', function() {
-        $('input[type="checkbox"].bread').not(this).prop('checked', false);
-    });
-
-    $('form[name=login]').submit(function(){
-        $.ajax({
-            url: "http://localhost:5000/",
-            type: 'POST',
-            data: {
-                email: $("#Email").val(),
-                pwd:  $("#Password").val()
-            },
-
-        });
-    });
-
-    $('.cardPlus').click(function (){
-        $('.content_center').addClass('opa')
-    });
-
-    $('#add_ingr').click(function (){
-        $('.content_center').addClass('opa')
-    });
-
-    $('.iconClose').click(function (){
-        $('.content_center').removeClass('opa')
-    });
+/*SET OPACITY WHEN YOU WANT ADD A NEW PLATE OR A NEW SANDWICH*/
+$('.cardPlus').click(function (){
+    $('.content_center').addClass('opa')
+});
+$('#add_ingr').click(function (){
+    $('.content_center').addClass('opa')
+});
+$('.iconClose').click(function (){
+    $('.content_center').removeClass('opa')
+});
 
 
-
+/*ADD A NEW PLATE*/
 $('form[name=addPLate]').submit(function(){
-        $.ajax({
+    $.ajax({
         url: "/Home",
         type: "POST",
         data: {
@@ -58,19 +61,20 @@ $('form[name=addPLate]').submit(function(){
             console.log('Error in addPlate.')
         }
     });
+});
+
+/*SIGNIN*/
+$('form[name=signin]').submit(function(){
+    $.ajax({
+        url: "http://localhost:5000/signin",
+        type: 'POST',
+        data: {
+            email: $("#email2").val(),
+        },
     });
+});
 
-    $('form[name=signin]').submit(function(){
-        $.ajax({
-            url: "http://localhost:5000/signin",
-            type: 'POST',
-            data: {
-                email: $("#email2").val(),
-            },
-
-        });
-    });
-
+/*LOAD CARD*/
 let numbCard = 1;
 function loadCard(id){
     $('div').remove('.usCard');
@@ -83,89 +87,93 @@ function loadCard(id){
             Section_card: $('#section_card').val(),
         },
         success: function(resp){
+            /*CREATE DYNAMICALLY CARDS WITH DETAILS TAKEN FROM THE DB*/
             let varTemp = resp['plates']
             for (let i = varTemp.length - 1; i >= 0; i--) {
                 let newCard = varTemp[i]
-                        console.log('Sono in success.')
-                        numbCard++;
-                        let containerCards1 = document.getElementById('cntcards1')
-                        let newName = newCard['Name']
-                        let newPrice = newCard['Price']
-                        let newIdName = 'plate' + numbCard + '_name'
-                        let newIdPrice = 'plate' + numbCard + '_price'
-                        let newFilename = newCard['Filename']
-                        let externalCard
-                        let card
-                        let cardBody
-                        let imgCard
-                        let cardName
-                        let priceName
-                        let input
+                console.log('Sono in success.')
+                numbCard++;
+                let containerCards1 = document.getElementById('cntcards1')
+                let newName = newCard['Name']
+                let newPrice = newCard['Price']
+                let newIdName = 'plate' + numbCard + '_name'
+                let newIdPrice = 'plate' + numbCard + '_price'
+                let newFilename = newCard['Filename']
+                let externalCard
+                let card
+                let cardBody
+                let imgCard
+                let cardName
+                let priceName
+                let input
 
-                        externalCard = document.createElement("div")
-                        externalCard.classList.add('col-md-3')
-                        externalCard.classList.add('usCard')
+                externalCard = document.createElement("div")
+                externalCard.classList.add('col-md-3')
+                externalCard.classList.add('usCard')
 
-                        card = document.createElement("div")
-                        card.classList.add('card')
+                card = document.createElement("div")
+                card.classList.add('card')
 
-                        cardBody = document.createElement("div")
-                        cardBody.classList.add('card-body')
+                cardBody = document.createElement("div")
+                cardBody.classList.add('card-body')
 
-                        cardName = document.createElement("h5")
-                        cardName.classList.add('card-title')
-                        cardName.id = newIdName
-                        cardName.innerText = newName
+                cardName = document.createElement("h5")
+                cardName.classList.add('card-title')
+                cardName.id = newIdName
+                cardName.innerText = newName
 
-                        priceName = document.createElement("p")
-                        priceName.classList.add('card-text')
-                        priceName.id = newIdPrice
-                        priceName.innerText = 'Prezzo: ' + newPrice + '€'
+                priceName = document.createElement("p")
+                priceName.classList.add('card-text')
+                priceName.id = newIdPrice
+                priceName.innerText = 'Prezzo: ' + newPrice + '€'
 
-                        input = document.createElement("input")
-                        if(resp['Type'] === 'admin') {
-                            input.classList.add('removeCard')
-                            input.type = 'button'
-                            input.value = 'Rimuovi'
-                            input.addEventListener('click', function () {
-                                removeCard(newCard['_id'])
-                            });
-                        }else{
-                            input.classList.add('button_book')
-                            input.type = 'button'
-                            input.value = 'Aggiungi'
-                            input.addEventListener('click', function () {
-                                addProductToBill(newIdName, newIdPrice)
-                            });
-                        }
+                input = document.createElement("input")
 
-
-
-                        imgCard = document.createElement("img")
-                        imgCard.src = '../static/images/mensa/' + newFilename
-                        imgCard.classList.add('card-img-top')
-                        imgCard.classList.add('imgCard')
-
-                        cardBody.appendChild(cardName)
-                        cardBody.appendChild(priceName)
-                        cardBody.appendChild(input)
-                        card.appendChild(imgCard)
-                        card.appendChild(cardBody)
+                /*IF THE USER IS ADMIN APPEND TO THE CARD AN INPUT ELEMENT WITH REMOVE FUNCTION*/
+                if(resp['Type'] === 'admin') {
+                    input.classList.add('removeCard')
+                    input.type = 'button'
+                    input.value = 'Rimuovi'
+                    input.addEventListener('click', function () {
+                        removeCard(newCard['_id'])
+                    });
+                    /*ELSE APPEND TO THE CARD AN INPUT ELEMENT WITH ADD PRODUCT FUNCTION*/
+                }else{
+                    input.classList.add('button_book')
+                    input.type = 'button'
+                    input.value = 'Aggiungi'
+                    input.addEventListener('click', function () {
+                        addProductToBill(newIdName, newIdPrice)
+                    });
+                }
 
 
-                        externalCard.appendChild(card)
-                        containerCards1.appendChild(externalCard)
-                    }
+
+                imgCard = document.createElement("img")
+                imgCard.src = '../static/images/mensa/' + newFilename
+                imgCard.classList.add('card-img-top')
+                imgCard.classList.add('imgCard')
+
+                cardBody.appendChild(cardName)
+                cardBody.appendChild(priceName)
+                cardBody.appendChild(input)
+                card.appendChild(imgCard)
+                card.appendChild(cardBody)
+
+
+                externalCard.appendChild(card)
+                containerCards1.appendChild(externalCard)
+            }
 
         },
         error: function(){
             console.log('Error in createCard.')
         }
-
     });
 
 }
 
+/*FUNCTION FOR SET ACTIVE THE SECTION ON MENU LIST*/
 function setActive(id){
     let li = document.getElementById(id)
     $('.liPlate').removeClass("liActive");
@@ -181,6 +189,7 @@ function setActive(id){
     }
 }
 
+/*FUNCTION FOR REMOVECARD ON DB*/
 function removeCard(idCard)
 {
     $.ajax({
@@ -190,6 +199,7 @@ function removeCard(idCard)
             'Name': idCard,
         },
         success: function(){
+            /*AFTER DELETE RELOAD*/
             section = $('#section_card').val();
             loadCard(section);
         },
@@ -200,7 +210,7 @@ function removeCard(idCard)
 
 }
 
-
+/*FUNCTION FOR LOADSANDWICHES*/
 function loadSandwiches(id){
     $('.container_checkbox').empty()
     setActive(id);
@@ -211,6 +221,7 @@ function loadSandwiches(id){
             Section_card: $('#section_card').val(),
         },
         success: function(resp){
+            /*CREATE DINAMICALLY CHECKBOX WITH DETAILS TAKEN FROM DB*/
             let varTemp = resp['sandwiches']
             for (let i = varTemp.length - 1; i >= 0; i--) {
                 let sandwich = varTemp[i]
@@ -234,6 +245,7 @@ function loadSandwiches(id){
                 input = document.createElement("input")
 
                 input = document.createElement("input")
+                /*IF THE USER IS ADMIN APPEND CHECKBOXES ELEMENT WITH REMOVE FUNCTION*/
                 if(resp['Type'] === 'admin') {
                     input.type = 'image'
                     input.src = '../static/images/body_home/cestino.png'
@@ -241,6 +253,7 @@ function loadSandwiches(id){
                     input.addEventListener('click', function () {
                         removeSandwich(sandwich['_id'])
                     });
+                    /*ELSE APPEND SIMPLY CHECKBOXES*/
                 }else{
                     input.type = 'checkbox'
                     input.classList.add('checkbox_sandwiches')
@@ -267,7 +280,7 @@ function loadSandwiches(id){
 }
 
 
-
+/*FUNCTION FOR REMOVE AN INGREDIENTS IN THE DB*/
 function removeSandwich(idSandwiches)
 {
     $.ajax({
@@ -277,6 +290,7 @@ function removeSandwich(idSandwiches)
             'Name': idSandwiches,
         },
         success: function(){
+            /*AFTER DELETE LOAD SANDWICHES*/
             loadSandwiches('sandwiches')
         },
         error: function(){
@@ -287,6 +301,7 @@ function removeSandwich(idSandwiches)
 
 }
 
+/*FUNCTION FOR ORDER PLATES AND SANDWICHES*/
 function toOrder(){
     $.ajax({
         url: "/Order",
@@ -294,6 +309,7 @@ function toOrder(){
         data: JSON.stringify(elementCart),
         contentType: 'application/json',
         success: function(){
+            /*AFTER CREATE THE ORDER REFRESH THE BILL*/
             console.log("SUCCESS ORDINI")
             drop_all_product()
         },
@@ -305,12 +321,13 @@ function toOrder(){
 
 }
 
-
+/*FUNCTION FOR LOAD ORDERS*/
 function loadOrder(){
     $.ajax({
         url: "/LoadOrder",
         type: 'POST',
         success: function(resp){
+            /*CREATE DYNAMICALLY ORDER WITH DETAIL TAKEN FROM THE DB*/
             console.log("SUCCESS Load ORDINI")
             let varTemp = resp['orders']
             for (let i = varTemp.length - 1; i >= 0; i--) {
@@ -355,6 +372,7 @@ function loadOrder(){
                 containerBill = document.createElement('div')
                 containerBill.classList.add('content_order2')
 
+                /*IF THE USER IS AN USER AND THE STATE IS CLOSED, SET THE CLASS IN CLOSED*/
                 if(resp['Type'] === 'user')
                 {
                     if(order['State'] === 'closed')
@@ -395,15 +413,13 @@ function loadOrder(){
                 for (let x = allOrder.length -1; x >=0; x--)
                     stringOrders.innerText = stringOrders.innerText + '\n' + allOrder[x]
 
-
-
-
                 divCntLst.appendChild(stringOrders)
                 divCntBll.appendChild(priceTot)
                 divCntBll.appendChild(data)
                 divCntBll.appendChild(userName)
                 divCntBll.appendChild(state)
 
+                /*IF THE USER IS ADMIN APPEND AN INPUT ELEMENT FOR CLOSE THE ORDER*/
                 if(resp['Type'] === 'admin')
                 {
                     input = document.createElement('input')
@@ -411,7 +427,7 @@ function loadOrder(){
                     input.type = 'button'
                     input.value = 'Chiudi ordine'
                     input.addEventListener('click', function () {
-                          closeOrder(order['_id'])
+                        closeOrder(order['_id'])
                     });
                     divCntLst.appendChild(input)
                 }
@@ -422,7 +438,7 @@ function loadOrder(){
 
 }
 
-
+/*FUNCTION FOR CLOSE THE ORDER ONLY ADMIN USER*/
 function closeOrder(idOrder){
     $.ajax({
         url: "/closeOrder",
@@ -436,7 +452,7 @@ function closeOrder(idOrder){
     });
 }
 
-
+/*FUNCTION FOR ADD INGREDIENT IN THE LIST OF INGREDIENTS IN SANDWICHES SECTION*/
 function addSandwiches()
 {
     $.ajax({
