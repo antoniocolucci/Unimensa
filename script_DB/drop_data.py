@@ -16,5 +16,5 @@ result_sandwiches = sandwiches.find()
 result_sandwiches = sandwiches.delete_many({})
 
 # Drop orders.
-result_orders = order.find()
-result_orders  = order.delete_many({})
+result_orders = db.order.find()
+result_orders = db.order.delete_many({})
