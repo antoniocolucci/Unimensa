@@ -28,4 +28,5 @@ The app consists of a client side and a server side.
 * **Student: nomeutente @studenti.universita.it**
 * **Chef: nomeutente @personale.universita.it**
 * **Professor: nomeutente @docenti.universita.it**
+10. Only with nomeutente@personale.universita.it you have the possibility to upload dishes, while with the emails of students and professors you can view the dishes uploaded by the chef.
 
