@@ -34,6 +34,7 @@ let filesToCache = [
     'static/js/Home.js',
     'static/js/home_00.js',
     'static/js/JQuery.js',
+    "static/main.js",
     'static/images/favicons/android-icon-192x192.png',
     'static/images/favicons/apple-icon-180x180.png',
     'static/images/favicons/favicon.ico',
