@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Home</title>
+    <meta charset="UTF-8">
+    <title>Home</title>
 
-  <!-- FILE CSS -->
-  <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css">
-  <link rel="stylesheet" href="../static/css/homeCSS/home.css">
-  <link rel="stylesheet" href="../static/css/homeCSS/contentHome.css">
+    <!-- FILE CSS -->
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/homeCSS/home.css">
+    <link rel="stylesheet" href="../static/css/homeCSS/contentHome.css">
 
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
     <!-- FAVICONS -->
@@ -31,88 +31,68 @@
 
 <body onload="loadCard('choose_plate')">
 
-   <!--NAVBAR-->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-         <div class="container-fluid">
-             <!--BUTTON MENU-->
-             <button class="navbar-toggler" type="button">
-                <span class="navbar-toggler-icon" onclick="showContainer('container_menu');
-                                                           hideOtherMenu('container_menu')">
-                </span>
+<!--NAVBAR-->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container-fluid">
+        <a href="/Home"><img  src="../static/images/logo/logo.png" alt="logo_unimensa" style="width: 287px; height: 50px;"></a>
 
-             </button>
-
-             <a href="/Home"><img  src="../static/images/logo/logo.png" alt="logo_unimensa" style="width: 287px; height: 50px;"></a>
-
-            <!--MENU LIST NOT DELETE THIS-->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-            </div>
-
-
-            <!--PROFILE-->
-            <div id="icon_profile">
-                     <input type="image" class="icon" id="imgProfile" alt="profile" src="../static/images/header/imgProfile.png" title="Profilo"
-                                    onclick="changeIcon('imgProfile');
-                                            showContainer('container_profile');
-                                            hideOtherMenu('container_profile')">
-            </div>
+        <!--PROFILE-->
+        <div id="icon_profile">
+            <input type="image" class="icon" id="imgProfile" alt="profile" src="../static/images/header/imgProfile.png" title="Profilo"
+                   onclick="changeIcon('imgProfile');
+                            showContainer('container_profile');">
         </div>
-    </nav>
-
-         <!--CONTAINER MENU SMARTPHONE-->
-         <div id="container_menu" class="dropdown-menu" style="display: none">
-
-         </div>
-
-        <!--CONTAINER PROFILE-->
-        <div id="container_profile" style="display: none">
-            <ul id="myAccount">
-                <li class="login" onclick="goTo('/LoadOrder')"><a class='btn a_profile' role="button" href="/LoadOrder">Ordini</a></li>
-                <li class="login" onclick="goTo('/logout')"><a class='btn a_profile' role="button" href="/logout">Logout</a></li>
-            </ul>
-        </div>
+    </div>
+</nav>
 
 
+<!--CONTAINER PROFILE-->
+<div id="container_profile" style="display: none">
+    <ul id="myAccount">
+        <li class="login" onclick="goTo('/LoadOrder')"><a class='btn a_profile' role="button" href="/LoadOrder">Ordini</a></li>
+        <li class="login" onclick="goTo('/logout')"><a class='btn a_profile' role="button" href="/logout">Logout</a></li>
+    </ul>
+</div>
 
-         <!--HOMPAGE CONTENT-->
-         <!--CONTENT CREATE MENU-->
-      <div class="container-fluid content_center">
-         <div class="container" id="container_listPlate">
-            <!--LIST IN CREATE MENU-->
-            <ul id="listPlate">
-                <li class="liPlate" id="choose_plate">
-                    <p class="p_listPlate">Scelte rapide</p></li>
-                <li class="liPlate" id="first_plate">
-                    <p class="p_listPlate">Primi</p></li>
-                <li class="liPlate" id="second_plate">
-                    <p class="p_listPlate">Secondi</p></li>
-                <li class="liPlate" id="side_dish">
-                    <p class="p_listPlate">Contorni</p></li>
-                <li class="liPlate" id="fruits">
-                    <p class="p_listPlate">Frutta</p></li>
-                <li class="liPlate" id="desserts">
-                    <p class="p_listPlate">Dolci</p></li>
-                <li class="liPlate" id="sandwiches">
-                    <p class="p_listPlate">Panini</p></li>
-                <li class="liPlate" id="pizza">
-                    <p class="p_listPlate">Pizze</p></li>
-                <li class="liPlate" id="drink">
-                    <p class="p_listPlate">Bibite</p></li>
-            </ul>
-        </div>
 
-        <div class="container" id="content_cards_menu" style="display: inline-block">
-            <!--CARDS HORIZONTAL-->
+<!--HOMPAGE CONTENT-->
+<!--CONTENT CREATE MENU-->
+<div class="container-fluid content_center">
+    <div class="container" id="container_listPlate">
+        <!--LIST IN CREATE MENU-->
+        <ul id="listPlate">
+            <li class="liPlate" id="choose_plate">
+                <p class="p_listPlate">Scelte rapide</p></li>
+            <li class="liPlate" id="first_plate">
+                <p class="p_listPlate">Primi</p></li>
+            <li class="liPlate" id="second_plate">
+                <p class="p_listPlate">Secondi</p></li>
+            <li class="liPlate" id="side_dish">
+                <p class="p_listPlate">Contorni</p></li>
+            <li class="liPlate" id="fruits">
+                <p class="p_listPlate">Frutta</p></li>
+            <li class="liPlate" id="desserts">
+                <p class="p_listPlate">Dolci</p></li>
+            <li class="liPlate" id="sandwiches">
+                <p class="p_listPlate">Panini</p></li>
+            <li class="liPlate" id="pizza">
+                <p class="p_listPlate">Pizze</p></li>
+            <li class="liPlate" id="drink">
+                <p class="p_listPlate">Bibite</p></li>
+        </ul>
+    </div>
 
-            <div id='cntcards1' class="container-fluid container_card cntcards1 ">
+    <div class="container" id="content_cards_menu" style="display: inline-block">
+        <!--CARDS HORIZONTAL-->
 
-            </div>
+        <div id='cntcards1' class="container-fluid container_card cntcards1 ">
 
         </div>
 
+    </div>
 
-        <div class="container" id="container_sandwiches" style="display: none">
+
+    <div class="container" id="container_sandwiches" style="display: none">
 
         <div class="cntsnd">
             <div class="nameContainerCheckbox">
@@ -120,7 +100,7 @@
             </div>
             <div class="container_checkbox" id="bread">
             </div>
-         </div>
+        </div>
 
 
         <div class="cntsnd">
@@ -142,7 +122,7 @@
 
         <div class="cntsnd">
             <div class="nameContainerCheckbox">
-            <h3>Carne</h3>
+                <h3>Carne</h3>
             </div>
             <div class="container_checkbox" id="meat">
             </div>
@@ -165,31 +145,31 @@
             </div>
         </div>
 
-            <div class="container-fluid">
-                <input type="button" class="button_sandwiches" value="Conferma il tuo panino"
-                       onclick="addSandwichesToBill()">
-            </div>
+        <div class="container-fluid">
+            <input type="button" class="button_sandwiches" value="Conferma il tuo panino"
+                   onclick="addSandwichesToBill()">
         </div>
-          <div class="container container_bill">
-
-              <h3>Prodotti scelti: </h3>
-              <div class="container_product_chosen">
-                  <img class="cart_empty" src="../static/images/body_home/cart.png" alt="cart_empty">
-                  <ul id="list_bill">
-                  </ul>
-              </div>
-              <div class="container_deleteAll" style="display: none">
-                  <input type="button" class="button_deleteAll" value="Svuota tutto" onclick="drop_all_product()" >
-              </div>
-              <div class="container_total">
-                  <h3 id="total">Totale:  </h3>
-                  <input type="button" class="button_book2" value="Ordina" onclick="toOrder()">
-              </div>
-          </div>
-      </div>
-    <div class="container container_inputPlate" style="display: none">
-        <input type="text" class="addplateControl" id="section_card" name="Section_card">
     </div>
+    <div class="container container_bill">
+
+        <h3>Prodotti scelti: </h3>
+        <div class="container_product_chosen">
+            <img class="cart_empty" src="../static/images/body_home/cart.png" alt="cart_empty">
+            <ul id="list_bill">
+            </ul>
+        </div>
+        <div class="container_deleteAll" style="display: none">
+            <input type="button" class="button_deleteAll" value="Svuota tutto" onclick="drop_all_product()" >
+        </div>
+        <div class="container_total">
+            <h3 id="total">Totale:  </h3>
+            <input type="button" class="button_book2" value="Ordina" onclick="toOrder()">
+        </div>
+    </div>
+</div>
+<div class="container container_inputPlate" style="display: none">
+    <input type="text" class="addplateControl" id="section_card" name="Section_card">
+</div>
 
 
 <script src="../static/js/Home.js"></script>
