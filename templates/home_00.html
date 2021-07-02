@@ -6,7 +6,7 @@
 
   <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css">
   <link rel="stylesheet" href="../static/css/homeCSS/home.css">
-    <link rel="stylesheet" href="../static/css/homeCSS/home_00.css">
+  <link rel="stylesheet" href="../static/css/homeCSS/home_00.css">
   <link rel="stylesheet" href="../static/css/homeCSS/contentHome.css">
 
 
@@ -29,7 +29,7 @@
             </button>
 
 
-             <img href='/Home' src="../static/images/logo/logo.png" alt="logo_unimensa"  style="width: 287px; height: 50px;">
+             <a href="/Home"><img  src="../static/images/logo/logo.png" alt="logo_unimensa" style="width: 287px; height: 50px;"></a>
             <!--UNIMENSA-->
 
             <!--MENU LIST-->
@@ -56,8 +56,8 @@
          <!--CONTAINER PROFILE-->
          <div id="container_profile" style="display: none">
                  <ul id="myAccount">
-                     <li class="login"><a class='a_profile' href="/LoadOrder">Ordini</a></li>
-                     <li class="login"><a class='a_profile' href="/logout">Logout</a></li>
+                     <li class="login" onclick="goTo('/LoadOrder')"><a class='btn a_profile' role="button" href="/LoadOrder">Ordini</a></li>
+                     <li class="login" onclick="goTo('/logout')"><a class='btn a_profile' role="button" href="/logout">Logout</a></li>
                  </ul>
         </div>
 
@@ -158,8 +158,8 @@
 
 
         <div class="container-fluid">
-            <input type="button" class="button_sandwiches" value="Conferma il tuo panino"
-                   onclick="addSandwichesToBill()">
+            <input type="button" id='add_ingr' class="button_sandwiches" value="Aggiungi ingrediente"
+                   onclick="showContainer('add_sand')">
         </div>
     </div>
     </div>
@@ -167,6 +167,7 @@
     <div class="container_add_plate" id="add_plate" style="display: none">
         <img src="../static/images/menu_ristoratore/close.png" alt="close" class="icon iconClose" onclick="showContainer('add_plate')">
         <form name="addPlate" method="post" enctype="multipart/form-data">
+            <div id="preview"></div>
             <div class="container container_label">
                 <label for="plate_name">
                     Nome piatto:
@@ -185,24 +186,60 @@
                 <input type="text" class="addplateControl" id="price" name="Price">
             </div>
 
-            <div class="container container_label">
-                <label for="ingredients">
-                    Ingredienti:
-                </label>
-            </div>
-
             <div class="container container_inputPlate" style="display: none">
                 <input type="text" class="addplateControl" id="section_card" name="Section_card">
             </div>
 
-            <div class="container container_inputPlate">
-                <textarea rows="4" cols="50" id="ingredients" name="Ingredients"></textarea>
+            <div class="container container_inputFile">
+                <input type="file" name="imgFile" id="imgFile">
             </div>
-            <div id="preview"></div>
 
-            <input type="file" name="imgFile" id="imgFile">
+            <div class="container container_inputSubmit">
             <input type="submit" value="Aggiungi" id="addPlate">
+            </div>
+        </form>
 
+
+    </div>
+
+
+    <div class="container_add_plate" id="add_sand" style="display: none">
+        <img src="../static/images/menu_ristoratore/close.png" alt="close" class="icon iconClose" onclick="showContainer('add_sand')">
+        <form name="addSand" method="post" enctype="multipart/form-data">
+            <div class="container container_label">
+                <label for="plate_name">
+                    Nome Ingrediente:
+                </label>
+            </div>
+            <div class="container container_inputPlate">
+                <input type="text" class="addplateControl" id="sand_name" name="sand_name">
+            </div>
+
+            <div class="container container_label">
+                <label for="price">
+                    Prezzo:
+                </label>
+            </div>
+            <div class="container container_inputPlate">
+                <input type="text" class="addplateControl" id="sand_price" name="sand_price">
+            </div>
+
+            <div class="container container_inputPlate">
+                <select class="form-select" aria-label="Default select example" id="typeSand" name="typeSand">
+                    <option selected>Tipo ingrediente</option>
+                    <option value="bread">Pane</option>
+                    <option value="cheese">Formaggi</option>
+                    <option value="dish">Contorni</option>
+                    <option value="meat">Carne</option>
+                    <option value="sausage">Salumi</option>
+                    <option value="sauce">Salse</option>
+                </select>
+            </div>
+
+
+            <div class="container container_inputSubmit">
+                <input type="button" value="Aggiungi" id="addSand" onclick="addSandwiches()">
+            </div>
         </form>
 
 
