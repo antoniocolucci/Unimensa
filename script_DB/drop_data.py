@@ -1,4 +1,4 @@
-from app import db, users, plate, sandwiches
+from app import db, users, plate, sandwiches, order
 from passlib.hash import pbkdf2_sha256
 import uuid
 
@@ -14,3 +14,7 @@ result_plates = plate.delete_many({})
 # Drop data of ingredients of sandwiches.
 result_sandwiches = sandwiches.find()
 result_sandwiches = sandwiches.delete_many({})
+
+# Drop orders.
+result_orders = order.find()
+result_orders  = order.delete_many({})
