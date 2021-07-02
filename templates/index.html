@@ -22,7 +22,7 @@
 
         <div class="container-fluid">
 
-          <img href='/Home' src="../static/images/logo/logo.png" alt="logo_unimensa"  style="width: 287px; height: 50px;">
+          <a href="/"><img  src="../static/images/logo/logo.png" alt="logo_unimensa" style="width: 287px; height: 50px;"></a>
 
         </div>
       </nav>
@@ -32,7 +32,7 @@
         <div class="container-fluid" id="container_title">
           <h1>Accedi</h1>
         </div>
-        <!--p class="infoLogin">Inserisci email e password del portale dell'università</p-->
+
         <div class="container formLogin">
           <form name="login" method="POST" action="/">
             <div class="container container_label">
@@ -40,8 +40,8 @@
                 E-mail istituzionale
               </label>
             </div>
-            <div class="container container_input_login">
 
+            <div class="container container_input_login">
               <input type="email" class="loginControl" id="email" name="Email">
             </div>
 
@@ -50,10 +50,11 @@
                 Password
               </label>
             </div>
+
             <div class="container container_input_login">
               <input type="password" class="loginControl" id="password" name="Password">
-
             </div>
+
             <div class="container container_submit">
               {% if error == 2%}
               <p class="errorLogin">Email sbagliata</p>
@@ -68,6 +69,7 @@
               <p class="verify"> Non sei ancora registrato ? <a href="/signin"> Registrati </a></p>
 
             </div>
+
           </form>
         </div>
       </div>

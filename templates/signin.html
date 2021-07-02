@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Signin</title>
@@ -15,88 +16,94 @@
 <body onLoad="signin.Name.focus();">
 
 
-<!--NAVBAR-->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <!--NAVBAR-->
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top">
 
-  <div class="container-fluid">
+        <div class="container-fluid">
 
-    <img href='/Home' src="../static/images/logo/logo.png" alt="logo_unimensa"  style="width: 287px; height: 50px;">
+          <a href="/signin"><img  src="../static/images/logo/logo.png" alt="logo_unimensa" style="width: 287px; height: 50px;"></a>
 
-  </div>
-</nav>
-
-
-<div  id="container_form_signin" class="container-fluid content_center" style="display: block">
-  <div class="container-fluid" id="container_title">
-    <h1>Registrazione</h1>
-  </div>
-  <div class="container formSignin">
-    <form name="signin" method="post" action="/signin">
-      <div class="container container_label">
-        <label for="name" class="text">
-          Nome
-        </label>
-      </div>
-      <div class="container-fluid container_input_signin">
-        <input type="text" class="signinControl" id="name" name="Name">
-      </div>
-      <div class="container container_label">
-        <label for="surname" class="text">
-          Cognome
-        </label>
-      </div>
-      <div class="container container_input_signin">
-        <input type="text" class="signinControl" id="surname" name="Surname">
-      </div>
-      <div class="container container_label">
-        <label for="email2" id="prova" class="text">
-          E-mail istituzionale
-        </label>
-      </div>
-      <div class="container container_input_signin">
-        <input type="email" class="signinControl" id="email2" name="Email">
-      </div>
-
-      <div class="container container_label">
-        <label for="password2" class="text">
-          Password
-        </label>
-      </div>
-      <div class="container container_input_signin">
-        <input type="password" class="signinControl" id="password2" name="Password">
-      </div>
-
-      <div class="container container_label">
-        <label for="confirm_password" class="text">
-          Conferma Password
-        </label>
-      </div>
-      <div class="container container_input_signin">
-        <input type="password" class="signinControl" id="confirm_password" name="checkPassword">
-      </div>
-      <div class="container container_submit">
-        {% if error == 3%}
-        <p class="errorLogin">Email già in uso</p>
-        {% endif %}
-        {% if error == 4%}
-        <p class="errorLogin2">Registrarsi con una delle email istituzionali: (@studenti.universita.it) (@docenti.universita.it) (@personale.universita.it)</p>
-        {% endif %}
-        {% if error == 5%}
-        <p class="errorLogin">Riempire tutti i campi</p>
-        {% endif %}
-        {% if error == 6%}
-        <p class="errorLogin">Le password inserite sono diverse</p>
-        {% endif %}
-        <input type="submit" value="Registrati" id="submit">
+        </div>
+      </nav>
 
 
-        <p class="verify"> Hai già un account ? <a href="/"> Accedi </a></p>
+      <div  id="container_form_signin" class="container-fluid content_center" style="display: block">
+        <div class="container-fluid" id="container_title">
+          <h1>Registrazione</h1>
+        </div>
+        <div class="container formSignin">
+          <form name="signin" method="post" action="/signin">
+
+            <div class="container container_label">
+              <label for="name" class="text">
+                Nome
+              </label>
+            </div>
+
+            <div class="container-fluid container_input_signin">
+              <input type="text" class="signinControl" id="name" name="Name">
+            </div>
+
+            <div class="container container_label">
+              <label for="surname" class="text">
+                Cognome
+              </label>
+            </div>
+
+            <div class="container container_input_signin">
+              <input type="text" class="signinControl" id="surname" name="Surname">
+            </div>
+
+            <div class="container container_label">
+              <label for="email2" id="prova" class="text">
+                E-mail istituzionale
+              </label>
+            </div>
+
+            <div class="container container_input_signin">
+              <input type="email" class="signinControl" id="email2" name="Email">
+            </div>
+
+            <div class="container container_label">
+              <label for="password2" class="text">
+                Password
+              </label>
+            </div>
+
+            <div class="container container_input_signin">
+              <input type="password" class="signinControl" id="password2" name="Password">
+            </div>
+
+            <div class="container container_label">
+              <label for="confirm_password" class="text">
+                Conferma Password
+              </label>
+            </div>
+
+            <div class="container container_input_signin">
+              <input type="password" class="signinControl" id="confirm_password" name="checkPassword">
+            </div>
+
+            <div class="container container_submit">
+              {% if error == 3%}
+              <p class="errorLogin">Email già in uso</p>
+              {% endif %}
+              {% if error == 4%}
+              <p class="errorLogin2">Registrarsi con una delle email istituzionali: (@studenti.universita.it) (@docenti.universita.it) (@personale.universita.it)</p>
+              {% endif %}
+              {% if error == 5%}
+              <p class="errorLogin">Riempire tutti i campi</p>
+              {% endif %}
+              {% if error == 6%}
+              <p class="errorLogin">Le password inserite sono diverse</p>
+              {% endif %}
+              <input type="submit" value="Registrati" id="submit">
+
+              <p class="verify"> Hai già un account ? <a href="/"> Accedi </a></p>
+            </div>
+          </form>
+        </div>
       </div>
-    </form>
-  </div>
-
-
-</div>
 
 
 <script language="JavaScript" src="../js/Home.js"></script>
