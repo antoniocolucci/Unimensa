@@ -1,5 +1,5 @@
+/*CARD FOR ADD NEW DISHES*/
 .cardPlus{
-
     margin-left: 0;
     height: 20rem;
     width: 15rem;
@@ -7,17 +7,15 @@
     border: 6px #65db86 dashed;
     cursor: pointer;
 }
-
 .uscardPlus{
-
     float: left;
     display: inline-block;
     margin-left: 5%;
     cursor: pointer;
 }
 
+/*ICON PLUS FOR CARDPLUS*/
 .plusIcon{
-
     width: 128px;
     height: 128px;
     margin-top: 35%;
@@ -25,6 +23,7 @@
 
 }
 
+/*CONTAINER FORM ADD PLATE*/
 .container_add_plate{
     padding:0.5%;
     position: absolute;
@@ -41,49 +40,44 @@
     box-shadow: 0px 0px 52px -17px #000000;
 }
 
+/*BUTTON SUBMIT ADDPLATE FORM*/
 #addPlate{
     width: 15%;
     background-color: #358000;
     color: white;
 }
 
+/*ICON X FOR CLOSE ADDPLATE FORM*/
 .iconClose{
 
     float: right;
     cursor: pointer;
 }
 
+/*CLASS FOR SET OPACITY WHEN ADDPLATE IS BLOCK*/
 .opa{
     opacity: 0.5;
     background-color: rgb(33, 41, 52);
 }
 
+/*RESIZE FOR PREVIEW IMAGE IN THE FORM*/
 .resize{
     height: 150px;
     margin: 30px 30px 0 0;
 }
 
+/*INPUT FILE IMAGE FOR ADDPLATE FORM*/
 #imgFile{
     margin-left: 1.3%;
 }
 
+/*CONTAINER FOR PREVIEW IMAGE IN ADDPLATE FORM*/
 #preview{
     float: right;
     margin-right: 15%;
 }
 
-
-
-
-#myAccount{
-
-    padding: 0;
-    margin-top: 0;
-}
-
-
-
-
+/*ICON FOR DELETE INGREDIENT SANDWICH ONLY ADMIN SESSION*/
 .icon3{
     width: 24px;
     height: 24px;
@@ -91,7 +85,7 @@
     left: 0;
 }
 
-
+/*BUTTON FOR REMOVE CARD ONLY ADMIN SESSION*/
 .removeCard{
     height: 30%;
     width: 50%;
@@ -103,29 +97,32 @@
     border-radius: 2px;
 }
 
-
+/*INPUT TEXT FOR ADDPLATE FORM*/
 .addplateControl{
     width: 30%;
 }
 
-
+/*CONTAINER INPUT ELEMENT FOR ADDPLATE FORM*/
 .container_inputPlate{
     width: 100%;
     height: 30%;
     margin-left: 1%;
 }
 
+/*CONTAIENR LABEL FOR ADDPLATE FORM*/
 .container_label{
     margin-top: 3%;
     margin-left: 1%;
 }
 
+/*CONTAINER INPUT FILE FOR ADDPLATE FORM*/
 .container_inputFile{
     width: 100%;
     height: 30%;
     margin-top: 3%;
 }
 
+/*CONTAINER INPUT SUBMIT FOR ADDPLATE FORM*/
 .container_inputSubmit{
     width: 100%;
     height: 30%;
@@ -134,9 +131,9 @@
     text-align: right;
 }
 
+/*BUTTON SUBMIT FOR ADD SANDWICHES FORM*/
 #addSand{
     width: 15%;
     background-color: #358000;
     color: white;
 }
-

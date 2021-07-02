@@ -84,7 +84,7 @@ ul#listPlate{
     text-align: center;
 }
 
-/*CONTAINER THAT CONTAINs TRIAD OF CARDS*/
+/*CONTAINER THAT CONTAINS TRIAD OF CARDS*/
 .container_card{
     width: 100%;
     height: 45%;
@@ -110,13 +110,15 @@ ul#listPlate{
     display: inline-block;
 }
 
+/*NAME OF SINGLE GROUP OF CHECKBOX IN SANDWICHES*/
 .nameContainerCheckbox{
-text-align: left;
+    text-align: left;
     width: 100%;
     float: left;
     display: inline-block;
 }
 
+/*CONTAINER SINGLE CHECKBOX AND SINGLE NAME*/
 .cntsnd{
     text-align: left;
     width: 30%;
@@ -215,7 +217,6 @@ text-align: left;
     width: 50%;
     text-align: center;
     line-height: 1;
- //   margin-top:3%;
     border-radius: 2px;
 
 }
@@ -234,12 +235,14 @@ text-align: left;
     border-radius: 2px;
 }
 
+/*PRICE IN THE BILL CONTAINER*/
 .price_bill {
     float: right;
     width: 17%;
     margin-bottom: 0;
 }
 
+/*CONTAINER DELETE_ALL BUTTON*/
 .container_deleteAll{
     height: 15%;
     display: flex;
@@ -248,10 +251,12 @@ text-align: left;
     padding-top: 2%;
 }
 
+/*CONTAINER LIST OF CHOSEN PRODUCT*/
 .container_product_chosen{
     height: 50%;
 }
 
+/*QUANTITY OF CHOSEN PRODUCT*/
 .count_item{
     float: left;
     width: 8%;
@@ -263,6 +268,7 @@ text-align: left;
 
 }
 
+/*Li ELEMENT FOR LIST CHOSEN PRODUCT IN THE BILL*/
 .li_name{
     width: 50%;
     display: inline-block;
@@ -271,12 +277,15 @@ text-align: left;
     margin-bottom: 0;
 }
 
+/*IMAGE FOR CART EMPTY*/
 .cart_empty{
     width: 200px;
     height: 200px;
     margin-left: 20%;
 }
 
+
+/*CONTAINER WHITE FOR CART EMPTY*/
 #cartEmpty{
 
     text-align: center;

@@ -1,3 +1,4 @@
+/*BODY OF ALL HTML FILE*/
 html,body{
     margin-top: 0;
     margin-left: 0;
@@ -5,9 +6,6 @@ html,body{
     height: 100%;
     background-color: ghostwhite;
 }
-
-/*UNIMENSA*/
-
 
 /*HEADER - NAVBAR*/
 nav.navbar-expand-lg {
@@ -62,20 +60,23 @@ div#container_menu{
     position: fixed;
 }
 
+/*DROPDOWN MENU*/
 div.dropdown-menu a.active{
     background-color: #3b83bd;
 }
 
+/*LIST IN CONTAINER PROFILE*/
 #myAccount{
     padding: 0;
     margin-top: 0;
 }
 
+/*LI ELEMENT IN CONTAINER PROFILE*/
 .login{
     width: 100%;
     height: 3%;
     text-align: center;
-    //font-size: 18px;
+//font-size: 18px;
     cursor: pointer;
     float: left;
     background-color: #EFEFEF;
@@ -88,22 +89,22 @@ div.dropdown-menu a.active{
     background-color: lightblue;
 }
 
+/*LINK FOR LI ELEMENT .LOGIN*/
 .a_profile{
     text-decoration: none;
     color: inherit;
 }
 
 .slide{
-
     color: red;
 }
 
+/*PRICE FOR CARDS*/
 .card-text{
-
     color: black;
 }
 
+/*NAME FOR CARDS*/
 .card-title{
-
     color: black;
 }
