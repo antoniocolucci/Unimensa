@@ -1,7 +1,3 @@
-$(document).ready(function(){
-
-    }
-);
 /*LOAD CARD OR SANDWICHES*/
 $('.liPlate').click(function(){
     let id = this.id
@@ -9,12 +5,6 @@ $('.liPlate').click(function(){
         loadSandwiches(id);
     else
         loadCard(id);
-});
-
-/*NOT WORKING*/
-/*CAN SELECT ONLY ONE TYPE OF BREAD*/
-$('input[type="checkbox"].bread').on('change', function() {
-    $('input[type="checkbox"].bread').not(this).prop('checked', false);
 });
 
 /*LOGIN*/

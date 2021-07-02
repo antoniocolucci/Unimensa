@@ -8,7 +8,7 @@ function showContainer(element_id) {
     }
 }
 
-/*FUNCTION CHANGE INCON IN NAVBAR*/
+/*FUNCTION CHANGE ICON IN NAVBAR*/
 function changeIcon(element_id){
     /*SAVE THE FIRST OCCURRENCE OF IMAGES IN THE SRC ATTRIBUTE OF THE ELEMENT*/
     let firstOcc = document.getElementById(element_id).src.indexOf('static')
@@ -26,31 +26,6 @@ function changeIcon(element_id){
         document.getElementById(element_id).src = "../static/images/header/"+element_id+".png"
     }
 
-}
-
-
-/*FUNCTION FOR HIDE OTHER MENU IN NAVBAR*/
-function hideOtherMenu (element_id) {
-    let element = document.getElementById(element_id)
-    let nameContainer = [
-        'container_profile',
-        'container_menu'
-    ]
-
-    if(element === document.getElementById(nameContainer[0]))
-    {
-        if(document.getElementById(nameContainer[1]).style.display === 'block') {
-            document.getElementById(nameContainer[1]).style.display = 'none'
-        }
-    }
-
-    else if (element === document.getElementById(nameContainer[1]))
-    {
-        if(document.getElementById(nameContainer[0]).style.display === 'block') {
-            document.getElementById(nameContainer[0]).style.display= 'none'
-            changeIcon('imgProfile')
-        }
-    }
 }
 
 
@@ -172,7 +147,7 @@ function drop_all_product(){
 
 }
 
-/*FUNCTION FOR ADD SANDIWCHES TO THE BILL*/
+/*FUNCTION FOR ADD SANDWICHES TO THE BILL*/
 function addSandwichesToBill() {
     $("#cartEmpty").css("display", "none")
     $(".cart_empty").css("display", "none")
@@ -182,7 +157,7 @@ function addSandwichesToBill() {
     let checked = document.getElementsByClassName('checkbox_sandwiches')
     let labels
     let components = "Panino("
-    /*CONTRO THE CHECKBOX THAT HAVE THE PROPERTY == TRUE*/
+    /*CONTROL THE CHECKBOX THAT HAVE THE PROPERTY == TRUE*/
     for(let x in checked){
         let xChecked = checked[x]
         console.log(checked[x])
@@ -335,8 +310,6 @@ function bill_tot(price, operand){
 
 }
 
-
-/*TRANSLATE THERE AND IN HTML*/
 /*FUNCTION FOR REFRESH THE FIELD IN THE LOGIN FORM*/
 function svuota(){
     $('#email').value = '';
