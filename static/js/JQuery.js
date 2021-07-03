@@ -1,3 +1,8 @@
+$(document).ready(function(){
+
+  }
+);
+
 /*LOAD CARD OR SANDWICHES*/
 $('.liPlate').click(function(){
     let id = this.id
