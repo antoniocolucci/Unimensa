@@ -44,20 +44,23 @@ def logout():
 @app.route('/Home', methods=['GET', 'POST'])
 def home():
     user = users.find_one({'Type': 'admin'})
-    if session['_id'] == user['_id']:
-        if request.method == 'POST':
-            namePlate = request.form['Name']
-            id = uuid.uuid4().hex
-            pricePlate = request.form['Price']
-            section = request.form['Section_card']
-            file = request.files['imgFile']
-            filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            newCard = {'_id': id, 'Name': namePlate, 'Price': pricePlate, 'Section': section, 'Filename': filename}
-            plate.insert_one(newCard)
-            return render_template('home_00.html')
+    if(user):
+        if session['_id'] == user['_id']:
+            if request.method == 'POST':
+                namePlate = request.form['Name']
+                id = uuid.uuid4().hex
+                pricePlate = request.form['Price']
+                section = request.form['Section_card']
+                file = request.files['imgFile']
+                filename = secure_filename(file.filename)
+                file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                newCard = {'_id': id, 'Name': namePlate, 'Price': pricePlate, 'Section': section, 'Filename': filename}
+                plate.insert_one(newCard)
+                return render_template('home_00.html')
+            else:
+                return render_template('home_00.html')
         else:
-            return render_template('home_00.html')
+            return render_template('Home.html')
     else:
         return render_template('Home.html')
 
